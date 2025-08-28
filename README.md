@@ -11,7 +11,7 @@ This website displays game assets, sprites, and text files from Last Fortress Un
 ## Features
 
 - **Update Archive**: Browse game updates by date with organized asset galleries 
-- **Text File Analysis**: Compare localization and configuration changes
+- **Text File Analysis**: Compare configuration changes
 - **Responsive Design**: Works on desktop and mobile devices
 - **Search & Filter**: Find specific assets across all updates
 
@@ -19,7 +19,7 @@ This website displays game assets, sprites, and text files from Last Fortress Un
 
 New updates are added regularly as game patches are released. Each update includes:
 - All new and modified game sprites/images
-- Text file changes and translations
+- Text file changes
 
 ## Fair Use Notice
 

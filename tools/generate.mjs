@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const ROOT = path.resolve(__dirname, "..");
 const INBOX = path.join(ROOT, "inbox");
-const SITE = path.join(ROOT, "site");
+const SITE = ROOT;
 const UPDATES_DIR = path.join(SITE, "updates");
 
 const DISCLAIMER = `The images and artwork used on this page are displayed strictly for educational, informational, commentary, and news reporting purposes.

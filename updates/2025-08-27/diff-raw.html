@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Raw Config - 2025-08-27 - LFU Informer</title>
+<style>
+:root{--bg:#0b0d10;--fg:#e6e9ef;--muted:#9aa4b2;--card:#111318;--accent:#6aa2ff;--add:#15351b;--del:#3a1b1b;--ctx:#1a1d23;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial}
+a{color:var(--accent);text-decoration:none}
+header{position:sticky;top:0;background:linear-gradient(180deg,#0b0d10,rgba(11,13,16,0.95));backdrop-filter:blur(8px);border-bottom:2px solid #6aa2ff;padding:20px 16px;display:flex;align-items:center;z-index:10;box-shadow:0 4px 20px rgba(106,162,255,0.1)}
+header h1{font-size:32px;margin:0;font-weight:700;text-shadow:0 2px 10px rgba(106,162,255,0.3);letter-spacing:0.5px;flex:1;text-align:center}
+header a{color:var(--accent);text-decoration:none;padding:8px 16px;border:1px solid var(--accent);border-radius:8px;font-weight:600;transition:all 0.2s ease}
+header a:hover{background:var(--accent);color:var(--bg);transform:translateY(-1px)}
+.container{max-width:1180px;margin:24px auto;padding:0 16px}
+.card{background:var(--card);border:1px solid #1b2027;border-radius:14px;padding:16px}
+.grid{display:grid;gap:12px}
+.grid.images{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.thumb{position:relative;border:1px solid #222632;border-radius:10px;overflow:hidden;background:#0c0f14}
+.thumb img{width:100%;height:160px;object-fit:contain;background:#0c0f14;display:block}
+.caption{font-size:12px;color:var(--muted);padding:6px 4px 8px;text-align:center}
+.meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin:8px 0 0}
+.toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+select, input[type="search"], button{background:#0e1116;color:var(--fg);border:1px solid #1f2530;border-radius:10px;padding:8px 10px;font:inherit}
+button{cursor:pointer}
+.toggle{display:inline-flex;border:1px solid #1f2530;border-radius:10px;overflow:hidden}
+.toggle button{border:0;border-right:1px solid #1f2530}
+.toggle button:last-child{border-right:0}
+.toggle .active{background:#152033}
+.diff{background:var(--card);border:1px solid #1b2027;border-radius:14px;padding:0;overflow:hidden}
+.diff-header{display:flex;gap:8px;align-items:center;padding:12px;border-bottom:1px solid #1b2027}
+.diff-body{padding:12px;max-height:65vh;overflow:auto}
+.diff-line{white-space:pre-wrap;padding:2px 8px;border-radius:6px;margin:1px 0}
+.diff-line.add{background:var(--add)}
+.diff-line.del{background:var(--del)}
+.diff-line.ctx{background:var(--ctx)}
+.empty-state{color:var(--muted);padding:12px}
+details.mod-seg summary{cursor:pointer;margin-bottom:8px}
+pre.raw{white-space:pre-wrap;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;background:#0f1218;border:1px solid #1c2130;border-radius:10px;padding:10px}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tab-btn{padding:8px 12px;border:1px solid #1f2530;border-radius:10px;background:#0e1116;cursor:pointer}
+.tab-btn.active{background:#152033}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;z-index:100}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain}
+.lightbox .cap{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);color:#cbd5e1;font-size:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:8px}
+.searchbar{display:flex;gap:8px;align-items:center}
+.kbd{font:12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;border:1px solid #2a3140;border-radius:6px;padding:2px 6px;background:#0f1218;color:#aab4c3}
+.disclaimer{margin:18px 0;color:var(--fg);font-size:13px;line-height:1.6;border:2px solid #6aa2ff;border-radius:12px;padding:16px;background:linear-gradient(135deg,rgba(106,162,255,0.08),rgba(106,162,255,0.03));text-align:center}
+.disclaimer div{margin:0 0 8px 0}
+.disclaimer div:last-of-type{margin-bottom:16px}
+.patreon-link{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(45deg,#1e88e5,#6aa2ff);color:white!important;text-decoration:none!important;padding:10px 20px;border-radius:8px;font-weight:600;margin-top:16px;transition:all 0.2s ease;border:0}
+.patreon-link:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(30,136,229,0.4)}
+.patreon-link::before{content:'💙';margin-right:4px}
+.thumb[data-lazy="true"]{display:none}
+.thumb img{will-change:transform;contain:layout style paint}
+.grid.images{contain:layout}
+.pagination-info{display:flex;align-items:center;gap:8px}
+.diff-external{text-align:center;padding:20px;margin:10px 0}
+.diff-external a{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:linear-gradient(45deg,#1e88e5,#6aa2ff);color:white!important;text-decoration:none;border-radius:8px;font-weight:600;transition:all 0.2s ease}
+.diff-external a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(30,136,229,0.4)}
+.tab-btn[title]:hover::after{content:attr(title);position:absolute;bottom:-2em;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.9);color:white;padding:6px 8px;border-radius:6px;font-size:12px;white-space:nowrap;z-index:100;pointer-events:none}
+.tab-btn{position:relative}
+header h1{background:linear-gradient(135deg,#6aa2ff,#4f89ff,#00d4ff,#6aa2ff);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientShift 4s ease-in-out infinite}
+@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Raw Config - 2025-08-27 - LFU Informer</h1>
+  <a href="./index.html">All updates</a>
+</header>
+<div class="container">
+  <div class="card disclaimer">
+    <div>The images and artwork used on this page are displayed strictly for educational, informational, commentary, and news reporting purposes.</div>
+    <div>This constitutes Fair Use under Section 107 of the U.S. Copyright Act and similar copyright provisions worldwide.</div>
+    <div>This content is not for commercial exploitation, and no ownership of the original works is claimed.</div>
+    <div>All intellectual property rights remain with their respective copyright holders.</div>
+    <div>If you are a rights holder and believe your content has been misused outside the scope of fair use/fair dealing, please contact me and it will be promptly addressed.</div>
+    <a href="https://www.patreon.com/renegade2k6UK" target="_blank" rel="noopener" class="patreon-link">Support LFU Informer on Patreon</a>
+  </div>
+<div class="diff"><div class="diff-body">
+            <div class="card" style="margin-bottom: 16px;">
+              <div>This file is split into 25 parts due to size:</div>
+              <div><a href="./diff-raw-1.html" target="_blank">📄 Part 1 of 25</a></div><div><a href="./diff-raw-2.html" target="_blank">📄 Part 2 of 25</a></div><div><a href="./diff-raw-3.html" target="_blank">📄 Part 3 of 25</a></div><div><a href="./diff-raw-4.html" target="_blank">📄 Part 4 of 25</a></div><div><a href="./diff-raw-5.html" target="_blank">📄 Part 5 of 25</a></div><div><a href="./diff-raw-6.html" target="_blank">📄 Part 6 of 25</a></div><div><a href="./diff-raw-7.html" target="_blank">📄 Part 7 of 25</a></div><div><a href="./diff-raw-8.html" target="_blank">📄 Part 8 of 25</a></div><div><a href="./diff-raw-9.html" target="_blank">📄 Part 9 of 25</a></div><div><a href="./diff-raw-10.html" target="_blank">📄 Part 10 of 25</a></div><div><a href="./diff-raw-11.html" target="_blank">📄 Part 11 of 25</a></div><div><a href="./diff-raw-12.html" target="_blank">📄 Part 12 of 25</a></div><div><a href="./diff-raw-13.html" target="_blank">📄 Part 13 of 25</a></div><div><a href="./diff-raw-14.html" target="_blank">📄 Part 14 of 25</a></div><div><a href="./diff-raw-15.html" target="_blank">📄 Part 15 of 25</a></div><div><a href="./diff-raw-16.html" target="_blank">📄 Part 16 of 25</a></div><div><a href="./diff-raw-17.html" target="_blank">📄 Part 17 of 25</a></div><div><a href="./diff-raw-18.html" target="_blank">📄 Part 18 of 25</a></div><div><a href="./diff-raw-19.html" target="_blank">📄 Part 19 of 25</a></div><div><a href="./diff-raw-20.html" target="_blank">📄 Part 20 of 25</a></div><div><a href="./diff-raw-21.html" target="_blank">📄 Part 21 of 25</a></div><div><a href="./diff-raw-22.html" target="_blank">📄 Part 22 of 25</a></div><div><a href="./diff-raw-23.html" target="_blank">📄 Part 23 of 25</a></div><div><a href="./diff-raw-24.html" target="_blank">📄 Part 24 of 25</a></div><div><a href="./diff-raw-25.html" target="_blank">📄 Part 25 of 25</a></div>
+            </div>
+          </div></div>
+</div>
+<script>
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && !/input|textarea|select/.test(document.activeElement.tagName.toLowerCase())) {
+    const s = document.querySelector('input[type="search"]'); if (s) { e.preventDefault(); s.focus(); s.select(); }
+  }
+});
+</script>
+</body>
+</html>

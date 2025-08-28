@@ -1,0 +1,6 @@
+node_modules/
+.claude/
+inbox/
+site/
+*.log
+.DS_Store

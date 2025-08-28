@@ -1,20 +1,32 @@
+# LFU Informer - LFU Leaks
 
-# Datamine Static Generator
+A website showcasing Last Fortress Underground game assets and updates for educational and informational purposes.
 
-A zero-backend static site generator for your weekly game datamine drops.
+## About This Site
 
-## How it works
-- Drop a `Sprite/` folder and a `text_en.ini` into `inbox/`
-- Run: `npm i` once, then `npm run generate` for each drop
-- Output goes to `site/`, including:
-  - `site/index.html` (main index)
-  - `site/updates/YYYY-MM-DD/index.html` (update page)
-  - `site/updates/YYYY-MM-DD/assets/` (copied images)
-  - `site/updates/YYYY-MM-DD/text_en_YYYY-MM-DD.ini` (archived text file)
+This website displays game assets, sprites, and text files from Last Fortress Underground updates in an organized, searchable format. All content is presented under Fair Use for educational, informational, commentary, and news reporting purposes.
 
-## Hosting
-Upload `site/index.html` and the whole `site/updates/` folder to your static host.
-Each time you run the generator with a new drop, re-upload the new `site/index.html` and the new `site/updates/YYYY-MM-DD/` folder.
+**Live Site**: [https://renegade2k6.github.io/LFULeaks/](https://renegade2k6.github.io/LFULeaks/)
 
-## Disclaimer
-Every page includes the Fair Use disclaimer and a Patreon link (as required).
+## Features
+
+- **Update Archive**: Browse game updates by date with organized asset galleries
+- **Image Comparison**: Side-by-side diff views showing changes between updates  
+- **Text File Analysis**: Compare localization and configuration changes
+- **Responsive Design**: Works on desktop and mobile devices
+- **Search & Filter**: Find specific assets across all updates
+
+## Update Schedule
+
+New updates are added regularly as game patches are released. Each update includes:
+- All new and modified game sprites/images
+- Text file changes and translations
+- Detailed comparison views with previous versions
+
+## Fair Use Notice
+
+The images and artwork displayed on this website are used strictly for educational, informational, commentary, and news reporting purposes under Fair Use (Section 107 of the U.S. Copyright Act). This content is not for commercial exploitation, and no ownership of the original works is claimed. All intellectual property rights remain with their respective copyright holders.
+
+## Support
+
+If you find this resource useful, consider supporting the project on [Patreon](https://www.patreon.com/renegade2k6UK).

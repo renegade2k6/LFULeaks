@@ -1,16 +1,54 @@
+# Dependencies
 node_modules/
+package-lock.json
+
+# Build tools (not needed on GitHub Pages)
+tools/
 .claude/
+
+# Source files (not for deployment)
 inbox/
 site/
-tools/
-*.log
-.DS_Store
+
+# Build scripts
+*.bat
 deploy.bat
 rebuild-site.bat
+
+# CI/CD
 .github/
-package-lock.json
+
+# Configuration files
 package.json
-LFULeaks.rar
-META DATA.txt
+.eslintrc.json
+.prettierrc.json
+.eslintignore
+.prettierignore
+
+# Documentation (except README.md)
+DEVELOPER.md
+IMPROVEMENTS.md
+session.md
 CLAUDE.md
-*.md
+META DATA.txt
+
+# Archives and temp files
+*.rar
+*.zip
+*.log
+*.tmp
+tmp_*.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Keep README.md for GitHub
+!README.md

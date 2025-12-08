@@ -1,0 +1,19 @@
+{
+  "name": "LFU Informer - LFU Leaks",
+  "short_name": "LFU Leaks",
+  "description": "Last Fortress Underground game asset updates and leaks for educational purposes",
+  "start_url": "/LFULeaks/",
+  "display": "standalone",
+  "background_color": "#0b0d10",
+  "theme_color": "#6aa2ff",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/LFULeaks/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["games", "education", "reference"],
+  "lang": "en-US"
+}

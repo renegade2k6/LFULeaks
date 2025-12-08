@@ -154,10 +154,10 @@ input[type="search"]:focus{outline:none;border-color:var(--accent)}
 .diff-line.del{background:rgba(58, 27, 27, 0.5);color:#f87171}
 .diff-line.ctx{color:#9ca3af}
 
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;flex-direction:column;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s}
-.lightbox.open{opacity:1;visibility:visible;display:flex}
-.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px}
-.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:8px;max-width:90vw;word-wrap:break-word}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s;cursor:pointer}
+.lightbox.open{opacity:1;visibility:visible;display:flex!important;pointer-events:auto}
+.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px;cursor:default;pointer-events:none}
+.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:14px;font-weight:500;background:rgba(0,0,0,0.7);padding:8px 16px;border-radius:8px;max-width:90vw;word-wrap:break-word;cursor:pointer}
 
 /* Utilities */
 .kbd{border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:10px;background:rgba(255,255,255,0.05);color:var(--muted);margin-left:8px}
@@ -182,7 +182,9 @@ html { scroll-behavior: smooth; }
 .thumb {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position:relative;
+  cursor:pointer;
 }
+.thumb img{cursor:pointer}
 .thumb::after{
   content:'';
   position:absolute;
@@ -306,7 +308,7 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
 
 
   <div class="card">
-    <div class="meta">Images: 12 · New lines: 60 · Generated: 2025-12-08T17:12:03.347Z</div>
+    <div class="meta">Images: 12 · New lines: 60 · Generated: 2025-12-08T17:22:18.848Z</div>
   </div>
 
   <div class="tabs">
@@ -394,15 +396,6 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       </div>
       <div class="diff-body">
         <div class="diff-line add">+ 810210210=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Arrows of Love] will no longer be usable. Therefore, we recycled your {0} unused [Arrows of Love] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 607000301=Autumn Check-In Challenge</div><div class="diff-line add">+ 607000302=Autumn Supplies</div><div class="diff-line add">+ 607000303=Autumn Hunt</div><div class="diff-line add">+ 607000304=The bleak wind makes autumn the perfect season for a zombie hunt!</div><div class="diff-line add">+ 607000305=1. During the event, a large number of [Withered Zombies] will spawn in the world every day. \n2. You have {0} attempts each day to attack them. The number of attempts will be reset at 0:00 (Game Time) every day. \n3. Kill [Withered Zombies] to get lots of precious rewards!</div><div class="diff-line add">+ 607000306=Withered Zombies</div><div class="diff-line add">+ 607000307=Appearing withered and decayed on the outside, the zombie can still move around agilely, seemingly unaffected by the cold and piercing wind.</div><div class="diff-line add">+ 803018025=Commander {1} of Zone #{0} defeated the Demon King in the {2} event, earning Arrow of Love *{3}.</div><div class="diff-line add">+ 803018026=Defeat {0} Little Demons daily to receive the following rewards</div><div class="diff-line add">+ 803018019=Little Demon</div><div class="diff-line add">+ 803018020=Demon King</div><div class="diff-line add">+ 803018016=Power of Love</div><div class="diff-line add">+ 810210162=When the enemy target exits the Poisoned, Bleeding, or Burning status, {0} chance to apply the same status again to the target. At the end of the round, deals {1} TAC DMG, stackable for up to {2} layers.</div><div class="diff-line add">+ 607000201=Blazing Rose</div><div class="diff-line add">+ 607000202=The blaze-like petals are just like the strong affection. Use it in the [Blazing Love] event to redeem precious items.</div><div class="diff-line add">+ 607000203=Blazing Love</div><div class="diff-line add">+ 607000204=Collect Blazing Roses to redeem precious items</div><div class="diff-line add">+ 607000205=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Blazing Roses] will no longer be usable. Therefore, we recycled your unused [Blazing Rose] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 607000206=Get it to obtain a large number of Blazing Roses.</div><div class="diff-line add">+ 607000207=Fall in Love</div><div class="diff-line add">+ 607000208=Fall in Love - Inception Pack</div><div class="diff-line add">+ 607000209=Fall in Love - Surprise Pack</div><div class="diff-line add">+ 607000210=Fall in Love - Advanced Pack</div><div class="diff-line add">+ 607000211=Fall in Love - Premium Pack</div><div class="diff-line add">+ 607000212=Fall in Love - Deluxe Pack</div><div class="diff-line add">+ 810210179=In battles, friendly heroes' TAC DMG Bonus increases by {0}, lasting till the battle ends.</div><div class="diff-line add">+ 810210180=In battle, friendly heroes' TAC DMG Bonus increases by {0}, lasting till the battle ends. Archer hero's crit rate increases by {1} at the start of each round, stackable for up to {2} layers.</div><div class="diff-line add">+ 810210181=In battles, friendly heroes' WPN DMG Bonus increases by {0}, lasting till the battle ends.</div><div class="diff-line add">+ 810210182=In battles, friendly heroes' WPN DMG Bonus increases by {0}, lasting till the battle ends. Commando hero's crit rate increases by {1} at the start of each round, stackable for up to {2} layers.</div><div class="diff-line add">+ 810210183=In battles, friendly heroes' TAC DMG Mitigation increases by {0}, lasting till the battle ends.</div><div class="diff-line add">+ 810210184=In battles, friendly heroes' TAC DMG Mitigation increases by {0}, lasting till the battle ends. Each time a friendly hero takes damage, Crit Immunity Rate increases by {1}, stackable for up to {2} layers.</div><div class="diff-line add">+ 810210185=When Archer hero's crit effect hits max layers stackable, Crit DMG increases by {0}, lasting till the battle ends.</div><div class="diff-line add">+ 810210186=When Commando hero's crit effect hits max layers stackable, Crit DMG increases by {0}, lasting till the battle ends.</div><div class="diff-line add">+ 810210187=When a friendly hero's crit immunity effect hits the max stackable layers, DMG Mitigation increases by {0}, lasting {1} round(s).</div><div class="diff-line add">+ 810210188=Eye of Horus</div><div class="diff-line add">+ 810210189=A symbol of Horus, who represents royalty, majesty, and fairness. Horus is in the protection of each pharaoh.</div><div class="diff-line add">+ 810210190=The Creation of Adam</div><div class="diff-line add">+ 810210191=Part of a famous Renaissance chapel ceiling painting. An epitome of his exceptional painting skills.</div><div class="diff-line add">+ 810210192=Five-Reign Coins</div><div class="diff-line add">+ 810210193=A string of coins issued during the reigns of five emperors in the Qing Dynasty. Legend has it that the one who collects all five coins can be favored by good fortune.</div><div class="diff-line add">+ 810210194=Power of Love</div><div class="diff-line add">+ 810210195=Little demons are trying to break the dimensional barrier and assimilate us into evil beings! Fight them off to prevent our world from being ruined!</div><div class="diff-line add">+ 810210196=1. Little demons found our world. They are now sending a vanguard troop to attack us. The only thing that can drive them away is the arrow of love! Defend our world with the power of love! \n2. Use Arrows of Love to attack the demon legion and earn rewards. \n3. For every demon you defeat, you can get a nice reward. Beware that a more powerful demon king could show up as a result. \n4. The demon king is backed by a strong evil force, and thus can't be completely wiped out. But they can be driven away for a while. By attacking the demon king, there is a chance to get both attacker rewards and the demon's treasure. \n5. There is a chance to trigger a zero-cost effect, where no Arrows of Love are consumed in several subsequent attacks against the demons. \n6. Auto-attack only works when you stay on the event page. \n7. After the event ends, unused Arrows of Love will be converted into Diamonds and sent to your mailbox.</div><div class="diff-line add">+ 810210197=Little Demon</div><div class="diff-line add">+ 810210198=Demon King</div><div class="diff-line add">+ 810210199=Demon Mystery Box</div><div class="diff-line add">+ 810210200=Demon King Mystery Box</div><div class="diff-line add">+ 810210201=Arrow of Love</div><div class="diff-line add">+ 810210202=Demon's Scheme</div><div class="diff-line add">+ 810210203=Grab Arrows of Love to feel the power of love</div><div class="diff-line add">+ 810210204=Sweet Arrow</div><div class="diff-line add">+ 810210205=Shoot the enemy with the enemy's arrows</div><div class="diff-line add">+ 810210206=Doki Doki</div><div class="diff-line add">+ 810210207=Get it to obtain tons of Hearts.</div><div class="diff-line add">+ 810210208=Congratulations, Commander! You've unlocked the demon's treasure and received the rewards.</div><div class="diff-line add">+ 810210209=Defeat {0} Little Demons daily to receive the following rewards</div><div class="diff-line add">+ 810210211=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Heart] will no longer be usable. Therefore, we recycled your unused [Heart] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 810210097=Sophia can discover one Lv.{0} Common Artifact Chest in the Museum each day. Open it for a chance to get a Common Pot or some Restoration Toolkit.</div><div class="diff-line add">+ 810210098=Sophia discovers one Lv. {0} premium artifact chest weekly in the Museum. Open it for a chance to get the Common Pot, Premium Pot, or Slot Key.</div>
-      <div class="diff-external">
-        <div style="margin-top:20px; border-top:1px solid #333; padding-top:10px; font-size:12px; color:#888;">
-          More Views:
-          <a href="diff-add.html" target="_blank">Additions Only</a> |
-          <a href="diff-full.html" target="_blank">Full Diff (Context)</a> |
-          <a href="diff-raw.html" target="_blank">Raw File</a>
-        </div>
-      </div>
-    
       </div>
     </div>
   </div>
@@ -430,21 +423,53 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       });
     });
 
+    // Lightbox functionality
     const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    const lbCap = lb.querySelector('.cap');
-    document.getElementById('imgGrid')?.addEventListener('click', e=>{
-      const img = e.target.closest('.thumb img');
-      if(!img) return;
-      const src = img.src || img.dataset.src;
-      if (src) {
-        lbImg.src = src;
-        lbCap.textContent = decodeURIComponent(src.split('/').pop());
-        lb.classList.add('open');
-      }
-    });
-    lb.addEventListener('click', ()=>lb.classList.remove('open'));
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open') });
+    const lbImg = lb?.querySelector('img');
+    const lbCap = lb?.querySelector('.cap');
+    const imgGrid = document.getElementById('imgGrid');
+
+    if (lb && lbImg && lbCap && imgGrid) {
+      imgGrid.addEventListener('click', e=>{
+        // Check if clicked element is an image
+        let img = null;
+        if (e.target.tagName === 'IMG') {
+          img = e.target;
+        } else {
+          // Check if clicked on thumb container or caption
+          const thumb = e.target.closest('.thumb');
+          if (thumb) {
+            img = thumb.querySelector('img');
+          }
+        }
+
+        if (!img) return;
+
+        const src = img.src || img.dataset.src;
+        if (src) {
+          lbImg.src = src;
+          lbCap.textContent = decodeURIComponent(src.split('/').pop());
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+      });
+
+      // Close lightbox when clicking on overlay (but not the image itself)
+      lb.addEventListener('click', e=>{
+        if (e.target === lb || e.target === lbCap) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', e=>{
+        if(e.key==='Escape' && lb.classList.contains('open')) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    }
 
     const imgSearch = document.getElementById('imgSearch');
     let allThumbs;

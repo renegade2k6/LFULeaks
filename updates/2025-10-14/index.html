@@ -154,10 +154,10 @@ input[type="search"]:focus{outline:none;border-color:var(--accent)}
 .diff-line.del{background:rgba(58, 27, 27, 0.5);color:#f87171}
 .diff-line.ctx{color:#9ca3af}
 
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;flex-direction:column;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s}
-.lightbox.open{opacity:1;visibility:visible;display:flex}
-.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px}
-.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:8px;max-width:90vw;word-wrap:break-word}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s;cursor:pointer}
+.lightbox.open{opacity:1;visibility:visible;display:flex!important;pointer-events:auto}
+.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px;cursor:default;pointer-events:none}
+.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:14px;font-weight:500;background:rgba(0,0,0,0.7);padding:8px 16px;border-radius:8px;max-width:90vw;word-wrap:break-word;cursor:pointer}
 
 /* Utilities */
 .kbd{border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:10px;background:rgba(255,255,255,0.05);color:var(--muted);margin-left:8px}
@@ -182,7 +182,9 @@ html { scroll-behavior: smooth; }
 .thumb {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position:relative;
+  cursor:pointer;
 }
+.thumb img{cursor:pointer}
 .thumb::after{
   content:'';
   position:absolute;
@@ -306,7 +308,7 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
 
 
   <div class="card">
-    <div class="meta">Images: 54 · New lines: 95 · Generated: 2025-12-08T17:12:03.773Z</div>
+    <div class="meta">Images: 54 · New lines: 95 · Generated: 2025-12-08T17:22:19.285Z</div>
   </div>
 
   <div class="tabs">
@@ -604,15 +606,6 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       </div>
       <div class="diff-body">
         <div class="diff-line add">+ 607000559=Hello:\nCommander, we have received your confirmation email for resetting your password. If you have not recently submitted a password modification request for "Last Fortress," please ignore this email. If you confirm the existence of this operation from the application, please tap the reset link below. Note that once you tap the reset link, the new password will take effect immediately.</div><div class="diff-line add">+ 607000436=The monster is surrounded by raging winds. One can hear faint sounds of objects shattering.</div><div class="diff-line add">+ 607000437=Rules \n1. During the event, {0} will show up in the Homeworld. It will appear again somewhere else after being beaten. \n2. Commanders with a Fortress of Lv. {1} or above can dispatch troops for the challenge, with a maximum of {2} challenges allowed per day. \n3. {0} occupies desolate territories, where it hoards plundered chests. Defeat it to grab the chests, with a maximum of {3} chests obtainable per day. \n4. With a specified number of challenges completed, you can receive due rewards, which will be distributed to your mailbox. The challenge attempts will be reset daily. \n5. Rankings will be determined by your highest damage of the day. The higher the damage, the better the rewards. The leaderboard will be reset daily at 0:00, Game Time.</div><div class="diff-line add">+ 607000443=Killed {0}</div><div class="diff-line add">+ 607000444=Dear Commander, \n\nYou launched {1} attacks in the [{0}] event. Below are your rewards.</div><div class="diff-line add">+ 607000446=Mad Hound</div><div class="diff-line add">+ 607000447=Autumn of Chaos</div><div class="diff-line add">+ 607000448=On an autumn night when the full moon dims, evil spirits take the opportunity to mess around. A conspiracy starts in silence.</div><div class="diff-line add">+ 607000449=Autumn Chest</div><div class="diff-line add">+ 607000450=Strong winds swirl around the chest, as if guarding the treasure inside.</div><div class="diff-line add">+ 607000451=[Autumn of Chaos] Challenge Reward</div><div class="diff-line add">+ 607000452=[Autumn of Chaos] Ranking Reward</div><div class="diff-line add">+ 607000453=Dear Commander, \n\nThe [Autumn of Chaos] ranking event has ended. Your ranking this round: {0}, highest DMG: {1}. Below are your rewards.</div><div class="diff-line add">+ 805100501=Draco Fort</div><div class="diff-line add">+ 805100502=Draco Fort ({0})</div><div class="diff-line add">+ 805100503=You saw that? That terrifying gaze in the darkness! Use it to change the Fortress appearance into [Draco Fort].</div><div class="diff-line add">+ 805100504=Dark Night</div><div class="diff-line add">+ 805100505=Dark Night ({0})</div><div class="diff-line add">+ 805100506=Use it to change the Nameplate into [Dark Night].</div><div class="diff-line add">+ 805100507=Dragon's Gaze</div><div class="diff-line add">+ 805100508=Dragon's Gaze ({0})</div><div class="diff-line add">+ 805100509=Use it to change the avatar frame into [Dragon's Gaze].</div><div class="diff-line add">+ 805100510=Dark Bat</div><div class="diff-line add">+ 805100511=Dark Bat ({0})</div><div class="diff-line add">+ 805100512=Here it is waiting for a chance to have some real fun. Use it to change the Pendant into [Dark Bat].</div><div class="diff-line add">+ 805100513=Dark Night</div><div class="diff-line add">+ 805100514=Dark Night ({0})</div><div class="diff-line add">+ 805100515=When night falls, the Halloween party begins! Use it to change the Profile Card Frame into [Dark Night].</div><div class="diff-line add">+ 805100516=Sweet Trickster</div><div class="diff-line add">+ 805100517=Sweet Trickster ({0})</div><div class="diff-line add">+ 805100518=Trick or treat! Use it to change the APC appearance into [Sweet Trickster].</div><div class="diff-line add">+ 805100519=Dark Night</div><div class="diff-line add">+ 805100520=Dark Night ({0})</div><div class="diff-line add">+ 805100521=Use it to change the Message Frame into [Dark Night]</div><div class="diff-line add">+ 805100401=Origin of Life</div><div class="diff-line add">+ 805100402=Origin of Life ({0})</div><div class="diff-line add">+ 805100403=Take a moment to rest here. Use it to change the Fortress appearance to [Origin of Life].</div><div class="diff-line add">+ 805100404=Light of Life</div><div class="diff-line add">+ 805100405=Light of Life ({0})</div><div class="diff-line add">+ 805100406=A light symbolizing vitality. Use it to change the Pendant to [Light of Life].</div><div class="diff-line add">+ 805100407=Unstoppable</div><div class="diff-line add">+ 805100408=Unstoppable ({0})</div><div class="diff-line add">+ 805100409=Having this APC gives a sense of security. Use it to change the APC appearance to [Unstoppable].</div><div class="diff-line add">+ 805100410=Maple's Bless</div><div class="diff-line add">+ 805100411=Maple's Bless ({0})</div><div class="diff-line add">+ 805100412=Use it to change the Peace Treaty to [Maple's Bless].</div><div class="diff-line add">+ 805100413=Maple's Guidance</div><div class="diff-line add">+ 805100414=Maple's Guidance ({0})</div><div class="diff-line add">+ 805100415=Use it to change the Relocation Animation to [Maple's Guidance].</div><div class="diff-line add">+ 805100416=Autumn Harvest</div><div class="diff-line add">+ 805100417=Autumn Harvest ({0})</div><div class="diff-line add">+ 805100418=Use it to change the Halo Decor to [Autumn Harvest].</div><div class="diff-line add">+ 607000471=You are currently muted and have been permanently muted.</div><div class="diff-line add">+ 803011015=Blast Zone</div><div class="diff-line add">+ 803011016=Radical Modification</div><div class="diff-line add">+ 607000432=Moon-Slaying Hound</div><div class="diff-line add">+ 607000433=Eclipse Chaos</div><div class="diff-line add">+ 607000434=Warning! Ferocious monsters are invading! Beware: their &lt;color=#ee1d24&gt;ATK&lt;/color&gt; causes negative effects. Face them bravely and quell the chaos!</div><div class="diff-line add">+ 607000435=Event Rules:\n1. During the event, {0} will descend upon the Homeworld. After being defeated, it will relocate and reappear elsewhere.\n2. Commanders with a Fortress of Lv. {1} or above can dispatch troops for the challenge, up to {2} times per day.\n3. {0} occupies desolate territory, hoarding plundered chests. Defeat it to claim chests, up to {3} per day.\n4. Complete the specified number of challenges to earn rewards, which will be sent to your mailbox. Challenge attempts reset daily.\n5. Rankings are based on the highest DMG dealt by the Commander each day. Higher DMG yields better rewards. The leaderboard resets daily at 0:00 (Game Time).\n6. [Crimson Suppression]: At the start of battle, applies "Crimson Suppression" to all enemies, weakening their healing and Shield effects. [Spiky Crash]: At the start of each round, randomly applies Poisoned, Burning, or Bleeding to all units on the battlefield, dealing a certain amount of WPN DMG at the end of the round.</div><div class="diff-line add">+ 607000454=Tip: After unsubscribing, you will no longer receive marketing mailbox. System Functions mailbox, such as account security, will not be affected and Continuity of service will be maintained.</div><div class="diff-line add">+ 607000531=Note: We are not responsible for account loss due to unlinked mailboxes!</div><div class="diff-line add">+ 607000532=It has been detected that you have not linked your mailbox. To avoid account loss, please link it immediately!\n\n [color=FF0000]{0}Note: We are not responsible for account loss due to unlinked mailboxes![/color]</div><div class="diff-line add">+ 607000533=Link Account</div><div class="diff-line add">+ 607000534=Exit Game</div><div class="diff-line add">+ 607000535=Mailbox Link</div><div class="diff-line add">+ 607000536=Tip: Your account is in a risky state and may be lost. Please link your account! We are not responsible for account loss due to unlinked mailboxes!</div><div class="diff-line add">+ 607000537=Link your mailbox for the first time to acquire 50 Diamonds.</div><div class="diff-line add">+ 607000538=Warning!</div><div class="diff-line add">+ 607000539=Cancel</div><div class="diff-line add">+ 607000549=An email has been sent to the address you provided. It contains a link for verification. Please also check your spam folder.</div><div class="diff-line add">+ 607000540=New mailbox: {0}</div><div class="diff-line add">+ 607000541=After verifying the new email, an email will automatically be sent to the original email address. Complete the mailbox change after reconfirmation.</div><div class="diff-line add">+ 607000542=Original mailbox: {0}</div><div class="diff-line add">+ 607000543=You have successfully completed the mailbox link change.</div><div class="diff-line add">+ 607000544=Email Account</div><div class="diff-line add">+ 607000545=Email</div><div class="diff-line add">+ 607000546=Email linked to the account</div><div class="diff-line add">+ 607000547=Once you successfully log into the game using your email, your account information will be stored on the device for future logins. Please note: You will need to re-enter your email and password when switching devices.</div><div class="diff-line add">+ 607000548=To avoid account loss, we strongly recommend linking your mailbox. Once linked, you can access your account on any device anytime. \n\n2. The mailbox serves as the highest-level basis for account recovery. Please ensure account security and avoid sharing your account.</div><div class="diff-line add">+ 607000550=Go</div><div class="diff-line add">+ 607000551=Please enter a valid email address and set a password.</div><div class="diff-line add">+ 607000552=Your email has been successfully activated. You can switch accounts in [Personal Homepage] - [Account].\n\nThe login password is independent of the account password and must be entered during login to better protect your account security.</div><div class="diff-line add">+ 607000553=Change Linked Account</div><div class="diff-line add">+ 607000554=Your mailbox is in an unverified status, and you cannot log in to your game account using this mailbox account.\n\nIf you have not received the verification email, you can try changing the email address.\nNote: To protect your account security, linked accounts cannot be unlinked.</div><div class="diff-line add">+ 607000557=The new mailbox address you entered is the same as the original one. Please re-enter a new mailbox address.</div><div class="diff-line add">+ 607000558=Your original mailbox address is {0}. Please enter the new mailbox address you want to change to.</div><div class="diff-line add">+ 607000560=Please enter the new mailbox you want to change to and set the Password.</div><div class="diff-line add">+ 607000561=1. After you Link Account, you can log in on other devices anytime, anywhere, and avoid losing your Account. We strongly recommend you Link Account.\n\n2. The mailbox can be changed after linking.\n\n3. The linked Account is the highest-level basis for account recovery. Please keep your Account secure and do not Share your Account.</div><div class="diff-line add">+ 607000562=A mailbox has been sent to the mailbox you provided, containing a Link to verify the Account. If you have not received the verification mailbox, please check your spam folder or confirm the mailbox is correct.</div><div class="diff-line add">+ 607000563=Acquire 50 Diamond for the first Link Account.</div><div class="diff-line add">+ 607000564=Create Account</div><div class="diff-line add">+ 607000565=After you successfully log in using your Account, the Account information will be saved on the device for future logins. Note: You will need to input your Account and Password again when switching devices.</div><div class="diff-line add">+ 607000566=Up to 10 Account can be added.</div><div class="diff-line add">+ 607000567=You can use this Account to log into the game on any device.</div><div class="diff-line add">+ 607000568=You have successfully created an account.</div>
-      <div class="diff-external">
-        <div style="margin-top:20px; border-top:1px solid #333; padding-top:10px; font-size:12px; color:#888;">
-          More Views:
-          <a href="diff-add.html" target="_blank">Additions Only</a> |
-          <a href="diff-full.html" target="_blank">Full Diff (Context)</a> |
-          <a href="diff-raw.html" target="_blank">Raw File</a>
-        </div>
-      </div>
-    
       </div>
     </div>
   </div>
@@ -640,21 +633,53 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       });
     });
 
+    // Lightbox functionality
     const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    const lbCap = lb.querySelector('.cap');
-    document.getElementById('imgGrid')?.addEventListener('click', e=>{
-      const img = e.target.closest('.thumb img');
-      if(!img) return;
-      const src = img.src || img.dataset.src;
-      if (src) {
-        lbImg.src = src;
-        lbCap.textContent = decodeURIComponent(src.split('/').pop());
-        lb.classList.add('open');
-      }
-    });
-    lb.addEventListener('click', ()=>lb.classList.remove('open'));
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open') });
+    const lbImg = lb?.querySelector('img');
+    const lbCap = lb?.querySelector('.cap');
+    const imgGrid = document.getElementById('imgGrid');
+
+    if (lb && lbImg && lbCap && imgGrid) {
+      imgGrid.addEventListener('click', e=>{
+        // Check if clicked element is an image
+        let img = null;
+        if (e.target.tagName === 'IMG') {
+          img = e.target;
+        } else {
+          // Check if clicked on thumb container or caption
+          const thumb = e.target.closest('.thumb');
+          if (thumb) {
+            img = thumb.querySelector('img');
+          }
+        }
+
+        if (!img) return;
+
+        const src = img.src || img.dataset.src;
+        if (src) {
+          lbImg.src = src;
+          lbCap.textContent = decodeURIComponent(src.split('/').pop());
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+      });
+
+      // Close lightbox when clicking on overlay (but not the image itself)
+      lb.addEventListener('click', e=>{
+        if (e.target === lb || e.target === lbCap) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', e=>{
+        if(e.key==='Escape' && lb.classList.contains('open')) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    }
 
     const imgSearch = document.getElementById('imgSearch');
     let allThumbs;

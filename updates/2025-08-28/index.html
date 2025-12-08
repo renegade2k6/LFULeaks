@@ -154,10 +154,10 @@ input[type="search"]:focus{outline:none;border-color:var(--accent)}
 .diff-line.del{background:rgba(58, 27, 27, 0.5);color:#f87171}
 .diff-line.ctx{color:#9ca3af}
 
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;flex-direction:column;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s}
-.lightbox.open{opacity:1;visibility:visible;display:flex}
-.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px}
-.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:8px;max-width:90vw;word-wrap:break-word}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s;cursor:pointer}
+.lightbox.open{opacity:1;visibility:visible;display:flex!important;pointer-events:auto}
+.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px;cursor:default;pointer-events:none}
+.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:14px;font-weight:500;background:rgba(0,0,0,0.7);padding:8px 16px;border-radius:8px;max-width:90vw;word-wrap:break-word;cursor:pointer}
 
 /* Utilities */
 .kbd{border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:10px;background:rgba(255,255,255,0.05);color:var(--muted);margin-left:8px}
@@ -182,7 +182,9 @@ html { scroll-behavior: smooth; }
 .thumb {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position:relative;
+  cursor:pointer;
 }
+.thumb img{cursor:pointer}
 .thumb::after{
   content:'';
   position:absolute;
@@ -306,7 +308,7 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
 
 
   <div class="card">
-    <div class="meta">Images: 48 · New lines: 38 · Generated: 2025-12-08T17:12:03.129Z</div>
+    <div class="meta">Images: 48 · New lines: 38 · Generated: 2025-12-08T17:22:18.622Z</div>
   </div>
 
   <div class="tabs">
@@ -574,15 +576,6 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       </div>
       <div class="diff-body">
         <div class="diff-line add">+ 805100201=His Sweet Date</div><div class="diff-line add">+ 805100202=His Sweet Date ({0})</div><div class="diff-line add">+ 805100203=Use it to change the appearance of the Fortress into [His Sweet Date]</div><div class="diff-line add">+ 805100204=Her Sweet Date</div><div class="diff-line add">+ 805100205=Her Sweet Date ({0})</div><div class="diff-line add">+ 805100206=Use it to change the appearance of the Fortress into [Her Sweet Date]</div><div class="diff-line add">+ 805100207=Sweet Date</div><div class="diff-line add">+ 805100208=Sweet Date ({0})</div><div class="diff-line add">+ 805100209=Use it to change the Nameplate into [Sweet Date]</div><div class="diff-line add">+ 805100210=Sweet Date</div><div class="diff-line add">+ 805100211=Sweet Date ({0})</div><div class="diff-line add">+ 805100212=Use it to change the avatar frame into [Sweet Date]</div><div class="diff-line add">+ 805100213=Rainbow's Witness</div><div class="diff-line add">+ 805100214=Rainbow's Witness ({0})</div><div class="diff-line add">+ 805100215=Say it out loud with the rainbow as the witness of your love. Use it to change the Pendant into [Rainbow's Witness]</div><div class="diff-line add">+ 805100216=Rainbow's Witness</div><div class="diff-line add">+ 805100217=Rainbow's Witness ({0})</div><div class="diff-line add">+ 805100218=Say it out loud with the rainbow as the witness of your love. Use it to change the Profile Card Frame into [Rainbow's Witness]</div><div class="diff-line add">+ 805100219=Rainbow's Witness</div><div class="diff-line add">+ 805100220=Rainbow's Witness ({0})</div><div class="diff-line add">+ 805100221=Say it out loud with the rainbow as the witness of your love. Use it to change the appearance of the APC into [Rainbow's Witness].</div><div class="diff-line add">+ 805100222=Sweet Date</div><div class="diff-line add">+ 805100223=Sweet Date ({0})</div><div class="diff-line add">+ 805100224=Use it to change the Message Frame into [Sweet Date]</div><div class="diff-line add">+ 805100225=Bumper Harvest</div><div class="diff-line add">+ 805100226=Bumper Harvest (Advanced)</div><div class="diff-line add">+ 805100227=Bumper Harvest (Advanced &amp; Deluxe)</div><div class="diff-line add">+ 805100228=Bumper Harvest (Deluxe)</div><div class="diff-line add">+ 805100229=Leaf Points</div><div class="diff-line add">+ 805100230=Used to join the [Bumper Harvest] event; will be removed after the event ends.</div><div class="diff-line add">+ 805100231=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Leaf Points] will no longer be usable. Therefore, we recycled your {0} unused [Leaf Points] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 805100232=Dear Commander, \n\nYou ranked #{0} in the [Bumper Harvest] event with {1} EXP! Below are your rewards! Collect them now.</div><div class="diff-line add">+ 805100233=Bumper Harvest Chest</div><div class="diff-line add">+ 810210175=WPN DMG {0}</div><div class="diff-line add">+ 810210176=Max stackable layers increased by {0}</div><div class="diff-line add">+ 810210177=DEF reduced by {0}</div><div class="diff-line add">+ 810210178=ATK reduced by {0}</div><div class="diff-line add">+ 607000101=Shire Hub</div>
-      <div class="diff-external">
-        <div style="margin-top:20px; border-top:1px solid #333; padding-top:10px; font-size:12px; color:#888;">
-          More Views:
-          <a href="diff-add.html" target="_blank">Additions Only</a> |
-          <a href="diff-full.html" target="_blank">Full Diff (Context)</a> |
-          <a href="diff-raw.html" target="_blank">Raw File</a>
-        </div>
-      </div>
-    
       </div>
     </div>
   </div>
@@ -610,21 +603,53 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       });
     });
 
+    // Lightbox functionality
     const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    const lbCap = lb.querySelector('.cap');
-    document.getElementById('imgGrid')?.addEventListener('click', e=>{
-      const img = e.target.closest('.thumb img');
-      if(!img) return;
-      const src = img.src || img.dataset.src;
-      if (src) {
-        lbImg.src = src;
-        lbCap.textContent = decodeURIComponent(src.split('/').pop());
-        lb.classList.add('open');
-      }
-    });
-    lb.addEventListener('click', ()=>lb.classList.remove('open'));
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open') });
+    const lbImg = lb?.querySelector('img');
+    const lbCap = lb?.querySelector('.cap');
+    const imgGrid = document.getElementById('imgGrid');
+
+    if (lb && lbImg && lbCap && imgGrid) {
+      imgGrid.addEventListener('click', e=>{
+        // Check if clicked element is an image
+        let img = null;
+        if (e.target.tagName === 'IMG') {
+          img = e.target;
+        } else {
+          // Check if clicked on thumb container or caption
+          const thumb = e.target.closest('.thumb');
+          if (thumb) {
+            img = thumb.querySelector('img');
+          }
+        }
+
+        if (!img) return;
+
+        const src = img.src || img.dataset.src;
+        if (src) {
+          lbImg.src = src;
+          lbCap.textContent = decodeURIComponent(src.split('/').pop());
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+      });
+
+      // Close lightbox when clicking on overlay (but not the image itself)
+      lb.addEventListener('click', e=>{
+        if (e.target === lb || e.target === lbCap) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', e=>{
+        if(e.key==='Escape' && lb.classList.contains('open')) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    }
 
     const imgSearch = document.getElementById('imgSearch');
     let allThumbs;

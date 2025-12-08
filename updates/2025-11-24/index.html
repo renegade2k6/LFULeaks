@@ -154,10 +154,10 @@ input[type="search"]:focus{outline:none;border-color:var(--accent)}
 .diff-line.del{background:rgba(58, 27, 27, 0.5);color:#f87171}
 .diff-line.ctx{color:#9ca3af}
 
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;flex-direction:column;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s}
-.lightbox.open{opacity:1;visibility:visible;display:flex}
-.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px}
-.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:8px;max-width:90vw;word-wrap:break-word}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s;cursor:pointer}
+.lightbox.open{opacity:1;visibility:visible;display:flex!important;pointer-events:auto}
+.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px;cursor:default;pointer-events:none}
+.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:14px;font-weight:500;background:rgba(0,0,0,0.7);padding:8px 16px;border-radius:8px;max-width:90vw;word-wrap:break-word;cursor:pointer}
 
 /* Utilities */
 .kbd{border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:10px;background:rgba(255,255,255,0.05);color:var(--muted);margin-left:8px}
@@ -182,7 +182,9 @@ html { scroll-behavior: smooth; }
 .thumb {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position:relative;
+  cursor:pointer;
 }
+.thumb img{cursor:pointer}
 .thumb::after{
   content:'';
   position:absolute;
@@ -306,7 +308,7 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
 
 
   <div class="card">
-    <div class="meta">Images: 53 · New lines: 0 · Generated: 2025-12-08T17:12:04.107Z</div>
+    <div class="meta">Images: 53 · New lines: 0 · Generated: 2025-12-08T17:22:19.629Z</div>
   </div>
 
   <div class="tabs">
@@ -599,15 +601,6 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       </div>
       <div class="diff-body">
         <div class="empty-state">No new additions.</div>
-      <div class="diff-external">
-        <div style="margin-top:20px; border-top:1px solid #333; padding-top:10px; font-size:12px; color:#888;">
-          More Views:
-          <a href="diff-add.html" target="_blank">Additions Only</a> |
-          <a href="diff-full.html" target="_blank">Full Diff (Context)</a> |
-          <a href="diff-raw.html" target="_blank">Raw File</a>
-        </div>
-      </div>
-    
       </div>
     </div>
   </div>
@@ -635,21 +628,53 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       });
     });
 
+    // Lightbox functionality
     const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    const lbCap = lb.querySelector('.cap');
-    document.getElementById('imgGrid')?.addEventListener('click', e=>{
-      const img = e.target.closest('.thumb img');
-      if(!img) return;
-      const src = img.src || img.dataset.src;
-      if (src) {
-        lbImg.src = src;
-        lbCap.textContent = decodeURIComponent(src.split('/').pop());
-        lb.classList.add('open');
-      }
-    });
-    lb.addEventListener('click', ()=>lb.classList.remove('open'));
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open') });
+    const lbImg = lb?.querySelector('img');
+    const lbCap = lb?.querySelector('.cap');
+    const imgGrid = document.getElementById('imgGrid');
+
+    if (lb && lbImg && lbCap && imgGrid) {
+      imgGrid.addEventListener('click', e=>{
+        // Check if clicked element is an image
+        let img = null;
+        if (e.target.tagName === 'IMG') {
+          img = e.target;
+        } else {
+          // Check if clicked on thumb container or caption
+          const thumb = e.target.closest('.thumb');
+          if (thumb) {
+            img = thumb.querySelector('img');
+          }
+        }
+
+        if (!img) return;
+
+        const src = img.src || img.dataset.src;
+        if (src) {
+          lbImg.src = src;
+          lbCap.textContent = decodeURIComponent(src.split('/').pop());
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+      });
+
+      // Close lightbox when clicking on overlay (but not the image itself)
+      lb.addEventListener('click', e=>{
+        if (e.target === lb || e.target === lbCap) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', e=>{
+        if(e.key==='Escape' && lb.classList.contains('open')) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    }
 
     const imgSearch = document.getElementById('imgSearch');
     let allThumbs;

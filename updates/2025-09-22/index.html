@@ -154,10 +154,10 @@ input[type="search"]:focus{outline:none;border-color:var(--accent)}
 .diff-line.del{background:rgba(58, 27, 27, 0.5);color:#f87171}
 .diff-line.ctx{color:#9ca3af}
 
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;flex-direction:column;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s}
-.lightbox.open{opacity:1;visibility:visible;display:flex}
-.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px}
-.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:8px;max-width:90vw;word-wrap:break-word}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s;cursor:pointer}
+.lightbox.open{opacity:1;visibility:visible;display:flex!important;pointer-events:auto}
+.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px;cursor:default;pointer-events:none}
+.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:14px;font-weight:500;background:rgba(0,0,0,0.7);padding:8px 16px;border-radius:8px;max-width:90vw;word-wrap:break-word;cursor:pointer}
 
 /* Utilities */
 .kbd{border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:10px;background:rgba(255,255,255,0.05);color:var(--muted);margin-left:8px}
@@ -182,7 +182,9 @@ html { scroll-behavior: smooth; }
 .thumb {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position:relative;
+  cursor:pointer;
 }
+.thumb img{cursor:pointer}
 .thumb::after{
   content:'';
   position:absolute;
@@ -306,7 +308,7 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
 
 
   <div class="card">
-    <div class="meta">Images: 65 · New lines: 66 · Generated: 2025-12-08T17:12:03.562Z</div>
+    <div class="meta">Images: 65 · New lines: 66 · Generated: 2025-12-08T17:22:19.064Z</div>
   </div>
 
   <div class="tabs">
@@ -659,15 +661,6 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       </div>
       <div class="diff-body">
         <div class="diff-line add">+ 607000308=Ace Trooper Program</div><div class="diff-line add">+ 607000309=Get multiple supplies to train your own ace soldiers!</div><div class="diff-line add">+ 607000310=1. Log in daily to claim rewards. \n2. Rewards of the day not claimed in time can be collected later during the event via the event page. \n3. Rewards for days on which you do not log in cannot be claimed, nor can missed days be made up.</div><div class="diff-line add">+ 607000311=Check in daily for tons of amazing rewards!</div><div class="diff-line add">+ 607000401=Autumn Special</div><div class="diff-line add">+ 607000402=Autumn Special - Inception Pack</div><div class="diff-line add">+ 607000403=Autumn Special  - Surprise Pack</div><div class="diff-line add">+ 607000404=Autumn Special  - Advanced Pack</div><div class="diff-line add">+ 607000405=Autumn Special - Premium Pack</div><div class="diff-line add">+ 607000406=Autumn Special  - Deluxe Pack</div><div class="diff-line add">+ 607000407=Wishes under Moonlight</div><div class="diff-line add">+ 607000408=Autumn Snack</div><div class="diff-line add">+ 607000409=Look at the tempting golden glow around it! Used to redeem precious items in the [Wishes under Moonlight] event.</div><div class="diff-line add">+ 607000410=Collect [Autumn Snacks] to redeem rare items.</div><div class="diff-line add">+ 607000411=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Autumn Snacks] will no longer be usable. Therefore, we recycled your unused [Autumn Snack] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 607000412=Get it to obtain tons of [Autumn Snacks].</div><div class="diff-line add">+ 607000413=Moon-Bound Journey</div><div class="diff-line add">+ 607000414=Some Autumn Snacks are scattered in various corners of the wasteland. Go find them!</div><div class="diff-line add">+ 607000415=1. During the event, Moon Wells will spawn on the map daily. \n2. You have 5 attempts daily to march toward them. The attempts will be reset daily at 0:00, Game Time. \n3. Explore the Moon Wells to find precious rewards.</div><div class="diff-line add">+ 607000416=Moon Wells are scattered across the wasteland. Saw that mysterious glow? There could be surprises inside them!</div><div class="diff-line add">+ 607000417=Mid-Autumn Check-In</div><div class="diff-line add">+ 607000418=Full Moon Challenge</div><div class="diff-line add">+ 607000419=Complete designated tasks, and complete the puzzle to claim great rewards.</div><div class="diff-line add">+ 805100301=Moonlit Bunny Fort</div><div class="diff-line add">+ 805100302=Moonlit Bunny Fort ({0})</div><div class="diff-line add">+ 805100303=Use it to change the appearance of the Fortress into [Moonlit Bunny Fort]</div><div class="diff-line add">+ 805100304=Lunar Bunny</div><div class="diff-line add">+ 805100305=Lunar Bunny ({0})</div><div class="diff-line add">+ 805100306=Use it to change the Nameplate into [Lunar Bunny]</div><div class="diff-line add">+ 805100307=Lunar Bunny</div><div class="diff-line add">+ 805100308=Lunar Bunny ({0})</div><div class="diff-line add">+ 805100309=Use it to change the avatar frame into [Lunar Bunny]</div><div class="diff-line add">+ 805100310=Reunion Night</div><div class="diff-line add">+ 805100311=Reunion Night ({0})</div><div class="diff-line add">+ 805100312=Enjoy the night of reunion in the season of harvest! Use it to change the Pendant into [Reunion Night]</div><div class="diff-line add">+ 805100313=Lunar Bunny</div><div class="diff-line add">+ 805100314=Lunar Bunny ({0})</div><div class="diff-line add">+ 805100315=Believe it or not, the bunny is the messenger from the moon. Use it to change the Profile Card Frame into [Lunar Bunny].</div><div class="diff-line add">+ 805100316=Moon Palace Explorer</div><div class="diff-line add">+ 805100317=Moon Palace Explorer ({0})</div><div class="diff-line add">+ 805100318=Explore the Moon Palace on this Mid-Autumn Festival! Use it to change the APC appearance into [Moon Palace Explorer].</div><div class="diff-line add">+ 805100319=Lunar Bunny</div><div class="diff-line add">+ 805100320=Lunar Bunny ({0})</div><div class="diff-line add">+ 805100321=Use it to change the Chat Bubble to [Lunar Bunny].</div><div class="diff-line add">+ 113203=Improper words detected. Please enter again.</div><div class="diff-line add">+ 113204=Pay {0} to purchase this bundle?</div><div class="diff-line add">+ 113205=Minors cannot enter the game.</div><div class="diff-line add">+ 113206=Confirm</div><div class="diff-line add">+ 607000420=Bright Moon</div><div class="diff-line add">+ 607000421=Moon Well</div><div class="diff-line add">+ 607000501=Muted. To be lifted at {0}, Game Time.</div><div class="diff-line add">+ 607000502=Your avatar did not pass the review. Reason: Inappropriate content detected.</div><div class="diff-line add">+ 607000503=Your avatar did not pass the review! Reason: Suspected to contain ads.</div><div class="diff-line add">+ 607000504=Your avatar did not pass the review! Reason: Other.</div><div class="diff-line add">+ 607000505=Your avatar did not pass the review! Reason: Suspected to contain pornographic content</div><div class="diff-line add">+ 607000506=Your avatar did not pass the review! Reason: Away from keyboard</div><div class="diff-line add">+ 607000507=Your avatar did not pass the review! Reason: Possibly contains ads</div><div class="diff-line add">+ 607000508=Your avatar did not pass the review. Reason: Suspected violation of ethics</div><div class="diff-line add">+ 607000509=Your avatar did not pass the review! Reason: Suspected violent and terrorist content</div><div class="diff-line add">+ 607000510=Your avatar did not pass the review! Reason: Suspected vulgar content</div><div class="diff-line add">+ 607000511=Your avatar did not pass the review! Reason: Suspected prohibited content</div><div class="diff-line add">+ 607000512=Your avatar did not pass the review! Reason: Suspected to contain QR code</div><div class="diff-line add">+ 607000513=Your avatar did not pass the review! Reason: Suspected to contain political content</div><div class="diff-line add">+ 607000514=Your avatar did not pass the review! Reason: Suspected of containing insults to others</div><div class="diff-line add">+ 607000515=Your avatar did not pass the review! Reason: Suspected to be an invalid image</div><div class="diff-line add">+ 607000516=Your avatar did not pass the review! Reason: Suspected to be invalid content</div>
-      <div class="diff-external">
-        <div style="margin-top:20px; border-top:1px solid #333; padding-top:10px; font-size:12px; color:#888;">
-          More Views:
-          <a href="diff-add.html" target="_blank">Additions Only</a> |
-          <a href="diff-full.html" target="_blank">Full Diff (Context)</a> |
-          <a href="diff-raw.html" target="_blank">Raw File</a>
-        </div>
-      </div>
-    
       </div>
     </div>
   </div>
@@ -695,21 +688,53 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       });
     });
 
+    // Lightbox functionality
     const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    const lbCap = lb.querySelector('.cap');
-    document.getElementById('imgGrid')?.addEventListener('click', e=>{
-      const img = e.target.closest('.thumb img');
-      if(!img) return;
-      const src = img.src || img.dataset.src;
-      if (src) {
-        lbImg.src = src;
-        lbCap.textContent = decodeURIComponent(src.split('/').pop());
-        lb.classList.add('open');
-      }
-    });
-    lb.addEventListener('click', ()=>lb.classList.remove('open'));
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open') });
+    const lbImg = lb?.querySelector('img');
+    const lbCap = lb?.querySelector('.cap');
+    const imgGrid = document.getElementById('imgGrid');
+
+    if (lb && lbImg && lbCap && imgGrid) {
+      imgGrid.addEventListener('click', e=>{
+        // Check if clicked element is an image
+        let img = null;
+        if (e.target.tagName === 'IMG') {
+          img = e.target;
+        } else {
+          // Check if clicked on thumb container or caption
+          const thumb = e.target.closest('.thumb');
+          if (thumb) {
+            img = thumb.querySelector('img');
+          }
+        }
+
+        if (!img) return;
+
+        const src = img.src || img.dataset.src;
+        if (src) {
+          lbImg.src = src;
+          lbCap.textContent = decodeURIComponent(src.split('/').pop());
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+      });
+
+      // Close lightbox when clicking on overlay (but not the image itself)
+      lb.addEventListener('click', e=>{
+        if (e.target === lb || e.target === lbCap) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', e=>{
+        if(e.key==='Escape' && lb.classList.contains('open')) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    }
 
     const imgSearch = document.getElementById('imgSearch');
     let allThumbs;

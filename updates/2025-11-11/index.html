@@ -17,655 +17,678 @@
 <meta name="twitter:title" content="LFU Informer Leaks">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://renegade2k6.github.io/LFULeaks/preview.jpg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#0b0d10;--fg:#e6e9ef;--muted:#9aa4b2;--card:#111318;--accent:#6aa2ff;--add:#15351b;--del:#3a1b1b;--ctx:#1a1d23;}
+:root{
+  --bg:#0b0d10;
+  --fg:#e6e9ef;
+  --muted:#9aa4b2;
+  --card:#111318;
+  --accent:#6aa2ff;
+  --accent-hover:#8cb8ff;
+  --border:#1b2027;
+  --add:#15351b;
+  --del:#3a1b1b;
+  --ctx:#1a1d23;
+  --warn-bg:rgba(234, 179, 8, 0.1);
+  --warn-border:rgba(234, 179, 8, 0.3);
+  --warn-text:#fef08a;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial}
-a{color:var(--accent);text-decoration:none}
-header{position:sticky;top:0;background:linear-gradient(180deg,#0b0d10,rgba(11,13,16,0.95));backdrop-filter:blur(8px);border-bottom:2px solid #6aa2ff;padding:20px 16px;display:flex;align-items:center;z-index:10;box-shadow:0 4px 20px rgba(106,162,255,0.1)}
-header h1{font-size:32px;margin:0;font-weight:700;text-shadow:0 2px 10px rgba(106,162,255,0.3);letter-spacing:0.5px;flex:1;text-align:center}
-header a{color:var(--accent);text-decoration:none;padding:8px 16px;border:1px solid var(--accent);border-radius:8px;font-weight:600;transition:all 0.2s ease}
-header a:hover{background:var(--accent);color:var(--bg);transform:translateY(-1px)}
-.container{max-width:1180px;margin:24px auto;padding:0 16px}
-.card{background:var(--card);border:1px solid #1b2027;border-radius:14px;padding:16px}
-.grid{display:grid;gap:12px}
-.grid.images{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
-.thumb{position:relative;border:1px solid #222632;border-radius:10px;overflow:hidden;background:#0c0f14}
-.thumb img{width:100%;height:160px;object-fit:contain;background:#0c0f14;display:block}
-.caption{font-size:12px;color:var(--muted);padding:6px 4px 8px;text-align:center}
-.meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin:8px 0 0}
-.toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}
-select, input[type="search"], button{background:#0e1116;color:var(--fg);border:1px solid #1f2530;border-radius:10px;padding:8px 10px;font:inherit}
-button{cursor:pointer}
-.toggle{display:inline-flex;border:1px solid #1f2530;border-radius:10px;overflow:hidden}
-.toggle button{border:0;border-right:1px solid #1f2530}
-.toggle button:last-child{border-right:0}
-.toggle .active{background:#152033}
-.diff{background:var(--card);border:1px solid #1b2027;border-radius:14px;padding:0;overflow:hidden}
-.diff-header{display:flex;gap:8px;align-items:center;padding:12px;border-bottom:1px solid #1b2027}
-.diff-body{padding:12px;max-height:65vh;overflow:auto}
-.diff-line{white-space:pre-wrap;padding:2px 8px;border-radius:6px;margin:1px 0}
-.diff-line.add{background:var(--add)}
-.diff-line.del{background:var(--del)}
-.diff-line.ctx{background:var(--ctx)}
-.empty-state{color:var(--muted);padding:12px}
-details.mod-seg summary{cursor:pointer;margin-bottom:8px}
-pre.raw{white-space:pre-wrap;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;background:#0f1218;border:1px solid #1c2130;border-radius:10px;padding:10px}
-.tabs{display:flex;gap:8px;margin-bottom:12px}
-.tab-btn{padding:8px 12px;border:1px solid #1f2530;border-radius:10px;background:#0e1116;cursor:pointer}
-.tab-btn.active{background:#152033}
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;z-index:100}
-.lightbox.open{display:flex}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain}
-.lightbox .cap{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);color:#cbd5e1;font-size:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:8px}
-.searchbar{display:flex;gap:8px;align-items:center}
-.kbd{font:12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;border:1px solid #2a3140;border-radius:6px;padding:2px 6px;background:#0f1218;color:#aab4c3}
-.disclaimer{margin:18px 0;color:var(--fg);font-size:13px;line-height:1.6;border:2px solid #6aa2ff;border-radius:12px;padding:16px;background:linear-gradient(135deg,rgba(106,162,255,0.08),rgba(106,162,255,0.03));text-align:center}
-.disclaimer div{margin:0 0 8px 0}
-.disclaimer div:last-of-type{margin-bottom:16px}
-.patreon-link{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(45deg,#1e88e5,#6aa2ff);color:white!important;text-decoration:none!important;padding:10px 20px;border-radius:8px;font-weight:600;margin-top:16px;transition:all 0.2s ease;border:0}
-.patreon-link:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(30,136,229,0.4)}
-.patreon-link::before{content:'💙';margin-right:4px}
-.thumb[data-lazy="true"]{display:none}
-.thumb img{will-change:transform;contain:layout style paint}
-.grid.images{contain:layout}
-.pagination-info{display:flex;align-items:center;gap:8px}
-.diff-external{text-align:center;padding:20px;margin:10px 0}
-.diff-external a{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:linear-gradient(45deg,#1e88e5,#6aa2ff);color:white!important;text-decoration:none;border-radius:8px;font-weight:600;transition:all 0.2s ease}
-.diff-external a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(30,136,229,0.4)}
-.tab-btn[title]:hover::after{content:attr(title);position:absolute;bottom:-2em;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.9);color:white;padding:6px 8px;border-radius:6px;font-size:12px;white-space:nowrap;z-index:100;pointer-events:none}
-.tab-btn{position:relative}
-header h1{background:linear-gradient(135deg,#6aa2ff,#4f89ff,#00d4ff,#6aa2ff);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientShift 4s ease-in-out infinite}
-@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Inter', system-ui, -apple-system, sans-serif;line-height:1.5;font-size:14px}
+a{color:var(--accent);text-decoration:none;transition:color 0.2s}
+a:hover{color:var(--accent-hover)}
+
+header{position:sticky;top:0;background:rgba(11,13,16,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 16px 20px;display:flex;flex-direction:column;align-items:center;z-index:50;box-shadow:0 4px 30px rgba(0,0,0,0.1)}
+.header-content{position:relative;width:100%;max-width:700px;text-align:center}
+header h1{font-size:28px;margin:0;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(to right,#6aa2ff, #a855f7, #6aa2ff);background-size:200% auto;animation:shine 4s linear infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header-line{height:3px;width:100%;background:linear-gradient(90deg, transparent, #6aa2ff, transparent);margin-top:8px;border-radius:2px;box-shadow:0 0 15px rgba(106,162,255,0.6);opacity:0.8}
+
+@keyframes shine { to { background-position: 200% center; } }
+
+.container{max-width:1200px;margin:0 auto;padding:24px 16px;}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:transform 0.2s, box-shadow 0.2s}
+a.card:hover{transform:translateY(-2px);box-shadow:0 12px 24px -10px rgba(0,0,0,0.3);border-color:var(--accent)}
+
+.disclaimer{
+  background:linear-gradient(to right, var(--warn-bg), rgba(0,0,0,0));
+  border:1px solid var(--warn-border);
+  border-left:4px solid #eab308;
+  border-radius:8px;
+  padding:20px;
+  margin-bottom:32px;
+}
+.disclaimer h2{margin:0 0 12px 0;font-size:16px;color:var(--warn-text);display:flex;align-items:center;gap:8px}
+.disclaimer-text{color:var(--fg);font-size:14px;line-height:1.6;font-weight:500}
+.patreon-link{display:inline-flex;align-items:center;gap:8px;background:#eab308;color:#000!important;padding:8px 16px;border-radius:6px;font-weight:600;margin-top:16px;font-size:13px;transition:all 0.2s}
+.patreon-link:hover{background:#facc15;transform:translateY(-1px);box-shadow:0 4px 12px rgba(234, 179, 8, 0.2)}
+
+.grid{display:grid;gap:16px}
+.grid.images{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.thumb{position:relative;border:1px solid var(--border);border-radius:8px;overflow:hidden;  
+  background-image: linear-gradient(45deg, #1a1a1a 25%, transparent 25%),
+                    linear-gradient(-45deg, #1a1a1a 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, #1a1a1a 75%),
+                    linear-gradient(-45deg, transparent 75%, #1a1a1a 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  background-color: #111; /* Fallback */
+  transition:border-color 0.2s
+}
+.thumb:hover{border-color:var(--accent)}
+.thumb img{width:100%;height:180px;object-fit:contain;display:block;background:none;}
+.caption{font-size:11px;color:var(--muted);padding:8px;text-align:center;background:var(--card);border-top:1px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.meta{display:flex;gap:16px;color:var(--muted);font-size:12px;margin-top:8px}
+
+.tabs{display:flex;gap:4px;margin-bottom:16px;background:rgba(17,19,24,0.8);backdrop-filter:blur(8px);padding:4px;border-radius:10px;border:1px solid var(--border);width:fit-content;position:sticky;top:90px;z-index:40;margin-left:auto;margin-right:auto;}
+.tab-btn{padding:8px 16px;border:none;border-radius:6px;background:transparent;color:var(--muted);cursor:pointer;font-weight:500;font-size:13px;transition:all 0.2s}
+.tab-btn:hover{color:var(--fg)}
+.tab-btn.active{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(106,162,255,0.25)}
+
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:sticky;top:145px;z-index:30;background:var(--bg);padding:8px 0;} 
+input[type="search"]{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;width:100%;max-width:400px;font-size:14px}
+input[type="search"]:focus{outline:none;border-color:var(--accent)}
+
+.diff{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.diff-header{padding:12px;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.2)} 
+.diff-body{padding:16px;max-height:70vh;overflow:auto;font-family:'Menlo', 'Monaco', 'Courier New', monospace;font-size:12px}
+.diff-line{padding:2px 8px;border-radius:4px}
+.diff-line.add{background:rgba(21, 53, 27, 0.5);color:#4ade80}
+.diff-line.del{background:rgba(58, 27, 27, 0.5);color:#f87171}
+.diff-line.ctx{color:#9ca3af}
+
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;flex-direction:column;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s}
+.lightbox.open{opacity:1;visibility:visible;display:flex}
+.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px}
+.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:8px;max-width:90vw;word-wrap:break-word}
+
+/* Utilities */
+.kbd{border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:10px;background:rgba(255,255,255,0.05);color:var(--muted);margin-left:8px}
+.empty-state{padding:32px;text-align:center;color:var(--muted);font-style:italic}
+.diff-external{text-align:center;padding:16px;color:var(--muted);font-size:12px}
+.diff-external a{color:var(--accent);font-weight:500}
+
+/* Footer */
+footer{text-align:center;padding:40px 0;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:40px;background:rgba(11,13,16,0.5)}
+footer a{color:var(--accent);text-decoration:none;margin:0 4px}
+footer a:hover{color:var(--accent-hover);text-decoration:underline}
+footer p{margin:8px 0}
+
+/* Polish & Animations */
+html { scroll-behavior: smooth; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #1f2530; border-radius: 5px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+.thumb { transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+.thumb:hover { 
+  transform: translateY(-4px) scale(1.02); 
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+@keyframes lbFade { from{opacity:0} to{opacity:1} }
+@keyframes lbZoom { from{transform:scale(0.95)} to{transform:scale(1)} }
+.lightbox.open { animation: lbFade 0.2s ease-out; }
+.lightbox.open img { animation: lbZoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
 </style>
 </head>
 <body>
 <header>
-  <h1>LFU Informer - LFU Leaks</h1>
+  <div class="header-content">
+    <h1>LFU Informer - LFU Leaks</h1>
+    <div class="header-line"></div>
+  </div>
 </header>
 <div class="container">
-  <div class="card disclaimer">
-    <div>The images and artwork used on this page are displayed strictly for educational, informational, commentary, and news reporting purposes.</div>
-    <div>This constitutes Fair Use under Section 107 of the U.S. Copyright Act and similar copyright provisions worldwide.</div>
-    <div>This content is not for commercial exploitation, and no ownership of the original works is claimed.</div>
-    <div>All intellectual property rights remain with their respective copyright holders.</div>
-    <div>If you are a rights holder and believe your content has been misused outside the scope of fair use/fair dealing, please contact me and it will be promptly addressed.</div>
-    <a href="https://www.patreon.com/renegade2k6UK" target="_blank" rel="noopener" class="patreon-link">Support LFU Informer on Patreon</a>
+
+  <div class="disclaimer">
+    <h2>⚠️ Fair Use Notice</h2>
+    <div class="disclaimer-text">
+      <p style="margin-top:0">The images and artwork used on this page are displayed strictly for educational, informational, commentary, and news reporting purposes.</p>
+      <p>This constitutes <strong>Fair Use</strong> under Section 107 of the U.S. Copyright Act and similar copyright provisions worldwide. This content is not for commercial exploitation, and no ownership of the original works is claimed. All intellectual property rights remain with their respective copyright holders.</p>
+      <p style="margin-bottom:0">If you are a rights holder and believe your content has been misused outside the scope of fair use/fair dealing, please contact me and it will be promptly addressed.</p>
+    </div>
+    <a href="https://www.patreon.com/renegade2k6UK" target="_blank" rel="noopener" class="patreon-link">💙 Support on Patreon</a>
   </div>
 
-<div class="card">
-  <div class="meta">Images: 76 · New lines: 203 · Generated: 2025-11-11T11:13:50.936Z</div>
-</div>
 
-<div class="tabs">
-  <a href="../../index.html" class="tab-btn" style="background:#0a0c0f;border-color:#6aa2ff;color:#6aa2ff">← Back</a>
-  <button class="tab-btn active" data-tab="images">New Images (76)</button>
-  <button class="tab-btn" data-tab="diff" title="Differences from last update">Config Diff</button>
-</div>
-
-<div id="tab-images">
-  <div class="toolbar">
-    <div class="searchbar">
-      <input type="search" id="imgSearch" placeholder="Filter images (press / to focus)" />
-      <span class="kbd">Enter</span>
+  <div class="card">
+    <div class="meta">Images: 76 · New lines: 203 · Generated: 2025-12-08T16:47:46.941Z</div>
+  </div>
+  
+  <div class="tabs">
+    <a href="../../index.html" class="tab-btn" style="background:#0a0c0f;border-color:#6aa2ff;color:#6aa2ff">← Back</a>
+    <button class="tab-btn active" data-tab="images">New Images (76)</button>
+    <button class="tab-btn" data-tab="diff" title="Differences from last update">Config Diff</button>
+  </div>
+  
+  <div id="tab-images">
+    <div class="toolbar">
+      <div class="searchbar">
+        <input type="search" id="imgSearch" placeholder="Filter images (press / to focus)" />
+        <span class="kbd">Enter</span>
+      </div>
     </div>
+    <div class="grid images" id="imgGrid">
+      
+      <div class="thumb" data-name="bg_bp_duodangwei_ganenjie_2025.png">
+        <img loading="lazy" src="./assets/bg_bp_duodangwei_ganenjie_2025.png" alt="bg_bp_duodangwei_ganenjie_2025.png" width="160" height="160" /> 
+        <div class="caption">bg_bp_duodangwei_ganenjie_2025.png</div>
+      </div>
     
-  </div>
-  <div class="grid images" id="imgGrid">
+      <div class="thumb" data-name="bg_datulibao_ganenjie2025_bg.png">
+        <img loading="lazy" src="./assets/bg_datulibao_ganenjie2025_bg.png" alt="bg_datulibao_ganenjie2025_bg.png" width="160" height="160" /> 
+        <div class="caption">bg_datulibao_ganenjie2025_bg.png</div>
+      </div>
     
-    <div class="thumb" data-name="bg_bp_duodangwei_ganenjie_2025.png" >
-      <img  src="./assets/bg_bp_duodangwei_ganenjie_2025.png" alt="bg_bp_duodangwei_ganenjie_2025.png" width="160" height="160" />
-      <div class="caption">bg_bp_duodangwei_ganenjie_2025.png</div>
-    </div>
-  
-    <div class="thumb" data-name="bg_datulibao_ganenjie2025_bg.png" >
-      <img  src="./assets/bg_datulibao_ganenjie2025_bg.png" alt="bg_datulibao_ganenjie2025_bg.png" width="160" height="160" />
-      <div class="caption">bg_datulibao_ganenjie2025_bg.png</div>
-    </div>
-  
-    <div class="thumb" data-name="bg_dzhjr_ganenjie_tab01.png" >
-      <img  src="./assets/bg_dzhjr_ganenjie_tab01.png" alt="bg_dzhjr_ganenjie_tab01.png" width="160" height="160" />
-      <div class="caption">bg_dzhjr_ganenjie_tab01.png</div>
-    </div>
-  
-    <div class="thumb" data-name="bg_dzhjr_ganenjie_tab02.png" >
-      <img  src="./assets/bg_dzhjr_ganenjie_tab02.png" alt="bg_dzhjr_ganenjie_tab02.png" width="160" height="160" />
-      <div class="caption">bg_dzhjr_ganenjie_tab02.png</div>
-    </div>
-  
-    <div class="thumb" data-name="bg_dzhjr_ganenjie_tab03.png" >
-      <img  src="./assets/bg_dzhjr_ganenjie_tab03.png" alt="bg_dzhjr_ganenjie_tab03.png" width="160" height="160" />
-      <div class="caption">bg_dzhjr_ganenjie_tab03.png</div>
-    </div>
-  
-    <div class="thumb" data-name="bg_dzhjr_ganenjie_tab04.png" >
-      <img  src="./assets/bg_dzhjr_ganenjie_tab04.png" alt="bg_dzhjr_ganenjie_tab04.png" width="160" height="160" />
-      <div class="caption">bg_dzhjr_ganenjie_tab04.png</div>
-    </div>
-  
-    <div class="thumb" data-name="bg_dzhjr_ganenjie_tab05.png" >
-      <img  src="./assets/bg_dzhjr_ganenjie_tab05.png" alt="bg_dzhjr_ganenjie_tab05.png" width="160" height="160" />
-      <div class="caption">bg_dzhjr_ganenjie_tab05.png</div>
-    </div>
-  
-    <div class="thumb" data-name="bg_dzhjr_ganenjie_tab06.png" >
-      <img  src="./assets/bg_dzhjr_ganenjie_tab06.png" alt="bg_dzhjr_ganenjie_tab06.png" width="160" height="160" />
-      <div class="caption">bg_dzhjr_ganenjie_tab06.png</div>
-    </div>
-  
-    <div class="thumb" data-name="bg_dzhjr_ganenjie_tab07.png" >
-      <img  src="./assets/bg_dzhjr_ganenjie_tab07.png" alt="bg_dzhjr_ganenjie_tab07.png" width="160" height="160" />
-      <div class="caption">bg_dzhjr_ganenjie_tab07.png</div>
-    </div>
-  
-    <div class="thumb" data-name="bg_dzhjr_ganenjie.png" >
-      <img  src="./assets/bg_dzhjr_ganenjie.png" alt="bg_dzhjr_ganenjie.png" width="160" height="160" />
-      <div class="caption">bg_dzhjr_ganenjie.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_bp_ganenjie_title.png" >
-      <img  src="./assets/icon_bp_ganenjie_title.png" alt="icon_bp_ganenjie_title.png" width="160" height="160" />
-      <div class="caption">icon_bp_ganenjie_title.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_ganen2511.png" >
-      <img  src="./assets/ICON_ganen2511.png" alt="ICON_ganen2511.png" width="160" height="160" />
-      <div class="caption">ICON_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_ganenjie_box.png" >
-      <img  src="./assets/icon_ganenjie_box.png" alt="icon_ganenjie_box.png" width="160" height="160" />
-      <div class="caption">icon_ganenjie_box.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_ganenjie_dhsd_nangua.png" >
-      <img  src="./assets/icon_ganenjie_dhsd_nangua.png" alt="icon_ganenjie_dhsd_nangua.png" width="160" height="160" />
-      <div class="caption">icon_ganenjie_dhsd_nangua.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_ganenjie_qrqd_title.png" >
-      <img  src="./assets/icon_ganenjie_qrqd_title.png" alt="icon_ganenjie_qrqd_title.png" width="160" height="160" />
-      <div class="caption">icon_ganenjie_qrqd_title.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_ganenjie_tb.png" >
-      <img  src="./assets/icon_ganenjie_tb.png" alt="icon_ganenjie_tb.png" width="160" height="160" />
-      <div class="caption">icon_ganenjie_tb.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_gej_entrance.png" >
-      <img  src="./assets/Icon_gej_entrance.png" alt="Icon_gej_entrance.png" width="160" height="160" />
-      <div class="caption">Icon_gej_entrance.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_item_frame_ganen2511.png" >
-      <img  src="./assets/icon_item_Frame_ganen2511.png" alt="icon_item_Frame_ganen2511.png" width="160" height="160" />
-      <div class="caption">icon_item_Frame_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_mingpai_ganen2511.png" >
-      <img  src="./assets/ICON_mingpai_ganen2511.png" alt="ICON_mingpai_ganen2511.png" width="160" height="160" />
-      <div class="caption">ICON_mingpai_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="icon_talk_qipao_ganen2511.png" >
-      <img  src="./assets/ICON_Talk_qipao_ganen2511.png" alt="ICON_Talk_qipao_ganen2511.png" width="160" height="160" />
-      <div class="caption">ICON_Talk_qipao_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_card01.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card01.png" alt="img_2024ThanksgivingDay_card01.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_card01.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_card02.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card02.png" alt="img_2024ThanksgivingDay_card02.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_card02.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_card03.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card03.png" alt="img_2024ThanksgivingDay_card03.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_card03.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_card04.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card04.png" alt="img_2024ThanksgivingDay_card04.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_card04.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_card05.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card05.png" alt="img_2024ThanksgivingDay_card05.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_card05.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat1.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat1.png" alt="img_2024ThanksgivingDay_hat1.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat1.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat10.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat10.png" alt="img_2024ThanksgivingDay_hat10.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat10.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat11.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat11.png" alt="img_2024ThanksgivingDay_hat11.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat11.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat12.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat12.png" alt="img_2024ThanksgivingDay_hat12.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat12.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat2.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat2.png" alt="img_2024ThanksgivingDay_hat2.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat2.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat3.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat3.png" alt="img_2024ThanksgivingDay_hat3.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat3.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat4.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat4.png" alt="img_2024ThanksgivingDay_hat4.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat4.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat5.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat5.png" alt="img_2024ThanksgivingDay_hat5.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat5.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat6.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat6.png" alt="img_2024ThanksgivingDay_hat6.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat6.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat7.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat7.png" alt="img_2024ThanksgivingDay_hat7.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat7.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat8.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat8.png" alt="img_2024ThanksgivingDay_hat8.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat8.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_hat9.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat9.png" alt="img_2024ThanksgivingDay_hat9.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_hat9.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_my_card01.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card01.png" alt="img_2024ThanksgivingDay_my_card01.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_my_card01.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_my_card02.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card02.png" alt="img_2024ThanksgivingDay_my_card02.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_my_card02.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_my_card03.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card03.png" alt="img_2024ThanksgivingDay_my_card03.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_my_card03.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_my_card04.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card04.png" alt="img_2024ThanksgivingDay_my_card04.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_my_card04.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_my_card05.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card05.png" alt="img_2024ThanksgivingDay_my_card05.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_my_card05.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_pigment_01.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_01.png" alt="img_2024ThanksgivingDay_pigment_01.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_pigment_01.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_pigment_02.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_02.png" alt="img_2024ThanksgivingDay_pigment_02.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_pigment_02.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_pigment_03.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_03.png" alt="img_2024ThanksgivingDay_pigment_03.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_pigment_03.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_pigment_04.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_04.png" alt="img_2024ThanksgivingDay_pigment_04.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_pigment_04.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_2024thanksgivingday_pigment_05.png" >
-      <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_05.png" alt="img_2024ThanksgivingDay_pigment_05.png" width="160" height="160" />
-      <div class="caption">img_2024ThanksgivingDay_pigment_05.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_bp_ganenjie_01.png" >
-      <img loading="lazy" src="./assets/img_bp_ganenjie_01.png" alt="img_bp_ganenjie_01.png" width="160" height="160" />
-      <div class="caption">img_bp_ganenjie_01.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_bp_ganenjie_02.png" >
-      <img loading="lazy" src="./assets/img_bp_ganenjie_02.png" alt="img_bp_ganenjie_02.png" width="160" height="160" />
-      <div class="caption">img_bp_ganenjie_02.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_bp_ganenjie_03.png" >
-      <img loading="lazy" src="./assets/img_bp_ganenjie_03.png" alt="img_bp_ganenjie_03.png" width="160" height="160" />
-      <div class="caption">img_bp_ganenjie_03.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_bp_ganenjie_04.png" >
-      <img loading="lazy" src="./assets/img_bp_ganenjie_04.png" alt="img_bp_ganenjie_04.png" width="160" height="160" />
-      <div class="caption">img_bp_ganenjie_04.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_bp_ganenjie_05.png" >
-      <img loading="lazy" src="./assets/img_bp_ganenjie_05.png" alt="img_bp_ganenjie_05.png" width="160" height="160" />
-      <div class="caption">img_bp_ganenjie_05.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_bp_ganenjie_06.png" >
-      <img loading="lazy" src="./assets/img_bp_ganenjie_06.png" alt="img_bp_ganenjie_06.png" width="160" height="160" />
-      <div class="caption">img_bp_ganenjie_06.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_bp_ganenjie_pack.png" >
-      <img loading="lazy" src="./assets/img_bp_ganenjie_pack.png" alt="img_bp_ganenjie_pack.png" width="160" height="160" />
-      <div class="caption">img_bp_ganenjie_pack.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_bp_gannejie_tab.png" >
-      <img loading="lazy" src="./assets/img_bp_gannejie_tab.png" alt="img_bp_gannejie_tab.png" width="160" height="160" />
-      <div class="caption">img_bp_gannejie_tab.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_datulibao_ganenjie2025_dk01.png" >
-      <img loading="lazy" src="./assets/img_datulibao_ganenjie2025_dk01.png" alt="img_datulibao_ganenjie2025_dk01.png" width="160" height="160" />
-      <div class="caption">img_datulibao_ganenjie2025_dk01.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_datulibao_ganenjie2025_dk02.png" >
-      <img loading="lazy" src="./assets/img_datulibao_ganenjie2025_dk02.png" alt="img_datulibao_ganenjie2025_dk02.png" width="160" height="160" />
-      <div class="caption">img_datulibao_ganenjie2025_dk02.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_datulibao_ganenjie2025_tab.png" >
-      <img loading="lazy" src="./assets/img_datulibao_ganenjie2025_tab.png" alt="img_datulibao_ganenjie2025_tab.png" width="160" height="160" />
-      <div class="caption">img_datulibao_ganenjie2025_tab.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_ganenjie_dhsd_yeqian.png" >
-      <img loading="lazy" src="./assets/img_ganenjie_dhsd_yeqian.png" alt="img_ganenjie_dhsd_yeqian.png" width="160" height="160" />
-      <div class="caption">img_ganenjie_dhsd_yeqian.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_ganenjie_libaotu.png" >
-      <img loading="lazy" src="./assets/img_ganenjie_libaotu.png" alt="img_ganenjie_libaotu.png" width="160" height="160" />
-      <div class="caption">img_ganenjie_libaotu.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_ganenjie_qrqd_yeqian.png" >
-      <img loading="lazy" src="./assets/img_ganenjie_qrqd_yeqian.png" alt="img_ganenjie_qrqd_yeqian.png" width="160" height="160" />
-      <div class="caption">img_ganenjie_qrqd_yeqian.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_gej_banner.png" >
-      <img loading="lazy" src="./assets/img_gej_banner.png" alt="img_gej_banner.png" width="160" height="160" />
-      <div class="caption">img_gej_banner.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_gej_ddt_bg.png" >
-      <img loading="lazy" src="./assets/img_gej_ddt_bg.png" alt="img_gej_ddt_bg.png" width="160" height="160" />
-      <div class="caption">img_gej_ddt_bg.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_gej_ddt_enter.png" >
-      <img loading="lazy" src="./assets/img_gej_ddt_enter.png" alt="img_gej_ddt_enter.png" width="160" height="160" />
-      <div class="caption">img_gej_ddt_enter.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_gej_nangua.png" >
-      <img loading="lazy" src="./assets/img_gej_nangua.png" alt="img_gej_nangua.png" width="160" height="160" />
-      <div class="caption">img_gej_nangua.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_thanksgivingday_bg.png" >
-      <img loading="lazy" src="./assets/img_ThanksgivingDay_bg.png" alt="img_ThanksgivingDay_bg.png" width="160" height="160" />
-      <div class="caption">img_ThanksgivingDay_bg.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_thanksgivingday_gather_bg.png" >
-      <img loading="lazy" src="./assets/img_ThanksgivingDay_Gather_bg.png" alt="img_ThanksgivingDay_Gather_bg.png" width="160" height="160" />
-      <div class="caption">img_ThanksgivingDay_Gather_bg.png</div>
-    </div>
-  
-    <div class="thumb" data-name="img_waixian_gaizhuangche_ganen2511.png" >
-      <img loading="lazy" src="./assets/img_waixian_gaizhuangche_ganen2511.png" alt="img_waixian_gaizhuangche_ganen2511.png" width="160" height="160" />
-      <div class="caption">img_waixian_gaizhuangche_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="item_guashi_ganen2511.png" >
-      <img loading="lazy" src="./assets/item_guashi_ganen2511.png" alt="item_guashi_ganen2511.png" width="160" height="160" />
-      <div class="caption">item_guashi_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="item_mingpian_ganen2511.png" >
-      <img loading="lazy" src="./assets/item_mingpian_ganen2511.png" alt="item_mingpian_ganen2511.png" width="160" height="160" />
-      <div class="caption">item_mingpian_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="jianzhu_qrcj_nanguadi.png" >
-      <img loading="lazy" src="./assets/jianzhu_qrcj_nanguadi.png" alt="jianzhu_qrcj_nanguadi.png" width="160" height="160" />
-      <div class="caption">jianzhu_qrcj_nanguadi.png</div>
-    </div>
-  
-    <div class="thumb" data-name="mingpian_ganen2511.png" >
-      <img loading="lazy" src="./assets/mingpian_ganen2511.png" alt="mingpian_ganen2511.png" width="160" height="160" />
-      <div class="caption">mingpian_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="ui_2024thanksgivingday_tips_property_frame.png" >
-      <img loading="lazy" src="./assets/ui_2024ThanksgivingDay_tips_Property_frame.png" alt="ui_2024ThanksgivingDay_tips_Property_frame.png" width="160" height="160" />
-      <div class="caption">ui_2024ThanksgivingDay_tips_Property_frame.png</div>
-    </div>
-  
-    <div class="thumb" data-name="ui_mingpai_ganen2511.png" >
-      <img loading="lazy" src="./assets/UI_mingpai_ganen2511.png" alt="UI_mingpai_ganen2511.png" width="160" height="160" />
-      <div class="caption">UI_mingpai_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="ui_talk_qipao_ganen2511.png" >
-      <img loading="lazy" src="./assets/UI_Talk_qipao_ganen2511.png" alt="UI_Talk_qipao_ganen2511.png" width="160" height="160" />
-      <div class="caption">UI_Talk_qipao_ganen2511.png</div>
-    </div>
-  
-    <div class="thumb" data-name="uiformation_gaizhuangche_ganenjie_2025.png" >
-      <img loading="lazy" src="./assets/UIFormation_gaizhuangche_ganenjie_2025.png" alt="UIFormation_gaizhuangche_ganenjie_2025.png" width="160" height="160" />
-      <div class="caption">UIFormation_gaizhuangche_ganenjie_2025.png</div>
-    </div>
-  
-  </div>
-</div>
-
-<div id="tab-diff" style="display:none">
-  <div class="diff">
-    <div class="diff-header">
-      <input type="search" id="diffSearch" placeholder="Find in diff…" />
-    </div>
-    <div class="diff-body">
-      <div class="diff-line add">+ 607000454=Tip: After unsubscribing, you will no longer accept marketing mailbox. System function mailbox related to Account security will not be affected and will continue to provide service.</div><div class="diff-line add">+ 607000531=Note: We are not responsible for Account loss caused by not linking a mailbox!</div><div class="diff-line add">+ 607000532=It has been detected that you have not linked a mailbox. To avoid Account loss, please link it immediately!\n\n [color=FF0000]{0}Note: We are not responsible for Account loss caused by not linking a mailbox![/color]</div><div class="diff-line add">+ 607000533=Link Account</div><div class="diff-line add">+ 607000534=Exit Game</div><div class="diff-line add">+ 607000535=Mailbox Link</div><div class="diff-line add">+ 607000536=Tip: Your Account is in a risky status and is prone to loss. Please go to link Account! We are not responsible for Account loss caused by not linking a mailbox!</div><div class="diff-line add">+ 607000537=Link a mailbox for the first time to acquire 50 Diamonds.</div><div class="diff-line add">+ 607000538=Warning!</div><div class="diff-line add">+ 607000539=Cancel</div><div class="diff-line add">+ 607000549=An email has been sent to the address you provided. It contains a link for verification. Please also check your spam/junk folder.</div><div class="diff-line add">+ 607000540=New mailbox: {0}</div><div class="diff-line add">+ 607000541=After verifying the new email, an email will automatically be sent to the original email address. Complete the email change after reconfirmation.</div><div class="diff-line add">+ 607000542=Original mailbox: {0}</div><div class="diff-line add">+ 607000543=You have successfully completed the mailbox change.</div><div class="diff-line add">+ 607000544=mailbox Account</div><div class="diff-line add">+ 607000545=mailbox</div><div class="diff-line add">+ 607000546=mailbox linked to the Account</div><div class="diff-line add">+ 607000547=Once you successfully log into the game using your mailbox, your Account information will be stored on the device for future logins. Please note that you will need to re-enter your mailbox and Password when switching devices.</div><div class="diff-line add">+ 607000548=To avoid Account loss, we strongly recommend you link your mailbox. After linking, you can access your Account on other devices anytime, anywhere. \n\n2. The mailbox is the highest level proof for Account recovery. Please ensure Account security and avoid sharing your Account.</div><div class="diff-line add">+ 607000550=Go</div><div class="diff-line add">+ 607000551=Please enter a valid email address and set a Password.</div><div class="diff-line add">+ 607000552=Your mailbox has been successfully activated. You can Switch Accounts in [Personal Homepage] - [Account].</div><div class="diff-line add">+ </div><div class="diff-line add">+ The login Password is independent of the Account Password and must be entered during login to better escort your Account security.</div><div class="diff-line add">+ 607000553=Change Link</div><div class="diff-line add">+ 607000554=Your mailbox is in an unverified Status, and you cannot log in to your game Account using this mailbox Account.</div><div class="diff-line add">+ </div><div class="diff-line add">+ If you have not received the verification mailbox, you can try changing the mailbox address.</div><div class="diff-line add">+ Note: To escort your Account security, linked Accounts cannot be unlinked.</div><div class="diff-line add">+ 607000557=The new mailbox address you entered is the same as the original one. Please re-enter a new mailbox address.</div><div class="diff-line add">+ 607000558=Your original mailbox address is {0}. Please enter the new mailbox address you want to change to.</div><div class="diff-line add">+ 607000559=Hello:</div><div class="diff-line add">+ Commander, we have received your password reset confirmation mailbox. If you have not recently submitted a password change request for "Last Fortress," please ignore this mailbox. If you confirm the existence of this operation, please tap the reset Link below. Note that the new password will be Effective immediately after tapping the reset Link.</div><div class="diff-line add">+ 607000560=Please enter the new mailbox address you want to change to and set a Password.</div><div class="diff-line add">+ 607000561=1. After you Link Account, you can log in to the game on Others devices anytime, anywhere, and avoid losing your Account. Therefore, we strongly recommend you Link Account.</div><div class="diff-line add">+ </div><div class="diff-line add">+ 2. The mailbox can be changed after linking.</div><div class="diff-line add">+ </div><div class="diff-line add">+ 3. The linked Account serves as the highest-level basis for Account recovery. Please Note Account security and do not Share your Account.</div><div class="diff-line add">+ 607000562=A mailbox has been sent to the mailbox address you provided, containing a Link to verify the Account. If you have not received the verification mailbox, please check your spam folder or confirm that the mailbox address is entered correctly.</div><div class="diff-line add">+ 607000563=Acquire 50 Diamonds by linking an Account for the first time.</div><div class="diff-line add">+ 607000564=Create Account</div><div class="diff-line add">+ 607000565=Once you successfully log into the game using your Account, the Account information will be stored on the device for future logins. Please Note that you will need to re-Input your game Account and Password when switching devices.</div><div class="diff-line add">+ 607000566=You can add up to 10 Accounts.</div><div class="diff-line add">+ 607000567=You can use this Account to log into the game on any device.</div><div class="diff-line add">+ 607000568=You have Success Create Account.</div><div class="diff-line add">+ 607000701=Phantom Market</div><div class="diff-line add">+ 607000702=Collect Special Candy to redeem rare items.</div><div class="diff-line add">+ 607000703=Special Candy</div><div class="diff-line add">+ 607000704=This strange appearance... can it really be eaten? Special Candy can be used to redeem rare items in the Phantom Market.</div><div class="diff-line add">+ 607000705=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Special Candy] will no longer be usable. Therefore, we recycled your {0} unused [Special Candy] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 607000706=After purchase, you can acquire a large amount of Special Candy.</div><div class="diff-line add">+ 607000707=Specter Special</div><div class="diff-line add">+ 607000708=Specter Special Inception Pack</div><div class="diff-line add">+ 607000709=Specter Special Surprise Pack</div><div class="diff-line add">+ 607000710=Specter Special Advanced Pack</div><div class="diff-line add">+ 607000711=Specter Special Premium Pack</div><div class="diff-line add">+ 607000712=Specter Special Deluxe Pack</div><div class="diff-line add">+ 607000713=Night Hunt</div><div class="diff-line add">+ 607000714=During this special festival, even zombies are stirring restlessly.</div><div class="diff-line add">+ 607000715=1. During the event, a large number of Shadow Zombies will spawn in the world every day. \n2. Commanders have {0} deployment attempts daily, which reset at 0:00 (Game Time) each day. \n3. Defeating Shadow Zombies grants lots of precious rewards.</div><div class="diff-line add">+ 607000716=Shadow Zombie</div><div class="diff-line add">+ 607000717=They move with unusual agility, yet emit a foul stench of decay, making them look very dangerous.</div><div class="diff-line add">+ 607000718=Demon Hunt</div><div class="diff-line add">+ 607000719=1. Little Demons have discovered our world and sent a vanguard to attack. Pick up the Mithril Hammer to repel them and defend our world! \n2. During the event, use Mithril Hammers to attack the Demon Legion and acquire various rewards. \n3. Each time you defeat a Little Demon, you will receive a generous victory reward, but it may attract a stronger Demon King. \n4. The Demon King embodies the concept of demons and cannot be completely destroyed but can be temporarily repelled. Attacking the Demon King not only grants richer attack rewards but also offers a chance to win the demon's treasure. \n5. When using Mithril Hammers to attack, there is a probability of triggering a no-cost effect, allowing several subsequent attacks without consuming Mithril Hammers. \n6. Auto-attack is only effective when the event interface is open. \n7. After the event ends, unused Mithril Hammers will automatically be redeemed for Diamonds and sent to your mailbox.</div><div class="diff-line add">+ 607000720=Mithril Hammer</div><div class="diff-line add">+ 607000721=Mithril Power, Demon Buster</div><div class="diff-line add">+ 607000722=Mithril Hammer Treasure</div><div class="diff-line add">+ 607000723=Purchase to acquire a large number of Mithril Hammers</div><div class="diff-line add">+ 607000724=Hammer of Exorcism</div><div class="diff-line add">+ 607000725=Hammer of Suppression, Evil Eradication</div><div class="diff-line add">+ 607000569=Your mailbox\n{0}\nhas been confirmed. We have sent a verification message to the new mailbox.</div><div class="diff-line add">+ 813000101=Data Update</div><div class="diff-line add">+ 813000102=No longer updating data to Game Center Achievements</div><div class="diff-line add">+ 813000103=No longer updating data to Game Center leaderboards</div><div class="diff-line add">+ 813000104=Version Update</div><div class="diff-line add">+ 813000105=Notify you when the game version updates</div><div class="diff-line add">+ 805000467=Use Wildlings and Minutemen faction Heroes to deal 50% additional DMG.</div><div class="diff-line add">+ 805000468=Phantom Leaf</div><div class="diff-line add">+ 805000469=Phantom Raid Event Points can support the alliance's Fortress Construction and earn leaderboard rewards.</div><div class="diff-line add">+ 805000470=Phantom Raid Mission rewards</div><div class="diff-line add">+ 805000471=Dear Commander, below are the mission rewards you have not claimed from the Phantom Raid event.</div><div class="diff-line add">+ 805000472=Phantom Raid Construction Stage Personal leaderboard rewards</div><div class="diff-line add">+ 805000473=Dear Commander, the Construction Stage of this session of the Phantom Raid event has ended. Your ranking this round: {0}, your Points: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000474=Phantom Raid Construction Stage Alliance leaderboard rewards</div><div class="diff-line add">+ 805000475=Dear Commander, the Construction Stage of this session of the Phantom Raid event has ended. Your alliance's ranking: {0}, Alliance Points: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000476=Phantom Raid Combat Stage Personal leaderboard rewards</div><div class="diff-line add">+ 805000477=Dear Commander, the Combat Stage of this session of the Phantom Raid event has ended. Your ranking this round: {0}, total DMG you dealt: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000478=Phantom Raid Combat Stage Alliance leaderboard rewards</div><div class="diff-line add">+ 805000479=Dear Commander, the Combat Stage of this session of the Phantom Raid event has ended. Your alliance's ranking: {0}, total DMG your alliance dealt: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000487=Spooky Party</div><div class="diff-line add">+ 607000727=Dear Commander,\n\nThe event has ended. Thank you for your active participation. After the event ends, your [Mithril Hammer] will no longer be usable. Therefore, we recycled your {0} unused [Mithril Hammer] and have sent you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 607000726=Dear Commander,\n\nThe event has ended. Thank you for your participation. After the event ends, your [Mithril Hammers] will no longer be usable. Therefore, we recycled your {0} unused [Mithril Hammers] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 805000201=Phantom Raid</div><div class="diff-line add">+ 805000212=Deep in the forest lies a treehouse, which underwent a mysterious transformation on Phantom Day.</div><div class="diff-line add">+ 805000214=Event Rules:\n1. Warm-up Period\n- If the Commander does not join an alliance before the warm-up period ends, they cannot participate in the Phantom Raid event.\n2. Construction Period\n- Commanders can earn Points and Rewards during the Construction Period by completing Daily Missions, achievement missions, and Donate tasks.\n- Points contribute to the alliance's Treehouse Construction Progress. Once the Treehouse is completed, a buff is granted: DMG against Phantom Baron increases by 5%.\n- Ranking Rewards for Points will be distributed via mailbox after the Construction Period ends.\n- Commanders must Achieve a certain number of Points to qualify for Alliance Point leaderboard rewards.\n3. Combat Period\n- During the Combat Period, R4 or the alliance leader can Summon Phantom Baron, and Alliance Members can ATK it. The higher the total damage dealt to Phantom Baron, the higher the ranking.\n- Damage Ranking Rewards will be distributed via mailbox after the Combat Period ends.\n- Commanders must deal a certain amount of damage to qualify for alliance damage leaderboard rewards.\n4. Display Period\n- During the Display Period, Commanders can view their own and their alliance's leaderboard information.</div><div class="diff-line add">+ 805000243=Phantom Baron is about to descend.</div><div class="diff-line add">+ 805000245=1. Commanders can earn points and rewards by completing daily missions, achievement missions, and donation tasks.\n2. Achievement missions are one-time tasks and cannot be repeated.\n3. Points contribute to the alliance's Treehouse fortress construction progress. Once the fortress is completed, a buff is granted: DMG against Phantom Baron increases by 5%.</div><div class="diff-line add">+ 805000266=[{0}] Phantom Baron</div><div class="diff-line add">+ 805000271=Phantom Baron</div><div class="diff-line add">+ 805000272=Phantom Baron has arrived; go ATK now.</div><div class="diff-line add">+ 805000277=The alliance has not summoned Phantom Baron.</div><div class="diff-line add">+ 805000280=Buff from completed fortress: DMG against Phantom Baron increases by 5%.</div><div class="diff-line add">+ 805000283=tap to summon Phantom Baron.</div><div class="diff-line add">+ 805000286={0} Phantom Baron has appeared.</div><div class="diff-line add">+ 805000287={0} Phantom Baron has appeared; join the battle now.</div><div class="diff-line add">+ 805000296={0} Phantom Baron</div><div class="diff-line add">+ 805000297={0} Phantom Baron</div><div class="diff-line add">+ 805000407=Welcome to the Phantom Raid Events.</div><div class="diff-line add">+ 805000409=Points can help the alliance construct the fortress. Completing the fortress grants a DMG bonus against Phantom Baron.</div><div class="diff-line add">+ 805000411=During the event's combat stage, R4 and above alliance members can summon Phantom Baron.</div><div class="diff-line add">+ 805000412=The cumulative DMG dealt to Phantom Baron daily will contribute to personal and alliance damage rankings, with rewards distributed based on rankings.</div><div class="diff-line add">+ 805000413=Fight side by side with your alliance members, build your home, and battle Phantom Baron!</div><div class="diff-line add">+ 805000441=The Phantom Baron has not been summoned yet; please go to the Event Page to summon.</div><div class="diff-line add">+ 805000442={0} Phantom Baron has relocated; Go Fight.</div><div class="diff-line add">+ 805000454=The Phantom Baron is about to appear.</div><div class="diff-line add">+ 150961=Nora</div><div class="diff-line add">+ 150962=Lantern Carrier</div><div class="diff-line add">+ 150963=Tucker</div><div class="diff-line add">+ 150964=Whisker Sentinel</div><div class="diff-line add">+ 805100097=Halloween Hand</div><div class="diff-line add">+ 810210212=Nora | Telepathy</div><div class="diff-line add">+ 810210216=Tucker | Cat Loves You</div><div class="diff-line add">+ 810210220=Prayers for the Dead</div><div class="diff-line add">+ 810210221=Among the Souls</div><div class="diff-line add">+ 810210222=Ancestral Blessings</div><div class="diff-line add">+ 810210223=Support from Immortals</div><div class="diff-line add">+ 810210224=Wildlings' Resonance</div><div class="diff-line add">+ 810210232=The Tucker Shield!</div><div class="diff-line add">+ 810210233=Drop Your Weapon!</div><div class="diff-line add">+ 810210234=Take Your Share!</div><div class="diff-line add">+ 810210235=Peekaboo!</div><div class="diff-line add">+ 810210236=Play with Me!</div><div class="diff-line add">+ 805100098=Halloween Hand ({0})</div><div class="diff-line add">+ 805100099=Use it to change the Fortress appearance to [Halloween Hand].</div><div class="diff-line add">+ 810210213=The spirits of the ancestors gather here, singing triumphantly, relying on their protection.</div><div class="diff-line add">+ 810210214=Nora | Telepathy Ultimate Weapon Blueprint</div><div class="diff-line add">+ 810210215=Used to unlock and Star Up Nora | Telepathy.</div><div class="diff-line add">+ 810210217=Human, the cat really likes you.</div><div class="diff-line add">+ 810210218=Tucker | Cat Loves You Ultimate Weapon Blueprint</div><div class="diff-line add">+ 810210219=Used to unlock and Star Up Tucker | Cat Loves You.</div><div class="diff-line add">+ 810210237=Your Side All acquire a Shield equal to {0} Max HP, and self receives an enhancement of {1} ATK and {2} Speed, lasting 2 rounds.</div><div class="diff-line add">+ 810210238=The normal attack prioritizes the Enemy Unit with the highest ATK, applying a Weakness Status that reduces the Target's {0} ATK and {1} Speed, lasting 2 rounds.</div><div class="diff-line add">+ 810210239=After releasing the Focus Skill, enhance Your Side Teammates' {0} ATK and {1} Speed, lasting 2 rounds.</div><div class="diff-line add">+ 810210240=The normal attack deals additional DMG equal to {0} Max HP (up to a maximum of {1} of self ATK).</div><div class="diff-line add">+ 810210241=Your Side All Heroes' HP and DMG are enhanced by {0}%, and Watchers Heroes additionally acquire a 50% enhancement Effect.</div><div class="diff-line add">+ 810210242=When releasing a Focus Skill, the Unit with the highest and lowest HP on Your Side acquires a Shield equal to {0} of their max HP, reducing DMG Taken by {1}, lasting {2} rounds.</div><div class="diff-line add">+ 810210243=When releasing a Focus Skill, the Unit with the highest and lowest HP on Your Side acquires a Shield equal to {0} of their max HP and reduces DMG Taken by {1} for {2} rounds. The Unit with the highest and lowest HP on the Enemy Side has DMG Taken increased by {3} for {4} rounds.</div><div class="diff-line add">+ 803018016=Demon Hunt</div><div class="diff-line add">+ 814000101=Flag Message</div><div class="diff-line add">+ 814000102=Flag Avatar</div><div class="diff-line add">+ 814000103=Reason</div><div class="diff-line add">+ 814000104=Politically sensitive</div><div class="diff-line add">+ 814000105=Vulgar or sexually explicit</div><div class="diff-line add">+ 814000106=Suspicion of gambling</div><div class="diff-line add">+ 814000107=Fraud &amp; ad</div><div class="diff-line add">+ 814000108=Game cheats</div><div class="diff-line add">+ 814000109=Other</div><div class="diff-line add">+ 814000113=Content</div><div class="diff-line add">+ 805100601=Grill Fort</div><div class="diff-line add">+ 805100604=Bumper Harvest</div><div class="diff-line add">+ 805100607=Fancy Turkey</div><div class="diff-line add">+ 805100610=Blazing Feather</div><div class="diff-line add">+ 805100613=Bumper Harvest</div><div class="diff-line add">+ 805100616=Turkey Parade</div><div class="diff-line add">+ 805000496=Thanksgiving Feast</div><div class="diff-line add">+ 805000491=Pumpkin Pie Point</div><div class="diff-line add">+ 814000110=Tap to input reason, mandatory when selecting [Other]</div><div class="diff-line add">+ 814000111={0} characters remaining</div><div class="diff-line add">+ 814000112=Please input other reason</div><div class="diff-line add">+ 814000114=Please select the content you want to report</div><div class="diff-line add">+ 814000115=Please select a reason for reporting</div><div class="diff-line add">+ 607000570=If you haven't received the verification email, check your spam folder or confirm if the email address you entered is correct.\nNote: To protect your account security, [mailbox account] cannot be unlinked.</div><div class="diff-line add">+ 805100602=Grill Fort{0})</div><div class="diff-line add">+ 805100603=Can you smell the aroma? It's the stunning turkey feast! Use it to change the fortress appearance to [Grill Fort]</div><div class="diff-line add">+ 805100605=Bumper Harvest({0})</div><div class="diff-line add">+ 805100606=Use it to change the Nameplate into [Bumper Harvest]</div><div class="diff-line add">+ 805100608=Fancy Turkey({0})</div><div class="diff-line add">+ 805100609=Use it to change the avatar frame into [Fancy Turkey]</div><div class="diff-line add">+ 805100611=Blazing Feather({0})</div><div class="diff-line add">+ 805100612=It hovers, radiating colorful feathers. Use it to change the pendant to [Blazing Feather]</div><div class="diff-line add">+ 805100614=Bumper Harvest({0})</div><div class="diff-line add">+ 805100615=It's the season of gratitude and harvest! Use it to change the profile card frame to [Bumper Harvest]</div><div class="diff-line add">+ 805100617=Turkey Parade({0})</div><div class="diff-line add">+ 805100618=A majestic turkey parading around! Use it to change the APC appearance to [Turkey Parade]</div><div class="diff-line add">+ 805100619=Bumper Harvest</div><div class="diff-line add">+ 805100620=Bumper Harvest({0})</div><div class="diff-line add">+ 805100621=Use it to change the Message Frame into [Bumper Harvest]</div><div class="diff-line add">+ 805000488=[Thanksgiving Feast] Advanced</div><div class="diff-line add">+ 805000489=[Thanksgiving Feast] Advanced &amp; Deluxe</div><div class="diff-line add">+ 805000490=[Thanksgiving Feast] Deluxe</div><div class="diff-line add">+ 805000492=Used to join the [Thanksgiving Feast] event; will be removed after the event ends.</div><div class="diff-line add">+ 805000493=Dear Commander,\n\nThe event has ended. Thank you for your participation. After the event ends, your [Pumpkin Pie Points] will no longer be usable. Therefore, we recycled your {0} unused [Pumpkin Pie Points] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 805000494=Dear Commander,\n\nYou ranked #{0} in the [Thanksgiving Feast] with {1} EXP! Below are your rewards! Collect them now.</div><div class="diff-line add">+ 805000495=[Thanksgiving Feast] Chest</div><div class="diff-line add">+ 810210225=Deals {0} TAC DMG to all enemy targets, reduces DMG Mitigation of their front-row units by {1}, reduces DMG dealt by their back-row units by {2}, and enhances self DMG and DMG Mitigation by {3}. All effects last 2 rounds.</div><div class="diff-line add">+ 810210226=When any ally hero is KIA, other ally heroes' ATK is enhanced by {0}; when any enemy hero is KIA, the DEF of remaining enemy heroes is reduced by {1} (can trigger up to 4 times per fight).</div><div class="diff-line add">+ 810210227=Each time treated, self DMG is enhanced by {0}, stacking up to 5 layers.</div><div class="diff-line add">+ 810210228=When casting "Prayers for the Dead," DMG is enhanced by {0}, and skill effect is enhanced by {1}.</div><div class="diff-line add">+ 810210229=Increases self TAC ATK by {0}, and additionally enhances by {1} for each deployed Wildling.</div><div class="diff-line add">+ 810210230=When any ally hero is KIA, recovers {0} Focus.</div><div class="diff-line add">+ 810210231=When any ally hero is KIA, recovers {0} Focus and restores {1} max HP for all ally units (can trigger up to 3 times per fight).</div>
+      <div class="thumb" data-name="bg_dzhjr_ganenjie_tab01.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_ganenjie_tab01.png" alt="bg_dzhjr_ganenjie_tab01.png" width="160" height="160" /> 
+        <div class="caption">bg_dzhjr_ganenjie_tab01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="bg_dzhjr_ganenjie_tab02.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_ganenjie_tab02.png" alt="bg_dzhjr_ganenjie_tab02.png" width="160" height="160" /> 
+        <div class="caption">bg_dzhjr_ganenjie_tab02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="bg_dzhjr_ganenjie_tab03.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_ganenjie_tab03.png" alt="bg_dzhjr_ganenjie_tab03.png" width="160" height="160" /> 
+        <div class="caption">bg_dzhjr_ganenjie_tab03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="bg_dzhjr_ganenjie_tab04.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_ganenjie_tab04.png" alt="bg_dzhjr_ganenjie_tab04.png" width="160" height="160" /> 
+        <div class="caption">bg_dzhjr_ganenjie_tab04.png</div>
+      </div>
+    
+      <div class="thumb" data-name="bg_dzhjr_ganenjie_tab05.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_ganenjie_tab05.png" alt="bg_dzhjr_ganenjie_tab05.png" width="160" height="160" /> 
+        <div class="caption">bg_dzhjr_ganenjie_tab05.png</div>
+      </div>
+    
+      <div class="thumb" data-name="bg_dzhjr_ganenjie_tab06.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_ganenjie_tab06.png" alt="bg_dzhjr_ganenjie_tab06.png" width="160" height="160" /> 
+        <div class="caption">bg_dzhjr_ganenjie_tab06.png</div>
+      </div>
+    
+      <div class="thumb" data-name="bg_dzhjr_ganenjie_tab07.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_ganenjie_tab07.png" alt="bg_dzhjr_ganenjie_tab07.png" width="160" height="160" /> 
+        <div class="caption">bg_dzhjr_ganenjie_tab07.png</div>
+      </div>
+    
+      <div class="thumb" data-name="bg_dzhjr_ganenjie.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_ganenjie.png" alt="bg_dzhjr_ganenjie.png" width="160" height="160" /> 
+        <div class="caption">bg_dzhjr_ganenjie.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_bp_ganenjie_title.png">
+        <img loading="lazy" src="./assets/icon_bp_ganenjie_title.png" alt="icon_bp_ganenjie_title.png" width="160" height="160" /> 
+        <div class="caption">icon_bp_ganenjie_title.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_ganen2511.png">
+        <img loading="lazy" src="./assets/ICON_ganen2511.png" alt="ICON_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">ICON_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_ganenjie_box.png">
+        <img loading="lazy" src="./assets/icon_ganenjie_box.png" alt="icon_ganenjie_box.png" width="160" height="160" /> 
+        <div class="caption">icon_ganenjie_box.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_ganenjie_dhsd_nangua.png">
+        <img loading="lazy" src="./assets/icon_ganenjie_dhsd_nangua.png" alt="icon_ganenjie_dhsd_nangua.png" width="160" height="160" /> 
+        <div class="caption">icon_ganenjie_dhsd_nangua.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_ganenjie_qrqd_title.png">
+        <img loading="lazy" src="./assets/icon_ganenjie_qrqd_title.png" alt="icon_ganenjie_qrqd_title.png" width="160" height="160" /> 
+        <div class="caption">icon_ganenjie_qrqd_title.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_ganenjie_tb.png">
+        <img loading="lazy" src="./assets/icon_ganenjie_tb.png" alt="icon_ganenjie_tb.png" width="160" height="160" /> 
+        <div class="caption">icon_ganenjie_tb.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_gej_entrance.png">
+        <img loading="lazy" src="./assets/Icon_gej_entrance.png" alt="Icon_gej_entrance.png" width="160" height="160" /> 
+        <div class="caption">Icon_gej_entrance.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_item_frame_ganen2511.png">
+        <img loading="lazy" src="./assets/icon_item_Frame_ganen2511.png" alt="icon_item_Frame_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">icon_item_Frame_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_mingpai_ganen2511.png">
+        <img loading="lazy" src="./assets/ICON_mingpai_ganen2511.png" alt="ICON_mingpai_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">ICON_mingpai_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_talk_qipao_ganen2511.png">
+        <img loading="lazy" src="./assets/ICON_Talk_qipao_ganen2511.png" alt="ICON_Talk_qipao_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">ICON_Talk_qipao_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_card01.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card01.png" alt="img_2024ThanksgivingDay_card01.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_card01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_card02.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card02.png" alt="img_2024ThanksgivingDay_card02.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_card02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_card03.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card03.png" alt="img_2024ThanksgivingDay_card03.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_card03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_card04.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card04.png" alt="img_2024ThanksgivingDay_card04.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_card04.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_card05.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_card05.png" alt="img_2024ThanksgivingDay_card05.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_card05.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat1.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat1.png" alt="img_2024ThanksgivingDay_hat1.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat10.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat10.png" alt="img_2024ThanksgivingDay_hat10.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat10.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat11.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat11.png" alt="img_2024ThanksgivingDay_hat11.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat11.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat12.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat12.png" alt="img_2024ThanksgivingDay_hat12.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat2.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat2.png" alt="img_2024ThanksgivingDay_hat2.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat3.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat3.png" alt="img_2024ThanksgivingDay_hat3.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat4.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat4.png" alt="img_2024ThanksgivingDay_hat4.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat5.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat5.png" alt="img_2024ThanksgivingDay_hat5.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat5.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat6.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat6.png" alt="img_2024ThanksgivingDay_hat6.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat6.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat7.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat7.png" alt="img_2024ThanksgivingDay_hat7.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat7.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat8.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat8.png" alt="img_2024ThanksgivingDay_hat8.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat8.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_hat9.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_hat9.png" alt="img_2024ThanksgivingDay_hat9.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_hat9.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_my_card01.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card01.png" alt="img_2024ThanksgivingDay_my_card01.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_my_card01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_my_card02.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card02.png" alt="img_2024ThanksgivingDay_my_card02.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_my_card02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_my_card03.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card03.png" alt="img_2024ThanksgivingDay_my_card03.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_my_card03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_my_card04.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card04.png" alt="img_2024ThanksgivingDay_my_card04.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_my_card04.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_my_card05.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_my_card05.png" alt="img_2024ThanksgivingDay_my_card05.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_my_card05.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_pigment_01.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_01.png" alt="img_2024ThanksgivingDay_pigment_01.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_pigment_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_pigment_02.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_02.png" alt="img_2024ThanksgivingDay_pigment_02.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_pigment_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_pigment_03.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_03.png" alt="img_2024ThanksgivingDay_pigment_03.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_pigment_03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_pigment_04.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_04.png" alt="img_2024ThanksgivingDay_pigment_04.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_pigment_04.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_2024thanksgivingday_pigment_05.png">
+        <img loading="lazy" src="./assets/img_2024ThanksgivingDay_pigment_05.png" alt="img_2024ThanksgivingDay_pigment_05.png" width="160" height="160" /> 
+        <div class="caption">img_2024ThanksgivingDay_pigment_05.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_ganenjie_01.png">
+        <img loading="lazy" src="./assets/img_bp_ganenjie_01.png" alt="img_bp_ganenjie_01.png" width="160" height="160" /> 
+        <div class="caption">img_bp_ganenjie_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_ganenjie_02.png">
+        <img loading="lazy" src="./assets/img_bp_ganenjie_02.png" alt="img_bp_ganenjie_02.png" width="160" height="160" /> 
+        <div class="caption">img_bp_ganenjie_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_ganenjie_03.png">
+        <img loading="lazy" src="./assets/img_bp_ganenjie_03.png" alt="img_bp_ganenjie_03.png" width="160" height="160" /> 
+        <div class="caption">img_bp_ganenjie_03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_ganenjie_04.png">
+        <img loading="lazy" src="./assets/img_bp_ganenjie_04.png" alt="img_bp_ganenjie_04.png" width="160" height="160" /> 
+        <div class="caption">img_bp_ganenjie_04.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_ganenjie_05.png">
+        <img loading="lazy" src="./assets/img_bp_ganenjie_05.png" alt="img_bp_ganenjie_05.png" width="160" height="160" /> 
+        <div class="caption">img_bp_ganenjie_05.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_ganenjie_06.png">
+        <img loading="lazy" src="./assets/img_bp_ganenjie_06.png" alt="img_bp_ganenjie_06.png" width="160" height="160" /> 
+        <div class="caption">img_bp_ganenjie_06.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_ganenjie_pack.png">
+        <img loading="lazy" src="./assets/img_bp_ganenjie_pack.png" alt="img_bp_ganenjie_pack.png" width="160" height="160" /> 
+        <div class="caption">img_bp_ganenjie_pack.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_gannejie_tab.png">
+        <img loading="lazy" src="./assets/img_bp_gannejie_tab.png" alt="img_bp_gannejie_tab.png" width="160" height="160" /> 
+        <div class="caption">img_bp_gannejie_tab.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_datulibao_ganenjie2025_dk01.png">
+        <img loading="lazy" src="./assets/img_datulibao_ganenjie2025_dk01.png" alt="img_datulibao_ganenjie2025_dk01.png" width="160" height="160" /> 
+        <div class="caption">img_datulibao_ganenjie2025_dk01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_datulibao_ganenjie2025_dk02.png">
+        <img loading="lazy" src="./assets/img_datulibao_ganenjie2025_dk02.png" alt="img_datulibao_ganenjie2025_dk02.png" width="160" height="160" /> 
+        <div class="caption">img_datulibao_ganenjie2025_dk02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_datulibao_ganenjie2025_tab.png">
+        <img loading="lazy" src="./assets/img_datulibao_ganenjie2025_tab.png" alt="img_datulibao_ganenjie2025_tab.png" width="160" height="160" /> 
+        <div class="caption">img_datulibao_ganenjie2025_tab.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_ganenjie_dhsd_yeqian.png">
+        <img loading="lazy" src="./assets/img_ganenjie_dhsd_yeqian.png" alt="img_ganenjie_dhsd_yeqian.png" width="160" height="160" /> 
+        <div class="caption">img_ganenjie_dhsd_yeqian.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_ganenjie_libaotu.png">
+        <img loading="lazy" src="./assets/img_ganenjie_libaotu.png" alt="img_ganenjie_libaotu.png" width="160" height="160" /> 
+        <div class="caption">img_ganenjie_libaotu.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_ganenjie_qrqd_yeqian.png">
+        <img loading="lazy" src="./assets/img_ganenjie_qrqd_yeqian.png" alt="img_ganenjie_qrqd_yeqian.png" width="160" height="160" /> 
+        <div class="caption">img_ganenjie_qrqd_yeqian.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_gej_banner.png">
+        <img loading="lazy" src="./assets/img_gej_banner.png" alt="img_gej_banner.png" width="160" height="160" /> 
+        <div class="caption">img_gej_banner.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_gej_ddt_bg.png">
+        <img loading="lazy" src="./assets/img_gej_ddt_bg.png" alt="img_gej_ddt_bg.png" width="160" height="160" /> 
+        <div class="caption">img_gej_ddt_bg.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_gej_ddt_enter.png">
+        <img loading="lazy" src="./assets/img_gej_ddt_enter.png" alt="img_gej_ddt_enter.png" width="160" height="160" /> 
+        <div class="caption">img_gej_ddt_enter.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_gej_nangua.png">
+        <img loading="lazy" src="./assets/img_gej_nangua.png" alt="img_gej_nangua.png" width="160" height="160" /> 
+        <div class="caption">img_gej_nangua.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_thanksgivingday_bg.png">
+        <img loading="lazy" src="./assets/img_ThanksgivingDay_bg.png" alt="img_ThanksgivingDay_bg.png" width="160" height="160" /> 
+        <div class="caption">img_ThanksgivingDay_bg.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_thanksgivingday_gather_bg.png">
+        <img loading="lazy" src="./assets/img_ThanksgivingDay_Gather_bg.png" alt="img_ThanksgivingDay_Gather_bg.png" width="160" height="160" /> 
+        <div class="caption">img_ThanksgivingDay_Gather_bg.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_waixian_gaizhuangche_ganen2511.png">
+        <img loading="lazy" src="./assets/img_waixian_gaizhuangche_ganen2511.png" alt="img_waixian_gaizhuangche_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">img_waixian_gaizhuangche_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="item_guashi_ganen2511.png">
+        <img loading="lazy" src="./assets/item_guashi_ganen2511.png" alt="item_guashi_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">item_guashi_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="item_mingpian_ganen2511.png">
+        <img loading="lazy" src="./assets/item_mingpian_ganen2511.png" alt="item_mingpian_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">item_mingpian_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="jianzhu_qrcj_nanguadi.png">
+        <img loading="lazy" src="./assets/jianzhu_qrcj_nanguadi.png" alt="jianzhu_qrcj_nanguadi.png" width="160" height="160" /> 
+        <div class="caption">jianzhu_qrcj_nanguadi.png</div>
+      </div>
+    
+      <div class="thumb" data-name="mingpian_ganen2511.png">
+        <img loading="lazy" src="./assets/mingpian_ganen2511.png" alt="mingpian_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">mingpian_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_2024thanksgivingday_tips_property_frame.png">
+        <img loading="lazy" src="./assets/ui_2024ThanksgivingDay_tips_Property_frame.png" alt="ui_2024ThanksgivingDay_tips_Property_frame.png" width="160" height="160" /> 
+        <div class="caption">ui_2024ThanksgivingDay_tips_Property_frame.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_mingpai_ganen2511.png">
+        <img loading="lazy" src="./assets/UI_mingpai_ganen2511.png" alt="UI_mingpai_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">UI_mingpai_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_talk_qipao_ganen2511.png">
+        <img loading="lazy" src="./assets/UI_Talk_qipao_ganen2511.png" alt="UI_Talk_qipao_ganen2511.png" width="160" height="160" /> 
+        <div class="caption">UI_Talk_qipao_ganen2511.png</div>
+      </div>
+    
+      <div class="thumb" data-name="uiformation_gaizhuangche_ganenjie_2025.png">
+        <img loading="lazy" src="./assets/UIFormation_gaizhuangche_ganenjie_2025.png" alt="UIFormation_gaizhuangche_ganenjie_2025.png" width="160" height="160" /> 
+        <div class="caption">UIFormation_gaizhuangche_ganenjie_2025.png</div>
+      </div>
+    
     </div>
   </div>
-</div>
-
-<div class="lightbox" id="lightbox">
-  <img alt="">
-  <div class="cap"></div>
-</div>
-
-<script>
-(function(){
-  // Performance optimizations
-  const raf = requestAnimationFrame;
-  let searchTimeout;
   
-  // Tabs
-  const tabs = document.querySelectorAll('.tab-btn');
-  const tabImages = document.getElementById('tab-images');
-  const tabDiff = document.getElementById('tab-diff');
-  tabs.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      tabs.forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      const t = btn.dataset.tab;
-      tabImages.style.display = (t==='images') ? '' : 'none';
-      tabDiff.style.display = (t==='diff') ? '' : 'none';
-    });
-  });
-
-  // Optimized lazy loading for images beyond viewport
-  const lazyImages = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        if (img.dataset.src) {
-          img.src = img.dataset.src;
-          img.removeAttribute('data-src');
-        }
-        lazyImages.unobserve(img);
-      }
-    });
-  }, { rootMargin: '50px' });
-
-  // Initialize lazy loading for images with data-src
-  document.querySelectorAll('img[data-src]').forEach(img => lazyImages.observe(img));
-
-  // Load more functionality
-  const loadMoreBtn = document.getElementById('loadMore');
-  const showingCount = document.getElementById('showingCount');
-  let currentlyLoaded = 100;
+  <div id="tab-diff" style="display:none">
+    <div class="diff">
+      <div class="diff-header">
+        <input type="search" id="diffSearch" placeholder="Find in diff…" />
+      </div>
+      <div class="diff-body">
+        <div class="diff-line add">+ 607000454=Tip: After unsubscribing, you will no longer accept marketing mailbox. System function mailbox related to Account security will not be affected and will continue to provide service.</div><div class="diff-line add">+ 607000531=Note: We are not responsible for Account loss caused by not linking a mailbox!</div><div class="diff-line add">+ 607000532=It has been detected that you have not linked a mailbox. To avoid Account loss, please link it immediately!\n\n [color=FF0000]{0}Note: We are not responsible for Account loss caused by not linking a mailbox![/color]</div><div class="diff-line add">+ 607000533=Link Account</div><div class="diff-line add">+ 607000534=Exit Game</div><div class="diff-line add">+ 607000535=Mailbox Link</div><div class="diff-line add">+ 607000536=Tip: Your Account is in a risky status and is prone to loss. Please go to link Account! We are not responsible for Account loss caused by not linking a mailbox!</div><div class="diff-line add">+ 607000537=Link a mailbox for the first time to acquire 50 Diamonds.</div><div class="diff-line add">+ 607000538=Warning!</div><div class="diff-line add">+ 607000539=Cancel</div><div class="diff-line add">+ 607000549=An email has been sent to the address you provided. It contains a link for verification. Please also check your spam/junk folder.</div><div class="diff-line add">+ 607000540=New mailbox: {0}</div><div class="diff-line add">+ 607000541=After verifying the new email, an email will automatically be sent to the original email address. Complete the email change after reconfirmation.</div><div class="diff-line add">+ 607000542=Original mailbox: {0}</div><div class="diff-line add">+ 607000543=You have successfully completed the mailbox change.</div><div class="diff-line add">+ 607000544=mailbox Account</div><div class="diff-line add">+ 607000545=mailbox</div><div class="diff-line add">+ 607000546=mailbox linked to the Account</div><div class="diff-line add">+ 607000547=Once you successfully log into the game using your mailbox, your Account information will be stored on the device for future logins. Please note that you will need to re-enter your mailbox and Password when switching devices.</div><div class="diff-line add">+ 607000548=To avoid Account loss, we strongly recommend you link your mailbox. After linking, you can access your Account on other devices anytime, anywhere. \n\n2. The mailbox is the highest level proof for Account recovery. Please ensure Account security and avoid sharing your Account.</div><div class="diff-line add">+ 607000550=Go</div><div class="diff-line add">+ 607000551=Please enter a valid email address and set a Password.</div><div class="diff-line add">+ 607000552=Your mailbox has been successfully activated. You can Switch Accounts in [Personal Homepage] - [Account].</div><div class="diff-line add">+ </div><div class="diff-line add">+ The login Password is independent of the Account Password and must be entered during login to better escort your Account security.</div><div class="diff-line add">+ 607000553=Change Link</div><div class="diff-line add">+ 607000554=Your mailbox is in an unverified Status, and you cannot log in to your game Account using this mailbox Account.</div><div class="diff-line add">+ </div><div class="diff-line add">+ If you have not received the verification mailbox, you can try changing the mailbox address.</div><div class="diff-line add">+ Note: To escort your Account security, linked Accounts cannot be unlinked.</div><div class="diff-line add">+ 607000557=The new mailbox address you entered is the same as the original one. Please re-enter a new mailbox address.</div><div class="diff-line add">+ 607000558=Your original mailbox address is {0}. Please enter the new mailbox address you want to change to.</div><div class="diff-line add">+ 607000559=Hello:</div><div class="diff-line add">+ Commander, we have received your password reset confirmation mailbox. If you have not recently submitted a password change request for "Last Fortress," please ignore this mailbox. If you confirm the existence of this operation, please tap the reset Link below. Note that the new password will be Effective immediately after tapping the reset Link.</div><div class="diff-line add">+ 607000560=Please enter the new mailbox address you want to change to and set a Password.</div><div class="diff-line add">+ 607000561=1. After you Link Account, you can log in to the game on Others devices anytime, anywhere, and avoid losing your Account. Therefore, we strongly recommend you Link Account.</div><div class="diff-line add">+ </div><div class="diff-line add">+ 2. The mailbox can be changed after linking.</div><div class="diff-line add">+ </div><div class="diff-line add">+ 3. The linked Account serves as the highest-level basis for Account recovery. Please Note Account security and do not Share your Account.</div><div class="diff-line add">+ 607000562=A mailbox has been sent to the mailbox address you provided, containing a Link to verify the Account. If you have not received the verification mailbox, please check your spam folder or confirm that the mailbox address is entered correctly.</div><div class="diff-line add">+ 607000563=Acquire 50 Diamonds by linking an Account for the first time.</div><div class="diff-line add">+ 607000564=Create Account</div><div class="diff-line add">+ 607000565=Once you successfully log into the game using your Account, the Account information will be stored on the device for future logins. Please Note that you will need to re-Input your game Account and Password when switching devices.</div><div class="diff-line add">+ 607000566=You can add up to 10 Accounts.</div><div class="diff-line add">+ 607000567=You can use this Account to log into the game on any device.</div><div class="diff-line add">+ 607000568=You have Success Create Account.</div><div class="diff-line add">+ 607000701=Phantom Market</div><div class="diff-line add">+ 607000702=Collect Special Candy to redeem rare items.</div><div class="diff-line add">+ 607000703=Special Candy</div><div class="diff-line add">+ 607000704=This strange appearance... can it really be eaten? Special Candy can be used to redeem rare items in the Phantom Market.</div><div class="diff-line add">+ 607000705=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Special Candy] will no longer be usable. Therefore, we recycled your {0} unused [Special Candy] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 607000706=After purchase, you can acquire a large amount of Special Candy.</div><div class="diff-line add">+ 607000707=Specter Special</div><div class="diff-line add">+ 607000708=Specter Special Inception Pack</div><div class="diff-line add">+ 607000709=Specter Special Surprise Pack</div><div class="diff-line add">+ 607000710=Specter Special Advanced Pack</div><div class="diff-line add">+ 607000711=Specter Special Premium Pack</div><div class="diff-line add">+ 607000712=Specter Special Deluxe Pack</div><div class="diff-line add">+ 607000713=Night Hunt</div><div class="diff-line add">+ 607000714=During this special festival, even zombies are stirring restlessly.</div><div class="diff-line add">+ 607000715=1. During the event, a large number of Shadow Zombies will spawn in the world every day. \n2. Commanders have {0} deployment attempts daily, which reset at 0:00 (Game Time) each day. \n3. Defeating Shadow Zombies grants lots of precious rewards.</div><div class="diff-line add">+ 607000716=Shadow Zombie</div><div class="diff-line add">+ 607000717=They move with unusual agility, yet emit a foul stench of decay, making them look very dangerous.</div><div class="diff-line add">+ 607000718=Demon Hunt</div><div class="diff-line add">+ 607000719=1. Little Demons have discovered our world and sent a vanguard to attack. Pick up the Mithril Hammer to repel them and defend our world! \n2. During the event, use Mithril Hammers to attack the Demon Legion and acquire various rewards. \n3. Each time you defeat a Little Demon, you will receive a generous victory reward, but it may attract a stronger Demon King. \n4. The Demon King embodies the concept of demons and cannot be completely destroyed but can be temporarily repelled. Attacking the Demon King not only grants richer attack rewards but also offers a chance to win the demon's treasure. \n5. When using Mithril Hammers to attack, there is a probability of triggering a no-cost effect, allowing several subsequent attacks without consuming Mithril Hammers. \n6. Auto-attack is only effective when the event interface is open. \n7. After the event ends, unused Mithril Hammers will automatically be redeemed for Diamonds and sent to your mailbox.</div><div class="diff-line add">+ 607000720=Mithril Hammer</div><div class="diff-line add">+ 607000721=Mithril Power, Demon Buster</div><div class="diff-line add">+ 607000722=Mithril Hammer Treasure</div><div class="diff-line add">+ 607000723=Purchase to acquire a large number of Mithril Hammers</div><div class="diff-line add">+ 607000724=Hammer of Exorcism</div><div class="diff-line add">+ 607000725=Hammer of Suppression, Evil Eradication</div><div class="diff-line add">+ 607000569=Your mailbox\n{0}\nhas been confirmed. We have sent a verification message to the new mailbox.</div><div class="diff-line add">+ 813000101=Data Update</div><div class="diff-line add">+ 813000102=No longer updating data to Game Center Achievements</div><div class="diff-line add">+ 813000103=No longer updating data to Game Center leaderboards</div><div class="diff-line add">+ 813000104=Version Update</div><div class="diff-line add">+ 813000105=Notify you when the game version updates</div><div class="diff-line add">+ 805000467=Use Wildlings and Minutemen faction Heroes to deal 50% additional DMG.</div><div class="diff-line add">+ 805000468=Phantom Leaf</div><div class="diff-line add">+ 805000469=Phantom Raid Event Points can support the alliance's Fortress Construction and earn leaderboard rewards.</div><div class="diff-line add">+ 805000470=Phantom Raid Mission rewards</div><div class="diff-line add">+ 805000471=Dear Commander, below are the mission rewards you have not claimed from the Phantom Raid event.</div><div class="diff-line add">+ 805000472=Phantom Raid Construction Stage Personal leaderboard rewards</div><div class="diff-line add">+ 805000473=Dear Commander, the Construction Stage of this session of the Phantom Raid event has ended. Your ranking this round: {0}, your Points: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000474=Phantom Raid Construction Stage Alliance leaderboard rewards</div><div class="diff-line add">+ 805000475=Dear Commander, the Construction Stage of this session of the Phantom Raid event has ended. Your alliance's ranking: {0}, Alliance Points: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000476=Phantom Raid Combat Stage Personal leaderboard rewards</div><div class="diff-line add">+ 805000477=Dear Commander, the Combat Stage of this session of the Phantom Raid event has ended. Your ranking this round: {0}, total DMG you dealt: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000478=Phantom Raid Combat Stage Alliance leaderboard rewards</div><div class="diff-line add">+ 805000479=Dear Commander, the Combat Stage of this session of the Phantom Raid event has ended. Your alliance's ranking: {0}, total DMG your alliance dealt: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000487=Spooky Party</div><div class="diff-line add">+ 607000727=Dear Commander,\n\nThe event has ended. Thank you for your active participation. After the event ends, your [Mithril Hammer] will no longer be usable. Therefore, we recycled your {0} unused [Mithril Hammer] and have sent you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 607000726=Dear Commander,\n\nThe event has ended. Thank you for your participation. After the event ends, your [Mithril Hammers] will no longer be usable. Therefore, we recycled your {0} unused [Mithril Hammers] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 805000201=Phantom Raid</div><div class="diff-line add">+ 805000212=Deep in the forest lies a treehouse, which underwent a mysterious transformation on Phantom Day.</div><div class="diff-line add">+ 805000214=Event Rules:\n1. Warm-up Period\n- If the Commander does not join an alliance before the warm-up period ends, they cannot participate in the Phantom Raid event.\n2. Construction Period\n- Commanders can earn Points and Rewards during the Construction Period by completing Daily Missions, achievement missions, and Donate tasks.\n- Points contribute to the alliance's Treehouse Construction Progress. Once the Treehouse is completed, a buff is granted: DMG against Phantom Baron increases by 5%.\n- Ranking Rewards for Points will be distributed via mailbox after the Construction Period ends.\n- Commanders must Achieve a certain number of Points to qualify for Alliance Point leaderboard rewards.\n3. Combat Period\n- During the Combat Period, R4 or the alliance leader can Summon Phantom Baron, and Alliance Members can ATK it. The higher the total damage dealt to Phantom Baron, the higher the ranking.\n- Damage Ranking Rewards will be distributed via mailbox after the Combat Period ends.\n- Commanders must deal a certain amount of damage to qualify for alliance damage leaderboard rewards.\n4. Display Period\n- During the Display Period, Commanders can view their own and their alliance's leaderboard information.</div><div class="diff-line add">+ 805000243=Phantom Baron is about to descend.</div><div class="diff-line add">+ 805000245=1. Commanders can earn points and rewards by completing daily missions, achievement missions, and donation tasks.\n2. Achievement missions are one-time tasks and cannot be repeated.\n3. Points contribute to the alliance's Treehouse fortress construction progress. Once the fortress is completed, a buff is granted: DMG against Phantom Baron increases by 5%.</div><div class="diff-line add">+ 805000266=[{0}] Phantom Baron</div><div class="diff-line add">+ 805000271=Phantom Baron</div><div class="diff-line add">+ 805000272=Phantom Baron has arrived; go ATK now.</div><div class="diff-line add">+ 805000277=The alliance has not summoned Phantom Baron.</div><div class="diff-line add">+ 805000280=Buff from completed fortress: DMG against Phantom Baron increases by 5%.</div><div class="diff-line add">+ 805000283=tap to summon Phantom Baron.</div><div class="diff-line add">+ 805000286={0} Phantom Baron has appeared.</div><div class="diff-line add">+ 805000287={0} Phantom Baron has appeared; join the battle now.</div><div class="diff-line add">+ 805000296={0} Phantom Baron</div><div class="diff-line add">+ 805000297={0} Phantom Baron</div><div class="diff-line add">+ 805000407=Welcome to the Phantom Raid Events.</div><div class="diff-line add">+ 805000409=Points can help the alliance construct the fortress. Completing the fortress grants a DMG bonus against Phantom Baron.</div><div class="diff-line add">+ 805000411=During the event's combat stage, R4 and above alliance members can summon Phantom Baron.</div><div class="diff-line add">+ 805000412=The cumulative DMG dealt to Phantom Baron daily will contribute to personal and alliance damage rankings, with rewards distributed based on rankings.</div><div class="diff-line add">+ 805000413=Fight side by side with your alliance members, build your home, and battle Phantom Baron!</div><div class="diff-line add">+ 805000441=The Phantom Baron has not been summoned yet; please go to the Event Page to summon.</div><div class="diff-line add">+ 805000442={0} Phantom Baron has relocated; Go Fight.</div><div class="diff-line add">+ 805000454=The Phantom Baron is about to appear.</div><div class="diff-line add">+ 150961=Nora</div><div class="diff-line add">+ 150962=Lantern Carrier</div><div class="diff-line add">+ 150963=Tucker</div><div class="diff-line add">+ 150964=Whisker Sentinel</div><div class="diff-line add">+ 805100097=Halloween Hand</div><div class="diff-line add">+ 810210212=Nora | Telepathy</div><div class="diff-line add">+ 810210216=Tucker | Cat Loves You</div><div class="diff-line add">+ 810210220=Prayers for the Dead</div><div class="diff-line add">+ 810210221=Among the Souls</div><div class="diff-line add">+ 810210222=Ancestral Blessings</div><div class="diff-line add">+ 810210223=Support from Immortals</div><div class="diff-line add">+ 810210224=Wildlings' Resonance</div><div class="diff-line add">+ 810210232=The Tucker Shield!</div><div class="diff-line add">+ 810210233=Drop Your Weapon!</div><div class="diff-line add">+ 810210234=Take Your Share!</div><div class="diff-line add">+ 810210235=Peekaboo!</div><div class="diff-line add">+ 810210236=Play with Me!</div><div class="diff-line add">+ 805100098=Halloween Hand ({0})</div><div class="diff-line add">+ 805100099=Use it to change the Fortress appearance to [Halloween Hand].</div><div class="diff-line add">+ 810210213=The spirits of the ancestors gather here, singing triumphantly, relying on their protection.</div><div class="diff-line add">+ 810210214=Nora | Telepathy Ultimate Weapon Blueprint</div><div class="diff-line add">+ 810210215=Used to unlock and Star Up Nora | Telepathy.</div><div class="diff-line add">+ 810210217=Human, the cat really likes you.</div><div class="diff-line add">+ 810210218=Tucker | Cat Loves You Ultimate Weapon Blueprint</div><div class="diff-line add">+ 810210219=Used to unlock and Star Up Tucker | Cat Loves You.</div><div class="diff-line add">+ 810210237=Your Side All acquire a Shield equal to {0} Max HP, and self receives an enhancement of {1} ATK and {2} Speed, lasting 2 rounds.</div><div class="diff-line add">+ 810210238=The normal attack prioritizes the Enemy Unit with the highest ATK, applying a Weakness Status that reduces the Target's {0} ATK and {1} Speed, lasting 2 rounds.</div><div class="diff-line add">+ 810210239=After releasing the Focus Skill, enhance Your Side Teammates' {0} ATK and {1} Speed, lasting 2 rounds.</div><div class="diff-line add">+ 810210240=The normal attack deals additional DMG equal to {0} Max HP (up to a maximum of {1} of self ATK).</div><div class="diff-line add">+ 810210241=Your Side All Heroes' HP and DMG are enhanced by {0}%, and Watchers Heroes additionally acquire a 50% enhancement Effect.</div><div class="diff-line add">+ 810210242=When releasing a Focus Skill, the Unit with the highest and lowest HP on Your Side acquires a Shield equal to {0} of their max HP, reducing DMG Taken by {1}, lasting {2} rounds.</div><div class="diff-line add">+ 810210243=When releasing a Focus Skill, the Unit with the highest and lowest HP on Your Side acquires a Shield equal to {0} of their max HP and reduces DMG Taken by {1} for {2} rounds. The Unit with the highest and lowest HP on the Enemy Side has DMG Taken increased by {3} for {4} rounds.</div><div class="diff-line add">+ 803018016=Demon Hunt</div><div class="diff-line add">+ 814000101=Flag Message</div><div class="diff-line add">+ 814000102=Flag Avatar</div><div class="diff-line add">+ 814000103=Reason</div><div class="diff-line add">+ 814000104=Politically sensitive</div><div class="diff-line add">+ 814000105=Vulgar or sexually explicit</div><div class="diff-line add">+ 814000106=Suspicion of gambling</div><div class="diff-line add">+ 814000107=Fraud &amp; ad</div><div class="diff-line add">+ 814000108=Game cheats</div><div class="diff-line add">+ 814000109=Other</div><div class="diff-line add">+ 814000113=Content</div><div class="diff-line add">+ 805100601=Grill Fort</div><div class="diff-line add">+ 805100604=Bumper Harvest</div><div class="diff-line add">+ 805100607=Fancy Turkey</div><div class="diff-line add">+ 805100610=Blazing Feather</div><div class="diff-line add">+ 805100613=Bumper Harvest</div><div class="diff-line add">+ 805100616=Turkey Parade</div><div class="diff-line add">+ 805000496=Thanksgiving Feast</div><div class="diff-line add">+ 805000491=Pumpkin Pie Point</div><div class="diff-line add">+ 814000110=Tap to input reason, mandatory when selecting [Other]</div><div class="diff-line add">+ 814000111={0} characters remaining</div><div class="diff-line add">+ 814000112=Please input other reason</div><div class="diff-line add">+ 814000114=Please select the content you want to report</div><div class="diff-line add">+ 814000115=Please select a reason for reporting</div><div class="diff-line add">+ 607000570=If you haven't received the verification email, check your spam folder or confirm if the email address you entered is correct.\nNote: To protect your account security, [mailbox account] cannot be unlinked.</div><div class="diff-line add">+ 805100602=Grill Fort{0})</div><div class="diff-line add">+ 805100603=Can you smell the aroma? It's the stunning turkey feast! Use it to change the fortress appearance to [Grill Fort]</div><div class="diff-line add">+ 805100605=Bumper Harvest({0})</div><div class="diff-line add">+ 805100606=Use it to change the Nameplate into [Bumper Harvest]</div><div class="diff-line add">+ 805100608=Fancy Turkey({0})</div><div class="diff-line add">+ 805100609=Use it to change the avatar frame into [Fancy Turkey]</div><div class="diff-line add">+ 805100611=Blazing Feather({0})</div><div class="diff-line add">+ 805100612=It hovers, radiating colorful feathers. Use it to change the pendant to [Blazing Feather]</div><div class="diff-line add">+ 805100614=Bumper Harvest({0})</div><div class="diff-line add">+ 805100615=It's the season of gratitude and harvest! Use it to change the profile card frame to [Bumper Harvest]</div><div class="diff-line add">+ 805100617=Turkey Parade({0})</div><div class="diff-line add">+ 805100618=A majestic turkey parading around! Use it to change the APC appearance to [Turkey Parade]</div><div class="diff-line add">+ 805100619=Bumper Harvest</div><div class="diff-line add">+ 805100620=Bumper Harvest({0})</div><div class="diff-line add">+ 805100621=Use it to change the Message Frame into [Bumper Harvest]</div><div class="diff-line add">+ 805000488=[Thanksgiving Feast] Advanced</div><div class="diff-line add">+ 805000489=[Thanksgiving Feast] Advanced &amp; Deluxe</div><div class="diff-line add">+ 805000490=[Thanksgiving Feast] Deluxe</div><div class="diff-line add">+ 805000492=Used to join the [Thanksgiving Feast] event; will be removed after the event ends.</div><div class="diff-line add">+ 805000493=Dear Commander,\n\nThe event has ended. Thank you for your participation. After the event ends, your [Pumpkin Pie Points] will no longer be usable. Therefore, we recycled your {0} unused [Pumpkin Pie Points] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 805000494=Dear Commander,\n\nYou ranked #{0} in the [Thanksgiving Feast] with {1} EXP! Below are your rewards! Collect them now.</div><div class="diff-line add">+ 805000495=[Thanksgiving Feast] Chest</div><div class="diff-line add">+ 810210225=Deals {0} TAC DMG to all enemy targets, reduces DMG Mitigation of their front-row units by {1}, reduces DMG dealt by their back-row units by {2}, and enhances self DMG and DMG Mitigation by {3}. All effects last 2 rounds.</div><div class="diff-line add">+ 810210226=When any ally hero is KIA, other ally heroes' ATK is enhanced by {0}; when any enemy hero is KIA, the DEF of remaining enemy heroes is reduced by {1} (can trigger up to 4 times per fight).</div><div class="diff-line add">+ 810210227=Each time treated, self DMG is enhanced by {0}, stacking up to 5 layers.</div><div class="diff-line add">+ 810210228=When casting "Prayers for the Dead," DMG is enhanced by {0}, and skill effect is enhanced by {1}.</div><div class="diff-line add">+ 810210229=Increases self TAC ATK by {0}, and additionally enhances by {1} for each deployed Wildling.</div><div class="diff-line add">+ 810210230=When any ally hero is KIA, recovers {0} Focus.</div><div class="diff-line add">+ 810210231=When any ally hero is KIA, recovers {0} Focus and restores {1} max HP for all ally units (can trigger up to 3 times per fight).</div>
+      <div class="diff-external">
+        <div style="margin-top:20px; border-top:1px solid #333; padding-top:10px; font-size:12px; color:#888;">
+          More Views: 
+          <a href="diff-add.html" target="_blank">Additions Only</a> | 
+          <a href="diff-full.html" target="_blank">Full Diff (Context)</a> | 
+          <a href="diff-raw.html" target="_blank">Raw File</a>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+  </div>
   
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-      const hiddenThumbs = [...document.querySelectorAll('.thumb[data-lazy="true"]')].slice(0, 100);
-      hiddenThumbs.forEach(thumb => {
-        thumb.removeAttribute('data-lazy');
-        const img = thumb.querySelector('img[data-src]');
-        if (img) lazyImages.observe(img);
+  <div class="lightbox" id="lightbox">
+    <img alt="">
+    <div class="cap"></div>
+  </div>
+  
+  <script>
+  (function(){
+    const raf = requestAnimationFrame;
+    let searchTimeout;
+  
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabImages = document.getElementById('tab-images');
+    const tabDiff = document.getElementById('tab-diff');
+    tabs.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        tabs.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const t = btn.dataset.tab;
+        tabImages.style.display = (t==='images') ? '' : 'none';
+        tabDiff.style.display = (t==='diff') ? '' : 'none';
       });
-      currentlyLoaded += hiddenThumbs.length;
-      const totalImages = document.querySelectorAll('.thumb').length;
-      showingCount.textContent = `Showing ${currentlyLoaded} of ${totalImages}`;
-      if (currentlyLoaded >= totalImages) {
-        loadMoreBtn.style.display = 'none';
-        showingCount.textContent = `All ${totalImages} images loaded`;
+    });
+  
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+    const lbCap = lb.querySelector('.cap');
+    document.getElementById('imgGrid')?.addEventListener('click', e=>{
+      const img = e.target.closest('.thumb img');
+      if(!img) return;
+      const src = img.src || img.dataset.src;
+      if (src) {
+        lbImg.src = src;
+        lbCap.textContent = decodeURIComponent(src.split('/').pop());
+        lb.classList.add('open');
       }
     });
-  }
-
-  // Lightbox with preloading
-  const lb = document.getElementById('lightbox');
-  const lbImg = lb.querySelector('img');
-  const lbCap = lb.querySelector('.cap');
-  document.getElementById('imgGrid')?.addEventListener('click', e=>{
-    const img = e.target.closest('.thumb img');
-    if(!img) return;
-    const src = img.src || img.dataset.src;
-    if (src) {
-      lbImg.src = src;
-      lbCap.textContent = decodeURIComponent(src.split('/').pop());
-      lb.classList.add('open');
+    lb.addEventListener('click', ()=>lb.classList.remove('open'));
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open') });
+  
+    const imgSearch = document.getElementById('imgSearch');
+    let allThumbs;
+  
+    function initSearch() {
+      allThumbs = [...document.querySelectorAll('.thumb')];
     }
-  });
-  lb.addEventListener('click', ()=>lb.classList.remove('open'));
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open') });
-
-  // Optimized search with debouncing
-  const imgSearch = document.getElementById('imgSearch');
-  let allThumbs;
   
-  function initSearch() {
-    allThumbs = [...document.querySelectorAll('.thumb')];
-  }
+    function performSearch(query) {
+      const q = query.trim().toLowerCase();
+      allThumbs.forEach(t => {
+        const name = t.getAttribute('data-name') || '';
+        t.style.display = (!q || name.includes(q)) ? '' : 'none';
+      });
+    }
   
-  function performSearch(query) {
-    const q = query.trim().toLowerCase();
-    let visibleCount = 0;
-    allThumbs.forEach(t => {
-      const name = t.getAttribute('data-name') || '';
-      const isMatch = !q || name.includes(q);
-      t.style.display = isMatch ? '' : 'none';
-      if (isMatch) visibleCount++;
-    });
-  }
-  
-  imgSearch?.addEventListener('input', e => {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => {
-      if (!allThumbs) initSearch();
-      raf(() => performSearch(e.target.value));
-    }, 150);
-  });
-  
-  imgSearch?.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
+    imgSearch?.addEventListener('input', e => {
       clearTimeout(searchTimeout);
-      if (!allThumbs) initSearch();
-      performSearch(e.target.value);
-    }
-  });
-
-  // Diff mode toggle
-  const diffToggle = document.getElementById('diffToggle');
-  const diffBody = document.getElementById('diffBody');
-  diffToggle?.addEventListener('click', (e)=>{
-    const b = e.target.closest('button'); if(!b) return;
-    diffToggle.querySelectorAll('button').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    const mode = b.dataset.mode;
-    diffBody.dataset.mode = mode;
-    diffBody.querySelectorAll('[data-mode]').forEach(sec=>{
-      sec.style.display = (sec.getAttribute('data-mode')===mode) ? '' : 'none';
+      searchTimeout = setTimeout(() => {
+        if (!allThumbs) initSearch();
+        raf(() => performSearch(e.target.value));
+      }, 150);
     });
-  });
-
-  // Diff search (basic)
-  const diffSearch = document.getElementById('diffSearch');
-  diffSearch?.addEventListener('change', ()=>{
-    const q = diffSearch.value.trim();
-    diffBody.querySelectorAll('mark.hl').forEach(n=>n.classList.remove('hl'));
-    if(!q) return;
-    const sec = diffBody.querySelector('[data-mode="'+diffBody.dataset.mode+'"]');
-    const walker = document.createTreeWalker(sec, NodeFilter.SHOW_TEXT);
-    const ranges = [];
-    while(walker.nextNode()){
-      const node = walker.currentNode;
-      const idx = node.nodeValue.toLowerCase().indexOf(q.toLowerCase());
-      if(idx>=0){
-        const range = document.createRange();
-        range.setStart(node, idx);
-        range.setEnd(node, idx+q.length);
-        ranges.push(range);
+  
+    const diffSearch = document.getElementById('diffSearch');
+    const diffBody = document.querySelector('.diff-body');
+    diffSearch?.addEventListener('change', ()=>{
+      const q = diffSearch.value.trim();
+      if(!diffBody) return;
+      diffBody.querySelectorAll('mark.hl').forEach(n=>n.classList.remove('hl'));        
+      if(!q) return;
+      
+      const walker = document.createTreeWalker(diffBody, NodeFilter.SHOW_TEXT);
+      const ranges = [];
+      while(walker.nextNode()){
+        const node = walker.currentNode;
+        if (!node.parentElement.closest('.diff-line')) continue; 
+  
+        const idx = node.nodeValue.toLowerCase().indexOf(q.toLowerCase());
+        if(idx>=0){
+          const range = document.createRange();
+          range.setStart(node, idx);
+          range.setEnd(node, idx+q.length);
+          ranges.push(range);
+        }
       }
-    }
-    ranges.forEach(r=>{
-      const mark = document.createElement('mark'); mark.className='hl';
-      r.surroundContents(mark);
+      ranges.forEach(r=>{
+        const mark = document.createElement('mark'); mark.className='hl';
+        r.surroundContents(mark);
+      });
     });
-  });
-})();
-</script>
+  })();
+  </script>
+  
 
 </div>
+
+<footer>
+  <p>Created by <a href="https://www.patreon.com/renegade2k6UK" target="_blank">Renegade2k6</a></p>
+  <p>
+    Follow on 
+    <a href="https://x.com/Renegade2k6News" target="_blank">X</a> | 
+    <a href="https://www.facebook.com/ren2k6" target="_blank">Facebook</a> | 
+    <a href="https://www.facebook.com/groups/3338947016351680/" target="_blank">LFU Informer Group</a>
+  </p>
+</footer>
+
 <script>
 document.addEventListener('keydown', (e) => {
   if (e.key === '/' && !/input|textarea|select/.test(document.activeElement.tagName.toLowerCase())) {

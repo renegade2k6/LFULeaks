@@ -6,9 +6,11 @@ tools/
 *.log
 .DS_Store
 deploy.bat
+rebuild-site.bat
 .github/
 package-lock.json
 package.json
 LFULeaks.rar
 META DATA.txt
 CLAUDE.md
+*.md

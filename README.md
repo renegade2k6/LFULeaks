@@ -93,4 +93,3 @@ If you find this resource useful, consider supporting the project:
 
 - [Patreon](https://www.patreon.com/renegade2k6UK) - Monthly support
 - [X (Twitter)](https://x.com/Renegade2k6News) - Follow for updates
-- [Facebook](https://www.facebook.com/ren2k6) - Join the community

@@ -112,12 +112,104 @@ a.card:hover::before{opacity:1}
   border-left:4px solid #eab308;
   border-radius:8px;
   padding:20px;
-  margin-bottom:32px;
+  margin-bottom:24px;
 }
 .disclaimer h2{margin:0 0 12px 0;font-size:16px;color:var(--warn-text);display:flex;align-items:center;gap:8px}
 .disclaimer-text{color:var(--fg);font-size:14px;line-height:1.6;font-weight:500}
-.patreon-link{display:inline-flex;align-items:center;gap:8px;background:#eab308;color:#000!important;padding:8px 16px;border-radius:6px;font-weight:600;margin-top:16px;font-size:13px;transition:all 0.2s}
-.patreon-link:hover{background:#facc15;transform:translateY(-1px);box-shadow:0 4px 12px rgba(234, 179, 8, 0.2)}
+
+/* Support CTA Section */
+.support-cta{
+  background:linear-gradient(135deg, rgba(106, 162, 255, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+  border:1px solid rgba(106, 162, 255, 0.2);
+  border-radius:12px;
+  padding:24px;
+  margin-bottom:32px;
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  transition:all 0.3s;
+  position:relative;
+  overflow:hidden;
+}
+.support-cta::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(106, 162, 255, 0.05) 0%, transparent 50%);
+  opacity:0;
+  transition:opacity 0.3s;
+  pointer-events:none;
+}
+.support-cta:hover::before{opacity:1}
+.support-cta:hover{
+  border-color:rgba(106, 162, 255, 0.4);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(106, 162, 255, 0.1);
+}
+.support-icon{
+  font-size:40px;
+  line-height:1;
+  flex-shrink:0;
+  filter:drop-shadow(0 2px 8px rgba(106, 162, 255, 0.3));
+}
+.support-content{flex:1}
+.support-content h3{
+  margin:0 0 12px 0;
+  font-size:20px;
+  font-weight:700;
+  background:linear-gradient(135deg, #6aa2ff 0%, #a855f7 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.support-content p{
+  margin:0 0 16px 0;
+  color:var(--fg);
+  font-size:14px;
+  line-height:1.7;
+  font-weight:400;
+}
+.cta-button{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  background:linear-gradient(135deg, #6aa2ff 0%, #5b8fd9 100%);
+  color:#fff!important;
+  padding:12px 28px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:15px;
+  transition:all 0.3s;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(106, 162, 255, 0.2);
+  position:relative;
+  overflow:hidden;
+}
+.cta-button::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.cta-button:hover::before{opacity:1}
+.cta-button:hover{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 8px 20px rgba(106, 162, 255, 0.35);
+  background:linear-gradient(135deg, #7ab0ff 0%, #6a9ee6 100%);
+}
+.cta-arrow{
+  transition:transform 0.3s;
+  font-size:18px;
+}
+.cta-button:hover .cta-arrow{transform:translateX(4px)}
+.support-note{
+  font-size:12px!important;
+  color:rgba(255,255,255,0.6)!important;
+  margin:12px 0 0 0!important;
+  font-style:italic;
+}
 
 .grid{display:grid;gap:16px}
 .grid.images{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
@@ -303,12 +395,24 @@ mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-wei
       <p>This constitutes <strong>Fair Use</strong> under Section 107 of the U.S. Copyright Act and similar copyright provisions worldwide. This content is not for commercial exploitation, and no ownership of the original works is claimed. All intellectual property rights remain with their respective copyright holders.</p>
       <p style="margin-bottom:0">If you are a rights holder and believe your content has been misused outside the scope of fair use/fair dealing, please contact me and it will be promptly addressed.</p>
     </div>
-    <a href="https://www.patreon.com/renegade2k6UK" target="_blank" rel="noopener" class="patreon-link">💙 Support on Patreon</a>
+  </div>
+
+  <div class="support-cta">
+    <div class="support-icon">💙</div>
+    <div class="support-content">
+      <h3>Support This Project</h3>
+      <p>If you value having instant access to the latest Last Fortress Underground updates and appreciate the time and effort invested in maintaining this resource, please consider supporting the project.</p>
+      <a href="https://www.patreon.com/renegade2k6UK" target="_blank" rel="noopener" class="cta-button">
+        <span class="cta-text">Become a Patron</span>
+        <span class="cta-arrow">→</span>
+      </a>
+      <p class="support-note">Your support helps keep this site running, updated, and completely ad-free!</p>
+    </div>
   </div>
 
 
   <div class="card">
-    <div class="meta">Images: 48 · New lines: 38 · Generated: 2025-12-08T17:22:18.622Z</div>
+    <div class="meta">Images: 48 · New lines: 38 · Generated: 2025-12-08T17:34:46.978Z</div>
   </div>
 
   <div class="tabs">

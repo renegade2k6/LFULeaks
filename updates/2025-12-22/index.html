@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LFU Informer - LFU Leaks</title>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAPEAAAAEAIAAoPgAAFgAAACgAAAA8AAAAgAAAAAEAIAAAAAAAADwAAMMOAADDDgAAAAAAAAAAAAAaFBX/GhQV/xoUFf8aFRT/GhQV/xoUFf8aFRT/GhUU/xoUFP8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8ZExT/GRQU/xkTFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFP8ZFBP/GRQT/xkUE/8ZFBT/GRQT/xkUFP8ZExT/GhQV/xoUFf8aFBX/GRQU/xkUE/8aFBX/GhQV/xoUFf8aFBX/GhQV/xoVFf8aFRX/GhUV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhUV/xoUFf8ZExT/GRMU/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFP8ZFBT/GRQU/xoUFP8ZFBT/GRMU/xkUFP8ZFBT/GhQU/xoUFf8aFBX/GhQU/xkUFP8bFRb/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xoUFf8aFBX/GxUW/xsVFv8aFRT/GhUU/xoVFP8aFBX/GhQV/xsVFv8bFRb/GxUW/xsVFv8bFRb/GhQV/xoVFP8aFRT/GhUU/xsVFP8bFRX/GhQV/xoUFf8aFRT/GhUU/xoVFf8aFBX/GhQV/xoUFf8aFBX/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFBb/GxUW/xoVFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFBX/GhQV/xoUFf8aFRX/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xoVFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xsVFv8aFRX/GhUV/xsVFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFRb/GhUV/xoVFP8bFhT/HRgU/xkVFP8ZFBX/HRgU/xwWFP8aFRX/GxUW/xsVFf8aFRX/GhUV/xsVFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFRX/GhUV/xoVFf8aFBX/GhQV/xoUFf8aFBX/GhUV/xoVFf8aFRX/GhQW/xoUFf8bFRb/GxUW/xsVFv8bFRb/GxUW/xsWFf8bFhX/GxYV/xsWFv8cFhf/HBYX/xwWF/8cFhf/HBYX/xwWF/8bFhb/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xsWFv8bFRb/GxUW/x4YFv8WERb/DQgU/x4aFP8fGRX/DAgU/xYRFf8eGRb/GxYW/xsWFf8aFRb/GhUW/xsVFv8bFRb/GxUW/xsVFf8bFhb/GxYX/xsWF/8cFhf/HBYX/xwWF/8cFhf/HBYW/xsWFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFRb/HBYW/xsWFv8bFRb/GxUW/xsVFv8aFhb/GxYW/xsWFv8bFhX/GxYW/xwWF/8cFhf/HBYX/xwWF/8cFhf/HBYX/xwWF/8bFhX/GhUW/xoVFv8bFRb/GxUW/xsVFv8bFRb/GxUW/xsVFf8cFxb/HRgW/w8JFv8sJRT/in0Q/9bEC//UxAv/iX0P/y0mFP8PChX/HRgV/x0XFf8bFRb/GxUW/xsVFv8bFRb/GxUW/xsVFv8bFRb/HBYX/xwWF/8cFhf/HBYX/xwWF/8cFhf/HBYX/xsWFf8bFhb/GxYW/xsWFv8bFhX/GxYW/xsWFv8bFhf/HBcW/xwWFv8cFhf/GxUW/xwWF/8cFhb/GxYX/xsWF/8cFxf/HBYX/xwWF/8cFhf/HBYX/xwXF/8cFhf/HBcX/xwWF/8cFhb/HBYX/xwWF/8cFhf/HBYX/xwWF/8cFhf/GxYW/x8ZF/8YExb/DwsU/2xgEv/o1wr///MC//3qAP/96wD///MB/+nWCv9xZRP/EQwV/xcSFv8fGRb/HBYX/xwWF/8cFhf/HBYX/xwWF/8cFhf/HBYX/xwWF/8cFxf/HBcX/xwXF/8cFhf/HBYX/xwXFv8cFhb/HBcW/xwXFv8cFxb/HBcW/xwWF/8cFhf/GxcW/xsXFv8cFhf/HBYX/xwWF/8cFxb/HBcW/xwXFv8cFxf/HBcW/xwXF/8dFhj/HBcX/xwXF/8cFxb/HBcW/xwW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AP//8wL/g3cU/xIOHf8nIhz/Ih0c/yIdHP8kHxz/GRQb/4p/HP89Nhv/JiEb/6OYGv9QSRv/GhQd/6OYG/9uZRr/PzYZ/8W3Hv9iWh7/V08b/6SZGv9bUhn/Hxod/yQfHv8jHh3/Ix4d/ykjHf8UDx7/gHMV///yAv/14gD/9eIA///zAf+UiBP/FREd/yYgHf8iHRz/Ih0d/yIdHP8iHRz/Ih0c/yIdHP8iHB3/Ih0d/yIdHP8iHRz/Ih0c/yIdHP8iHRz/Ih0c/yIdHP8iHRz/Ih0c/yMeHP8iHRz/Ix0a/9PDC///7gD/9uQB//zrAP/n1wj/Mywa/yAbHf8jHhz/Ih0c/yIdHf8jHh3/Hhkc/1JKHP8wKR3/IBob/29nGv91bR3/Ix0d/1BJGf89Nhv/NzAf/1BHG/9UTB3/LCYZ/3lwG/9TSxz/HBcd/yQfHf8jHh3/Ix4d/yQfHf8hHB7/MCob/+TTCf/96QD/9eIB///sAP/VxAv/JSAb/yIdHf8kHx3/Ix0d/yMdHf8iHRz/Ih4d/yMeHf8jHh3/Ix4d/yMeHf8jHh3/Ix4d/yMeHf8jHh3/Ix4d/yMeHf8jHh3/Ix4d/yUgHf8bFh3/SUEX//nmBf/55wD/9uQA///zAP+ypQ//GBQd/yUhHf8jHh3/Ix4d/yMeHf8iHh3/JB8d/x0YHP8iHRz/JR8e/xgUG/8YExv/JCAe/xwYHf8hGx7/Ix0e/x4ZHf8dFxv/Ihwe/xcTHP8cFx3/JB8d/yMeHf8jHh3/Ix4d/yMfHf8mIh7/GRQd/62fD///8QD/9eIA//jlAP/55gX/TkYY/xsXHv8lIB3/Ix4d/yMeHf8jHh3/Ix4d/yMeHf8jHh3/Ix4d/yMeHf8jHh3/Ix4d/yMeHf8iHh3/Ix4d/yMeHf8jHh3/Ix4d/yYhHf8WER7/gXYU///zAv/25AD/9eMA///0Af9/dRP/FREd/yYhHf8jHh3/Ix4d/yMeHf8jHh3/Ih4d/yQfHv8jHh7/IRwd/yQgHv8jHx7/IBwd/yQfH/8kHx//Ix8e/yUfIP8jHx//Ih4d/yUhHv8kHx3/Ix4d/yMeHf8jHh3/Ix4d/yQfHv8nIh7/FhMe/3tvFP//8gL/9eMA//XiAP//8gH/h3sU/xcTH/8mIh7/Ix4d/yMeHf8jHh3/Ix4d/yMeHf8kHh3/Ix4e/yMe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Jf8rJib/KyYl/ysmJf8rJib/LCcm/yYhIP+/shH/XlYc/yIcJ/8uKCb/KyUl/ysmJf8rJiX/KyYl/ysmJf8rJiX/KyYl/ysmJf8rJiX/KyYl/ysmJf8rJiX/LCcm/ykjJf8kICX/JiEk/ysmJf8rJiX/LCcm/ywnJv8sJyf/KiQm/yUhJP8mISX/JSAl/yYgJf8mISX/JSAl/yciJf8sJyb/LCcm/ywnJv8rJib/KyYm/ysmJv8rJiX/KyYl/ysmJf8rJiX/LCcm/y8pJv8iHif/XVQb/8W3E/8pJCL/KyYm/ysmJf8rJiX/LCcl/ywmJf8rJiX/LCcl/ysmJv8sJyb/Ix4m/1NKH/+Kfxv/Hxok/y4pJv8rJSf/KyYm/ysmJf8sJyb/KyYl/ysmJf8rJiX/KyYm/ysmJv8rJiX/KyYl/ysmJf8sJyb/LCcm/y0nJ/8uKSf/LSgn/ysmJf8sJyb/LCcm/ywnJv8sJyb/LScn/y0oJv8tKCb/LSgm/y0oJv8tKCf/Lico/y0nKP8sJyb/LCcm/ywnJv8rJiX/KyUm/yslJv8rJib/KyYl/ysnJv8sJyb/LSgm/ywnJv8uKSf/IBsk/4+DG/9WTSD/JB8k/y0oJP8sJyX/LCcl/ysmJf8sJyb/LCcm/ywnJv8tKCb/JyEl/0tBIf87NST/KSQn/y0nJv8sJyb/LCcm/ywnJv8sJyb/LCcm/ywnJv8sJyb/LCYm/ywnJv8sJyb/LCcm/y0oJ/8tKCf/LSgn/y0oJ/8tKCf/LSgn/y0nJ/8sJyb/LSgn/y0oJ/8tJyf/LSgn/y0oJv8tKCb/LCcm/y0oJf8tKCX/LSgm/y0oKP8tKCf/LSgn/ywnJ/8sJyb/LCcm/ywmJv8sJyb/LCcm/ywnJv8sJyb/LSgl/y0oJ/8tKCb/KiUn/zw1JP9LQyH/KCIl/y0oJv8sJyb/LCcn/ywnJv8sJyb/LCcm/ywnJv8sJyb/LCcm/yolJf8rJif/LSkm/y0oJv8sJyb/LCcm/ywnJv8sJyb/LCcm/ywnJv8sJyb/LCcm/ywnJv8sJyb/LSgm/y0oJ/8tKCj/LSko/y0oJ/8tKCf/LSgn/y0oJ/8tKCf/LSgo/y0pKP8tKCf/LSgn/y0oJ/8tKCf/LSgn/y0oJv8tKCb/LSgn/y0oKP8tKCf/LSgm/ywnJ/8sJyb/LCcm/ywnJv8sJyb/LCcm/ywnJv8sJyb/LCgm/y0oJ/8tKCf/Likl/ysmJv8qJSX/LSgn/ywoJ/8tKCb/LSgl/y0oJv8tKCf/LSgn/y0oJ/8tKCf/LSgn/y0oJ/8tKCf/LSgn/y0oJ/8tKCf/LSgn/y0oJ/8tKCf/LSgn/y0oJ/8tKCf/LSgm/y0oJv8tKCf/LSgn/y4pJv8uKSf/Liko/y4pJ/8uKSf/LSkm/y0oJv8uKSj/Liko/y4pKP8vKyj/MCsn/y8qJ/8vKif/Lyon/y8qJ/8vKif/Lion/y8qJ/8vKif/Lyon/y8qJv8uKSb/LSkm/y4pJv8uKSX/Likl/y8qJv8vKib/Lyom/y4qJ/8vKif/Lyol/zAqJ/8vKif/Likn/ywoJ/8tKCf/LSkn/y0oJ/8tKCf/LSgn/y4pJ/8tKSf/LSgm/y4pKP8tKCf/LSgn/y0oJ/8tKCf/LSgn/y0oJ/8tKCf/LSgn/y0oJ/8tKCX/LCgl/y0oJf8tKCf/LSgn/y0oJ/8tKCf/Likn/y4pJv8uKSb/Likn/y0oJ/8tKCj/Liko/y0oKP8nIin/JyIp/yYhJ/8mISj/JiEo/yUhKP8mISf/JiEo/yYhKP8mISj/JSEn/yUgJ/8lICf/JSAn/yUgKP8lICf/JiEn/yUhJ/8lISf/JSEn/yYhKP8mISj/JyIn/yciKP8mISj/KCQn/y4pJ/8uKSj/Likn/y4pJ/8uKSb/Likn/y4pJ/8uKSj/Lyoo/zArKf8wKyr/MCsq/zArKv8wKyn/Lysq/y8rKv8vKyr/Lysp/zArKf8wKij/Lyso/zArKf8wKyn/MCsq/zAsKv8xKyr/MSsq/zArKv8wKyr/MCsq/zAsKv8xLCv/MCsr/zUwKf9PSSH/UEse/1BKHv9QSh7/UEof/1BKH/9QSh7/UUse/1FLHv9SSh7/Ukse/1JKHv9SSh7/Ukoe/1JKHv9RSx7/U0we/1NMHv9SSx//Ukse/1NMHv9UTR//VE0e/1NMHv9UTR3/RT4i/y4oKf8vKij/Liko/y4pJ/8uKSf/Liko/y4pKP8vKSj/OTMw/zs1Mv86NTL/OjUy/zs1Mv87NTL/PDUz/z01M/88NTL/OzUy/zs1Mv88NTL/OzUz/zo1NP86NjP/PTYz/z03NP88NzT/PDY0/zs2NP88NzT/PDc0/zw3NP89ODT/ODM1/01HLP/s4Qz/++8E//frBf/57AX/+ewF//rtBf/67QX/+u0F//ruBf/67gX/++4F//vtBf/77QX/++4F//vuBf/67gX/++4F//vuBf/77gX/++4F//vuBf/77gT/++4F//nrBf//9gT/0MQQ/y0nJv8uKij/Lyon/y4pJ/8wKif/MCon/zApJ/8yLCv/OjUz/zo1Mv86NTL/OjUy/zw1Mv88NTL/OzUz/zs1M/88NTL/PDYy/zs2M/88NjP/OjUz/zs1M/88NjP/PTY0/z03NP88NzT/PDc0/zw3NP88NzT/PDc0/z03NP8+ODT/ODM2/01GK//v4wf///MA//zvAP/98AD//fAA//3wAP/98AD//fAA//7xAP/+8QD//fAA//3wAP/98AD//vEA//7xAP/+8QD//vEA//7xAP/+8AD//fAA//3wAP/98AD//fAA//zvAP/+8QD/+ewF/09HIP8pJCr/MSso/y8qKP8xKif/MSon/y8pJ/83MC3/PDYz/zs0Mv87NTL/PDUy/zw2Mv88NzL/OzYz/zs2M/87NTL/Ozcy/zs2M/87NjP/OzYz/z02M/89NjP/PTYz/zw3M/88NzT/PDc0/zw3NP88NzT/PDY0/z43NP8/ODT/ODM2/05HK//w4wf///IA//vuAP/97wD//O8A//zwAf/98AH//fEA//3xAf/98QH//fEA//3xAf/98QD//vIA//7yAP/+8gD//fEA//3xAf/98AH//fAA//3wAP/98AD//fAB//3wAP/67QD///wC/4yDGv8lHyn/NC0o/zArKf8xKyj/MSso/zIrKP86MzD/PDUy/zw1Mv88NTL/PDUy/zw3Mv89NzP/PTYz/z02M/88NjP/OzYz/zs3Mv87NjL/PDYz/z02M/89NjP/PTYz/z03M/88ODP/PDgz/zw3NP88NzT/PTYz/z03NP8/ODP/ODM2/05IK//x5Af///MA//zvAP/98AD//fAA//3xAf/+8gH//vIA//7yAP/+8gD//vIA//7yAP/+8gD//vIA//7yAP/+8gD//vIA//7yAP/+8gD//vIB//3wAP/98AD//vEB//3wAP/77wH///wA/8m/Ef8sJyj/Miwp/zEsKP8yKyj/Miso/zMsKf88NTH/PDUy/zw1Mv88NTL/PDUy/zs2Mv88NzL/PTYz/z02M/89NjP/OzYy/zs1Mf88NjL/PDYz/zw2M/87NjP/PTYz/z02M/88NzP/PDgz/zw4M/89NzT/PTYz/z02M/8+NzP/ODM1/05IK//w5Af///MA//zvAP/98AD//fAA//7yAP/+8gD//vIA//7yAP/+8gD//vIA//7yAP/+8gD//vIA//7yAP/+8gD//vIA//7yAP/+8gD//vEB//3xAP/98QD//vEB//7xAf/98AH///YA/+HXDP82MSf/MCsq/zItKf8yLCn/Miwp/zMsKf87NTH/PTgz/zs2Mv88NTL/PDUy/zs2Mv87NzL/PTYz/z02M/87NjP/OzUy/zw1Mv88NTL/PDUy/zw1Mv87NzL/PDYz/z02M/88NjP/PDgz/zw4M/88ODT/PTcz/zw3M/89NzP/ODM1/09IK//w5Aj///MA//zvAP/98AD//fAA//7xAP/+8gD//vIA//7yAf/+8gD//vIA//7yAP/+8gD//vIA//7yAP/+8gD//vIA//7yAP/+8gD//vIA//3xAP/98QD//vIB//7yAf/67QH///4A/7GoE/8pJCj/NC8q/zItKv8zLSr/My0q/zMsKf82MC3/Pjgz/zw2M/87NjL/PDUy/zw1Mv87NjL/OzYz/zs2M/88NjP/OzYz/zw2Mv88NTL/PDUy/zw1Mv87NzL/PTYz/zw2M/88NzT/Pjc0/z43NP89NzT/PDcz/zw3NP89ODT/ODM2/09IK//x5Af///QA//zwAf/98AD//fAA//3wAP/+8QD//vIA//7yAP/+8gD//vEB//3wAP/98AD//vEA//7xAP/98AD//fAA//3wAP/98AD//fAA//3wAP/98AD//vIA//vuAf//+AD/6+QM/0hBJP8sKCz/My4q/zItKv80Liv/NC0q/zQuK/8zLCn/ODIu/z43NP88NjP/OzUy/zw0Mv87NTL/OjYz/zs1M/89NjP/PTYz/zs2M/87NjP/OzYz/zs2M/88NjP/PDYz/zw3NP8+NzT/Pjc0/z03NP8+NzT/PTc0/zw3NP89ODT/OTM2/09HLP/w5Af///QA//zwAP/+8gH//vEB//3wAP/+8QH//vEA//7xAP/98QD//vIA//3wAP/98AD//fAA//3wAP/87wD//O8A//zuAP/67gD/+u0A//rtAP/67gD//O8A///6AP/07An/ZV0i/yslLv81MCv/My4r/zMtKv81Liv/NS4r/zUuK/81Liv/My0q/zgxLv89NjP/PDc0/zw2M/88NjP/OzYz/z02M/88NjP/PDcz/zw2M/88NTP/PDYz/zw2M/88NjP/PDc0/z03NP89ODX/PTg0/z03NP89NzT/Pjc0/z03NP89ODT/OTM2/09HLP/w5Af///MA//zvAP/98AD//fAA//3wAP/98AD//fEB//3xAf/88AD//O8A//vuAf/67QD/+e0A//rtAP/98AD///MA///3AP//+gD///wA///8AP/++AL///YE/97TDP9aVCH/KSUs/zcyLP8zLiz/Mi4r/zIuLP80Lyz/NC8s/zQuK/80Liv/NC4r/zMtKv81Lyz/NzIv/zgzMP85NDH/OjUy/zs2M/88NzT/PTg0/z44NP8+ODT/PTg0/z03NP89NzT/Pjc0/z44Nf8+ODX/Pzg1/z84Nf89ODX/Pjc0/z03NP89ODT/ODQ2/05HLP/w4wf///IA//vuAP/77gD/+u4A//ruAP/67QD/++4A//3vAP//8gD///cA///6AP///QD///0A///5Af/98QX/8OQI/93SC//GvBD/rKIV/5GHGv91bh3/Ylsi/z03Kf8sJy7/NjEs/zQvLP8zLiv/My4r/zMuLP82Lyz/Ni8s/zQvLP80Lyz/NC8s/zMuK/8zLiv/My4r/zMuK/80Lyz/NC8s/zUwLf82MS7/NzIu/zgyMP85NDD/OjUx/zs2Mv89NzT/Pzg1/z84Nf8/OTb/Pzk2/z84Nf8+ODX/Pjc0/zw3NP89ODP/ODM1/01HK//w5Qf///YA//7zAP//9wD///oA///9AP///QD///oC//3xBP/w5Af/3dIL/8e9D/+soxT/j4ca/3RtHv9cVSP/SEEn/zcyKf8tKCv/KSQt/yciLf8pJC3/KyYt/zMtLP82MSz/NC8s/zQvLP80Lyz/NC8s/zQvLP82MC3/NjAt/zYvLP81Lyz/NTAs/zUwLf80Lyz/NTAt/zUwLf81MC3/NTAt/zUwLf81MC3/NTAt/zQvLP80Lyz/NC8s/zQwLf82MC3/NjEu/zcyL/84MzD/OTQx/zo0Mf86NTL/OzYz/zs2M/89NzP/OTQ1/0xGLP/n3Az/+e0F/+3jCP/d0gv/xbwQ/6yjFf+QiRn/dnAf/15XI/9JQyb/OTMp/y8qLP8qJS3/KCMu/yolL/8tKC7/MSwu/zQvLf82MS3/NzIs/zgyLP84Miz/NzIs/zUwLP80Lyz/NC8s/zUwLf81MC3/NC8s/zQvLP81MC3/NTAt/zYwLf82MC3/NTAt/zUwLf81MC3/NjEu/zYxLv82MS7/NjEu/zUwLf81MC3/NTAt/zUwLf81MC3/NTAt/zUwLf80Ly3/NDAt/zUwLf81Ly7/NC8s/zQvLP80Lyz/NC8s/zUwLf82MS7/NjEu/zk0Lv9NRyX/T0gk/0hCKP87NCv/MCot/yolLv8oIy//KSUu/y0oL/8xLC7/NC8u/zYxLf84My3/ODMt/zgzLf82MSz/NjEs/zUwLf81MC3/NTAt/zUwLf81MC3/NjAt/zUwLf81MC3/NTAt/zUwLf81MC3/NTAt/zUwLf82MS7/NjEv/zUxLv81MS7/NTEt/zYxLv82MS7/NjEu/zYxLv82MS7/NjEu/zYxLv82MS7/NjEu/zYxLv82MS7/NTAu/zUwLf81MC3/NTAt/zUwLf81MC7/NTAt/zUwLf81MC3/NTAt/zUwLf81MC3/NTAt/zUwLv8wKzH/Lysw/zEsLv80MC7/NzIu/zgzL/84My7/ODMt/zcyLf82MS3/NjEt/zYxLf81MC7/NTAt/zUwLf81MC3/NTAt/zUwLf82MS7/NTAt/zYxLv81MS7/NjEu/zYxLv82MS7/NjEu/zYxLv81MC3/NTAt/zUwLf82MS7/NjEu/zYxL/82MS//NjEu/zYxLv82MS7/NjEu/zYxLv82MS7/NjEu/zYxLv82MS7/NjEu/zYxLv82MS//NTAu/zUwLv81MC7/NTAt/zUwLf81MC3/NTAt/zQvLP80Lyz/NC8s/zQvLP81MC3/NTAt/zUwLf82MS7/NjEt/zYxLf81MCz/NTAt/zUwLf81MC//NTAu/zUwLv81MC7/NjEu/zYxLv82MS7/NTAu/zUwLv81MC3/NTAt/zYxLv82MS7/NjEu/zYxL/82MTD/NjEu/zYxLv82MS7/NjEu/zYxLv82MS//NTAt/zUwLf83Mi//NjEu/zYxLv82MS//NjEu/zYxL/82MS7/NzIv/zcyL/82MS//NjEu/zYxLv82MS7/NjEu/zYxLv82MS//NjEv/zUxMP81MS7/NTAu/zYxLf81MC3/NTAt/zQvLf80Ly3/NTAt/zUwLf81MC3/NTAt/zUwLf81MC7/NTAt/zYxLv82MS7/NjEu/zYxLv82MS7/NTAv/zYxL/82MS7/NjEu/zYxLv82MS7/NjEu/zYxLv81MC//NjEu/zYxLv82MS7/NjEu/zYxL/82MTD/NjEw/zcyL/82MS7/NjEu/zYxL/82MTD/NjEu/zUwLf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" />
+
+<!-- PWA Support -->
+<link rel="manifest" href="/LFULeaks/manifest.json">
+<meta name="theme-color" content="#6aa2ff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LFU Leaks">
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data: https://renegade2k6.github.io; script-src 'self' 'unsafe-inline';">
+
+<!-- Facebook / Open Graph Meta -->
+<meta property="og:title" content="LFU Informer Leaks">
+<meta property="og:description" content="Last Fortress Underground game asset updates and leaks for educational purposes">
+<meta property="og:image" content="https://renegade2k6.github.io/LFULeaks/preview.jpg">
+<meta property="og:url" content="https://renegade2k6.github.io/LFULeaks/">
+<meta property="og:type" content="website">
+
+<!-- Twitter / X Card Meta -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LFU Informer Leaks">
+<meta name="twitter:description" content="Last Fortress Underground game asset updates and leaks for educational purposes">
+<meta name="twitter:image" content="https://renegade2k6.github.io/LFULeaks/preview.jpg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0d10;
+  --fg:#e6e9ef;
+  --muted:#9aa4b2;
+  --card:#111318;
+  --accent:#6aa2ff;
+  --accent-hover:#8cb8ff;
+  --accent-glow:rgba(106, 162, 255, 0.3);
+  --border:#1b2027;
+  --add:#15351b;
+  --del:#3a1b1b;
+  --ctx:#1a1d23;
+  --warn-bg:rgba(234, 179, 8, 0.1);
+  --warn-border:rgba(234, 179, 8, 0.3);
+  --warn-text:#fef08a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(106, 162, 255, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.08) 0px, transparent 50%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  color:var(--fg);
+  font-family:'Inter', system-ui, -apple-system, sans-serif;
+  line-height:1.5;
+  font-size:14px;
+  position:relative;
+}
+a{color:var(--accent);text-decoration:none;transition:color 0.2s}
+a:hover{color:var(--accent-hover)}
+
+header{position:sticky;top:0;background:rgba(11,13,16,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 16px 20px;display:flex;flex-direction:column;align-items:center;z-index:50;box-shadow:0 4px 30px rgba(0,0,0,0.1)}
+.header-content{position:relative;width:100%;max-width:700px;text-align:center}
+header h1{font-size:28px;margin:0;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(to right,#6aa2ff, #a855f7, #6aa2ff);background-size:200% auto;animation:shine 4s linear infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header-line{height:3px;width:100%;background:linear-gradient(90deg, transparent, #6aa2ff, transparent);margin-top:8px;border-radius:2px;box-shadow:0 0 15px rgba(106,162,255,0.6);opacity:0.8}
+
+@keyframes shine { to { background-position: 200% center; } }
+
+.container{max-width:1200px;margin:0 auto;padding:24px 16px;}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:20px;
+  transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:12px;
+  padding:1px;
+  background:linear-gradient(135deg, var(--accent), transparent);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+a.card:hover{
+  transform:translateY(-4px) scale(1.01);
+  box-shadow:0 20px 40px -15px rgba(0,0,0,0.5), 0 0 0 1px var(--accent), 0 0 30px -10px var(--accent-glow);
+  border-color:var(--accent);
+}
+a.card:hover::before{opacity:1}
+
+.disclaimer{
+  background:linear-gradient(to right, var(--warn-bg), rgba(0,0,0,0));
+  border:1px solid var(--warn-border);
+  border-left:4px solid #eab308;
+  border-radius:8px;
+  padding:20px;
+  margin-bottom:24px;
+}
+.disclaimer h2{margin:0 0 12px 0;font-size:16px;color:var(--warn-text);display:flex;align-items:center;gap:8px}
+.disclaimer-text{color:var(--fg);font-size:14px;line-height:1.6;font-weight:500}
+
+/* Support CTA Section */
+.support-cta{
+  background:linear-gradient(135deg, rgba(106, 162, 255, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+  border:1px solid rgba(106, 162, 255, 0.2);
+  border-radius:12px;
+  padding:24px;
+  margin-bottom:32px;
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  transition:all 0.3s;
+  position:relative;
+  overflow:hidden;
+}
+.support-cta::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(106, 162, 255, 0.05) 0%, transparent 50%);
+  opacity:0;
+  transition:opacity 0.3s;
+  pointer-events:none;
+}
+.support-cta:hover::before{opacity:1}
+.support-cta:hover{
+  border-color:rgba(106, 162, 255, 0.4);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(106, 162, 255, 0.1);
+}
+.support-icon{
+  font-size:40px;
+  line-height:1;
+  flex-shrink:0;
+  filter:drop-shadow(0 2px 8px rgba(106, 162, 255, 0.3));
+}
+.support-content{flex:1}
+.support-content h3{
+  margin:0 0 12px 0;
+  font-size:20px;
+  font-weight:700;
+  background:linear-gradient(135deg, #6aa2ff 0%, #a855f7 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.support-content p{
+  margin:0 0 16px 0;
+  color:var(--fg);
+  font-size:14px;
+  line-height:1.7;
+  font-weight:400;
+}
+.cta-button{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  background:linear-gradient(135deg, #6aa2ff 0%, #5b8fd9 100%);
+  color:#fff!important;
+  padding:12px 28px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:15px;
+  transition:all 0.3s;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(106, 162, 255, 0.2);
+  position:relative;
+  overflow:hidden;
+}
+.cta-button::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.cta-button:hover::before{opacity:1}
+.cta-button:hover{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 8px 20px rgba(106, 162, 255, 0.35);
+  background:linear-gradient(135deg, #7ab0ff 0%, #6a9ee6 100%);
+}
+.cta-arrow{
+  transition:transform 0.3s;
+  font-size:18px;
+}
+.cta-button:hover .cta-arrow{transform:translateX(4px)}
+.support-note{
+  font-size:12px!important;
+  color:rgba(255,255,255,0.6)!important;
+  margin:12px 0 0 0!important;
+  font-style:italic;
+}
+
+.grid{display:grid;gap:16px}
+.grid.images{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.thumb{position:relative;border:1px solid var(--border);border-radius:8px;overflow:hidden;  
+  background-image: linear-gradient(45deg, #1a1a1a 25%, transparent 25%),
+                    linear-gradient(-45deg, #1a1a1a 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, #1a1a1a 75%),
+                    linear-gradient(-45deg, transparent 75%, #1a1a1a 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  background-color: #111; /* Fallback */
+  transition:border-color 0.2s
+}
+.thumb:hover{border-color:var(--accent)}
+.thumb img{width:100%;height:180px;object-fit:contain;display:block;background:none;}
+.caption{font-size:11px;color:var(--muted);padding:8px;text-align:center;background:var(--card);border-top:1px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.meta{display:flex;gap:16px;color:var(--muted);font-size:12px;margin-top:8px}
+
+.tabs{display:flex;gap:4px;margin-bottom:16px;background:rgba(17,19,24,0.8);backdrop-filter:blur(8px);padding:4px;border-radius:10px;border:1px solid var(--border);width:fit-content;position:sticky;top:90px;z-index:40;margin-left:auto;margin-right:auto;}
+.tab-btn{padding:8px 16px;border:none;border-radius:6px;background:transparent;color:var(--muted);cursor:pointer;font-weight:500;font-size:13px;transition:all 0.2s}
+.tab-btn:hover{color:var(--fg)}
+.tab-btn.active{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(106,162,255,0.25)}
+
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:sticky;top:145px;z-index:30;background:var(--bg);padding:8px 0;} 
+input[type="search"]{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;width:100%;max-width:400px;font-size:14px}
+input[type="search"]:focus{outline:none;border-color:var(--accent)}
+
+.diff{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.diff-header{padding:12px;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.2)} 
+.diff-body{padding:16px;max-height:70vh;overflow:auto;font-family:'Menlo', 'Monaco', 'Courier New', monospace;font-size:12px}
+.diff-line{padding:2px 8px;border-radius:4px}
+.diff-line.add{background:rgba(21, 53, 27, 0.5);color:#4ade80}
+.diff-line.del{background:rgba(58, 27, 27, 0.5);color:#f87171}
+.diff-line.ctx{color:#9ca3af}
+
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.95);opacity:0;visibility:hidden;display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(4px);padding:20px;transition:opacity 0.2s, visibility 0.2s;cursor:pointer}
+.lightbox.open{opacity:1;visibility:visible;display:flex!important;pointer-events:auto}
+.lightbox img{max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 0 50px rgba(0,0,0,0.5);margin-bottom:10px;cursor:default;pointer-events:none}
+.lightbox .cap{position:static;text-align:center;color:#cbd5e1;font-size:14px;font-weight:500;background:rgba(0,0,0,0.7);padding:8px 16px;border-radius:8px;max-width:90vw;word-wrap:break-word;cursor:pointer}
+
+/* Utilities */
+.kbd{border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:10px;background:rgba(255,255,255,0.05);color:var(--muted);margin-left:8px}
+.empty-state{padding:32px;text-align:center;color:var(--muted);font-style:italic}
+.diff-external{text-align:center;padding:16px;color:var(--muted);font-size:12px}
+.diff-external a{color:var(--accent);font-weight:500}
+
+/* Footer */
+footer{text-align:center;padding:40px 0;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:40px;background:rgba(11,13,16,0.5)}
+footer a{color:var(--accent);text-decoration:none;margin:0 4px}
+footer a:hover{color:var(--accent-hover);text-decoration:underline}
+footer p{margin:8px 0}
+
+/* Polish & Animations */
+html { scroll-behavior: smooth; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #1f2530; border-radius: 5px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+.thumb {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position:relative;
+  cursor:pointer;
+}
+.thumb img{cursor:pointer}
+.thumb::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:8px;
+  box-shadow:0 0 30px var(--accent-glow);
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.thumb:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7);
+  border-color:var(--accent);
+  z-index: 10;
+}
+.thumb:hover::after{opacity:1}
+.thumb img{transition:transform 0.3s ease-out}
+.thumb:hover img{transform:scale(1.05)}
+
+@keyframes lbFade { from{opacity:0} to{opacity:1} }
+@keyframes lbZoom { from{transform:scale(0.8) rotateX(10deg)} to{transform:scale(1) rotateX(0deg)} }
+.lightbox.open { animation: lbFade 0.25s ease-out; }
+.lightbox.open img {
+  animation: lbZoom 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,0.8), 0 0 80px -20px var(--accent-glow);
+}
+
+/* Page load animation */
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.container > * {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+.container > *:nth-child(1) { animation-delay: 0.05s; }
+.container > *:nth-child(2) { animation-delay: 0.1s; }
+.container > *:nth-child(3) { animation-delay: 0.15s; }
+.container > *:nth-child(4) { animation-delay: 0.2s; }
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(106, 162, 255, 0.4);
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(106, 162, 255, 0.6);
+  background: var(--accent-hover);
+}
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+/* Enhanced tabs */
+.tab-btn{
+  position:relative;
+  overflow:hidden;
+}
+.tab-btn::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:var(--accent);
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.tab-btn:hover::before{opacity:0.1}
+.tab-btn.active{
+  box-shadow:0 4px 12px rgba(106, 162, 255, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* Improve searchbar */
+.searchbar{position:relative}
+.searchbar input:focus{
+  box-shadow:0 0 0 3px var(--accent-glow), 0 4px 12px rgba(106, 162, 255, 0.2);
+}
+
+/* Mark highlight */
+mark.hl{background:#eab308;color:#000;padding:2px 4px;border-radius:3px;font-weight:600}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <h1>LFU Informer - LFU Leaks</h1>
+    <div class="header-line"></div>
+  </div>
+</header>
+<div class="container">
+
+  <div class="disclaimer">
+    <h2>⚠️ Fair Use Notice</h2>
+    <div class="disclaimer-text">
+      <p style="margin-top:0">The images and artwork used on this page are displayed strictly for educational, informational, commentary, and news reporting purposes.</p>
+      <p>This constitutes <strong>Fair Use</strong> under Section 107 of the U.S. Copyright Act and similar copyright provisions worldwide. This content is not for commercial exploitation, and no ownership of the original works is claimed. All intellectual property rights remain with their respective copyright holders.</p>
+      <p style="margin-bottom:0">If you are a rights holder and believe your content has been misused outside the scope of fair use/fair dealing, please contact me and it will be promptly addressed.</p>
+    </div>
+  </div>
+
+  <div class="support-cta">
+    <div class="support-icon">💙</div>
+    <div class="support-content">
+      <h3>Support This Project</h3>
+      <p>If you value having instant access to the latest Last Fortress Underground updates and appreciate the time and effort invested in maintaining this resource, please consider supporting the project.</p>
+      <a href="https://www.patreon.com/renegade2k6UK" target="_blank" rel="noopener" class="cta-button">
+        <span class="cta-text">Become a Patron</span>
+        <span class="cta-arrow">→</span>
+      </a>
+      <p class="support-note">Your support helps keep this site running, updated, and completely ad-free!</p>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="meta">Images: 49 · New lines: 202 · Generated: 2025-12-22T13:22:18.638Z</div>
+  </div>
+
+  <div class="tabs">
+    <a href="../../index.html" class="tab-btn" style="background:#0a0c0f;border-color:#6aa2ff;color:#6aa2ff">← Back</a>
+    <button class="tab-btn active" data-tab="images">New Images (49)</button>
+    <button class="tab-btn" data-tab="diff" title="Differences from last update">Config Diff</button>
+  </div>
+
+  <div id="tab-images">
+    <div class="toolbar">
+      <div class="searchbar">
+        <input type="search" id="imgSearch" placeholder="Filter images (press / to focus)" />
+        <span class="kbd">Enter</span>
+      </div>
+    </div>
+    <div class="grid images" id="imgGrid">
+      
+      <div class="thumb" data-name="bg_bp_duodangwei_zhanshou_2025.png">
+        <img loading="lazy" src="./assets/bg_bp_duodangwei_zhanshou_2025.png" alt="bg_bp_duodangwei_zhanshou_2025.png" width="160" height="160" />
+        <div class="caption">bg_bp_duodangwei_zhanshou_2025.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_bp_zhanshou_title.png">
+        <img loading="lazy" src="./assets/icon_bp_zhanshou_title.png" alt="icon_bp_zhanshou_title.png" width="160" height="160" />
+        <div class="caption">icon_bp_zhanshou_title.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_qxhdz_gtzs_jqrhd.png">
+        <img loading="lazy" src="./assets/icon_qxhdz_gtzs_jqrhd.png" alt="icon_qxhdz_gtzs_jqrhd.png" width="160" height="160" />
+        <div class="caption">icon_qxhdz_gtzs_jqrhd.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_shengdanjie_bosstou.png">
+        <img loading="lazy" src="./assets/icon_shengdanjie_bosstou.png" alt="icon_shengdanjie_bosstou.png" width="160" height="160" />
+        <div class="caption">icon_shengdanjie_bosstou.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_shengdanjie_yeqian.png">
+        <img loading="lazy" src="./assets/icon_shengdanjie_yeqian.png" alt="icon_shengdanjie_yeqian.png" width="160" height="160" />
+        <div class="caption">icon_shengdanjie_yeqian.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_zhanshou_box.png">
+        <img loading="lazy" src="./assets/icon_zhanshou_box.png" alt="icon_zhanshou_box.png" width="160" height="160" />
+        <div class="caption">icon_zhanshou_box.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_zhanshou_eye.png">
+        <img loading="lazy" src="./assets/icon_zhanshou_eye.png" alt="icon_zhanshou_eye.png" width="160" height="160" />
+        <div class="caption">icon_zhanshou_eye.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_zhanshou_gx.png">
+        <img loading="lazy" src="./assets/icon_zhanshou_gx.png" alt="icon_zhanshou_gx.png" width="160" height="160" />
+        <div class="caption">icon_zhanshou_gx.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_zhanshou_gxk.png">
+        <img loading="lazy" src="./assets/icon_zhanshou_gxk.png" alt="icon_zhanshou_gxk.png" width="160" height="160" />
+        <div class="caption">icon_zhanshou_gxk.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_zhanshou_tb.png">
+        <img loading="lazy" src="./assets/icon_zhanshou_tb.png" alt="icon_zhanshou_tb.png" width="160" height="160" />
+        <div class="caption">icon_zhanshou_tb.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_zhanshou_pack.png">
+        <img loading="lazy" src="./assets/img_bp_zhanshou_pack.png" alt="img_bp_zhanshou_pack.png" width="160" height="160" />
+        <div class="caption">img_bp_zhanshou_pack.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_bp_zhanshou_tab.png">
+        <img loading="lazy" src="./assets/img_bp_zhanshou_tab.png" alt="img_bp_zhanshou_tab.png" width="160" height="160" />
+        <div class="caption">img_bp_zhanshou_tab.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_qxhdz_dhsd_gtzs_yeqian2025.png">
+        <img loading="lazy" src="./assets/img_qxhdz_dhsd_gtzs_yeqian2025.png" alt="img_qxhdz_dhsd_gtzs_yeqian2025.png" width="160" height="160" />
+        <div class="caption">img_qxhdz_dhsd_gtzs_yeqian2025.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_sdj_boss.png">
+        <img loading="lazy" src="./assets/img_sdj_boss.png" alt="img_sdj_boss.png" width="160" height="160" />
+        <div class="caption">img_sdj_boss.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_sdj_sevendays_banner.png">
+        <img loading="lazy" src="./assets/img_sdj_sevendays_banner.png" alt="img_sdj_sevendays_banner.png" width="160" height="160" />
+        <div class="caption">img_sdj_sevendays_banner.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_sdj_yeqian.png">
+        <img loading="lazy" src="./assets/img_sdj_yeqian.png" alt="img_sdj_yeqian.png" width="160" height="160" />
+        <div class="caption">img_sdj_yeqian.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdan_bg.png">
+        <img loading="lazy" src="./assets/img_shengdan_bg.png" alt="img_shengdan_bg.png" width="160" height="160" />
+        <div class="caption">img_shengdan_bg.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_bg02.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_bg02.png" alt="img_shengdanhuodong_bg02.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_bg02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_bosslaixi01.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_bosslaixi01.png" alt="img_shengdanhuodong_bosslaixi01.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_bosslaixi01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_bosslaixi02.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_bosslaixi02.png" alt="img_shengdanhuodong_bosslaixi02.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_bosslaixi02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_di1.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_di1.png" alt="img_shengdanhuodong_di1.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_di1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_di2.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_di2.png" alt="img_shengdanhuodong_di2.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_di2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_di3.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_di3.png" alt="img_shengdanhuodong_di3.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_di3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_di4.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_di4.png" alt="img_shengdanhuodong_di4.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_di4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_di5.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_di5.png" alt="img_shengdanhuodong_di5.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_di5.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_jlyl.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_jlyl.png" alt="img_shengdanhuodong_jlyl.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_jlyl.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_libaopi.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_libaopi.png" alt="img_shengdanhuodong_libaopi.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_libaopi.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_lihe.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_lihe.png" alt="img_shengdanhuodong_lihe.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_lihe.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_mh01.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_mh01.png" alt="img_shengdanhuodong_mh01.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_mh01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuodong_mh02.png">
+        <img loading="lazy" src="./assets/img_shengdanhuodong_mh02.png" alt="img_shengdanhuodong_mh02.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuodong_mh02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanhuoodng_bg02.png">
+        <img loading="lazy" src="./assets/img_shengdanhuoodng_bg02.png" alt="img_shengdanhuoodng_bg02.png" width="160" height="160" />
+        <div class="caption">img_shengdanhuoodng_bg02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanjie_chat.png">
+        <img loading="lazy" src="./assets/img_shengdanjie_chat.png" alt="img_shengdanjie_chat.png" width="160" height="160" />
+        <div class="caption">img_shengdanjie_chat.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanjie_jieriboss_shijietanchuang.png">
+        <img loading="lazy" src="./assets/img_shengdanjie_jieriboss_shijietanchuang.png" alt="img_shengdanjie_jieriboss_shijietanchuang.png" width="160" height="160" />
+        <div class="caption">img_shengdanjie_jieriboss_shijietanchuang.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_shengdanjie_jieriboss_shijietanchuang02.png">
+        <img loading="lazy" src="./assets/img_shengdanjie_jieriboss_shijietanchuang02.png" alt="img_shengdanjie_jieriboss_shijietanchuang02.png" width="160" height="160" />
+        <div class="caption">img_shengdanjie_jieriboss_shijietanchuang02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_daxingxing.png">
+        <img loading="lazy" src="./assets/img_zhanshou_daxingxing.png" alt="img_zhanshou_daxingxing.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_daxingxing.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_ditiao.png">
+        <img loading="lazy" src="./assets/img_zhanshou_ditiao.png" alt="img_zhanshou_ditiao.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_ditiao.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_feilong.png">
+        <img loading="lazy" src="./assets/img_zhanshou_feilong.png" alt="img_zhanshou_feilong.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_feilong.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_jiedian_di.png">
+        <img loading="lazy" src="./assets/img_zhanshou_jiedian_di.png" alt="img_zhanshou_jiedian_di.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_jiedian_di.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_jiedian_red.png">
+        <img loading="lazy" src="./assets/img_zhanshou_jiedian_red.png" alt="img_zhanshou_jiedian_red.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_jiedian_red.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_jiedian_yellow.png">
+        <img loading="lazy" src="./assets/img_zhanshou_jiedian_yellow.png" alt="img_zhanshou_jiedian_yellow.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_jiedian_yellow.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_jixielong.png">
+        <img loading="lazy" src="./assets/img_zhanshou_jixielong.png" alt="img_zhanshou_jixielong.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_jixielong.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_line.png">
+        <img loading="lazy" src="./assets/img_zhanshou_line.png" alt="img_zhanshou_line.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_line.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_tankuang01_001.png">
+        <img loading="lazy" src="./assets/img_zhanshou_tankuang01_001.png" alt="img_zhanshou_tankuang01_001.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_tankuang01_001.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_tankuang01_002.png">
+        <img loading="lazy" src="./assets/img_zhanshou_tankuang01_002.png" alt="img_zhanshou_tankuang01_002.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_tankuang01_002.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_tankuang01_003.png">
+        <img loading="lazy" src="./assets/img_zhanshou_tankuang01_003.png" alt="img_zhanshou_tankuang01_003.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_tankuang01_003.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_tankuang01_004.png">
+        <img loading="lazy" src="./assets/img_zhanshou_tankuang01_004.png" alt="img_zhanshou_tankuang01_004.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_tankuang01_004.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_tankuang01.png">
+        <img loading="lazy" src="./assets/img_zhanshou_tankuang01.png" alt="img_zhanshou_tankuang01.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_tankuang01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_tankuang02.png">
+        <img loading="lazy" src="./assets/img_zhanshou_tankuang02.png" alt="img_zhanshou_tankuang02.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_tankuang02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhanshou_tankuang03.png">
+        <img loading="lazy" src="./assets/img_zhanshou_tankuang03.png" alt="img_zhanshou_tankuang03.png" width="160" height="160" />
+        <div class="caption">img_zhanshou_tankuang03.png</div>
+      </div>
+    
+    </div>
+  </div>
+
+  <div id="tab-diff" style="display:none">
+    <div class="diff">
+      <div class="diff-header">
+        <input type="search" id="diffSearch" placeholder="Find in diff…" />
+      </div>
+      <div class="diff-body">
+        <div class="diff-line add">+ 805200007=Storage Battery containing powerful energy, used to charge the Enercore.</div><div class="diff-line add">+ 805200008=Energy Crystal that instantly releases immense energy to trigger an Enercore Breakthru.</div><div class="diff-line add">+ 805200035=Charging</div><div class="diff-line add">+ 805200036=Charge</div><div class="diff-line add">+ 805200037=Enercore stats</div><div class="diff-line add">+ 805200038=Unlocking Condition</div><div class="diff-line add">+ 805200039=Decor Preview</div><div class="diff-line add">+ 805200040=Skill Description</div><div class="diff-line add">+ 805200041=Go charge to activate the Enercore.</div><div class="diff-line add">+ 805200042=Display Beast's Trail?</div><div class="diff-line add">+ 805200043=The current Enercore can undergo a Breakthru. Go to Breakthru?</div><div class="diff-line add">+ 805200044=Charging Breakthru</div><div class="diff-line add">+ 805200045=Charge to Star-Up</div><div class="diff-line add">+ 805200046=Enercore and charging are not yet unlocked. Coming Soon.</div><div class="diff-line add">+ 805200047=Consume items to proceed with the Breakthru?</div><div class="diff-line add">+ 805200048=Enercore Stats</div><div class="diff-line add">+ 805200049=Reset the current war beast's Enercore?\nResetting will refund {0} of the item cost.</div><div class="diff-line add">+ 805200013=Energy Vault</div><div class="diff-line add">+ 805200014=Open the Energy Vault to acquire powerful tech energy!</div><div class="diff-line add">+ 805200015=1. During the event, consume specified items to randomly acquire a reward from the Energy Vault.\n2. Additional rewards can be claimed based on the accumulated number of rewards obtained.</div><div class="diff-line add">+ 805200016=Energy Supply</div><div class="diff-line add">+ 805200017=Purchase to acquire a large number of Energy Keys.</div><div class="diff-line add">+ 805200018=Energy Key</div><div class="diff-line add">+ 805200019=Use this key to open the [Energy Vault] and randomly acquire a reward.</div><div class="diff-line add">+ 805200020=Storage Battery Sale</div><div class="diff-line add">+ 805200021=Energy Crystal Sale</div><div class="diff-line add">+ 805200022=Fountain</div><div class="diff-line add">+ 805200023=Flower Bed</div><div class="diff-line add">+ 805200024=Bellflower</div><div class="diff-line add">+ 805200025=Cactus</div><div class="diff-line add">+ 805200026=Floral Floor</div><div class="diff-line add">+ 805200027=Acquire the Manor Landscape, Garden Fountain</div><div class="diff-line add">+ 805200028=Acquire the Manor Landscape, Flower Bed</div><div class="diff-line add">+ 805200029=Acquire the Manor Landscape, Bellflower</div><div class="diff-line add">+ 805200030=Acquire the Manor Landscape, Cactus</div><div class="diff-line add">+ 805200031=Acquire the Manor Landscape, Floral Floor</div><div class="diff-line add">+ 805200032=Garden</div><div class="diff-line add">+ 805200033=Floral Adventure</div><div class="diff-line add">+ 805200034=1. During the event, use Landscape Draw Tickets to make lucky draws. \n2. Each draw grants you a random item. Check the probability page for details. \n3. A Supreme-quality Landscape is guaranteed in the 50th draw.</div><div class="diff-line add">+ 813000106=Mutated Zombies</div><div class="diff-line add">+ 813000107=A new season has arrived! Mutated Zombie rewards are enhanced, and you can additionally acquire a new item—Storage Battery!</div><div class="diff-line add">+ 813000108=During the event, kill Mutated Zombies to acquire the new reward item, Storage Battery. The higher the level of the Mutated Zombie defeated, the more you will obtain!</div><div class="diff-line add">+ 813000109=Exclusive Challenge Extra Rewards</div><div class="diff-line add">+ 813000111=Attempts Refresh Time:</div><div class="diff-line add">+ 813000112=Go to Challenge</div><div class="diff-line add">+ 810210244=Drako Judgement</div><div class="diff-line add">+ 810210245=Outrageous Strike</div><div class="diff-line add">+ 810210246=Draco Armor</div><div class="diff-line add">+ 810210247=During the fight, all ally heroes' STR, INT, AGI, and VIT are increased by 3%, while all enemy heroes' STR, INT, AGI, and VIT are decreased by 3%.</div><div class="diff-line add">+ 810210248=During the fight, all ally heroes' STR, INT, AGI, and VIT are increased by 3%, while all enemy heroes' STR, INT, AGI, and VIT are decreased by 3%. At the end of each round, there is a 60% probability that an ally hero will clear 1 negative status.</div><div class="diff-line add">+ 810210251=During the fight, all ally heroes' DMG Taken is reduced by 10%, and there is a 20% probability to be immune to the damage when taking damage.</div><div class="diff-line add">+ 805200053=1. War beasts require blueprints to activate. Once activated, they can participate in battles in the World.\n2. Each war beast has basic attributes that are effective for all heroes without needing to deploy the war beast.\n3. Use blueprints to upgrade war beasts, enhancing their basic attributes and unlocking new module slots.\n4. Modules can be equipped in module slots, with each slot only supporting a specific type of module.\n5. Modules have levels, and the sum of equipped module levels determines the war beast's modification level.\n6. Increasing the modification level grants corresponding modification attributes; higher levels mean stronger attributes.\n7. Modification attributes are only effective in battles for heroes deployed in your team.\n8. In the "Module" function, low-level modules can be fused into advanced modules.\n9. When a war beast reaches max level, its Enercore can be unlocked and charged, continuously enhancing its attributes.\n10. Each Enercore requires six charges, with each charge increasing its star level. Once fully charged, tap to break through the Enercore, improving its quality.\n11. Enercore breakthroughs significantly enhance existing attributes or unlock powerful war beast skills.</div><div class="diff-line add">+ 461046=1. War beasts require blueprints to activate. Once activated, they can participate in battles in the World.\n2. Each war beast has basic attributes that are effective for all heroes without needing to deploy the war beast.\n3. Use blueprints to upgrade war beasts, enhancing their basic attributes and unlocking new module slots.\n4. Modules can be equipped in module slots, with each slot only supporting a specific type of module.\n5. Modules have levels, and the sum of equipped module levels determines the war beast's modification level.\n6. Increasing the modification level grants corresponding modification attributes; higher levels mean stronger attributes.\n7. Modification attributes are only effective in battles for heroes deployed in your team.\n8. In the "Module" function, low-level modules can be fused into advanced modules.</div><div class="diff-line add">+ 621068=Total CP reaches {0}</div><div class="diff-line add">+ 805200050=Enercore attribute (Max Level)</div><div class="diff-line add">+ 805200051=Enercore</div><div class="diff-line add">+ 805200052=Max stars</div><div class="diff-line add">+ 805200054=Unlock Enercore after war beast reaches Max Level</div><div class="diff-line add">+ 805200055=Hide Beast's Trail?</div><div class="diff-line add">+ 810210249=During the fight, enhance all ally heroes' Focus DMG by 10%. At the start of each round, all ally heroes recover 100 Focus Value.</div><div class="diff-line add">+ 810210250=During the fight, enhance all ally heroes' Focus DMG by 20%. At the start of each round, all ally heroes recover 100 Focus Value and reduce 100 Focus Value from one random enemy hero.</div><div class="diff-line add">+ 810210252=During the fight, all ally heroes' DMG Taken is reduced by 15%, and there is a 30% probability to be immune to the current DMG when taking damage. At the end of each round, the ally hero with the lowest HP percentage recovers 10% Max HP.</div><div class="diff-line add">+ 803018016=Frozen Defense</div><div class="diff-line add">+ 803018019=Snowman</div><div class="diff-line add">+ 803018020=Snowman King</div><div class="diff-line add">+ 607000901=Christmas Party</div><div class="diff-line add">+ 607000902=Christmas Check-in</div><div class="diff-line add">+ 607000904=Santa's Scavenger Hunt</div><div class="diff-line add">+ 607000907=Miraculous Tree</div><div class="diff-line add">+ 607000909=Winter Hunt</div><div class="diff-line add">+ 607000912=Christmas Zombie</div><div class="diff-line add">+ 607000914=Santa's Gift Vault</div><div class="diff-line add">+ 607000920=Surprise Christmas Mystery Box</div><div class="diff-line add">+ 607000921=Jolly Christmas Mystery Box</div><div class="diff-line add">+ 607000922=Christmas Mystery Box</div><div class="diff-line add">+ 607000923=Winter Special</div><div class="diff-line add">+ 607000929=Frosty Fang Raider</div><div class="diff-line add">+ 607000931=Desperate Frozen Night</div><div class="diff-line add">+ 607000933=Icy Chest</div><div class="diff-line add">+ 607000938=Christmas Supplies</div><div class="diff-line add">+ 607000944=Snowman Mystery Box</div><div class="diff-line add">+ 607000945=Snowman King Mystery Box</div><div class="diff-line add">+ 607000946=Boom Bomb</div><div class="diff-line add">+ 607000949=Boom Perk</div><div class="diff-line add">+ 805100701=Aurora Fort</div><div class="diff-line add">+ 805100704=Snow Fiesta</div><div class="diff-line add">+ 805100710=Jolly Snowman</div><div class="diff-line add">+ 805100716=Snowball APC</div><div class="diff-line add">+ 1010000105=Candy Cane</div><div class="diff-line add">+ 805000468=Gingerbread</div><div class="diff-line add">+ 805000201=Christmas Is Here</div><div class="diff-line add">+ 805000271=Frosty Baron</div><div class="diff-line add">+ 607000916=Ice Coin</div><div class="diff-line add">+ 803011017=Doomsday Clan</div><div class="diff-line add">+ 803011018=Paw Brawler</div><div class="diff-line add">+ 805100419=Snowy Christmas</div><div class="diff-line add">+ 803018025=Commander {1} of Zone {0} defeated the Snowman King in the {2} event, earning Boom Bomb *{3}.</div><div class="diff-line add">+ 803018026=Defeat {0} Snowmen daily to acquire the following rewards.</div><div class="diff-line add">+ 607000903=1. During the event, log in to claim the daily check-in rewards.\n2. If you miss a day, you can remedy it by spending a specified number of Diamonds.\n3. If you log in but don't claim the reward, you can claim it the next day.</div><div class="diff-line add">+ 607000905=Rumor has it that Santa Claus likes to place presents under the Christmas tree outside. Let's go find them!</div><div class="diff-line add">+ 607000906=1. During the event, Miraculous Trees will refresh daily across the world.\n2. Commanders have a daily deployment limit of 5 times, which resets at 0:00 (Game Time).\n3. Explore the Miraculous Trees to acquire tons of precious rewards.</div><div class="diff-line add">+ 607000908=Presents are placed under the Christmas tree, and faintly written in the snow nearby: 'Meeting you is a miracle.'</div><div class="diff-line add">+ 607000910=On this special festival, zombies are stirring. We must eliminate them!</div><div class="diff-line add">+ 607000911=1. During the event, a large number of Christmas Zombies will refresh daily across the world.\n2. Commanders have {0} deployment attempts daily, which reset at 0:00 (Game Time).\n3. Defeat Christmas Zombies to acquire tons of precious rewards.</div><div class="diff-line add">+ 607000913=Zombies wearing Christmas hats look even more ferocious.</div><div class="diff-line add">+ 607000915=Collect Ice Coins to redeem rare items. Thank you for your continued support and companionship!</div><div class="diff-line add">+ 607000918=Dear Commander,\n\nThe event has ended. Thank you for your active participation. After the event, your [Ice Coins] will no longer be usable. Therefore, we have recycled your {0} unused [Ice Coins] and provided the following items as compensation. Thank you for your great support, and enjoy the game!</div><div class="diff-line add">+ 607000919=After purchase, acquire tons of Ice Coins.</div><div class="diff-line add">+ 607000924=Winter Special - Inception Pack</div><div class="diff-line add">+ 607000925=Winter Special - Surprise Pack</div><div class="diff-line add">+ 607000926=Winter Special - Advanced Pack</div><div class="diff-line add">+ 607000927=Winter Special - Premium Pack</div><div class="diff-line add">+ 607000928=Winter Special - Deluxe Pack</div><div class="diff-line add">+ 607000930=Clad in armor encrusted with ice crystals, it emits a chilling aura, making it a fearsome hound to behold.</div><div class="diff-line add">+ 607000932=Christmas night is about to begin, and suddenly the Frosty Fang Raider appears, its deafening roar echoing from afar...</div><div class="diff-line add">+ 607000934=A chest once tightly gripped by the Frosty Fang Raider over a great distance, still exuding a biting chill.</div><div class="diff-line add">+ 607000935=Desperate Frozen Night Challenge Reward</div><div class="diff-line add">+ 607000936=Desperate Frozen Night Ranking Reward</div><div class="diff-line add">+ 607000937=Dear Commander, \n\nThe [Desperate Frozen Night] ranking event has ended. Your ranking this round: {0}, highest DMG: {1}. Below are your rewards.</div><div class="diff-line add">+ 607000939=Frozen Defense</div><div class="diff-line add">+ 607000940=Snowmen have magically appeared in this world. Kill them to guard our homeworld!</div><div class="diff-line add">+ 607000941=1. Snowmen have discovered our world and sent a vanguard to attack. Use bombs to repel them and guard our homeworld!\n2. During the event, use Boom Bombs to attack the Snowman Legion and acquire various rewards.\n3. Each time you kill a Snowman, you will receive a generous victory reward, but it may also attract a stronger Snowman King.\n4. The Snowman King is the leader of the Snowmen and cannot be completely destroyed but can be temporarily repelled. Attacking the Snowman King not only grants richer attack rewards but also a chance to win Winter Treasures.\n5. When using Boom Bombs to attack, there is a probability of triggering a no-cost effect. Once triggered, subsequent attacks for a certain number of times will not consume Boom Bombs.\n6. Auto-attack is only effective when the event interface is open.\n7. After the event ends, unused Boom Bombs will be automatically redeemed for Diamonds and sent to your mailbox.</div><div class="diff-line add">+ 607000942=Snowman</div><div class="diff-line add">+ 607000943=Snowman King</div><div class="diff-line add">+ 607000947=The fiery bomb contains terrifying power, making it the ultimate item to counter Snowmen!</div><div class="diff-line add">+ 607000948=Snowman King Incoming</div><div class="diff-line add">+ 607000950=The power of bombs, Snowman Buster!</div><div class="diff-line add">+ 607000951=Kill {0} Snowmen daily to acquire the following rewards.</div><div class="diff-line add">+ 607000952=Dear Commander, \n\nThe event has ended. Thank you for your active participation. After the event, your [Boom Bombs] are no longer usable. Therefore, we have recycled your {0} unused [Boom Bombs] and provided the following items as compensation. Thank you for your support, and enjoy the game!</div><div class="diff-line add">+ 805100702=Aurora Fort {0}</div><div class="diff-line add">+ 805100703=Can you hear the sound of reindeer running? Santa Claus is on his way to deliver presents! Use it to change the fortress appearance to [Aurora Fort].</div><div class="diff-line add">+ 805100705=Snow Fiesta ({0})</div><div class="diff-line add">+ 805100706=Use it to change the Nameplate into [Snow Fiesta].</div><div class="diff-line add">+ 805100707=Snow Fiesta</div><div class="diff-line add">+ 805100708=Snow Fiesta ({0})</div><div class="diff-line add">+ 805100709=Use it to change the avatar frame into [Snow Fiesta].</div><div class="diff-line add">+ 805100711=Christmas Snowman ({0})</div><div class="diff-line add">+ 805100712=A snowman dressed in Christmas attire, dancing in the air. Use it to change the pendant to [Christmas Snowman].</div><div class="diff-line add">+ 805100713=Snow Fiesta</div><div class="diff-line add">+ 805100714=Snow Fiesta ({0})</div><div class="diff-line add">+ 805100715=Ready to receive the blessings of the Christmas season? Use it to change the profile card frame to [Snow Fiesta].</div><div class="diff-line add">+ 805100717=Snowball APC ({0})</div><div class="diff-line add">+ 805100718=It's not pushing a snowball, but a festive surprise rolling to your doorstep! Use it to change the APC appearance to [Snowball APC].</div><div class="diff-line add">+ 805100719=Snow Fiesta</div><div class="diff-line add">+ 805100720=Snow Fiesta ({0})</div><div class="diff-line add">+ 805100721=Use it to change the message frame to [Snow Fiesta].</div><div class="diff-line add">+ 1010000101=Christmas Party</div><div class="diff-line add">+ 1010000102=[Christmas Party] Advanced</div><div class="diff-line add">+ 1010000103=[Christmas Party] Advanced &amp; Deluxe</div><div class="diff-line add">+ 1010000104=[Christmas Party] Deluxe</div><div class="diff-line add">+ 1010000106=Used to join the [Christmas Party] event; will be recycled after the event ends.</div><div class="diff-line add">+ 1010000107=Dear Commander,\n\nThe event has ended. Thank you for your participation. After the event ends, your [Candy Cane Points] will no longer be usable. Therefore, we recycled your {0} unused [Candy Cane Points] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line add">+ 1010000108=Dear Commander,\n\nYou ranked #{0} in the [Christmas Party] with {1} EXP! Congratulations on acquiring the following rewards! Collect them now.</div><div class="diff-line add">+ 1010000109=[Christmas Party] Chest</div><div class="diff-line add">+ 805000469=Event Points for [Christmas Is Here] can support the alliance's Fortress Construction and help compete for leaderboard rewards.</div><div class="diff-line add">+ 805000470=[Christmas Is Here] Mission rewards</div><div class="diff-line add">+ 805000471=Dear Commander, below are the mission rewards you have not yet claimed from the [Christmas Is Here] event.</div><div class="diff-line add">+ 805000472=[Christmas Is Here] Personal Construction Stage leaderboard Rewards</div><div class="diff-line add">+ 805000473=Dear Commander, the construction stage ranking event of this session of [Christmas Is Here] has ended. Your ranking this round: #{0}; your points: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000474=[Christmas Is Here] Alliance Construction Stage leaderboard rewards</div><div class="diff-line add">+ 805000475=Dear Commander, the construction stage of this session of the [Christmas Is Here] event has ended. Your alliance's ranking: #{0}; Alliance Points: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000476=[Christmas Is Here] Personal combat ranking rewards</div><div class="diff-line add">+ 805000477=Dear Commander, the combat stage of this session of the [Christmas Is Here] event has ended. Your ranking this round: #{0}; total DMG you dealt: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000478=[Christmas Is Here] Alliance Fight Stage leaderboard rewards</div><div class="diff-line add">+ 805000479=Dear Commander, the combat stage of this session of the [Christmas Is Here] event has ended. Your alliance's ranking: #{0}; total DMG your alliance dealt: {1}. Below are your rewards.</div><div class="diff-line add">+ 805000441=The Frosty Baron has not been summoned yet; please go to the Event Page to summon it.</div><div class="diff-line add">+ 805000442={0} Frosty Baron has been relocated; Go to Fight.</div><div class="diff-line add">+ 805000454=The Frosty Baron is about to appear.</div><div class="diff-line add">+ 805000212=Deep in the snowy plains lies a treehouse, which has undergone a magical transformation before Christmas.</div><div class="diff-line add">+ 805000214=Event Rules:\n1. Warm-up Period\n- If the Commander does not join an alliance before the warm-up period ends, they cannot participate in the Christmas Is Here event.\n2. Construction Period\n- Commanders can earn points and rewards during the construction period by completing daily missions, achievement missions, and donation tasks.\n- Points contribute to the alliance's Treehouse fortress construction progress. Once the fortress is completed, a buff will be granted: 5% DMG increase against the Frosty Baron.\n- Ranking rewards for points will be distributed via mailbox after the construction period ends.\n- Commanders must achieve a certain number of points to qualify for alliance point leaderboard rewards.\n3. Combat Period\n- During the combat period, R4 or the alliance leader can summon the Frosty Baron, and alliance members can attack it. The higher the total damage dealt to the Frosty Baron, the higher the ranking.\n- Damage ranking rewards will be distributed via mailbox after the combat period ends.\n- Commanders must deal a certain amount of damage to qualify for alliance damage leaderboard rewards.\n4. Display Period\n- During the display period, Commanders can view their own and their alliance's leaderboard information.</div><div class="diff-line add">+ 805000243=The Frosty Baron is about to descend.</div><div class="diff-line add">+ 805000245=1. Commanders can earn points and rewards by completing daily missions, achievement missions, and donation tasks.\n2. Achievement missions are one-time tasks and cannot be repeated.\n3. Points contribute to the alliance's Treehouse fortress construction progress. Once the fortress is completed, a buff will be granted: 5% DMG increase against the Frosty Baron.</div><div class="diff-line add">+ 805000266=[{0}] Frosty Baron</div><div class="diff-line add">+ 805000272=The Frosty Baron has descended; Go to ATK.</div><div class="diff-line add">+ 805000277=The alliance has not summoned the Frosty Baron.</div><div class="diff-line add">+ 805000280=Buff from completed Fortress construction: 5% DMG increase against the Frosty Baron.</div><div class="diff-line add">+ 805000283=Tap to Summon the Frosty Baron.</div><div class="diff-line add">+ 805000286={0} Frosty Baron has appeared.</div><div class="diff-line add">+ 805000287={0} Frosty Baron has appeared; Go to Fight.</div><div class="diff-line add">+ 805000296={0} Frosty Baron</div><div class="diff-line add">+ 805000297={0} Frosty Baron</div><div class="diff-line add">+ 805000407=Welcome to the Christmas Is Here event.</div><div class="diff-line add">+ 805000409=Points support the alliance's Fortress construction. Completing the Fortress grants a DMG Bonus against the Frosty Baron.</div><div class="diff-line add">+ 805000411=When entering the combat stage of the event, alliance R4 and above members can summon the Frosty Baron.</div><div class="diff-line add">+ 805000412=The cumulative DMG dealt to the Frosty Baron daily will contribute to personal and alliance damage rankings, with rewards distributed based on rankings.</div><div class="diff-line add">+ 805000413=Fight side by side with your allies, build your homeworld, and battle against the Frosty Baron!</div><div class="diff-line add">+ 607000917=A currency made of ice, its crystal-clear appearance reveals its high value. It can be redeemed for rare items in Santa's Gift Vault.</div><div class="diff-line add">+ 805100420=Snowy Christmas ({0})</div><div class="diff-line add">+ 805100421=Wings born in the snow during Christmas, symbolizing light, joy, and blessings. Use it to grow a pair of ice and snow wings behind the fortress.</div><div class="diff-line add">+ 810210253=In battles, ally heroes' DMG Mitigation increases by {0}, lasting till the battle ends.</div><div class="diff-line add">+ 810210254=In battles, ally heroes' DMG Mitigation increases by {0}, lasting till the battle ends. Defender heroes' Crit Immunity Rate increases by {1} at the start of each round, stackable for up to {2} layers.</div><div class="diff-line add">+ 810210255=When ally heroes' Crit Immunity Rate effect reaches the limit, DEF increases by {0}, lasting {1} round(s).</div><div class="diff-line add">+ 810210256=In battles, ally heroes' WPN DMG Mitigation increases by {0}, lasting till the battle ends.</div><div class="diff-line add">+ 810210257=In battles, ally heroes' WPN DMG Mitigation increases by {0}, lasting till the battle ends. At the start of the battle, the ally hero with the highest ATK deals {1} more DMG, lasting 3 rounds.</div><div class="diff-line add">+ 810210258=Starting from round 4, the ally hero with the highest current ATK deals {0} more DMG each round, stackable for up to 5 layers, lasting till the battle ends.</div><div class="diff-line add">+ 371212=Use 1 Storage Battery</div><div class="diff-line add">+ 371213=Use 1 Energy Crystal</div><div class="diff-line add">+ 371214=Use 1 Restoration Toolkit</div><div class="diff-line add">+ 810210259=Samantha acquires {0} layers of Strangler status at the start of each round.</div><div class="diff-line add">+ 810210260=At the start of each round, Samantha enhances her crit rate by {0} and Crit DMG by {1}, up to a maximum of {2}.</div><div class="diff-line add">+ 810210261=At the end of each round, Bobbie enhances the DEF of the ally with the lowest HP percentage by {0} for 1 round.</div><div class="diff-line add">+ 810210262=When Bobbie casts Jungle's Protection, all allied heroes acquire {0} Focus, and their DMG Dealt is enhanced by {1} for 2 rounds.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img alt="">
+    <div class="cap"></div>
+  </div>
+
+  <script>
+  (function(){
+    const raf = requestAnimationFrame;
+    let searchTimeout;
+
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabImages = document.getElementById('tab-images');
+    const tabDiff = document.getElementById('tab-diff');
+    tabs.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        tabs.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const t = btn.dataset.tab;
+        tabImages.style.display = (t==='images') ? '' : 'none';
+        tabDiff.style.display = (t==='diff') ? '' : 'none';
+      });
+    });
+
+    // Lightbox functionality
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb?.querySelector('img');
+    const lbCap = lb?.querySelector('.cap');
+    const imgGrid = document.getElementById('imgGrid');
+
+    if (lb && lbImg && lbCap && imgGrid) {
+      imgGrid.addEventListener('click', e=>{
+        // Check if clicked element is an image
+        let img = null;
+        if (e.target.tagName === 'IMG') {
+          img = e.target;
+        } else {
+          // Check if clicked on thumb container or caption
+          const thumb = e.target.closest('.thumb');
+          if (thumb) {
+            img = thumb.querySelector('img');
+          }
+        }
+
+        if (!img) return;
+
+        const src = img.src || img.dataset.src;
+        if (src) {
+          lbImg.src = src;
+          lbCap.textContent = decodeURIComponent(src.split('/').pop());
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+      });
+
+      // Close lightbox when clicking on overlay (but not the image itself)
+      lb.addEventListener('click', e=>{
+        if (e.target === lb || e.target === lbCap) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', e=>{
+        if(e.key==='Escape' && lb.classList.contains('open')) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    const imgSearch = document.getElementById('imgSearch');
+    let allThumbs;
+
+    function initSearch() {
+      allThumbs = [...document.querySelectorAll('.thumb')];
+    }
+
+    function performSearch(query) {
+      const q = query.trim().toLowerCase();
+      allThumbs.forEach(t => {
+        const name = t.getAttribute('data-name') || '';
+        t.style.display = (!q || name.includes(q)) ? '' : 'none';
+      });
+    }
+
+    imgSearch?.addEventListener('input', e => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        if (!allThumbs) initSearch();
+        raf(() => performSearch(e.target.value));
+      }, 150);
+    });
+
+    const diffSearch = document.getElementById('diffSearch');
+    const diffBody = document.querySelector('.diff-body');
+    diffSearch?.addEventListener('change', ()=>{
+      const q = diffSearch.value.trim();
+      if(!diffBody) return;
+      diffBody.querySelectorAll('mark.hl').forEach(n=>n.classList.remove('hl'));
+      if(!q) return;
+
+      const walker = document.createTreeWalker(diffBody, NodeFilter.SHOW_TEXT);
+      const ranges = [];
+      while(walker.nextNode()){
+        const node = walker.currentNode;
+        if (!node.parentElement.closest('.diff-line')) continue;
+
+        const idx = node.nodeValue.toLowerCase().indexOf(q.toLowerCase());
+        if(idx>=0){
+          const range = document.createRange();
+          range.setStart(node, idx);
+          range.setEnd(node, idx+q.length);
+          ranges.push(range);
+        }
+      }
+      ranges.forEach(r=>{
+        const mark = document.createElement('mark'); mark.className='hl';
+        r.surroundContents(mark);
+      });
+    });
+  })();
+  </script>
+  
+
+</div>
+
+<!-- Back to top button -->
+<div class="back-to-top" id="backToTop">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+</div>
+
+<footer>
+  <p>Created by <a href="https://www.patreon.com/renegade2k6UK" target="_blank">Renegade2k6</a></p>
+  <p>
+    Follow on 
+    <a href="https://x.com/Renegade2k6News" target="_blank">X</a> | 
+    <a href="https://www.facebook.com/ren2k6" target="_blank">Facebook</a> | 
+    <a href="https://www.facebook.com/groups/3338947016351680/" target="_blank">LFU Informer Group</a>
+  </p>
+</footer>
+
+<script>
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  // Don't interfere with typing in inputs
+  const activeElement = document.activeElement;
+  const isTyping = /input|textarea|select/.test(activeElement.tagName.toLowerCase());
+
+  // / - Focus search
+  if (e.key === '/' && !isTyping) {
+    const s = document.querySelector('input[type="search"]');
+    if (s) {
+      e.preventDefault();
+      s.focus();
+      s.select();
+    }
+  }
+
+  // Escape - Blur search or close lightbox
+  if (e.key === 'Escape') {
+    if (isTyping) {
+      activeElement.blur();
+    }
+  }
+
+  // ? - Show keyboard shortcuts (could be extended)
+  if (e.key === '?' && !isTyping) {
+    e.preventDefault();
+    alert('Keyboard Shortcuts:\n/ - Focus search\nEscape - Close lightbox or blur search\nClick images to view in lightbox');
+  }
+});
+
+// Register service worker for PWA (if available)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/LFULeaks/sw.js').catch(() => {
+      // Service worker registration failed, that's okay
+    });
+  });
+}
+
+// Back to top button functionality
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+</script>
+</body>
+</html>

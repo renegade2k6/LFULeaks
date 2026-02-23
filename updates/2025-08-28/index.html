@@ -1462,7 +1462,7 @@ input[type="search"]:focus {
 
 
   <div class="card">
-    <div class="meta">Images: 48 · New lines: 38 · Generated: 2026-02-23T08:25:30.518Z</div>
+    <div class="meta">Images: 48 · New lines: 38 · Generated: 2026-02-23T08:46:30.465Z</div>
   </div>
 
   <div class="tabs">
@@ -1892,15 +1892,17 @@ input[type="search"]:focus {
       });
     }
 
-    // Enhanced search with result count and clear button
+    // Enhanced search with result count, clear button, and no-results state
     const imgSearch = document.getElementById('imgSearch');
     const searchClear = document.getElementById('searchClear');
     const resultsCount = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
     
     if (imgSearch) {
       function updateSearch(query) {
         const items = Array.from(document.querySelectorAll('.thumb'));
         const q = query.toLowerCase().trim();
+        const grid = document.getElementById('imgGrid');
         
         let visibleCount = 0;
         items.forEach(t => {
@@ -1921,27 +1923,41 @@ input[type="search"]:focus {
 
         // Show/hide clear button
         if (searchClear) {
-          if (q) {
-            searchClear.classList.add('show');
+          searchClear.classList.toggle('show', q.length > 0);
+        }
+
+        // Show/hide no-results state
+        if (noResults && grid) {
+          if (q && visibleCount === 0) {
+            noResults.style.display = 'block';
+            grid.style.display = 'none';
           } else {
-            searchClear.classList.remove('show');
+            noResults.style.display = 'none';
+            grid.style.display = '';
           }
         }
 
-        // Update images list for lightbox
+        // Keep lightbox image list in sync
         updateImagesList();
       }
 
       imgSearch.addEventListener('input', e => {
         clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-          updateSearch(e.target.value);
-        }, 150);
+        searchTimeout = setTimeout(() => updateSearch(e.target.value), 150);
       });
 
-      // Clear button
       if (searchClear) {
         searchClear.addEventListener('click', () => {
+          imgSearch.value = '';
+          updateSearch('');
+          imgSearch.focus();
+        });
+      }
+
+      // Wire up the in-page clear button inside no-results message
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', () => {
           imgSearch.value = '';
           updateSearch('');
           imgSearch.focus();
@@ -1954,66 +1970,6 @@ input[type="search"]:focus {
         resultsCount.textContent = `${items.length} images`;
       }
     }
-
-    // Close on escape key
-          lb.classList.remove('open');
-          document.body.style.overflow = '';
-        }
-      });
-    }
-
-    const imgSearch = document.getElementById('imgSearch');
-    let allThumbs;
-
-    function initSearch() {
-      allThumbs = [...document.querySelectorAll('.thumb')];
-    }
-
-    function performSearch(query) {
-      const q = query.trim().toLowerCase();
-      let visibleCount = 0;
-      allThumbs.forEach(t => {
-        const name = t.getAttribute('data-name') || '';
-        const isVisible = !q || name.includes(q);
-        t.style.display = isVisible ? '' : 'none';
-        if (isVisible) visibleCount++;
-      });
-      
-      // Update results count
-      const resultsCount = document.getElementById('resultsCount');
-      const noResults = document.getElementById('noResults');
-      const imgGrid = document.querySelector('.grid.images');
-      
-      if (q) {
-        if (resultsCount) {
-          resultsCount.textContent = `${visibleCount} of ${allThumbs.length} images`;
-          resultsCount.style.display = 'inline';
-        }
-        
-        // Show/hide no results message
-        if (noResults && imgGrid) {
-          if (visibleCount === 0) {
-            noResults.style.display = 'block';
-            imgGrid.style.display = 'none';
-          } else {
-            noResults.style.display = 'none';
-            imgGrid.style.display = 'grid';
-          }
-        }
-      } else {
-        if (resultsCount) resultsCount.style.display = 'none';
-        if (noResults) noResults.style.display = 'none';
-        if (imgGrid) imgGrid.style.display = 'grid';
-      }
-    }
-
-    imgSearch?.addEventListener('input', e => {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => {
-        if (!allThumbs) initSearch();
-        raf(() => performSearch(e.target.value));
-      }, 150);
-    });
 
     const diffSearch = document.getElementById('diffSearch');
     const diffBody = document.querySelector('.diff-body');
@@ -2194,16 +2150,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Clear search button functionality
-const clearSearchBtn = document.getElementById('clearSearchBtn');
-const imgSearch = document.getElementById('imgSearch');
-if (clearSearchBtn && imgSearch) {
-  clearSearchBtn.addEventListener('click', () => {
-    imgSearch.value = '';
-    imgSearch.dispatchEvent(new Event('input'));
-    imgSearch.focus();
-  });
-}
+// Clear search button functionality is handled inline per page
 </script>
 </body>
 </html>

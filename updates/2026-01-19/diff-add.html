@@ -1616,16 +1616,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Clear search button functionality
-const clearSearchBtn = document.getElementById('clearSearchBtn');
-const imgSearch = document.getElementById('imgSearch');
-if (clearSearchBtn && imgSearch) {
-  clearSearchBtn.addEventListener('click', () => {
-    imgSearch.value = '';
-    imgSearch.dispatchEvent(new Event('input'));
-    imgSearch.focus();
-  });
-}
+// Clear search button functionality is handled inline per page
 </script>
 </body>
 </html>

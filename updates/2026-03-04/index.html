@@ -1461,100 +1461,480 @@ input[type="search"]:focus {
   </div>
 
 
-<div class="grid" style="grid-template-columns:1fr;gap:10px">
-  
-    <a class="card" href="./updates/2026-03-04/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-03-04<span style="background:linear-gradient(135deg, #6aa2ff 0%, #a855f7 100%);color:#fff;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;margin-left:8px;white-space:nowrap">Updated today</span></div>
-        <div class="meta">Images: 35 · New lines: 139 · File lines: 37223</div>
+  <div class="card">
+    <div class="meta">Images: 35 · New lines: 139 · Generated: 2026-03-04T06:53:35.922Z</div>
+  </div>
+
+  <div class="tabs">
+    <a href="../../index.html" class="tab-btn" style="background:#0a0c0f;border-color:#6aa2ff;color:#6aa2ff">← Back</a>
+    <button class="tab-btn active" data-tab="images">New Images (35)</button>
+    <button class="tab-btn" data-tab="diff" title="Differences from last update">Config Diff</button>
+  </div>
+
+  <div id="tab-images">
+    <div class="toolbar">
+      <div class="searchbar">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="search" id="imgSearch" placeholder="Filter images (press / to focus)" />
+        <button class="search-clear" id="searchClear" aria-label="Clear search">×</button>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-02-04/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-02-04</div>
-        <div class="meta">Images: 165 · New lines: 115 · File lines: 37091</div>
+      <span class="search-results-count" id="resultsCount"></span>
+    </div>
+    <div class="grid images" id="imgGrid">
+      
+      <div class="thumb" data-name="buff_d_paint.png">
+        <img loading="lazy" src="./assets/Buff_D_Paint.png" alt="Buff_D_Paint.png" width="160" height="160" />
+        <div class="caption">Buff_D_Paint.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-01-19/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-01-19</div>
-        <div class="meta">Images: 114 · New lines: 36539 · File lines: 36979</div>
+    
+      <div class="thumb" data-name="hero_half_iris.png">
+        <img loading="lazy" src="./assets/hero_half_Iris.png" alt="hero_half_Iris.png" width="160" height="160" />
+        <div class="caption">hero_half_Iris.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-01-09/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-01-09</div>
-        <div class="meta">Images: 40 · New lines: 16 · File lines: 37179</div>
+    
+      <div class="thumb" data-name="hero_half_thomas.png">
+        <img loading="lazy" src="./assets/hero_half_Thomas.png" alt="hero_half_Thomas.png" width="160" height="160" />
+        <div class="caption">hero_half_Thomas.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-12-22/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-12-22</div>
-        <div class="meta">Images: 49 · New lines: 202 · File lines: 37163</div>
+    
+      <div class="thumb" data-name="hero_head_iris.png">
+        <img loading="lazy" src="./assets/hero_head_Iris.png" alt="hero_head_Iris.png" width="160" height="160" />
+        <div class="caption">hero_head_Iris.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-12-08/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-12-08</div>
-        <div class="meta">Images: 247 · New lines: 63 · File lines: 37005</div>
+    
+      <div class="thumb" data-name="hero_head_thomas.png">
+        <img loading="lazy" src="./assets/hero_head_Thomas.png" alt="hero_head_Thomas.png" width="160" height="160" />
+        <div class="caption">hero_head_Thomas.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-11-24/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-11-24</div>
-        <div class="meta">Images: 53 · New lines: 0 · File lines: 36950</div>
+    
+      <div class="thumb" data-name="hl200.png">
+        <img loading="lazy" src="./assets/hl200.png" alt="hl200.png" width="160" height="160" />
+        <div class="caption">hl200.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-11-11/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-11-11</div>
-        <div class="meta">Images: 76 · New lines: 203 · File lines: 36950</div>
+    
+      <div class="thumb" data-name="hl200biyan.png">
+        <img loading="lazy" src="./assets/hl200biyan.png" alt="hl200biyan.png" width="160" height="160" />
+        <div class="caption">hl200biyan.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-10-14/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-10-14</div>
-        <div class="meta">Images: 54 · New lines: 95 · File lines: 36808</div>
+    
+      <div class="thumb" data-name="icon_iris_01.png">
+        <img loading="lazy" src="./assets/ICON_Iris_01.png" alt="ICON_Iris_01.png" width="160" height="160" />
+        <div class="caption">ICON_Iris_01.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-09-22/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-09-22</div>
-        <div class="meta">Images: 65 · New lines: 66 · File lines: 36713</div>
+    
+      <div class="thumb" data-name="icon_iris_02.png">
+        <img loading="lazy" src="./assets/ICON_Iris_02.png" alt="ICON_Iris_02.png" width="160" height="160" />
+        <div class="caption">ICON_Iris_02.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-09-08/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-09-08</div>
-        <div class="meta">Images: 12 · New lines: 60 · File lines: 36647</div>
+    
+      <div class="thumb" data-name="icon_iris_03.png">
+        <img loading="lazy" src="./assets/ICON_Iris_03.png" alt="ICON_Iris_03.png" width="160" height="160" />
+        <div class="caption">ICON_Iris_03.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-08-28/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-08-28</div>
-        <div class="meta">Images: 48 · New lines: 38 · File lines: 36595</div>
+    
+      <div class="thumb" data-name="icon_iris_04.png">
+        <img loading="lazy" src="./assets/ICON_Iris_04.png" alt="ICON_Iris_04.png" width="160" height="160" />
+        <div class="caption">ICON_Iris_04.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-08-27/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-08-27</div>
-        <div class="meta">Images: 24137 · New lines: 36557 · File lines: 36557</div>
+    
+      <div class="thumb" data-name="icon_iris_05.png">
+        <img loading="lazy" src="./assets/ICON_Iris_05.png" alt="ICON_Iris_05.png" width="160" height="160" />
+        <div class="caption">ICON_Iris_05.png</div>
       </div>
-    </a>
-  
-</div>
+    
+      <div class="thumb" data-name="icon_iris_woman_exclusive_show_red.png">
+        <img loading="lazy" src="./assets/ICON_Iris_woman_exclusive_show_red.png" alt="ICON_Iris_woman_exclusive_show_red.png" width="160" height="160" />
+        <div class="caption">ICON_Iris_woman_exclusive_show_red.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_thomas_01.png">
+        <img loading="lazy" src="./assets/ICON_Thomas_01.png" alt="ICON_Thomas_01.png" width="160" height="160" />
+        <div class="caption">ICON_Thomas_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_thomas_02.png">
+        <img loading="lazy" src="./assets/ICON_Thomas_02.png" alt="ICON_Thomas_02.png" width="160" height="160" />
+        <div class="caption">ICON_Thomas_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_thomas_03.png">
+        <img loading="lazy" src="./assets/ICON_Thomas_03.png" alt="ICON_Thomas_03.png" width="160" height="160" />
+        <div class="caption">ICON_Thomas_03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_thomas_04.png">
+        <img loading="lazy" src="./assets/ICON_Thomas_04.png" alt="ICON_Thomas_04.png" width="160" height="160" />
+        <div class="caption">ICON_Thomas_04.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_thomas_05.png">
+        <img loading="lazy" src="./assets/ICON_Thomas_05.png" alt="ICON_Thomas_05.png" width="160" height="160" />
+        <div class="caption">ICON_Thomas_05.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_tomas_man_exclusive_show_red.png">
+        <img loading="lazy" src="./assets/ICON_Tomas_man_exclusive_show_red.png" alt="ICON_Tomas_man_exclusive_show_red.png" width="160" height="160" />
+        <div class="caption">ICON_Tomas_man_exclusive_show_red.png</div>
+      </div>
+    
+      <div class="thumb" data-name="klsd200.png">
+        <img loading="lazy" src="./assets/klsd200.png" alt="klsd200.png" width="160" height="160" />
+        <div class="caption">klsd200.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ky200-.png">
+        <img loading="lazy" src="./assets/ky200-.png" alt="ky200-.png" width="160" height="160" />
+        <div class="caption">ky200-.png</div>
+      </div>
+    
+      <div class="thumb" data-name="llc200.png">
+        <img loading="lazy" src="./assets/llc200.png" alt="llc200.png" width="160" height="160" />
+        <div class="caption">llc200.png</div>
+      </div>
+    
+      <div class="thumb" data-name="lre200.png">
+        <img loading="lazy" src="./assets/lre200.png" alt="lre200.png" width="160" height="160" />
+        <div class="caption">lre200.png</div>
+      </div>
+    
+      <div class="thumb" data-name="lrebiyan.png">
+        <img loading="lazy" src="./assets/lrebiyan.png" alt="lrebiyan.png" width="160" height="160" />
+        <div class="caption">lrebiyan.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_chouka_iris_01.png">
+        <img loading="lazy" src="./assets/ui_chouka_Iris_01.png" alt="ui_chouka_Iris_01.png" width="160" height="160" />
+        <div class="caption">ui_chouka_Iris_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_chouka_thomas_01.png">
+        <img loading="lazy" src="./assets/ui_chouka_Thomas_01.png" alt="ui_chouka_Thomas_01.png" width="160" height="160" />
+        <div class="caption">ui_chouka_Thomas_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_iris_woman_exclusive_show_red.png">
+        <img loading="lazy" src="./assets/UI_Iris_woman_exclusive_show_red.png" alt="UI_Iris_woman_exclusive_show_red.png" width="160" height="160" />
+        <div class="caption">UI_Iris_woman_exclusive_show_red.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_libaohalf_iris.png">
+        <img loading="lazy" src="./assets/ui_libaohalf_Iris.png" alt="ui_libaohalf_Iris.png" width="160" height="160" />
+        <div class="caption">ui_libaohalf_Iris.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_libaohalf_thomas.png">
+        <img loading="lazy" src="./assets/ui_libaohalf_Thomas.png" alt="ui_libaohalf_Thomas.png" width="160" height="160" />
+        <div class="caption">ui_libaohalf_Thomas.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_libaoiris.png">
+        <img loading="lazy" src="./assets/ui_libaoIris.png" alt="ui_libaoIris.png" width="160" height="160" />
+        <div class="caption">ui_libaoIris.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_libaothomas.png">
+        <img loading="lazy" src="./assets/ui_libaoThomas.png" alt="ui_libaoThomas.png" width="160" height="160" />
+        <div class="caption">ui_libaoThomas.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_s17kachi_yeqian_01.png">
+        <img loading="lazy" src="./assets/ui_S17kachi_yeqian_01.png" alt="ui_S17kachi_yeqian_01.png" width="160" height="160" />
+        <div class="caption">ui_S17kachi_yeqian_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_s17kachi_yeqian_02.png">
+        <img loading="lazy" src="./assets/ui_S17kachi_yeqian_02.png" alt="ui_S17kachi_yeqian_02.png" width="160" height="160" />
+        <div class="caption">ui_S17kachi_yeqian_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_tomas_man_exclusive_show_red.png">
+        <img loading="lazy" src="./assets/UI_Tomas_man_exclusive_show_red.png" alt="UI_Tomas_man_exclusive_show_red.png" width="160" height="160" />
+        <div class="caption">UI_Tomas_man_exclusive_show_red.png</div>
+      </div>
+    
+      <div class="thumb" data-name="xzc200.png">
+        <img loading="lazy" src="./assets/xzc200.png" alt="xzc200.png" width="160" height="160" />
+        <div class="caption">xzc200.png</div>
+      </div>
+    
+    </div>
+  </div>
+
+  <div id="tab-diff" style="display:none">
+    <div class="diff">
+      <div class="diff-header">
+        <input type="search" id="diffSearch" placeholder="Find in diff…" />
+      </div>
+      <div class="diff-body">
+        <div class="diff-line add">+ 1010000401=Sweet Encounter</div><div class="diff-line add">+ 1010000402=[Sweet Encounter] Advanced</div><div class="diff-line add">+ 1010000403=[Sweet Encounter] Advanced &amp; Deluxe</div><div class="diff-line add">+ 1010000404=[Sweet Encounter] Deluxe</div><div class="diff-line add">+ 1010000405=Love Points</div><div class="diff-line add">+ 1010000406=Used for participating in the [Sweet Encounter] Events. Will be recycled after the Events end.</div><div class="diff-line add">+ 1010000407=Dear Commander,\n\nThe Event has ended, thank you for your active participation. After the Event ends, your [Love Points] will no longer be usable. Therefore, we have recycled your {0} unused [Love Points] and issued the following items as compensation. Thank you for your strong support, and we wish you a pleasant game experience!</div><div class="diff-line add">+ 1010000408=Dear Commander,\n\nYou ranked {0} in the [Sweet Encounter], with {1} EXP. Congratulations on obtaining the following rewards! Please collect them now</div><div class="diff-line add">+ 1010000409=[Sweet Encounter] chest</div><div class="diff-line add">+ 150965=Iris</div><div class="diff-line add">+ 150966=Iron-Fist Guard</div><div class="diff-line add">+ 150967=Thomas</div><div class="diff-line add">+ 150968=Mad Graffitier</div><div class="diff-line add">+ 607002012=[{0}]Commander{1} opened the Wasteland Chest reward and obtained {3} {2}</div><div class="diff-line add">+ 607002026=</div><div class="diff-line add">+ A highly radioactive crystal formed in special geology after a nuclear explosion. It is extremely valuable and can be exchanged for various rare items in the Wasteland Store. Unused Nukellite will be Recycled after the Events end.</div><div class="diff-line add">+ 607002047=There is never a shortage of brave Commanders in this wasteland, and their Wasteland Adventure has just begun!\n1. Commanders will draw Action Cards and move the corresponding number of Steps based on the Points.\n2. Each stop will trigger the square's effect.\n3. After drawing a Common Action Card, Points will be randomly generated between 1-6; after using a Targeted Action Card, you can directly select the number of Steps to move.\n4. When you Draw 5x, you can continuously draw 5 times, obtaining 5 squares' rewards based on the Points respectively.\n5. The Wasteland Chest will randomly drop on any Item Square or Treasure Square. Upon reaching that Square, you can additionally open the chest to receive rewards. The chest will randomly refresh.\n6. Each time you reach an upgradable square, you will gain 1 EXP. When EXP reaches the current Level Limit, the square will upgrade, which can increase the reward obtained upon reaching that square next time.\n7. Each time you reach or pass the Start Square, you will receive rewards of random 2 Item Squares or Treasure Squares and the corresponding square's EXP +1.\n8. During the event, the total squares moved can be accumulated, and you can receive corresponding tier rewards based on it.\n9. After the event ends, unused Common Action Cards and Targeted Action Cards will be recycled.\n10. After the Event ends, unused Nukellite will be Recycled.</div><div class="diff-line add">+ 607002056=There is never a shortage of brave Commanders in this wasteland, and their Wasteland Adventure has just begun!\n1. Commanders will draw Action Cards and move the corresponding number of Steps based on the Points.\n2. Each stop will trigger the square's effect.\n3. After drawing a Common Action Card, Points will be randomly generated between 1-6; after using a Targeted Action Card, you can directly select the number of Steps to move.\n4. When you Draw 5x, you can continuously draw 5 times, obtaining 5 squares' rewards based on the Points respectively.\n5. The Wasteland Chest will randomly drop on any Item Square or Treasure Square. Upon reaching that Square, you can additionally open the chest to receive rewards. The chest will randomly refresh.\n6. Each time you reach an upgradable square, you will gain 1 EXP. When EXP reaches the current Level Limit, the square will upgrade, which can increase the reward obtained upon reaching that square next time.\n7. Each time you reach or pass the Start Square, you will receive rewards of random 2 Item Squares and the corresponding square's EXP +1.\n8. During the event, the total squares moved can be accumulated, and you can receive corresponding tier rewards based on it.\n9. After the event ends, unused Common Action Cards and Targeted Action Cards will be recycled.\n10. After the Event ends, unused Nukellite will be Recycled.</div><div class="diff-line add">+ 607002059=Dear Commander,\n\nThe Event has ended. Thank you for your active participation. After the Event ends, your [Common Action Card] will no longer be usable. Therefore, we have recycled {0} of your unused [Common Action Cards] and issued the following Items to you as Compensation. Thank you for your great support, and we wish you an enjoyable game!</div><div class="diff-line add">+ 607002060=Dear Commander,\n\nThe Event has ended. Thank you for your active participation. After the Event ends, your [Targeted Action Card] will no longer be usable. Therefore, we have recycled {0} of your unused [Targeted Action Cards] and issued the following Items to you as Compensation. Thank you for your great support, and we wish you an enjoyable game!</div><div class="diff-line add">+ 607002061=Dear Commander,\n\nThe Events have concluded. Thank you for your active participation. After the Events end, your [Nukellite] will no longer be available for Use. Therefore, we have Recycled your {0} unused [Nukellite] and issued the following Items as Compensation. Thank you for your great support, and we wish you a pleasant game!</div><div class="diff-line add">+ 607003001=Love Letter</div><div class="diff-line add">+ 607003002=Sweet Shop</div><div class="diff-line add">+ 607003003=Collect Heart Candy and Redeem Rare Items</div><div class="diff-line add">+ 607003004=Heart Candy</div><div class="diff-line add">+ 607003005=With its peach-pink appearance and sweet fragrance, who shines in your heart? Redeem Rare Items at the Sweet Shop.</div><div class="diff-line add">+ 607003006=Dear Commander,\n\nThe event has ended. Thank you for your active participation. After the event, your [Heart Candy] will become unusable. Therefore, we have recycled your {0} unused [Heart Candy] and issued the following items as compensation.</div><div class="diff-line add">+ 607003007=Purchase to receive a large amount of Heart Candy.</div><div class="diff-line add">+ 607003008=Sweet Special</div><div class="diff-line add">+ 607003009=Sweet Special - Inception Pack</div><div class="diff-line add">+ 607003010=Sweet Special - Surprise Pack</div><div class="diff-line add">+ 607003011=Sweet Special - Advanced Pack</div><div class="diff-line add">+ 607003012=Sweet Special - Premium Pack</div><div class="diff-line add">+ 607003013=Sweet Special - Deluxe Pack</div><div class="diff-line add">+ 607003014=Fight for Love</div><div class="diff-line add">+ 607003015=Little Demons have descended upon this World through magic. Defeat them and guard our Homeworld!</div><div class="diff-line add">+ 607003016=1. The sky has been torn open with a huge rift, and countless Little Demons have appeared in the sky. Repel the Little Demons and Guard our Homeworld!\n2. During the event, consume Spear of Love to attack the Demon Legion and obtain various rewards.\n3. Each time you defeat a Little Demon, you will receive a generous defeat reward, but you may also attract a more powerful Demon King.\n4. The Arch Demon is the leader of the Little Demons and cannot be completely eliminated, but can be temporarily repelled. When attacking the Arch Demon, you can not only get richer attack rewards, but also have a chance to win the Demon Treasure.\n5. When consuming Spear of Love to attack, there is a probability of triggering a no-cost effect. After triggering, subsequent attacks will no longer consume Spear of Love.\n6. Auto ATK is only effective when the event interface is open.\n7. After the event, unconsumed Spear of Love will be automatically redeemed for diamonds and sent via mail.</div><div class="diff-line add">+ 607003017=Little Demon</div><div class="diff-line add">+ 607003018=Arch Demon</div><div class="diff-line add">+ 607003019=Demon Mystery Box</div><div class="diff-line add">+ 607003020=Demon King Mystery Box</div><div class="diff-line add">+ 607003021=Spear of Love</div><div class="diff-line add">+ 607003022=Pink affection flows at the spear's tip, its Power seemingly capable of destroying all!</div><div class="diff-line add">+ 607003023=Wicked Arch Demon</div><div class="diff-line add">+ 607003024=Sweet Arsenal</div><div class="diff-line add">+ 607003025=Spear of Love, conquer all.</div><div class="diff-line add">+ 607003026=Defeat {0} Little Demons daily to receive the following rewards</div><div class="diff-line add">+ 607003027=Dear Commander:\n\nThe event has ended. Thank you for your active participation. After the event, your [Spear of Love] can no longer be used. Therefore, we have recycled your {0} unused [Spear of Love] and issued the following items as compensation. Thank you for your great support, and we wish you a pleasant game!</div><div class="diff-line add">+ 607003028=Check-in for Love</div><div class="diff-line add">+ 607003029=Crimson Hound</div><div class="diff-line add">+ 607003030=An unknown pink liquid flows from the evil dog's mouth. Beneath its fierce appearance lies wisdom. We must defeat it!</div><div class="diff-line add">+ 607003031=Defense of Love</div><div class="diff-line add">+ 607003032=The sweet day is about to begin, the Crimson Hound has come to Guard our romance by driving away the evil dogs!</div><div class="diff-line add">+ 607003033=Love Chest</div><div class="diff-line add">+ 607003034=The chest, Guarded by evil dogs, emits a pink and dazzling glow.</div><div class="diff-line add">+ 607003035=“Defense of Love” Challenge Reward</div><div class="diff-line add">+ 607003036=“Defense of Love” Ranking Reward</div><div class="diff-line add">+ 607003037=Dear Commander,\n\nThe "Defense of Love" Ranking Event has Ended. Your Ranking for this round: {0}, Highest DMG: {1}. You will receive the following rewards:</div><div class="diff-line add">+ 803018016=Fight for Love</div><div class="diff-line add">+ 803018019=Little Demon</div><div class="diff-line add">+ 803018020=Arch Demon</div><div class="diff-line add">+ 803018025=Zone {0} Commander {1} killed the Arch Demon in Event {2} and obtained {3} Spear of Love</div><div class="diff-line add">+ 803018026=Defeat {0} Little Demons daily to receive the following rewards</div><div class="diff-line add">+ 803018043=Congratulations, Commander, on obtaining the Demon's Treasure and receiving rewards!</div><div class="diff-line add">+ 805100901=Dreamy Realm (Blue)</div><div class="diff-line add">+ 805100902=Dreamy Realm (Blue) ({0})</div><div class="diff-line add">+ 805100903=As the wind passes, star-like ice shards flutter down—it is the cold, immortal palace that has sealed the Dreamy Realm for a thousand years! Upon Use, the appearance of the Fortress can be changed to [Dreamy Realm (Blue)].</div><div class="diff-line add">+ 805100904=Rosy Romance</div><div class="diff-line add">+ 805100905=Rosy Romance ({0})</div><div class="diff-line add">+ 805100906=After Use, the Nameplate can be changed to [Rosy Romance]</div><div class="diff-line add">+ 805100907=Rosy Romance</div><div class="diff-line add">+ 805100908=Rosy Romance ({0})</div><div class="diff-line add">+ 805100909=After Use, the avatar frame can be changed to [Rosy Romance]</div><div class="diff-line add">+ 805100910=Heart Pendant</div><div class="diff-line add">+ 805100911=Heart Pendant({0})</div><div class="diff-line add">+ 805100912=A pink heart-shaped little pendant, gentle and exquisite. After use, the pendant can be changed to [Heart Pendant]</div><div class="diff-line add">+ 805100913=Rosy Romance</div><div class="diff-line add">+ 805100914=Rosy Romance({0})</div><div class="diff-line add">+ 805100915=Receive the blessings from the Rose! Upon use, your Profile Card Frame will be changed to [Rosy Romance].</div><div class="diff-line add">+ 805100916=Cupid's Cannon</div><div class="diff-line add">+ 805100917=Cupid's Cannon ({0})</div><div class="diff-line add">+ 805100918=The pink and white coating covers the sturdy Armor; what blasts from the muzzle are not smoke and gunpowder, but hearts and critical hits! Upon use, the APC Appearance will be changed to [Cupid's Cannon].</div><div class="diff-line add">+ 805100919=Rosy Romance</div><div class="diff-line add">+ 805100920=Rosy Romance ({0})</div><div class="diff-line add">+ 805100921=After use, the bubble can be changed to [Rosy Romance]</div><div class="diff-line add">+ 805100922=Dreamy Realm (Red)</div><div class="diff-line add">+ 805100923=Dreamy Realm (Red) ({0})</div><div class="diff-line add">+ 805100924=Rose vines entwine the pink crystal city wall, creating a tender realm where fairy tales come true! After use, the Fortress appearance can be changed to [Dreamy Realm (Red)]</div><div class="diff-line add">+ 805100925=Dreamy Fairy City</div><div class="diff-line add">+ 805100926=Star Ring Halo</div><div class="diff-line add">+ 805100927=Star Ring Halo ({0})</div><div class="diff-line add">+ 805100928=Use to change the Halo Decor to [Star Ring Halo].</div><div class="diff-line add">+ 805100929=Energite Wings</div><div class="diff-line add">+ 805100930=Energite Wings ({0})</div><div class="diff-line add">+ 805100931=These wing blades are like crystalized stardust falling from the sky. As blue light flows, they seem to draw upon the energy of the entire star sea to lift you into the air. After use, a pair of Energite Wings will grow behind your Fortress.</div><div class="diff-line add">+ 805200082=1. During the event, consume a certain number of items to open one Mystery Box and receive a reward;\n2. When you draw a Key, you can refresh the Mystery Box to get a high-value Mystery Box again;\n3. When you acquire the Take-All Reward, you can claim all remaining unopened Mystery Box rewards in the current Mystery Box Machine, and directly unlock the next Mystery Box Machine, refreshing a new batch of Mystery Boxes.\n4.After you use the key and unlock a new Mystery Box Machine, you can still choose to draw at the current machine or head directly to the new one.</div><div class="diff-line add">+ 805200111=Doomsday Graffiti</div><div class="diff-line add">+ 805200112=Immortal Being</div><div class="diff-line add">+ 810210269=Iris | Welder's Mark</div><div class="diff-line add">+ 810210270=The joints I tuned myself are more reliable than any oath.</div><div class="diff-line add">+ 810210271=Iris | Welder's Mark Ultimate Weapon Blueprint</div><div class="diff-line add">+ 810210272=Can be used for Iris | Welder's Mark Unlock and Star Up</div><div class="diff-line add">+ 810210273=Thomas | Colored Splash</div><div class="diff-line add">+ 810210274=Every shade of color is a declaration of war for Revenge.</div><div class="diff-line add">+ 810210275=Thomas | Colored Splash Ultimate Weapon Blueprint</div><div class="diff-line add">+ 810210276=Can be used for Thomas | Colored Splash Unlock and Star Up</div><div class="diff-line add">+ 810210277=Iron Fist</div><div class="diff-line add">+ 810210278=Iron Barrier</div><div class="diff-line add">+ 810210279=Power Recharge</div><div class="diff-line add">+ 810210280=Wild Bash</div><div class="diff-line add">+ 810210281=Exosuit Repairs</div><div class="diff-line add">+ 810210282=Deals {0} WPN DMG to Target. Permanently reduces Target's {1} ATK and DEF, max reduction {2}. Permanently increases the hero's {3} ATK and DEF, max increase {6}.</div><div class="diff-line add">+ 810210283=Gains {0} DMG Mitigation at the start of Fight. For every {1} HP lost, takes {2} less damage. </div><div class="diff-line add">+ 810210284=Gains a Shield equal to {0} of own Max HP every time an action is taken.</div><div class="diff-line add">+ 810210285=When using the Focus Skill, additionally apply WPN DMG equal to {0} of the Target's Max HP (cannot exceed {1} of your ATK)</div><div class="diff-line add">+ 810210286=Increases the hero's Heal and Shield Effect by {0}</div><div class="diff-line add">+ 810210287=When single DMG received exceeds 15% of the Hero's Max HP, the Hero's Speed increases by {0}, up to a maximum of {1}</div><div class="diff-line add">+ 810210288=When single DMG received exceeds 15% of the Hero's Max HP, the Hero's Initiative increases by {0}, up to a maximum of {1}; after Initiative reaches its max value, additionally gain {2} Focus at the start of each round, lasting till the battle ends.</div><div class="diff-line add">+ 810210289=Careless Doodles</div><div class="diff-line add">+ 810210290=Spray Party</div><div class="diff-line add">+ 810210291=Immense Fury</div><div class="diff-line add">+ 810210292=Toxic Paint</div><div class="diff-line add">+ 810210293=Matte Graffiti</div><div class="diff-line add">+ 810210294=Deals {0} TAC DMG to all enemies and applies 1 stack of [Paint] to the target; for every stack of [Paint], reduces the target's {1} DMG Bonus, {2} DMG Mitigation, and {3} Initiative. Max 5 stacks.</div><div class="diff-line add">+ 810210295=When attacking a Target coated with [Paint], the hero recovers HP equal to {0} of his Max HP; when a Teammate attacks a Target coated with [Paint], they recover HP equal to {1} of their Max HP.</div><div class="diff-line add">+ 810210296=When any Enemy gains a Shield Effect, gain {0} Focus.</div><div class="diff-line add">+ 810210297=Thomas's [Paint] is lethally poisonous, dealing sustained DMG to the Target. At the end of each Round, each layer of Paint deals DMG equal to {0} of the Target's Max HP, up to a maximum of {1} of the hero's Max HP.</div><div class="diff-line add">+ 810210298=At the start of each round, there is a {0} Probability to Silence 2 random Enemy Targets for 1 Round.</div><div class="diff-line add">+ 810210299=Focus Skill additionally reduces the Crit Immunity Rate of All Enemies by {0}, up to a maximum reduction of {1}, lasting till the battle ends.</div><div class="diff-line add">+ 810210300=Focus Skill additionally reduces all enemies' Crit Immunity Rate by {0}, up to a maximum reduction of {1}, lasting until the end of the fight. When releasing a Focus Skill, reduce all enemies' Focus by {2}.</div><div class="diff-line add">+ 810210301=Troop Specialty combat report</div><div class="diff-line add">+ 810210302=Defender Progress</div><div class="diff-line add">+ 810210303=Commando Progress</div><div class="diff-line add">+ 810210304=Archer Progress</div><div class="diff-line add">+ 810210305=Attribute Bonus</div><div class="diff-line add">+ 810210306=Specialty Progress</div><div class="diff-line add">+ 810210307=No artifacts owned</div><div class="diff-line add">+ 813000203=Wish {0} time(s) in Landscape Draw.</div><div class="diff-line add">+ 813000204=Open {0} pot(s) in Artifacts in Pots.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <img alt="">
+    <div class="cap"></div>
+  </div>
+
+  <!-- Loading bar -->
+  <div class="loading-bar" id="loadingBar"></div>
+
+  <script>
+  (function(){
+    const raf = requestAnimationFrame;
+    let searchTimeout;
+
+    // Loading bar helper
+    const loadingBar = document.getElementById('loadingBar');
+    function showLoading() {
+      if (loadingBar) {
+        loadingBar.classList.add('active');
+      }
+    }
+    function hideLoading() {
+      if (loadingBar) {
+        loadingBar.classList.add('complete');
+        setTimeout(() => {
+          loadingBar.classList.remove('active', 'complete');
+        }, 500);
+      }
+    }
+
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabImages = document.getElementById('tab-images');
+    const tabDiff = document.getElementById('tab-diff');
+    tabs.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        showLoading();
+        tabs.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const t = btn.dataset.tab;
+        tabImages.style.display = (t==='images') ? '' : 'none';
+        tabDiff.style.display = (t==='diff') ? '' : 'none';
+        setTimeout(hideLoading, 300);
+      });
+    });
+
+    // Enhanced Lightbox functionality with keyboard navigation
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb?.querySelector('img');
+    const lbCap = lb?.querySelector('.cap');
+    const lbClose = document.getElementById('lightboxClose');
+    const lbPrev = document.getElementById('lightboxPrev');
+    const lbNext = document.getElementById('lightboxNext');
+    const lbCounter = document.getElementById('lightboxCounter');
+    const imgGrid = document.getElementById('imgGrid');
+    
+    let currentImageIndex = 0;
+    let allImages = [];
+
+    if (lb && lbImg && lbCap && imgGrid) {
+      // Collect all images for navigation
+      function updateImagesList() {
+        allImages = Array.from(imgGrid.querySelectorAll('.thumb')).filter(t => t.style.display !== 'none');
+      }
+      updateImagesList();
+
+      function showImage(index) {
+        if (index < 0) index = allImages.length - 1;
+        if (index >= allImages.length) index = 0;
+        currentImageIndex = index;
+
+        const thumb = allImages[index];
+        const img = thumb?.querySelector('img');
+        if (!img) return;
+
+        const src = img.src || img.dataset.src;
+        if (src) {
+          lbImg.src = src;
+          lbCap.textContent = decodeURIComponent(src.split('/').pop());
+          if (lbCounter) {
+            lbCounter.textContent = `${index + 1} / ${allImages.length}`;
+          }
+        }
+      }
+
+      // Click to open lightbox
+      imgGrid.addEventListener('click', e=>{
+        let img = null;
+        let thumb = null;
+        
+        if (e.target.tagName === 'IMG') {
+          img = e.target;
+          thumb = img.closest('.thumb');
+        } else {
+          thumb = e.target.closest('.thumb');
+          if (thumb) img = thumb.querySelector('img');
+        }
+
+        if (!img || !thumb) return;
+
+        updateImagesList();
+        currentImageIndex = allImages.indexOf(thumb);
+        showImage(currentImageIndex);
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Close button
+      if (lbClose) {
+        lbClose.addEventListener('click', e => {
+          e.stopPropagation();
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+
+      // Navigation buttons
+      if (lbPrev) {
+        lbPrev.addEventListener('click', e => {
+          e.stopPropagation();
+          showImage(currentImageIndex - 1);
+        });
+      }
+
+      if (lbNext) {
+        lbNext.addEventListener('click', e => {
+          e.stopPropagation();
+          showImage(currentImageIndex + 1);
+        });
+      }
+
+      // Close on overlay click (but not on image or caption)
+      lb.addEventListener('click', e=>{
+        if (e.target === lb) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', e=>{
+        if (lb.classList.contains('open')) {
+          if (e.key === 'Escape') {
+            lb.classList.remove('open');
+            document.body.style.overflow = '';
+          } else if (e.key === 'ArrowLeft') {
+            showImage(currentImageIndex - 1);
+          } else if (e.key === 'ArrowRight') {
+            showImage(currentImageIndex + 1);
+          }
+        }
+      });
+    }
+
+    // Enhanced search with result count, clear button, and no-results state
+    const imgSearch = document.getElementById('imgSearch');
+    const searchClear = document.getElementById('searchClear');
+    const resultsCount = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
+    
+    if (imgSearch) {
+      function updateSearch(query) {
+        const items = Array.from(document.querySelectorAll('.thumb'));
+        const q = query.toLowerCase().trim();
+        const grid = document.getElementById('imgGrid');
+        
+        let visibleCount = 0;
+        items.forEach(t => {
+          const name = t.dataset.name || '';
+          const match = !q || name.includes(q);
+          t.style.display = match ? '' : 'none';
+          if (match) visibleCount++;
+        });
+
+        // Update results count
+        if (resultsCount) {
+          if (q) {
+            resultsCount.textContent = `${visibleCount} of ${items.length} images`;
+          } else {
+            resultsCount.textContent = `${items.length} images`;
+          }
+        }
+
+        // Show/hide clear button
+        if (searchClear) {
+          searchClear.classList.toggle('show', q.length > 0);
+        }
+
+        // Show/hide no-results state
+        if (noResults && grid) {
+          if (q && visibleCount === 0) {
+            noResults.style.display = 'block';
+            grid.style.display = 'none';
+          } else {
+            noResults.style.display = 'none';
+            grid.style.display = '';
+          }
+        }
+
+        // Keep lightbox image list in sync
+        updateImagesList();
+      }
+
+      imgSearch.addEventListener('input', e => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => updateSearch(e.target.value), 150);
+      });
+
+      if (searchClear) {
+        searchClear.addEventListener('click', () => {
+          imgSearch.value = '';
+          updateSearch('');
+          imgSearch.focus();
+        });
+      }
+
+      // Wire up the in-page clear button inside no-results message
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', () => {
+          imgSearch.value = '';
+          updateSearch('');
+          imgSearch.focus();
+        });
+      }
+
+      // Initial count
+      if (resultsCount) {
+        const items = document.querySelectorAll('.thumb');
+        resultsCount.textContent = `${items.length} images`;
+      }
+    }
+
+    const diffSearch = document.getElementById('diffSearch');
+    const diffBody = document.querySelector('.diff-body');
+    diffSearch?.addEventListener('change', ()=>{
+      const q = diffSearch.value.trim();
+      if(!diffBody) return;
+      diffBody.querySelectorAll('mark.hl').forEach(n=>n.classList.remove('hl'));
+      if(!q) return;
+
+      const walker = document.createTreeWalker(diffBody, NodeFilter.SHOW_TEXT);
+      const ranges = [];
+      while(walker.nextNode()){
+        const node = walker.currentNode;
+        if (!node.parentElement.closest('.diff-line')) continue;
+
+        const idx = node.nodeValue.toLowerCase().indexOf(q.toLowerCase());
+        if(idx>=0){
+          const range = document.createRange();
+          range.setStart(node, idx);
+          range.setEnd(node, idx+q.length);
+          ranges.push(range);
+        }
+      }
+      ranges.forEach(r=>{
+        const mark = document.createElement('mark'); mark.className='hl';
+        r.surroundContents(mark);
+      });
+    });
+  })();
+  </script>
   
 
 </main>

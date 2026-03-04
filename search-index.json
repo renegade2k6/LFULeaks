@@ -25130,5 +25130,46 @@
       "UIGiftpackvalentine202601_bg_bp_4.png"
     ],
     "textSnippets": "[en]\nstring_id=content\n1=Stronghold Battle abnormal explanation\n100000=Commandos\n100001=Defenders\n100002=Archer\n100003=Worker\n100004=Grievously Wounded Soldiers\n100100=Radar\n100101=Control Center\n100102=Entrance Hall\n100103=Lift\n100104=Power Generator\n100105=Cultivation Room\n100106=Water Treatment Plant\n100107=Auto Repair Station\n100108=Charging Station\n100109=Diner\n100110=Material Warehouse\n100111=Work Station\n100112=Quarters\n100113=Mint\n100114=Sparring Room\n100115=Gym\n100116=Shooting Range\n100117=Iron Mine\n100118=Coal Mine\n100119=Capacitor Room\n100120=Infirmary\n100122=Bar\n100123=Satellite Nexus\n100124=Ladder\n100125=Stone Quarry\n100126=Trade Center\n100128=Wheat Farm\n100129=Pumpkin Farm\n100130=Herb Farm\n100131=Gopher Farm\n100132=Dairy Farm\n100133=Cistern\n100134=Garage\n100135=Mine\n100137=Breeding Room\n100139=Hand Pump\n100140=Lv. {0} Stone Quarry\n100141=Lv. {0} Iron Mine\n100142=Lv. {0} Mint\n100143=Barracks\n100144=Coal Mine\n100145=Iron Mine\n100146=Advanced Iron Mine\n100147=Advanced Coal M"
+  },
+  {
+    "date": "2026-03-04",
+    "images": [
+      "Buff_D_Paint.png",
+      "hero_half_Iris.png",
+      "hero_half_Thomas.png",
+      "hero_head_Iris.png",
+      "hero_head_Thomas.png",
+      "hl200.png",
+      "hl200biyan.png",
+      "ICON_Iris_01.png",
+      "ICON_Iris_02.png",
+      "ICON_Iris_03.png",
+      "ICON_Iris_04.png",
+      "ICON_Iris_05.png",
+      "ICON_Iris_woman_exclusive_show_red.png",
+      "ICON_Thomas_01.png",
+      "ICON_Thomas_02.png",
+      "ICON_Thomas_03.png",
+      "ICON_Thomas_04.png",
+      "ICON_Thomas_05.png",
+      "ICON_Tomas_man_exclusive_show_red.png",
+      "klsd200.png",
+      "ky200-.png",
+      "llc200.png",
+      "lre200.png",
+      "lrebiyan.png",
+      "ui_chouka_Iris_01.png",
+      "ui_chouka_Thomas_01.png",
+      "UI_Iris_woman_exclusive_show_red.png",
+      "ui_libaohalf_Iris.png",
+      "ui_libaohalf_Thomas.png",
+      "ui_libaoIris.png",
+      "ui_libaoThomas.png",
+      "ui_S17kachi_yeqian_01.png",
+      "ui_S17kachi_yeqian_02.png",
+      "UI_Tomas_man_exclusive_show_red.png",
+      "xzc200.png"
+    ],
+    "textSnippets": "[en]\r\nstring_id=content\r\n1=Stronghold Battle abnormal explanation\r\n100000=Commandos\r\n100001=Defenders\r\n100002=Archer\r\n100003=Worker\r\n100004=Grievously Wounded Soldiers\r\n100100=Radar\r\n100101=Control Center\r\n100102=Entrance Hall\r\n100103=Lift\r\n100104=Power Generator\r\n100105=Cultivation Room\r\n100106=Water Treatment Plant\r\n100107=Auto Repair Station\r\n100108=Charging Station\r\n100109=Diner\r\n100110=Material Warehouse\r\n100111=Work Station\r\n100112=Quarters\r\n100113=Mint\r\n100114=Sparring Room\r\n100115=Gym\r\n100116=Shooting Range\r\n100117=Iron Mine\r\n100118=Coal Mine\r\n100119=Capacitor Room\r\n100120=Infirmary\r\n100122=Bar\r\n100123=Satellite Nexus\r\n100124=Ladder\r\n100125=Stone Quarry\r\n100126=Trade Center\r\n100128=Wheat Farm\r\n100129=Pumpkin Farm\r\n100130=Herb Farm\r\n100131=Gopher Farm\r\n100132=Dairy Farm\r\n100133=Cistern\r\n100134=Garage\r\n100135=Mine\r\n100137=Breeding Room\r\n100139=Hand Pump\r\n100140=Lv. {0} Stone Quarry\r\n100141=Lv. {0} Iron Mine\r\n100142=Lv. {0} Mint\r\n100143=Barracks\r\n100144=Coal Mine\r\n100145=Iron Mine"
   }
 ]

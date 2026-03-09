@@ -12,8 +12,10 @@ site/
 
 # Build scripts
 *.bat
+*.ps1
 deploy.bat
 rebuild-site.bat
+auto-deploy.ps1
 
 # CI/CD
 .github/

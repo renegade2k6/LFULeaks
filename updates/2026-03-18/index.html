@@ -1461,107 +1461,595 @@ input[type="search"]:focus {
   </div>
 
 
-<div class="grid" style="grid-template-columns:1fr;gap:10px">
-  
-    <a class="card" href="./updates/2026-03-18/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-03-18<span style="background:linear-gradient(135deg, #6aa2ff 0%, #a855f7 100%);color:#fff;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;margin-left:8px;white-space:nowrap">Updated today</span></div>
-        <div class="meta">Images: 58 · New lines: 114 · File lines: 37324</div>
+  <div class="card">
+    <div class="meta">Images: 58 · New lines: 114 · Generated: 2026-03-18T04:53:06.590Z</div>
+  </div>
+
+  <div class="tabs">
+    <a href="../../index.html" class="tab-btn" style="background:#0a0c0f;border-color:#6aa2ff;color:#6aa2ff">← Back</a>
+    <button class="tab-btn active" data-tab="images">New Images (58)</button>
+    <button class="tab-btn" data-tab="diff" title="Differences from last update">Config Diff</button>
+  </div>
+
+  <div id="tab-images">
+    <div class="toolbar">
+      <div class="searchbar">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="search" id="imgSearch" placeholder="Filter images (press / to focus)" />
+        <button class="search-clear" id="searchClear" aria-label="Clear search">×</button>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-03-04/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-03-04</div>
-        <div class="meta">Images: 35 · New lines: 139 · File lines: 37223</div>
+      <span class="search-results-count" id="resultsCount"></span>
+    </div>
+    <div class="grid images" id="imgGrid">
+      
+      <div class="thumb" data-name="bg_chunri_check_in.png">
+        <img loading="lazy" src="./assets/bg_chunri_check_in.png" alt="bg_chunri_check_in.png" width="160" height="160" />
+        <div class="caption">bg_chunri_check_in.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-02-04/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-02-04</div>
-        <div class="meta">Images: 165 · New lines: 115 · File lines: 37091</div>
+    
+      <div class="thumb" data-name="bg_chunri_exchange_store_1.png">
+        <img loading="lazy" src="./assets/bg_chunri_Exchange_Store_1.png" alt="bg_chunri_Exchange_Store_1.png" width="160" height="160" />
+        <div class="caption">bg_chunri_Exchange_Store_1.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-01-19/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-01-19</div>
-        <div class="meta">Images: 114 · New lines: 36539 · File lines: 36979</div>
+    
+      <div class="thumb" data-name="bg_chunri_exchange_store_2.png">
+        <img loading="lazy" src="./assets/bg_chunri_Exchange_Store_2.png" alt="bg_chunri_Exchange_Store_2.png" width="160" height="160" />
+        <div class="caption">bg_chunri_Exchange_Store_2.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-01-09/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-01-09</div>
-        <div class="meta">Images: 40 · New lines: 16 · File lines: 37179</div>
+    
+      <div class="thumb" data-name="bg_chunri_exchange_store_3.png">
+        <img loading="lazy" src="./assets/bg_chunri_Exchange_Store_3.png" alt="bg_chunri_Exchange_Store_3.png" width="160" height="160" />
+        <div class="caption">bg_chunri_Exchange_Store_3.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-12-22/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-12-22</div>
-        <div class="meta">Images: 49 · New lines: 202 · File lines: 37163</div>
+    
+      <div class="thumb" data-name="bg_chunri_exchange_store_5.png">
+        <img loading="lazy" src="./assets/bg_chunri_Exchange_Store_5.png" alt="bg_chunri_Exchange_Store_5.png" width="160" height="160" />
+        <div class="caption">bg_chunri_Exchange_Store_5.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-12-08/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-12-08</div>
-        <div class="meta">Images: 247 · New lines: 63 · File lines: 37005</div>
+    
+      <div class="thumb" data-name="bg_chunri_exchange_store_banner.png">
+        <img loading="lazy" src="./assets/bg_chunri_Exchange_Store_banner.png" alt="bg_chunri_Exchange_Store_banner.png" width="160" height="160" />
+        <div class="caption">bg_chunri_Exchange_Store_banner.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-11-24/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-11-24</div>
-        <div class="meta">Images: 53 · New lines: 0 · File lines: 36950</div>
+    
+      <div class="thumb" data-name="bg_chunri2026_seven_day_jungle_1.png">
+        <img loading="lazy" src="./assets/bg_chunri2026_Seven_day_jungle_1.png" alt="bg_chunri2026_Seven_day_jungle_1.png" width="160" height="160" />
+        <div class="caption">bg_chunri2026_Seven_day_jungle_1.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-11-11/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-11-11</div>
-        <div class="meta">Images: 76 · New lines: 203 · File lines: 36950</div>
+    
+      <div class="thumb" data-name="bg_chunri2026_seven_day_jungle_2.png">
+        <img loading="lazy" src="./assets/bg_chunri2026_Seven_day_jungle_2.png" alt="bg_chunri2026_Seven_day_jungle_2.png" width="160" height="160" />
+        <div class="caption">bg_chunri2026_Seven_day_jungle_2.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-10-14/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-10-14</div>
-        <div class="meta">Images: 54 · New lines: 95 · File lines: 36808</div>
+    
+      <div class="thumb" data-name="bg_chunri2026_seven_day_jungle_3.png">
+        <img loading="lazy" src="./assets/bg_chunri2026_Seven_day_jungle_3.png" alt="bg_chunri2026_Seven_day_jungle_3.png" width="160" height="160" />
+        <div class="caption">bg_chunri2026_Seven_day_jungle_3.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-09-22/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-09-22</div>
-        <div class="meta">Images: 65 · New lines: 66 · File lines: 36713</div>
+    
+      <div class="thumb" data-name="bg_datulibao_chunri2026_bg.png">
+        <img loading="lazy" src="./assets/bg_datulibao_chunri2026_bg.png" alt="bg_datulibao_chunri2026_bg.png" width="160" height="160" />
+        <div class="caption">bg_datulibao_chunri2026_bg.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-09-08/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-09-08</div>
-        <div class="meta">Images: 12 · New lines: 60 · File lines: 36647</div>
+    
+      <div class="thumb" data-name="btn_chunri_check_in_1.png">
+        <img loading="lazy" src="./assets/btn_chunri_check_in_1.png" alt="btn_chunri_check_in_1.png" width="160" height="160" />
+        <div class="caption">btn_chunri_check_in_1.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-08-28/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-08-28</div>
-        <div class="meta">Images: 48 · New lines: 38 · File lines: 36595</div>
+    
+      <div class="thumb" data-name="btn_chunri_check_in_2.png">
+        <img loading="lazy" src="./assets/btn_chunri_check_in_2.png" alt="btn_chunri_check_in_2.png" width="160" height="160" />
+        <div class="caption">btn_chunri_check_in_2.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-08-27/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-08-27</div>
-        <div class="meta">Images: 24137 · New lines: 36557 · File lines: 36557</div>
+    
+      <div class="thumb" data-name="btn_chunri_check_in_3.png">
+        <img loading="lazy" src="./assets/btn_chunri_check_in_3.png" alt="btn_chunri_check_in_3.png" width="160" height="160" />
+        <div class="caption">btn_chunri_check_in_3.png</div>
       </div>
-    </a>
-  
-</div>
+    
+      <div class="thumb" data-name="btn_chunri_check_in_4.png">
+        <img loading="lazy" src="./assets/btn_chunri_check_in_4.png" alt="btn_chunri_check_in_4.png" width="160" height="160" />
+        <div class="caption">btn_chunri_check_in_4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="btn_chunri_check_in_5.png">
+        <img loading="lazy" src="./assets/btn_chunri_check_in_5.png" alt="btn_chunri_check_in_5.png" width="160" height="160" />
+        <div class="caption">btn_chunri_check_in_5.png</div>
+      </div>
+    
+      <div class="thumb" data-name="btn_chunri2026_1.png">
+        <img loading="lazy" src="./assets/btn_chunri2026_1.png" alt="btn_chunri2026_1.png" width="160" height="160" />
+        <div class="caption">btn_chunri2026_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="btn_chunri2026_2.png">
+        <img loading="lazy" src="./assets/btn_chunri2026_2.png" alt="btn_chunri2026_2.png" width="160" height="160" />
+        <div class="caption">btn_chunri2026_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="btn_chunri2026_3.png">
+        <img loading="lazy" src="./assets/btn_chunri2026_3.png" alt="btn_chunri2026_3.png" width="160" height="160" />
+        <div class="caption">btn_chunri2026_3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="btn_chunri2026_4.png">
+        <img loading="lazy" src="./assets/btn_chunri2026_4.png" alt="btn_chunri2026_4.png" width="160" height="160" />
+        <div class="caption">btn_chunri2026_4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="btn_chunri2026_seven_day_jungle_0.png">
+        <img loading="lazy" src="./assets/btn_chunri2026_Seven_day_jungle_0.png" alt="btn_chunri2026_Seven_day_jungle_0.png" width="160" height="160" />
+        <div class="caption">btn_chunri2026_Seven_day_jungle_0.png</div>
+      </div>
+    
+      <div class="thumb" data-name="equip_joseph_body.png">
+        <img loading="lazy" src="./assets/equip_Joseph_body.png" alt="equip_Joseph_body.png" width="160" height="160" />
+        <div class="caption">equip_Joseph_body.png</div>
+      </div>
+    
+      <div class="thumb" data-name="equip_joseph_helmet.png">
+        <img loading="lazy" src="./assets/equip_Joseph_helmet.png" alt="equip_Joseph_helmet.png" width="160" height="160" />
+        <div class="caption">equip_Joseph_helmet.png</div>
+      </div>
+    
+      <div class="thumb" data-name="equip_joseph_jewelry.png">
+        <img loading="lazy" src="./assets/equip_Joseph_jewelry.png" alt="equip_Joseph_jewelry.png" width="160" height="160" />
+        <div class="caption">equip_Joseph_jewelry.png</div>
+      </div>
+    
+      <div class="thumb" data-name="equip_joseph_weapon.png">
+        <img loading="lazy" src="./assets/equip_Joseph_weapon.png" alt="equip_Joseph_weapon.png" width="160" height="160" />
+        <div class="caption">equip_Joseph_weapon.png</div>
+      </div>
+    
+      <div class="thumb" data-name="equip_margaret_body.png">
+        <img loading="lazy" src="./assets/equip_Margaret_body.png" alt="equip_Margaret_body.png" width="160" height="160" />
+        <div class="caption">equip_Margaret_body.png</div>
+      </div>
+    
+      <div class="thumb" data-name="equip_margaret_helmet.png">
+        <img loading="lazy" src="./assets/equip_Margaret_helmet.png" alt="equip_Margaret_helmet.png" width="160" height="160" />
+        <div class="caption">equip_Margaret_helmet.png</div>
+      </div>
+    
+      <div class="thumb" data-name="equip_margaret_jewelry.png">
+        <img loading="lazy" src="./assets/equip_Margaret_jewelry.png" alt="equip_Margaret_jewelry.png" width="160" height="160" />
+        <div class="caption">equip_Margaret_jewelry.png</div>
+      </div>
+    
+      <div class="thumb" data-name="equip_margaret_weapon.png">
+        <img loading="lazy" src="./assets/equip_Margaret_weapon.png" alt="equip_Margaret_weapon.png" width="160" height="160" />
+        <div class="caption">equip_Margaret_weapon.png</div>
+      </div>
+    
+      <div class="thumb" data-name="flower_chunri2026_1.png">
+        <img loading="lazy" src="./assets/flower_chunri2026_1.png" alt="flower_chunri2026_1.png" width="160" height="160" />
+        <div class="caption">flower_chunri2026_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="flower_chunri2026_2.png">
+        <img loading="lazy" src="./assets/flower_chunri2026_2.png" alt="flower_chunri2026_2.png" width="160" height="160" />
+        <div class="caption">flower_chunri2026_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="flower_chunri2026_3.png">
+        <img loading="lazy" src="./assets/flower_chunri2026_3.png" alt="flower_chunri2026_3.png" width="160" height="160" />
+        <div class="caption">flower_chunri2026_3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="grid_chunri_check_in_.png">
+        <img loading="lazy" src="./assets/grid_chunri_check_in_.png" alt="grid_chunri_check_in_.png" width="160" height="160" />
+        <div class="caption">grid_chunri_check_in_.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_chunri_1.png">
+        <img loading="lazy" src="./assets/icon_chunri_1.png" alt="icon_chunri_1.png" width="160" height="160" />
+        <div class="caption">icon_chunri_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_chunri_2.png">
+        <img loading="lazy" src="./assets/icon_chunri_2.png" alt="icon_chunri_2.png" width="160" height="160" />
+        <div class="caption">icon_chunri_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_chunri_check_in.png">
+        <img loading="lazy" src="./assets/icon_chunri_check_in.png" alt="icon_chunri_check_in.png" width="160" height="160" />
+        <div class="caption">icon_chunri_check_in.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_chunri2026_seven_day_jungle_1.png">
+        <img loading="lazy" src="./assets/icon_chunri2026_Seven_day_jungle_1.png" alt="icon_chunri2026_Seven_day_jungle_1.png" width="160" height="160" />
+        <div class="caption">icon_chunri2026_Seven_day_jungle_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_chunri2512.png">
+        <img loading="lazy" src="./assets/ICON_chunri2512.png" alt="ICON_chunri2512.png" width="160" height="160" />
+        <div class="caption">ICON_chunri2512.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_item_frame_chunri2602.png">
+        <img loading="lazy" src="./assets/icon_item_Frame_chunri2602.png" alt="icon_item_Frame_chunri2602.png" width="160" height="160" />
+        <div class="caption">icon_item_Frame_chunri2602.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_jinengduibi.png">
+        <img loading="lazy" src="./assets/icon_jinengduibi.png" alt="icon_jinengduibi.png" width="160" height="160" />
+        <div class="caption">icon_jinengduibi.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_mingpai_chunri2512.png">
+        <img loading="lazy" src="./assets/ICON_mingpai_chunri2512.png" alt="ICON_mingpai_chunri2512.png" width="160" height="160" />
+        <div class="caption">ICON_mingpai_chunri2512.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_shuxingduibi.png">
+        <img loading="lazy" src="./assets/icon_shuxingduibi.png" alt="icon_shuxingduibi.png" width="160" height="160" />
+        <div class="caption">icon_shuxingduibi.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_talk_qipao_chunri2512.png">
+        <img loading="lazy" src="./assets/ICON_Talk_qipao_chunri2512.png" alt="ICON_Talk_qipao_chunri2512.png" width="160" height="160" />
+        <div class="caption">ICON_Talk_qipao_chunri2512.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_datulibao_chunri2026_dk01.png">
+        <img loading="lazy" src="./assets/img_datulibao_chunri2026_dk01.png" alt="img_datulibao_chunri2026_dk01.png" width="160" height="160" />
+        <div class="caption">img_datulibao_chunri2026_dk01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_datulibao_chunri2026_dk02.png">
+        <img loading="lazy" src="./assets/img_datulibao_chunri2026_dk02.png" alt="img_datulibao_chunri2026_dk02.png" width="160" height="160" />
+        <div class="caption">img_datulibao_chunri2026_dk02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_datulibao_chunri2026_tab.png">
+        <img loading="lazy" src="./assets/img_datulibao_chunri2026_tab.png" alt="img_datulibao_chunri2026_tab.png" width="160" height="160" />
+        <div class="caption">img_datulibao_chunri2026_tab.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_newreport_bule.png">
+        <img loading="lazy" src="./assets/img_newreport_bule.png" alt="img_newreport_bule.png" width="160" height="160" />
+        <div class="caption">img_newreport_bule.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_newreport_red.png">
+        <img loading="lazy" src="./assets/img_newreport_red.png" alt="img_newreport_red.png" width="160" height="160" />
+        <div class="caption">img_newreport_red.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_operationscenter_statue_0072_77.png">
+        <img loading="lazy" src="./assets/img_operationscenter_statue_0072_77.png" alt="img_operationscenter_statue_0072_77.png" width="160" height="160" />
+        <div class="caption">img_operationscenter_statue_0072_77.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_operationscenter_statue_0072_78.png">
+        <img loading="lazy" src="./assets/img_operationscenter_statue_0072_78.png" alt="img_operationscenter_statue_0072_78.png" width="160" height="160" />
+        <div class="caption">img_operationscenter_statue_0072_78.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_waixian_gaizhuangche_chunri2512.png">
+        <img loading="lazy" src="./assets/img_waixian_gaizhuangche_chunri2512.png" alt="img_waixian_gaizhuangche_chunri2512.png" width="160" height="160" />
+        <div class="caption">img_waixian_gaizhuangche_chunri2512.png</div>
+      </div>
+    
+      <div class="thumb" data-name="item_guashi_chunri2512.png">
+        <img loading="lazy" src="./assets/item_guashi_chunri2512.png" alt="item_guashi_chunri2512.png" width="160" height="160" />
+        <div class="caption">item_guashi_chunri2512.png</div>
+      </div>
+    
+      <div class="thumb" data-name="item_mingpian_chunri2512.png">
+        <img loading="lazy" src="./assets/item_mingpian_chunri2512.png" alt="item_mingpian_chunri2512.png" width="160" height="160" />
+        <div class="caption">item_mingpian_chunri2512.png</div>
+      </div>
+    
+      <div class="thumb" data-name="mingpian_chunri2512.png">
+        <img loading="lazy" src="./assets/mingpian_chunri2512.png" alt="mingpian_chunri2512.png" width="160" height="160" />
+        <div class="caption">mingpian_chunri2512.png</div>
+      </div>
+    
+      <div class="thumb" data-name="tab_chunri_check_in_1.png">
+        <img loading="lazy" src="./assets/tab_chunri_check_in_1.png" alt="tab_chunri_check_in_1.png" width="160" height="160" />
+        <div class="caption">tab_chunri_check_in_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="tab_chunri_check_in_2.png">
+        <img loading="lazy" src="./assets/tab_chunri_check_in_2.png" alt="tab_chunri_check_in_2.png" width="160" height="160" />
+        <div class="caption">tab_chunri_check_in_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_frame_chunri2603.png">
+        <img loading="lazy" src="./assets/UI_Frame_chunri2603.png" alt="UI_Frame_chunri2603.png" width="160" height="160" />
+        <div class="caption">UI_Frame_chunri2603.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_mingpai_chunri2512.png">
+        <img loading="lazy" src="./assets/UI_mingpai_chunri2512.png" alt="UI_mingpai_chunri2512.png" width="160" height="160" />
+        <div class="caption">UI_mingpai_chunri2512.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_talk_qipao_chunri2512.png">
+        <img loading="lazy" src="./assets/UI_Talk_qipao_chunri2512.png" alt="UI_Talk_qipao_chunri2512.png" width="160" height="160" />
+        <div class="caption">UI_Talk_qipao_chunri2512.png</div>
+      </div>
+    
+    </div>
+  </div>
+
+  <div id="tab-diff" style="display:none">
+    <div class="diff">
+      <div class="diff-header">
+        <input type="search" id="diffSearch" placeholder="Find in diff…" />
+      </div>
+      <div class="diff-body">
+        <div class="diff-line add">+ 1020000004=Topped up for {0}d</div><div class="diff-line add">+ 130446={0} *{1} to be cooked</div><div class="diff-line add">+ 160464=Death Descends</div><div class="diff-line add">+ 310014={0} min ago</div><div class="diff-line add">+ 329255=There are varied titles in the federation. Take the challenge to win a title for yourself! Great chance to have a stable income every day!</div><div class="diff-line add">+ 607002062=Purchase Pack to get 3000 Diamonds</div><div class="diff-line add">+ 607004001=Spring Prelude</div><div class="diff-line add">+ 607004002=Blossom Trade House</div><div class="diff-line add">+ 607004003=Collect Pink Bouquet to redeem Rare Items</div><div class="diff-line add">+ 607004004=Pink Bouquet</div><div class="diff-line add">+ 607004005=The year's plan begins in spring, and pink flowers reflect our hope. Redeem Rare Items at the Blossom Trade House.</div><div class="diff-line add">+ 607004006=Dear Commander,\n\nThe event has ended. Thank you for your active participation. After the event, your [Pink Bouquet] will be unusable. Therefore, we have reclaimed your {0} unused [Pink Bouquet] and issued the following items as compensation.</div><div class="diff-line add">+ 607004007=Purchase to receive a large number of Pink Bouquets.</div><div class="diff-line add">+ 607004008=Spring Special</div><div class="diff-line add">+ 607004009=Spring Special - Inception Pack</div><div class="diff-line add">+ 607004010=Spring Special - Surprise Pack</div><div class="diff-line add">+ 607004011=Spring Special - Advanced Pack</div><div class="diff-line add">+ 607004012=Spring Special - Premium Pack</div><div class="diff-line add">+ 607004013=Spring Special - Deluxe Pack</div><div class="diff-line add">+ 607004014=Springtime Check-in</div><div class="diff-line add">+ 607004015=Steel Saw Maniac</div><div class="diff-line add">+ 607004016=A tremendous roar echoes through the heavens, and wherever the saw blade reaches, not a blade of grass grows. It is a terrifying and insane killer in the wasteland.</div><div class="diff-line add">+ 607004017=Guardian of Hope</div><div class="diff-line add">+ 607004018=As the spring breeze warms, the Steel Saw Maniac arrives. Drive them away to protect the nascent peace of the wasteland, and usher in a moment of vitality and hope.</div><div class="diff-line add">+ 607004019=Steel Saw Chest</div><div class="diff-line add">+ 607004020=A mysterious red glow envelops the chest, enticing people to open it.</div><div class="diff-line add">+ 607004021=Guardian of Hope Challenge Reward</div><div class="diff-line add">+ 607004022=Guardian of Hope Ranking Reward</div><div class="diff-line add">+ 607004023=Dear Commander:\n\nThe "Guardian of Hope" ranking event has ended. Your Ranking for this round: {0}, highest DMG: {1}. You will receive the following rewards.</div><div class="diff-line add">+ 607004024=Spring Hunt</div><div class="diff-line add">+ 607004025=The zombies are back, following the footsteps of spring. We must act immediately!</div><div class="diff-line add">+ 607004026=1. During the event period, a large number of Spring Zombies will refresh in the world daily.\n2. Commander, you have {0} Deployment Attempts daily, which reset at 0:00 (Game Time) daily.\n3. Defeating Spring Zombies can earn you a large amount of precious rewards.</div><div class="diff-line add">+ 607004027=Spring Zombie</div><div class="diff-line add">+ 607004028=Beautiful things are often fascinating. Do zombies also like wreaths?</div><div class="diff-line add">+ 707000223=Exclusive | Spotlight Cam</div><div class="diff-line add">+ 707000224=Exclusive | Tactical Vest</div><div class="diff-line add">+ 707000225=Exclusive | Minimalist Earrings</div><div class="diff-line add">+ 707000226=Exclusive | Field Reporter's Mic</div><div class="diff-line add">+ 707000227=Exclusive | Anatomist's Scalpel</div><div class="diff-line add">+ 707000228=Exclusive | Bloodstained Lab Coat</div><div class="diff-line add">+ 707000229=Exclusive | Acousmart Stethoscope</div><div class="diff-line add">+ 707000230=Exclusive | Skyripper Forceps</div><div class="diff-line add">+ 707000231=[LiveNews]</div><div class="diff-line add">+ 707000232=[Anatomy]</div><div class="diff-line add">+ 805002016=Collection</div><div class="diff-line add">+ 805101001=Butterfly Castle</div><div class="diff-line add">+ 805101002=Butterfly Castle{0})</div><div class="diff-line add">+ 805101003=A castle gently embraced by pink cherry blossoms and starlight, like a sweet dream hidden in spring. Use to change the Fortress appearance to [Butterfly Castle].</div><div class="diff-line add">+ 805101004=Butterfly Courtyard</div><div class="diff-line add">+ 805101005=Butterfly Courtyard ({0})</div><div class="diff-line add">+ 805101006=Use to change the Nameplate to [Butterfly Courtyard].</div><div class="diff-line add">+ 805101007=Butterfly Courtyard</div><div class="diff-line add">+ 805101008=Butterfly Courtyard ({0})</div><div class="diff-line add">+ 805101009=Use to change your avatar frame to [Butterfly Courtyard].</div><div class="diff-line add">+ 805101010=Butterfly Dance</div><div class="diff-line add">+ 805101011=Butterfly Dance ({0})</div><div class="diff-line add">+ 805101012=Blue wings flutter like a butterfly, purple tails flow like a soaring kite. Use to change your Pendant to [Butterfly Dance].</div><div class="diff-line add">+ 805101013=Butterfly Courtyard</div><div class="diff-line add">+ 805101014=Butterfly Courtyard ({0})</div><div class="diff-line add">+ 805101015=The tenderness and glory of spring are all integrated into this small space. After use, the Profile Card Frame can be changed to [Butterfly Courtyard].</div><div class="diff-line add">+ 805101016=Blossom Racer</div><div class="diff-line add">+ 805101017=Blossom Racer ({0})</div><div class="diff-line add">+ 805101018=The old car, embraced by blooming flowers, drives gently through the sand, as if carrying the entire spring in its Coach. Use it to change your APC Appearance to [Blossom Racer].</div><div class="diff-line add">+ 805101019=Butterfly Courtyard</div><div class="diff-line add">+ 805101020=Butterfly Courtyard ({0})</div><div class="diff-line add">+ 805101021=Use to change the chat bubble to [Butterfly Courtyard].</div><div class="diff-line add">+ 805200082=1. During the event, consume a certain amount of items to open a Mystery Box and acquire a reward.\n2. When you draw a Key, unlock the Refresh Mystery Box Machine permissions. You can choose to open the next Mystery Box Machine and re-acquire high-value Mystery Boxes.\n3. When choosing additional rewards, if you select the [Take-All Reward], you can directly claim all remaining unopened Mystery Box rewards from the current Mystery Box Machine; if you choose other rewards, it will not affect the Mystery Box drawing process, and you can continue to draw Mystery Boxes.\n4. After using a Key to unlock the next Mystery Box Machine, you can still freely choose to continue drawing from the current Mystery Box Machine or go to the next Mystery Box Machine to draw.\n5. Each session of the event has an amount cap on the number of Mystery Box Machine.</div><div class="diff-line add">+ 805200088=Choose one reward</div><div class="diff-line add">+ 805200113=The current stage is the last.</div><div class="diff-line add">+ 805200114=Sentry Bot</div><div class="diff-line add">+ 805200115=Mechanical Sentry Bot, the latest product from Wasteland Tech Hub, efficient and safe, guarding your Homeland.\nCollect All Landscapes in the Set and achieve the specified Level, and you will also receive the special Landscape [Sentry Bot]. Once the [Sentry Bot] reaches Level 3 or higher, it can be displayed in the World.</div><div class="diff-line add">+ 805200116=Wasteland Tech Hub</div><div class="diff-line add">+ 805200117=A Tech Hub born in the wasteland, representing hope of the future.</div><div class="diff-line add">+ 805200118=Energy Station</div><div class="diff-line add">+ 805200119=GeneMod Workshop</div><div class="diff-line add">+ 805200120=Bunker</div><div class="diff-line add">+ 805200121=Defence Tower</div><div class="diff-line add">+ 805200122=Wasteland Floor</div><div class="diff-line add">+ 805200123=Obtain Manor Landscape [Sentry Bot]. This Landscape belongs to the Wasteland Tech Hub Set.</div><div class="diff-line add">+ 805200124=Obtain the Manor Landscape [Wasteland Tech Hub]. This Landscape belongs to the Wasteland Tech Hub Set.</div><div class="diff-line add">+ 805200125=Obtain the Manor Landscape [Energy Station]. This Landscape belongs to the Wasteland Tech Hub Set.</div><div class="diff-line add">+ 805200126=Obtain the Manor Landscape [GeneMod Workshop]. This Landscape belongs to the Wasteland Tech Hub Set.</div><div class="diff-line add">+ 805200127=Obtain the Manor Landscape [Bunker]. This Landscape belongs to the Wasteland Tech Hub Set.</div><div class="diff-line add">+ 805200128=Obtain the Manor Landscape [Defence Tower]. This Landscape belongs to the Wasteland Tech Hub Set.</div><div class="diff-line add">+ 805200129=Obtain the Manor Landscape [Wasteland Floor]. This Landscape belongs to the Wasteland Tech Hub Set.</div><div class="diff-line add">+ 805200130=Wasteland Landscape Ticket</div><div class="diff-line add">+ 805200131=Wasteland Tech Hub</div><div class="diff-line add">+ 805200132=A high-tech park born in the wasteland, bringing amazing mechanical Sentinels that are efficient and safe, guarding your home.\nCollect all Landscapes in the Set and reach the specified Level to also obtain the special Landscape [Sentry Bot]. The [Sentry Bot] can be displayed in the World once it reaches Level 3 or higher.</div><div class="diff-line add">+ 805200133=Sentry Bot Lv.1</div><div class="diff-line add">+ 805200134=Sentry Bot Lv.2</div><div class="diff-line add">+ 805200135=Sentry Bot Lv.3</div><div class="diff-line add">+ 805200136=Sentry Bot Lv.4</div><div class="diff-line add">+ 810210265=At the end of each round, there is a 50% probability to reduce all Enemy Heroes' STR and INT by {0} , lasting 1 round.</div><div class="diff-line add">+ 810210268=At the start of the battle, your heroes’ STR and VIT increases by {0}, lasting 3 rounds.</div><div class="diff-line add">+ 810210282=Deals {0} WPN DMG to the Target. Permanently reduces the Target's ATK and DEF by {1}, up to {2}. Permanently increases the hero's ATK and DEF by {3}, up to {4}.</div><div class="diff-line add">+ 810210295=When attacking, 50% probability to recover {0} of max HP.</div><div class="diff-line add">+ 810210296=When any enemy gains a Treat or Shield Effect, self DMG increases by {0}, stacking up to 5 layers.</div><div class="diff-line add">+ 810210308=Normal Attack and Focus Skill reduce the damage caused by the Target by {0}, stacking up to 5 layers.</div><div class="diff-line add">+ 810210309=At the start of the first {0} rounds, additionally cast Focus Skill, dealing {1} TAC DMG to all enemies, and applying 1 layer of Poisoned and 2 layers of Focused Status.</div><div class="diff-line add">+ 810210310=Normal Attack and Focus Skill reduce the Target's Crit Immunity Rate by {0}, up to {1}.</div><div class="diff-line add">+ 810210311=Ignores the target‘s {0} DEF for the first three Rounds. Each kill additionally ignores the target's {1} DEF, and teammates ignore the target's {2} DEF, stacking up to 3 stacks.</div><div class="diff-line add">+ 810210312=Soul Seals</div><div class="diff-line add">+ 810210313=Heal to Thrive</div><div class="diff-line add">+ 810210314=Armor Shredder</div><div class="diff-line add">+ 810210315=At the start of the first 2 Rounds, there is a 30% probability to stun all enemies for 1 round.</div><div class="diff-line add">+ 810210316=At the start of the first 3 rounds, there is a 30% probability to stun all enemies for 1 round. Starting from Round 4, there is a 50% probability each round to stun the enemy target dealing the highest DMG for 1 Round.</div><div class="diff-line add">+ 810210317=At the start of the Fight, all Allies' Healing and Shield Effects are increased by 10%. At the end of each round, all Allies' Recover HP equal to 10% of DMG taken this Round.</div><div class="diff-line add">+ 810210318=At the start of the Fight, all Allies' Healing and Shield Effects are increased by 20%. At the end of each round, all Allies' Recover HP equal to 20% of DMG taken this round, and there is a 40% probability to additionally recover 30% of lost HP.</div><div class="diff-line add">+ 810210319=At the start of Fight, reduce the Healing and Shield Effect of all Enemy targets by 10%. At the start of each round, additionally reduce the Healing and Shield Effect of the Enemy target with the lowest HP and highest Shield value by 10% for 1 round.</div><div class="diff-line add">+ 810210320=At the start of Fight, reduce the Healing and Shield Effect of all Enemy targets by 20%. At the start of each round, additionally reduce the Healing and Shield Effect of the Enemy target with the lowest HP and highest Shield value by 20% for 1 round, and reduce their Shield by 15% of their Max HP.</div><div class="diff-line add">+ 814000133=Bronze Running Horse</div><div class="diff-line add">+ 814000134=A precious Bronze art piece from the Eastern Han Dynasty, showcasing a swift and agile posture, fully embodying the ancient charm and dynamic beauty.</div><div class="diff-line add">+ 814000135=Damaru Drum</div><div class="diff-line add">+ 814000136=A Tibetan Buddhist ritual instrument, with an ethereal sound that carries ancient religious connotations.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <img alt="">
+    <div class="cap"></div>
+  </div>
+
+  <!-- Loading bar -->
+  <div class="loading-bar" id="loadingBar"></div>
+
+  <script>
+  (function(){
+    const raf = requestAnimationFrame;
+    let searchTimeout;
+
+    // Loading bar helper
+    const loadingBar = document.getElementById('loadingBar');
+    function showLoading() {
+      if (loadingBar) {
+        loadingBar.classList.add('active');
+      }
+    }
+    function hideLoading() {
+      if (loadingBar) {
+        loadingBar.classList.add('complete');
+        setTimeout(() => {
+          loadingBar.classList.remove('active', 'complete');
+        }, 500);
+      }
+    }
+
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabImages = document.getElementById('tab-images');
+    const tabDiff = document.getElementById('tab-diff');
+    tabs.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        showLoading();
+        tabs.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const t = btn.dataset.tab;
+        tabImages.style.display = (t==='images') ? '' : 'none';
+        tabDiff.style.display = (t==='diff') ? '' : 'none';
+        setTimeout(hideLoading, 300);
+      });
+    });
+
+    // Enhanced Lightbox functionality with keyboard navigation
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb?.querySelector('img');
+    const lbCap = lb?.querySelector('.cap');
+    const lbClose = document.getElementById('lightboxClose');
+    const lbPrev = document.getElementById('lightboxPrev');
+    const lbNext = document.getElementById('lightboxNext');
+    const lbCounter = document.getElementById('lightboxCounter');
+    const imgGrid = document.getElementById('imgGrid');
+    
+    let currentImageIndex = 0;
+    let allImages = [];
+
+    if (lb && lbImg && lbCap && imgGrid) {
+      // Collect all images for navigation
+      function updateImagesList() {
+        allImages = Array.from(imgGrid.querySelectorAll('.thumb')).filter(t => t.style.display !== 'none');
+      }
+      updateImagesList();
+
+      function showImage(index) {
+        if (index < 0) index = allImages.length - 1;
+        if (index >= allImages.length) index = 0;
+        currentImageIndex = index;
+
+        const thumb = allImages[index];
+        const img = thumb?.querySelector('img');
+        if (!img) return;
+
+        const src = img.src || img.dataset.src;
+        if (src) {
+          lbImg.src = src;
+          lbCap.textContent = decodeURIComponent(src.split('/').pop());
+          if (lbCounter) {
+            lbCounter.textContent = `${index + 1} / ${allImages.length}`;
+          }
+        }
+      }
+
+      // Click to open lightbox
+      imgGrid.addEventListener('click', e=>{
+        let img = null;
+        let thumb = null;
+        
+        if (e.target.tagName === 'IMG') {
+          img = e.target;
+          thumb = img.closest('.thumb');
+        } else {
+          thumb = e.target.closest('.thumb');
+          if (thumb) img = thumb.querySelector('img');
+        }
+
+        if (!img || !thumb) return;
+
+        updateImagesList();
+        currentImageIndex = allImages.indexOf(thumb);
+        showImage(currentImageIndex);
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Close button
+      if (lbClose) {
+        lbClose.addEventListener('click', e => {
+          e.stopPropagation();
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+
+      // Navigation buttons
+      if (lbPrev) {
+        lbPrev.addEventListener('click', e => {
+          e.stopPropagation();
+          showImage(currentImageIndex - 1);
+        });
+      }
+
+      if (lbNext) {
+        lbNext.addEventListener('click', e => {
+          e.stopPropagation();
+          showImage(currentImageIndex + 1);
+        });
+      }
+
+      // Close on overlay click (but not on image or caption)
+      lb.addEventListener('click', e=>{
+        if (e.target === lb) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', e=>{
+        if (lb.classList.contains('open')) {
+          if (e.key === 'Escape') {
+            lb.classList.remove('open');
+            document.body.style.overflow = '';
+          } else if (e.key === 'ArrowLeft') {
+            showImage(currentImageIndex - 1);
+          } else if (e.key === 'ArrowRight') {
+            showImage(currentImageIndex + 1);
+          }
+        }
+      });
+    }
+
+    // Enhanced search with result count, clear button, and no-results state
+    const imgSearch = document.getElementById('imgSearch');
+    const searchClear = document.getElementById('searchClear');
+    const resultsCount = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
+    
+    if (imgSearch) {
+      function updateSearch(query) {
+        const items = Array.from(document.querySelectorAll('.thumb'));
+        const q = query.toLowerCase().trim();
+        const grid = document.getElementById('imgGrid');
+        
+        let visibleCount = 0;
+        items.forEach(t => {
+          const name = t.dataset.name || '';
+          const match = !q || name.includes(q);
+          t.style.display = match ? '' : 'none';
+          if (match) visibleCount++;
+        });
+
+        // Update results count
+        if (resultsCount) {
+          if (q) {
+            resultsCount.textContent = `${visibleCount} of ${items.length} images`;
+          } else {
+            resultsCount.textContent = `${items.length} images`;
+          }
+        }
+
+        // Show/hide clear button
+        if (searchClear) {
+          searchClear.classList.toggle('show', q.length > 0);
+        }
+
+        // Show/hide no-results state
+        if (noResults && grid) {
+          if (q && visibleCount === 0) {
+            noResults.style.display = 'block';
+            grid.style.display = 'none';
+          } else {
+            noResults.style.display = 'none';
+            grid.style.display = '';
+          }
+        }
+
+        // Keep lightbox image list in sync
+        updateImagesList();
+      }
+
+      imgSearch.addEventListener('input', e => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => updateSearch(e.target.value), 150);
+      });
+
+      if (searchClear) {
+        searchClear.addEventListener('click', () => {
+          imgSearch.value = '';
+          updateSearch('');
+          imgSearch.focus();
+        });
+      }
+
+      // Wire up the in-page clear button inside no-results message
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', () => {
+          imgSearch.value = '';
+          updateSearch('');
+          imgSearch.focus();
+        });
+      }
+
+      // Initial count
+      if (resultsCount) {
+        const items = document.querySelectorAll('.thumb');
+        resultsCount.textContent = `${items.length} images`;
+      }
+    }
+
+    const diffSearch = document.getElementById('diffSearch');
+    const diffBody = document.querySelector('.diff-body');
+    diffSearch?.addEventListener('change', ()=>{
+      const q = diffSearch.value.trim();
+      if(!diffBody) return;
+      diffBody.querySelectorAll('mark.hl').forEach(n=>n.classList.remove('hl'));
+      if(!q) return;
+
+      const walker = document.createTreeWalker(diffBody, NodeFilter.SHOW_TEXT);
+      const ranges = [];
+      while(walker.nextNode()){
+        const node = walker.currentNode;
+        if (!node.parentElement.closest('.diff-line')) continue;
+
+        const idx = node.nodeValue.toLowerCase().indexOf(q.toLowerCase());
+        if(idx>=0){
+          const range = document.createRange();
+          range.setStart(node, idx);
+          range.setEnd(node, idx+q.length);
+          ranges.push(range);
+        }
+      }
+      ranges.forEach(r=>{
+        const mark = document.createElement('mark'); mark.className='hl';
+        r.surroundContents(mark);
+      });
+    });
+  })();
+  </script>
   
 
 </main>

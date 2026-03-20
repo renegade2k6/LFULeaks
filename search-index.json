@@ -25235,5 +25235,14 @@
       "UI_Talk_qipao_chunri2512.png"
     ],
     "textSnippets": "[en]\r\nstring_id=content\r\n1=Stronghold Battle abnormal explanation\r\n100000=Commandos\r\n100001=Defenders\r\n100002=Archer\r\n100003=Worker\r\n100004=Grievously Wounded Soldiers\r\n100100=Radar\r\n100101=Control Center\r\n100102=Entrance Hall\r\n100103=Lift\r\n100104=Power Generator\r\n100105=Cultivation Room\r\n100106=Water Treatment Plant\r\n100107=Auto Repair Station\r\n100108=Charging Station\r\n100109=Diner\r\n100110=Material Warehouse\r\n100111=Work Station\r\n100112=Quarters\r\n100113=Mint\r\n100114=Sparring Room\r\n100115=Gym\r\n100116=Shooting Range\r\n100117=Iron Mine\r\n100118=Coal Mine\r\n100119=Capacitor Room\r\n100120=Infirmary\r\n100122=Bar\r\n100123=Satellite Nexus\r\n100124=Ladder\r\n100125=Stone Quarry\r\n100126=Trade Center\r\n100128=Wheat Farm\r\n100129=Pumpkin Farm\r\n100130=Herb Farm\r\n100131=Gopher Farm\r\n100132=Dairy Farm\r\n100133=Cistern\r\n100134=Garage\r\n100135=Mine\r\n100137=Breeding Room\r\n100139=Hand Pump\r\n100140=Lv. {0} Stone Quarry\r\n100141=Lv. {0} Iron Mine\r\n100142=Lv. {0} Mint\r\n100143=Barracks\r\n100144=Coal Mine\r\n100145=Iron Mine"
+  },
+  {
+    "date": "2026-03-20",
+    "images": [
+      "relics_item_dml.png",
+      "relics_item_mtfy_new.png",
+      "UIFormation_gaizhuangche_chunri_2025.png"
+    ],
+    "textSnippets": "[en]\r\nstring_id=content\r\n1=Stronghold Battle abnormal explanation\r\n100000=Commandos\r\n100001=Defenders\r\n100002=Archer\r\n100003=Worker\r\n100004=Grievously Wounded Soldiers\r\n100100=Radar\r\n100101=Control Center\r\n100102=Entrance Hall\r\n100103=Lift\r\n100104=Power Generator\r\n100105=Cultivation Room\r\n100106=Water Treatment Plant\r\n100107=Auto Repair Station\r\n100108=Charging Station\r\n100109=Diner\r\n100110=Material Warehouse\r\n100111=Work Station\r\n100112=Quarters\r\n100113=Mint\r\n100114=Sparring Room\r\n100115=Gym\r\n100116=Shooting Range\r\n100117=Iron Mine\r\n100118=Coal Mine\r\n100119=Capacitor Room\r\n100120=Infirmary\r\n100122=Bar\r\n100123=Satellite Nexus\r\n100124=Ladder\r\n100125=Stone Quarry\r\n100126=Trade Center\r\n100128=Wheat Farm\r\n100129=Pumpkin Farm\r\n100130=Herb Farm\r\n100131=Gopher Farm\r\n100132=Dairy Farm\r\n100133=Cistern\r\n100134=Garage\r\n100135=Mine\r\n100137=Breeding Room\r\n100139=Hand Pump\r\n100140=Lv. {0} Stone Quarry\r\n100141=Lv. {0} Iron Mine\r\n100142=Lv. {0} Mint\r\n100143=Barracks\r\n100144=Coal Mine\r\n100145=Iron Mine"
   }
 ]

@@ -1461,121 +1461,1170 @@ input[type="search"]:focus {
   </div>
 
 
-<div class="grid" style="grid-template-columns:1fr;gap:10px">
-  
-    <a class="card" href="./updates/2026-03-30/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-03-30<span style="background:linear-gradient(135deg, #6aa2ff 0%, #a855f7 100%);color:#fff;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;margin-left:8px;white-space:nowrap">Updated today</span></div>
-        <div class="meta">Images: 173 · New lines: 58 · File lines: 37378</div>
+  <div class="card">
+    <div class="meta">Images: 173 · New lines: 58 · Generated: 2026-03-30T12:19:29.028Z</div>
+  </div>
+
+  <div class="tabs">
+    <a href="../../index.html" class="tab-btn" style="background:#0a0c0f;border-color:#6aa2ff;color:#6aa2ff">← Back</a>
+    <button class="tab-btn active" data-tab="images">New Images (173)</button>
+    <button class="tab-btn" data-tab="diff" title="Differences from last update">Config Diff</button>
+  </div>
+
+  <div id="tab-images">
+    <div class="toolbar">
+      <div class="searchbar">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="search" id="imgSearch" placeholder="Filter images (press / to focus)" />
+        <button class="search-clear" id="searchClear" aria-label="Clear search">×</button>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-03-20/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-03-20</div>
-        <div class="meta">Images: 3 · New lines: 0 · File lines: 37324</div>
+      <span class="search-results-count" id="resultsCount"></span>
+    </div>
+    <div class="grid images" id="imgGrid">
+      
+      <div class="thumb" data-name="banner_nuclear_reset.png">
+        <img loading="lazy" src="./assets/banner_nuclear_reset.png" alt="banner_nuclear_reset.png" width="160" height="160" />
+        <div class="caption">banner_nuclear_reset.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-03-18/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-03-18</div>
-        <div class="meta">Images: 58 · New lines: 114 · File lines: 37324</div>
+    
+      <div class="thumb" data-name="bg_dzhjr_fuhuojie_tab2026.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_fuhuojie_tab2026.png" alt="bg_dzhjr_fuhuojie_tab2026.png" width="160" height="160" />
+        <div class="caption">bg_dzhjr_fuhuojie_tab2026.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-03-04/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-03-04</div>
-        <div class="meta">Images: 35 · New lines: 139 · File lines: 37223</div>
+    
+      <div class="thumb" data-name="bg_dzhjr_fuhuojie.png">
+        <img loading="lazy" src="./assets/bg_dzhjr_fuhuojie.png" alt="bg_dzhjr_fuhuojie.png" width="160" height="160" />
+        <div class="caption">bg_dzhjr_fuhuojie.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-02-04/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-02-04</div>
-        <div class="meta">Images: 165 · New lines: 115 · File lines: 37091</div>
+    
+      <div class="thumb" data-name="bg_nuclear_reset.png">
+        <img loading="lazy" src="./assets/bg_nuclear_reset.png" alt="bg_nuclear_reset.png" width="160" height="160" />
+        <div class="caption">bg_nuclear_reset.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-01-19/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-01-19</div>
-        <div class="meta">Images: 114 · New lines: 36539 · File lines: 36979</div>
+    
+      <div class="thumb" data-name="bt_fanhui.png">
+        <img loading="lazy" src="./assets/bt_fanhui.png" alt="bt_fanhui.png" width="160" height="160" />
+        <div class="caption">bt_fanhui.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2026-01-09/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2026-01-09</div>
-        <div class="meta">Images: 40 · New lines: 16 · File lines: 37179</div>
+    
+      <div class="thumb" data-name="effect_halo_autumnpro_2506.png">
+        <img loading="lazy" src="./assets/effect_halo_autumnpro_2506.png" alt="effect_halo_autumnpro_2506.png" width="160" height="160" />
+        <div class="caption">effect_halo_autumnpro_2506.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-12-22/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-12-22</div>
-        <div class="meta">Images: 49 · New lines: 202 · File lines: 37163</div>
+    
+      <div class="thumb" data-name="effect_halo_bingxuepro_2506.png">
+        <img loading="lazy" src="./assets/effect_halo_bingxuepro_2506.png" alt="effect_halo_bingxuepro_2506.png" width="160" height="160" />
+        <div class="caption">effect_halo_bingxuepro_2506.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-12-08/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-12-08</div>
-        <div class="meta">Images: 247 · New lines: 63 · File lines: 37005</div>
+    
+      <div class="thumb" data-name="effect_halo_sciencepro_2506.png">
+        <img loading="lazy" src="./assets/effect_halo_sciencepro_2506.png" alt="effect_halo_sciencepro_2506.png" width="160" height="160" />
+        <div class="caption">effect_halo_sciencepro_2506.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-11-24/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-11-24</div>
-        <div class="meta">Images: 53 · New lines: 0 · File lines: 36950</div>
+    
+      <div class="thumb" data-name="gride_nuclear_reset.png">
+        <img loading="lazy" src="./assets/gride_nuclear_reset.png" alt="gride_nuclear_reset.png" width="160" height="160" />
+        <div class="caption">gride_nuclear_reset.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-11-11/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-11-11</div>
-        <div class="meta">Images: 76 · New lines: 203 · File lines: 36950</div>
+    
+      <div class="thumb" data-name="icon_fhj_entrance.png">
+        <img loading="lazy" src="./assets/Icon_fhj_entrance.png" alt="Icon_fhj_entrance.png" width="160" height="160" />
+        <div class="caption">Icon_fhj_entrance.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-10-14/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-10-14</div>
-        <div class="meta">Images: 54 · New lines: 95 · File lines: 36808</div>
+    
+      <div class="thumb" data-name="icon_fuhuojie_dhsd_nangua.png">
+        <img loading="lazy" src="./assets/icon_fuhuojie_dhsd_nangua.png" alt="icon_fuhuojie_dhsd_nangua.png" width="160" height="160" />
+        <div class="caption">icon_fuhuojie_dhsd_nangua.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-09-22/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-09-22</div>
-        <div class="meta">Images: 65 · New lines: 66 · File lines: 36713</div>
+    
+      <div class="thumb" data-name="icon_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/ICON_fuhuojie2603.png" alt="ICON_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">ICON_fuhuojie2603.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-09-08/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-09-08</div>
-        <div class="meta">Images: 12 · New lines: 60 · File lines: 36647</div>
+    
+      <div class="thumb" data-name="icon_item_frame_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/icon_item_Frame_fuhuojie2603.png" alt="icon_item_Frame_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">icon_item_Frame_fuhuojie2603.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-08-28/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-08-28</div>
-        <div class="meta">Images: 48 · New lines: 38 · File lines: 36595</div>
+    
+      <div class="thumb" data-name="icon_mingpai_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/ICON_mingpai_fuhuojie2603.png" alt="ICON_mingpai_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">ICON_mingpai_fuhuojie2603.png</div>
       </div>
-    </a>
-  
-    <a class="card" href="./updates/2025-08-27/index.html" style="display:block;text-decoration:none">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:600;font-size:16px;display:flex;align-items:center">2025-08-27</div>
-        <div class="meta">Images: 24137 · New lines: 36557 · File lines: 36557</div>
+    
+      <div class="thumb" data-name="icon_monster_fuhuojie.png">
+        <img loading="lazy" src="./assets/Icon_monster_fuhuojie.png" alt="Icon_monster_fuhuojie.png" width="160" height="160" />
+        <div class="caption">Icon_monster_fuhuojie.png</div>
       </div>
-    </a>
-  
-</div>
+    
+      <div class="thumb" data-name="icon_nuclear_reset_1.png">
+        <img loading="lazy" src="./assets/icon_nuclear_reset_1.png" alt="icon_nuclear_reset_1.png" width="160" height="160" />
+        <div class="caption">icon_nuclear_reset_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_nuclear_reset_2.png">
+        <img loading="lazy" src="./assets/icon_nuclear_reset_2.png" alt="icon_nuclear_reset_2.png" width="160" height="160" />
+        <div class="caption">icon_nuclear_reset_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_panda.png">
+        <img loading="lazy" src="./assets/icon_panda.png" alt="icon_panda.png" width="160" height="160" />
+        <div class="caption">icon_panda.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_scarlet_hunter.png">
+        <img loading="lazy" src="./assets/icon_Scarlet_Hunter.png" alt="icon_Scarlet_Hunter.png" width="160" height="160" />
+        <div class="caption">icon_Scarlet_Hunter.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_talk_qipao_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/ICON_Talk_qipao_fuhuojie2603.png" alt="ICON_Talk_qipao_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">ICON_Talk_qipao_fuhuojie2603.png</div>
+      </div>
+    
+      <div class="thumb" data-name="icon_viper.png">
+        <img loading="lazy" src="./assets/icon_Viper.png" alt="icon_Viper.png" width="160" height="160" />
+        <div class="caption">icon_Viper.png</div>
+      </div>
+    
+      <div class="thumb" data-name="image_fuhuojie_db.png">
+        <img loading="lazy" src="./assets/image_fuhuojie_db.png" alt="image_fuhuojie_db.png" width="160" height="160" />
+        <div class="caption">image_fuhuojie_db.png</div>
+      </div>
+    
+      <div class="thumb" data-name="image_fuhuojie_libao.png">
+        <img loading="lazy" src="./assets/image_fuhuojie_libao.png" alt="image_fuhuojie_libao.png" width="160" height="160" />
+        <div class="caption">image_fuhuojie_libao.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_datulibao_fuhuojie_tab2026.png">
+        <img loading="lazy" src="./assets/img_datulibao_fuhuojie_tab2026.png" alt="img_datulibao_fuhuojie_tab2026.png" width="160" height="160" />
+        <div class="caption">img_datulibao_fuhuojie_tab2026.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_fuhuojie_dhsd_dk02.png">
+        <img loading="lazy" src="./assets/img_fuhuojie_dhsd_dk02.png" alt="img_fuhuojie_dhsd_dk02.png" width="160" height="160" />
+        <div class="caption">img_fuhuojie_dhsd_dk02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_fuhuojie_dhsd_dk03.png">
+        <img loading="lazy" src="./assets/img_fuhuojie_dhsd_dk03.png" alt="img_fuhuojie_dhsd_dk03.png" width="160" height="160" />
+        <div class="caption">img_fuhuojie_dhsd_dk03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_fuhuojie_dhsd_yeqian.png">
+        <img loading="lazy" src="./assets/img_fuhuojie_dhsd_yeqian.png" alt="img_fuhuojie_dhsd_yeqian.png" width="160" height="160" />
+        <div class="caption">img_fuhuojie_dhsd_yeqian.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_fuhuojietiao.png">
+        <img loading="lazy" src="./assets/img_fuhuojietiao.png" alt="img_fuhuojietiao.png" width="160" height="160" />
+        <div class="caption">img_fuhuojietiao.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_fuhuojietiaoliang.png">
+        <img loading="lazy" src="./assets/img_fuhuojietiaoliang.png" alt="img_fuhuojietiaoliang.png" width="160" height="160" />
+        <div class="caption">img_fuhuojietiaoliang.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_panda_1_1.png">
+        <img loading="lazy" src="./assets/img_line_panda_1_1.png" alt="img_line_panda_1_1.png" width="160" height="160" />
+        <div class="caption">img_line_panda_1_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_panda_1_12.png">
+        <img loading="lazy" src="./assets/img_line_panda_1_12.png" alt="img_line_panda_1_12.png" width="160" height="160" />
+        <div class="caption">img_line_panda_1_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_panda_2_1.png">
+        <img loading="lazy" src="./assets/img_line_panda_2_1.png" alt="img_line_panda_2_1.png" width="160" height="160" />
+        <div class="caption">img_line_panda_2_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_panda_2_12.png">
+        <img loading="lazy" src="./assets/img_line_panda_2_12.png" alt="img_line_panda_2_12.png" width="160" height="160" />
+        <div class="caption">img_line_panda_2_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_panda_3_1.png">
+        <img loading="lazy" src="./assets/img_line_panda_3_1.png" alt="img_line_panda_3_1.png" width="160" height="160" />
+        <div class="caption">img_line_panda_3_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_panda_3_12.png">
+        <img loading="lazy" src="./assets/img_line_panda_3_12.png" alt="img_line_panda_3_12.png" width="160" height="160" />
+        <div class="caption">img_line_panda_3_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_panda_4_1.png">
+        <img loading="lazy" src="./assets/img_line_panda_4_1.png" alt="img_line_panda_4_1.png" width="160" height="160" />
+        <div class="caption">img_line_panda_4_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_panda_4_12.png">
+        <img loading="lazy" src="./assets/img_line_panda_4_12.png" alt="img_line_panda_4_12.png" width="160" height="160" />
+        <div class="caption">img_line_panda_4_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_panda2.png">
+        <img loading="lazy" src="./assets/img_line_panda2.png" alt="img_line_panda2.png" width="160" height="160" />
+        <div class="caption">img_line_panda2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_scarlet_hunter_1_1.png">
+        <img loading="lazy" src="./assets/img_line_Scarlet_Hunter_1_1.png" alt="img_line_Scarlet_Hunter_1_1.png" width="160" height="160" />
+        <div class="caption">img_line_Scarlet_Hunter_1_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_scarlet_hunter_1_12.png">
+        <img loading="lazy" src="./assets/img_line_Scarlet_Hunter_1_12.png" alt="img_line_Scarlet_Hunter_1_12.png" width="160" height="160" />
+        <div class="caption">img_line_Scarlet_Hunter_1_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_scarlet_hunter_2_1.png">
+        <img loading="lazy" src="./assets/img_line_Scarlet_Hunter_2_1.png" alt="img_line_Scarlet_Hunter_2_1.png" width="160" height="160" />
+        <div class="caption">img_line_Scarlet_Hunter_2_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_scarlet_hunter_2_12.png">
+        <img loading="lazy" src="./assets/img_line_Scarlet_Hunter_2_12.png" alt="img_line_Scarlet_Hunter_2_12.png" width="160" height="160" />
+        <div class="caption">img_line_Scarlet_Hunter_2_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_scarlet_hunter_3_1.png">
+        <img loading="lazy" src="./assets/img_line_Scarlet_Hunter_3_1.png" alt="img_line_Scarlet_Hunter_3_1.png" width="160" height="160" />
+        <div class="caption">img_line_Scarlet_Hunter_3_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_scarlet_hunter_3_12.png">
+        <img loading="lazy" src="./assets/img_line_Scarlet_Hunter_3_12.png" alt="img_line_Scarlet_Hunter_3_12.png" width="160" height="160" />
+        <div class="caption">img_line_Scarlet_Hunter_3_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_scarlet_hunter_4_1.png">
+        <img loading="lazy" src="./assets/img_line_Scarlet_Hunter_4_1.png" alt="img_line_Scarlet_Hunter_4_1.png" width="160" height="160" />
+        <div class="caption">img_line_Scarlet_Hunter_4_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_scarlet_hunter_4_12.png">
+        <img loading="lazy" src="./assets/img_line_Scarlet_Hunter_4_12.png" alt="img_line_Scarlet_Hunter_4_12.png" width="160" height="160" />
+        <div class="caption">img_line_Scarlet_Hunter_4_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_scarlet_hunter2.png">
+        <img loading="lazy" src="./assets/img_line_Scarlet_Hunter2.png" alt="img_line_Scarlet_Hunter2.png" width="160" height="160" />
+        <div class="caption">img_line_Scarlet_Hunter2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_viper_1_1.png">
+        <img loading="lazy" src="./assets/img_line_Viper_1_1.png" alt="img_line_Viper_1_1.png" width="160" height="160" />
+        <div class="caption">img_line_Viper_1_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_viper_1_12.png">
+        <img loading="lazy" src="./assets/img_line_Viper_1_12.png" alt="img_line_Viper_1_12.png" width="160" height="160" />
+        <div class="caption">img_line_Viper_1_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_viper_2_1.png">
+        <img loading="lazy" src="./assets/img_line_Viper_2_1.png" alt="img_line_Viper_2_1.png" width="160" height="160" />
+        <div class="caption">img_line_Viper_2_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_viper_2_12.png">
+        <img loading="lazy" src="./assets/img_line_Viper_2_12.png" alt="img_line_Viper_2_12.png" width="160" height="160" />
+        <div class="caption">img_line_Viper_2_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_viper_3_1.png">
+        <img loading="lazy" src="./assets/img_line_Viper_3_1.png" alt="img_line_Viper_3_1.png" width="160" height="160" />
+        <div class="caption">img_line_Viper_3_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_viper_3_12.png">
+        <img loading="lazy" src="./assets/img_line_Viper_3_12.png" alt="img_line_Viper_3_12.png" width="160" height="160" />
+        <div class="caption">img_line_Viper_3_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_viper_4_1.png">
+        <img loading="lazy" src="./assets/img_line_Viper_4_1.png" alt="img_line_Viper_4_1.png" width="160" height="160" />
+        <div class="caption">img_line_Viper_4_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_viper_4_12.png">
+        <img loading="lazy" src="./assets/img_line_Viper_4_12.png" alt="img_line_Viper_4_12.png" width="160" height="160" />
+        <div class="caption">img_line_Viper_4_12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_line_viper2.png">
+        <img loading="lazy" src="./assets/img_line_Viper2.png" alt="img_line_Viper2.png" width="160" height="160" />
+        <div class="caption">img_line_Viper2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_0.png">
+        <img loading="lazy" src="./assets/img_panda_0.png" alt="img_panda_0.png" width="160" height="160" />
+        <div class="caption">img_panda_0.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_1_01.png">
+        <img loading="lazy" src="./assets/img_panda_1_01.png" alt="img_panda_1_01.png" width="160" height="160" />
+        <div class="caption">img_panda_1_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_1_02.png">
+        <img loading="lazy" src="./assets/img_panda_1_02.png" alt="img_panda_1_02.png" width="160" height="160" />
+        <div class="caption">img_panda_1_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_1.png">
+        <img loading="lazy" src="./assets/img_panda_1.png" alt="img_panda_1.png" width="160" height="160" />
+        <div class="caption">img_panda_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_2_01.png">
+        <img loading="lazy" src="./assets/img_panda_2_01.png" alt="img_panda_2_01.png" width="160" height="160" />
+        <div class="caption">img_panda_2_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_2_02.png">
+        <img loading="lazy" src="./assets/img_panda_2_02.png" alt="img_panda_2_02.png" width="160" height="160" />
+        <div class="caption">img_panda_2_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_2.png">
+        <img loading="lazy" src="./assets/img_panda_2.png" alt="img_panda_2.png" width="160" height="160" />
+        <div class="caption">img_panda_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_3_01.png">
+        <img loading="lazy" src="./assets/img_panda_3_01.png" alt="img_panda_3_01.png" width="160" height="160" />
+        <div class="caption">img_panda_3_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_3_02.png">
+        <img loading="lazy" src="./assets/img_panda_3_02.png" alt="img_panda_3_02.png" width="160" height="160" />
+        <div class="caption">img_panda_3_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_3.png">
+        <img loading="lazy" src="./assets/img_panda_3.png" alt="img_panda_3.png" width="160" height="160" />
+        <div class="caption">img_panda_3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_4_01.png">
+        <img loading="lazy" src="./assets/img_panda_4_01.png" alt="img_panda_4_01.png" width="160" height="160" />
+        <div class="caption">img_panda_4_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_4_02.png">
+        <img loading="lazy" src="./assets/img_panda_4_02.png" alt="img_panda_4_02.png" width="160" height="160" />
+        <div class="caption">img_panda_4_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_4.png">
+        <img loading="lazy" src="./assets/img_panda_4.png" alt="img_panda_4.png" width="160" height="160" />
+        <div class="caption">img_panda_4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_5_01.png">
+        <img loading="lazy" src="./assets/img_panda_5_01.png" alt="img_panda_5_01.png" width="160" height="160" />
+        <div class="caption">img_panda_5_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_5_02.png">
+        <img loading="lazy" src="./assets/img_panda_5_02.png" alt="img_panda_5_02.png" width="160" height="160" />
+        <div class="caption">img_panda_5_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_panda_5.png">
+        <img loading="lazy" src="./assets/img_panda_5.png" alt="img_panda_5.png" width="160" height="160" />
+        <div class="caption">img_panda_5.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_0.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_0.png" alt="img_Scarlet_Hunter_0.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_0.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_1_01.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_1_01.png" alt="img_Scarlet_Hunter_1_01.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_1_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_1_02.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_1_02.png" alt="img_Scarlet_Hunter_1_02.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_1_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_1.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_1.png" alt="img_Scarlet_Hunter_1.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_2_01.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_2_01.png" alt="img_Scarlet_Hunter_2_01.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_2_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_2_02.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_2_02.png" alt="img_Scarlet_Hunter_2_02.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_2_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_2.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_2.png" alt="img_Scarlet_Hunter_2.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_3_01.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_3_01.png" alt="img_Scarlet_Hunter_3_01.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_3_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_3_02.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_3_02.png" alt="img_Scarlet_Hunter_3_02.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_3_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_3.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_3.png" alt="img_Scarlet_Hunter_3.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_4_01.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_4_01.png" alt="img_Scarlet_Hunter_4_01.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_4_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_4_02.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_4_02.png" alt="img_Scarlet_Hunter_4_02.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_4_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_4.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_4.png" alt="img_Scarlet_Hunter_4.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_5_01.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_5_01.png" alt="img_Scarlet_Hunter_5_01.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_5_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_5_02.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_5_02.png" alt="img_Scarlet_Hunter_5_02.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_5_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_scarlet_hunter_5.png">
+        <img loading="lazy" src="./assets/img_Scarlet_Hunter_5.png" alt="img_Scarlet_Hunter_5.png" width="160" height="160" />
+        <div class="caption">img_Scarlet_Hunter_5.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_0.png">
+        <img loading="lazy" src="./assets/img_Viper_0.png" alt="img_Viper_0.png" width="160" height="160" />
+        <div class="caption">img_Viper_0.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_1_01.png">
+        <img loading="lazy" src="./assets/img_Viper_1_01.png" alt="img_Viper_1_01.png" width="160" height="160" />
+        <div class="caption">img_Viper_1_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_1_02.png">
+        <img loading="lazy" src="./assets/img_Viper_1_02.png" alt="img_Viper_1_02.png" width="160" height="160" />
+        <div class="caption">img_Viper_1_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_1.png">
+        <img loading="lazy" src="./assets/img_Viper_1.png" alt="img_Viper_1.png" width="160" height="160" />
+        <div class="caption">img_Viper_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_2_01.png">
+        <img loading="lazy" src="./assets/img_Viper_2_01.png" alt="img_Viper_2_01.png" width="160" height="160" />
+        <div class="caption">img_Viper_2_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_2_02.png">
+        <img loading="lazy" src="./assets/img_Viper_2_02.png" alt="img_Viper_2_02.png" width="160" height="160" />
+        <div class="caption">img_Viper_2_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_2.png">
+        <img loading="lazy" src="./assets/img_Viper_2.png" alt="img_Viper_2.png" width="160" height="160" />
+        <div class="caption">img_Viper_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_3_01.png">
+        <img loading="lazy" src="./assets/img_Viper_3_01.png" alt="img_Viper_3_01.png" width="160" height="160" />
+        <div class="caption">img_Viper_3_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_3_02.png">
+        <img loading="lazy" src="./assets/img_Viper_3_02.png" alt="img_Viper_3_02.png" width="160" height="160" />
+        <div class="caption">img_Viper_3_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_3.png">
+        <img loading="lazy" src="./assets/img_Viper_3.png" alt="img_Viper_3.png" width="160" height="160" />
+        <div class="caption">img_Viper_3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_4_01.png">
+        <img loading="lazy" src="./assets/img_Viper_4_01.png" alt="img_Viper_4_01.png" width="160" height="160" />
+        <div class="caption">img_Viper_4_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_4_02.png">
+        <img loading="lazy" src="./assets/img_Viper_4_02.png" alt="img_Viper_4_02.png" width="160" height="160" />
+        <div class="caption">img_Viper_4_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_4.png">
+        <img loading="lazy" src="./assets/img_Viper_4.png" alt="img_Viper_4.png" width="160" height="160" />
+        <div class="caption">img_Viper_4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_5_01.png">
+        <img loading="lazy" src="./assets/img_Viper_5_01.png" alt="img_Viper_5_01.png" width="160" height="160" />
+        <div class="caption">img_Viper_5_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_5_02.png">
+        <img loading="lazy" src="./assets/img_Viper_5_02.png" alt="img_Viper_5_02.png" width="160" height="160" />
+        <div class="caption">img_Viper_5_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_viper_5.png">
+        <img loading="lazy" src="./assets/img_Viper_5.png" alt="img_Viper_5.png" width="160" height="160" />
+        <div class="caption">img_Viper_5.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_waixian_gaizhuangche_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/img_waixian_gaizhuangche_fuhuojie2603.png" alt="img_waixian_gaizhuangche_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">img_waixian_gaizhuangche_fuhuojie2603.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhish4_1.png">
+        <img loading="lazy" src="./assets/img_zhish4_1.png" alt="img_zhish4_1.png" width="160" height="160" />
+        <div class="caption">img_zhish4_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhish4_2.png">
+        <img loading="lazy" src="./assets/img_zhish4_2.png" alt="img_zhish4_2.png" width="160" height="160" />
+        <div class="caption">img_zhish4_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhish4_3.png">
+        <img loading="lazy" src="./assets/img_zhish4_3.png" alt="img_zhish4_3.png" width="160" height="160" />
+        <div class="caption">img_zhish4_3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhish4_4.png">
+        <img loading="lazy" src="./assets/img_zhish4_4.png" alt="img_zhish4_4.png" width="160" height="160" />
+        <div class="caption">img_zhish4_4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhish4_5.png">
+        <img loading="lazy" src="./assets/img_zhish4_5.png" alt="img_zhish4_5.png" width="160" height="160" />
+        <div class="caption">img_zhish4_5.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhish5_1.png">
+        <img loading="lazy" src="./assets/img_zhish5_1.png" alt="img_zhish5_1.png" width="160" height="160" />
+        <div class="caption">img_zhish5_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhish5_2.png">
+        <img loading="lazy" src="./assets/img_zhish5_2.png" alt="img_zhish5_2.png" width="160" height="160" />
+        <div class="caption">img_zhish5_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhish5_3.png">
+        <img loading="lazy" src="./assets/img_zhish5_3.png" alt="img_zhish5_3.png" width="160" height="160" />
+        <div class="caption">img_zhish5_3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhish5_4.png">
+        <img loading="lazy" src="./assets/img_zhish5_4.png" alt="img_zhish5_4.png" width="160" height="160" />
+        <div class="caption">img_zhish5_4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhishi6_1.png">
+        <img loading="lazy" src="./assets/img_zhishi6_1.png" alt="img_zhishi6_1.png" width="160" height="160" />
+        <div class="caption">img_zhishi6_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhishi6_2.png">
+        <img loading="lazy" src="./assets/img_zhishi6_2.png" alt="img_zhishi6_2.png" width="160" height="160" />
+        <div class="caption">img_zhishi6_2.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhishi6_3.png">
+        <img loading="lazy" src="./assets/img_zhishi6_3.png" alt="img_zhishi6_3.png" width="160" height="160" />
+        <div class="caption">img_zhishi6_3.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhishi6_4.png">
+        <img loading="lazy" src="./assets/img_zhishi6_4.png" alt="img_zhishi6_4.png" width="160" height="160" />
+        <div class="caption">img_zhishi6_4.png</div>
+      </div>
+    
+      <div class="thumb" data-name="img_zhishi6_5.png">
+        <img loading="lazy" src="./assets/img_zhishi6_5.png" alt="img_zhishi6_5.png" width="160" height="160" />
+        <div class="caption">img_zhishi6_5.png</div>
+      </div>
+    
+      <div class="thumb" data-name="item_guashi_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/item_guashi_fuhuojie2603.png" alt="item_guashi_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">item_guashi_fuhuojie2603.png</div>
+      </div>
+    
+      <div class="thumb" data-name="item_mingpian_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/item_mingpian_fuhuojie2603.png" alt="item_mingpian_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">item_mingpian_fuhuojie2603.png</div>
+      </div>
+    
+      <div class="thumb" data-name="mingpian_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/mingpian_fuhuojie2603.png" alt="mingpian_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">mingpian_fuhuojie2603.png</div>
+      </div>
+    
+      <div class="thumb" data-name="playercity_celebration_advanced_2024.png">
+        <img loading="lazy" src="./assets/PlayerCity_Celebration_Advanced_2024.png" alt="PlayerCity_Celebration_Advanced_2024.png" width="160" height="160" />
+        <div class="caption">PlayerCity_Celebration_Advanced_2024.png</div>
+      </div>
+    
+      <div class="thumb" data-name="playercity_fireworks_advanced_2024.png">
+        <img loading="lazy" src="./assets/PlayerCity_fireworks_Advanced_2024.png" alt="PlayerCity_fireworks_Advanced_2024.png" width="160" height="160" />
+        <div class="caption">PlayerCity_fireworks_Advanced_2024.png</div>
+      </div>
+    
+      <div class="thumb" data-name="playercity_palace_advanced_2024.png">
+        <img loading="lazy" src="./assets/PlayerCity_Palace_Advanced_2024.png" alt="PlayerCity_Palace_Advanced_2024.png" width="160" height="160" />
+        <div class="caption">PlayerCity_Palace_Advanced_2024.png</div>
+      </div>
+    
+      <div class="thumb" data-name="relics_item_mat.png">
+        <img loading="lazy" src="./assets/relics_item_mat.png" alt="relics_item_mat.png" width="160" height="160" />
+        <div class="caption">relics_item_mat.png</div>
+      </div>
+    
+      <div class="thumb" data-name="relics_item_yl.png">
+        <img loading="lazy" src="./assets/relics_item_yl.png" alt="relics_item_yl.png" width="160" height="160" />
+        <div class="caption">relics_item_yl.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_ld_1.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_ld_1.png" alt="shengdan_jiaohuan_ld_1.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_ld_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_ld.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_ld.png" alt="shengdan_jiaohuan_ld.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_ld.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_lh_1.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_lh_1.png" alt="shengdan_jiaohuan_lh_1.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_lh_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_lh.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_lh.png" alt="shengdan_jiaohuan_lh.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_lh.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_qq_1.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_qq_1.png" alt="shengdan_jiaohuan_qq_1.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_qq_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_qq.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_qq.png" alt="shengdan_jiaohuan_qq.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_qq.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_tg_1.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_tg_1.png" alt="shengdan_jiaohuan_tg_1.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_tg_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_tg.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_tg.png" alt="shengdan_jiaohuan_tg.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_tg.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_wz_1.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_wz_1.png" alt="shengdan_jiaohuan_wz_1.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_wz_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_wz.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_wz.png" alt="shengdan_jiaohuan_wz.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_wz.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_xx_1.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_xx_1.png" alt="shengdan_jiaohuan_xx_1.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_xx_1.png</div>
+      </div>
+    
+      <div class="thumb" data-name="shengdan_jiaohuan_xx.png">
+        <img loading="lazy" src="./assets/shengdan_jiaohuan_xx.png" alt="shengdan_jiaohuan_xx.png" width="160" height="160" />
+        <div class="caption">shengdan_jiaohuan_xx.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_frame_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/UI_Frame_fuhuojie2603.png" alt="UI_Frame_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">UI_Frame_fuhuojie2603.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_mingpai_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/UI_mingpai_fuhuojie2603.png" alt="UI_mingpai_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">UI_mingpai_fuhuojie2603.png</div>
+      </div>
+    
+      <div class="thumb" data-name="ui_talk_qipao_fuhuojie2603.png">
+        <img loading="lazy" src="./assets/UI_Talk_qipao_fuhuojie2603.png" alt="UI_Talk_qipao_fuhuojie2603.png" width="160" height="160" />
+        <div class="caption">UI_Talk_qipao_fuhuojie2603.png</div>
+      </div>
+    
+      <div class="thumb" data-name="uiformation_gaizhuangche_fuhuojie_2026.png">
+        <img loading="lazy" src="./assets/UIFormation_gaizhuangche_fuhuojie_2026.png" alt="UIFormation_gaizhuangche_fuhuojie_2026.png" width="160" height="160" />
+        <div class="caption">UIFormation_gaizhuangche_fuhuojie_2026.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_401_01.png">
+        <img loading="lazy" src="./assets/warmachine_node_401_01.png" alt="warmachine_node_401_01.png" width="160" height="160" />
+        <div class="caption">warmachine_node_401_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_401_02.png">
+        <img loading="lazy" src="./assets/warmachine_node_401_02.png" alt="warmachine_node_401_02.png" width="160" height="160" />
+        <div class="caption">warmachine_node_401_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_401_03.png">
+        <img loading="lazy" src="./assets/warmachine_node_401_03.png" alt="warmachine_node_401_03.png" width="160" height="160" />
+        <div class="caption">warmachine_node_401_03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_401_04.png">
+        <img loading="lazy" src="./assets/warmachine_node_401_04.png" alt="warmachine_node_401_04.png" width="160" height="160" />
+        <div class="caption">warmachine_node_401_04.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_401_05.png">
+        <img loading="lazy" src="./assets/warmachine_node_401_05.png" alt="warmachine_node_401_05.png" width="160" height="160" />
+        <div class="caption">warmachine_node_401_05.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_501_01.png">
+        <img loading="lazy" src="./assets/warmachine_node_501_01.png" alt="warmachine_node_501_01.png" width="160" height="160" />
+        <div class="caption">warmachine_node_501_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_501_02.png">
+        <img loading="lazy" src="./assets/warmachine_node_501_02.png" alt="warmachine_node_501_02.png" width="160" height="160" />
+        <div class="caption">warmachine_node_501_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_501_03.png">
+        <img loading="lazy" src="./assets/warmachine_node_501_03.png" alt="warmachine_node_501_03.png" width="160" height="160" />
+        <div class="caption">warmachine_node_501_03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_501_04.png">
+        <img loading="lazy" src="./assets/warmachine_node_501_04.png" alt="warmachine_node_501_04.png" width="160" height="160" />
+        <div class="caption">warmachine_node_501_04.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_501_05.png">
+        <img loading="lazy" src="./assets/warmachine_node_501_05.png" alt="warmachine_node_501_05.png" width="160" height="160" />
+        <div class="caption">warmachine_node_501_05.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_601_01.png">
+        <img loading="lazy" src="./assets/warmachine_node_601_01.png" alt="warmachine_node_601_01.png" width="160" height="160" />
+        <div class="caption">warmachine_node_601_01.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_601_02.png">
+        <img loading="lazy" src="./assets/warmachine_node_601_02.png" alt="warmachine_node_601_02.png" width="160" height="160" />
+        <div class="caption">warmachine_node_601_02.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_601_03.png">
+        <img loading="lazy" src="./assets/warmachine_node_601_03.png" alt="warmachine_node_601_03.png" width="160" height="160" />
+        <div class="caption">warmachine_node_601_03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_601_04.png">
+        <img loading="lazy" src="./assets/warmachine_node_601_04.png" alt="warmachine_node_601_04.png" width="160" height="160" />
+        <div class="caption">warmachine_node_601_04.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_node_601_05.png">
+        <img loading="lazy" src="./assets/warmachine_node_601_05.png" alt="warmachine_node_601_05.png" width="160" height="160" />
+        <div class="caption">warmachine_node_601_05.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_skill_icon_401.png">
+        <img loading="lazy" src="./assets/warmachine_skill_icon_401.png" alt="warmachine_skill_icon_401.png" width="160" height="160" />
+        <div class="caption">warmachine_skill_icon_401.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_skill_icon_402.png">
+        <img loading="lazy" src="./assets/warmachine_skill_icon_402.png" alt="warmachine_skill_icon_402.png" width="160" height="160" />
+        <div class="caption">warmachine_skill_icon_402.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_skill_icon_501.png">
+        <img loading="lazy" src="./assets/warmachine_skill_icon_501.png" alt="warmachine_skill_icon_501.png" width="160" height="160" />
+        <div class="caption">warmachine_skill_icon_501.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_skill_icon_502.png">
+        <img loading="lazy" src="./assets/warmachine_skill_icon_502.png" alt="warmachine_skill_icon_502.png" width="160" height="160" />
+        <div class="caption">warmachine_skill_icon_502.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_skill_icon_601.png">
+        <img loading="lazy" src="./assets/warmachine_skill_icon_601.png" alt="warmachine_skill_icon_601.png" width="160" height="160" />
+        <div class="caption">warmachine_skill_icon_601.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_skill_icon_602.png">
+        <img loading="lazy" src="./assets/warmachine_skill_icon_602.png" alt="warmachine_skill_icon_602.png" width="160" height="160" />
+        <div class="caption">warmachine_skill_icon_602.png</div>
+      </div>
+    
+      <div class="thumb" data-name="warmachine_star_icon_03.png">
+        <img loading="lazy" src="./assets/warmachine_star_icon_03.png" alt="warmachine_star_icon_03.png" width="160" height="160" />
+        <div class="caption">warmachine_star_icon_03.png</div>
+      </div>
+    
+      <div class="thumb" data-name="wonderfulwings_world_lv2_plus.png">
+        <img loading="lazy" src="./assets/Wonderfulwings_world_lv2_plus.png" alt="Wonderfulwings_world_lv2_plus.png" width="160" height="160" />
+        <div class="caption">Wonderfulwings_world_lv2_plus.png</div>
+      </div>
+    
+      <div class="thumb" data-name="wonderfulwings_world_lv3_plus.png">
+        <img loading="lazy" src="./assets/wonderfulwings_world_lv3_plus.png" alt="wonderfulwings_world_lv3_plus.png" width="160" height="160" />
+        <div class="caption">wonderfulwings_world_lv3_plus.png</div>
+      </div>
+    
+      <div class="thumb" data-name="wonderfulwings_world_plus.png">
+        <img loading="lazy" src="./assets/wonderfulwings_world_plus.png" alt="wonderfulwings_world_plus.png" width="160" height="160" />
+        <div class="caption">wonderfulwings_world_plus.png</div>
+      </div>
+    
+      <div class="thumb" data-name="xmas2021_eventcard_small_npc08.png">
+        <img loading="lazy" src="./assets/xmas2021_eventcard_small_NPC08.png" alt="xmas2021_eventcard_small_NPC08.png" width="160" height="160" />
+        <div class="caption">xmas2021_eventcard_small_NPC08.png</div>
+      </div>
+    
+      <div class="thumb" data-name="xmas2021_eventcard_small_npc09.png">
+        <img loading="lazy" src="./assets/xmas2021_eventcard_small_NPC09.png" alt="xmas2021_eventcard_small_NPC09.png" width="160" height="160" />
+        <div class="caption">xmas2021_eventcard_small_NPC09.png</div>
+      </div>
+    
+      <div class="thumb" data-name="xmas2021_eventcard_small_npc12.png">
+        <img loading="lazy" src="./assets/xmas2021_eventcard_small_NPC12.png" alt="xmas2021_eventcard_small_NPC12.png" width="160" height="160" />
+        <div class="caption">xmas2021_eventcard_small_NPC12.png</div>
+      </div>
+    
+      <div class="thumb" data-name="xmas2021_eventcard_small_npc13.png">
+        <img loading="lazy" src="./assets/xmas2021_eventcard_small_NPC13.png" alt="xmas2021_eventcard_small_NPC13.png" width="160" height="160" />
+        <div class="caption">xmas2021_eventcard_small_NPC13.png</div>
+      </div>
+    
+      <div class="thumb" data-name="xmas2021_eventcard_small_npc14.png">
+        <img loading="lazy" src="./assets/xmas2021_eventcard_small_NPC14.png" alt="xmas2021_eventcard_small_NPC14.png" width="160" height="160" />
+        <div class="caption">xmas2021_eventcard_small_NPC14.png</div>
+      </div>
+    
+    </div>
+  </div>
+
+  <div id="tab-diff" style="display:none">
+    <div class="diff">
+      <div class="diff-header">
+        <input type="search" id="diffSearch" placeholder="Find in diff…" />
+      </div>
+      <div class="diff-body">
+        <div class="diff-line add">+ 607005001=Easter Egg Carnival</div><div class="diff-line add">+ 607005002=Holiday Perks</div><div class="diff-line add">+ 607005003=Collect Holiday Tokens and Redeem Rare Items</div><div class="diff-line add">+ 607005004=Holiday Token</div><div class="diff-line add">+ 607005005=The colorful patterns shimmer brightly in the sun, and their substantial weight signifies their immense value. Redeem for Rare Items in Holiday Perks.</div><div class="diff-line add">+ 607005006=Dear Commander:\n\nThe Events have concluded. Thank you for your active participation. After the Events end, your [Holiday Tokens] will become unusable. Therefore, we have Recycled your {0} unused [Holiday Tokens] and issued the following items as Compensation.</div><div class="diff-line add">+ 607005007=Purchase to get a large amount of Holiday Tokens.</div><div class="diff-line add">+ 607005008=Easter Special</div><div class="diff-line add">+ 607005009=Easter Special - Inception Pack</div><div class="diff-line add">+ 607005010=Easter Special - Surprise Pack</div><div class="diff-line add">+ 607005011=Easter Special - Advanced Pack</div><div class="diff-line add">+ 607005012=Easter Special - Premium Pack</div><div class="diff-line add">+ 607005013=Easter Special - Deluxe Pack</div><div class="diff-line add">+ 607005014=Bunny Check-In</div><div class="diff-line add">+ 607005015=Holiday Mayhem</div><div class="diff-line add">+ 607005016=Some zombies in fancy dress have infiltrated the Holiday Vibe crowd. Defeat them quickly!</div><div class="diff-line add">+ 607005017=1. During the event, a large number of Bunny Zombies will refresh in the world daily.\n2. Commanders have {0} Deployment Attempts daily, which reset at 0:00 (Game Time) daily.\n3. Defeating Bunny Zombies can yield a large amount of precious rewards.</div><div class="diff-line add">+ 607005018=Bunny Zombie</div><div class="diff-line add">+ 607005019=A joyful atmosphere, bunny ears on their heads... do fierce zombies also have such a side?!</div><div class="diff-line add">+ 805101101=Rainbow Realm</div><div class="diff-line add">+ 805101102=Rainbow Realm {0})</div><div class="diff-line add">+ 805101103=A spring realm woven from colorful flowing light, each Easter egg hides a miracle waiting to hatch. Use to change the appearance of your shelter to [Rainbow Realm].</div><div class="diff-line add">+ 805101104=Rainbow of Bliss</div><div class="diff-line add">+ 805101105=Rainbow of Bliss ({0})</div><div class="diff-line add">+ 805101106=Use to change the Nameplate to [Rainbow of Bliss].</div><div class="diff-line add">+ 805101107=Rainbow of Bliss</div><div class="diff-line add">+ 805101108=Rainbow of Bliss ({0})</div><div class="diff-line add">+ 805101109=After use, the avatar frame can be changed to [Rainbow of Bliss]</div><div class="diff-line add">+ 805101110=Glistering Blossoms</div><div class="diff-line add">+ 805101111=Glistering Blossoms ({0})</div><div class="diff-line add">+ 805101112=Flowers formed by crystal blue light hang down, scattering starlight as they gently sway. After use, the Pendant can be changed to [Glistering Blossoms]</div><div class="diff-line add">+ 805101113=Rainbow of Bliss</div><div class="diff-line add">+ 805101114=Rainbow of Bliss ({0})</div><div class="diff-line add">+ 805101115=A spring blessing condensed from colorful flowing light. May all good things arrive as scheduled, like Easter eggs hatching. Use to change your Profile Card Frame to [Rainbow of Bliss].</div><div class="diff-line add">+ 805101116=Bunny's Ride</div><div class="diff-line add">+ 805101117=Bunny's Ride ({0})</div><div class="diff-line add">+ 805101118=The Bunny's Rainbow Ride, arriving on a rainbow, carries spring blessings and joy to every encounter. Use it to change your APC Appearance to [Bunny's Rainbow Ride].</div><div class="diff-line add">+ 805101119=Rainbow of Bliss</div><div class="diff-line add">+ 805101120=Rainbow of Bliss ({0})</div><div class="diff-line add">+ 805101121=Use to change your chat bubble to [Rainbow of Bliss].</div><div class="diff-line add">+ 805200137=Super Modifier</div><div class="diff-line add">+ 805200138=Using a Super Modifier allows you to get a 100% refund of consumed material when Enercore is reset.</div><div class="diff-line add">+ 805200139=One Super Modifier will be given for free during the event.</div><div class="diff-line add">+ 805200140=1. During the event, you can claim one Super Modifier for free.\n2. Using a Super Modifier allows you to get a 100% refund of consumed material when Enercore is reset.</div><div class="diff-line add">+ 805200141=Common Reset</div><div class="diff-line add">+ 805200142=Modifier Reset</div><div class="diff-line add">+ 805200143=Refund 90% of consumed items after reset</div><div class="diff-line add">+ 805200144=Refund 100% of consumed items after reset</div><div class="diff-line add">+ 810210321=Feather of Ma'at</div><div class="diff-line add">+ 810210322=A sacred artifact from ancient Egypt symbolizing truth and justice, used to weigh souls and judge the good and evil in people's hearts.</div><div class="diff-line add">+ 810210323=C-Shaped Jade Dragon</div><div class="diff-line add">+ 810210324=A Neolithic Hongshan Culture jade artifact, hailed as the "First Loong of China," fully displaying the charm of ancient totems.</div><div class="diff-line add">+ 810210325=In battles, your heroes' TAC ATK increases by {0}, lasting till the battle ends.</div><div class="diff-line add">+ 810210326=During fight, your heroes‘ TAC ATK increases by {0}, lasting until the end of fight. At the start of fight, your hero with the highest TAC ATK gains {1} TAC ATK and {2} TAC DMG bonus, lasting until the end of fight.</div><div class="diff-line add">+ 810210327=When your hero with the highest TAC ATK deals DMG, the hero ignores {0} of the Target's DEF, lasting until the end of fight.</div><div class="diff-line add">+ 810210328=In battles, your heroes' VIT increases by {0}, lasting till the battle ends.</div><div class="diff-line add">+ 810210329=During fight, your heroes' VIT increases by {0} until the end of the fight. When your heroes receive healing, their WPN DEF and TAC DEF increase by {1}, up to {2}, continues for 1 Round.</div><div class="diff-line add">+ 810210330=When your heroes receive healing, healing effect increases by {0}, up to {1}, continues for 1 Round.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <img alt="">
+    <div class="cap"></div>
+  </div>
+
+  <!-- Loading bar -->
+  <div class="loading-bar" id="loadingBar"></div>
+
+  <script>
+  (function(){
+    const raf = requestAnimationFrame;
+    let searchTimeout;
+
+    // Loading bar helper
+    const loadingBar = document.getElementById('loadingBar');
+    function showLoading() {
+      if (loadingBar) {
+        loadingBar.classList.add('active');
+      }
+    }
+    function hideLoading() {
+      if (loadingBar) {
+        loadingBar.classList.add('complete');
+        setTimeout(() => {
+          loadingBar.classList.remove('active', 'complete');
+        }, 500);
+      }
+    }
+
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabImages = document.getElementById('tab-images');
+    const tabDiff = document.getElementById('tab-diff');
+    tabs.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        showLoading();
+        tabs.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const t = btn.dataset.tab;
+        tabImages.style.display = (t==='images') ? '' : 'none';
+        tabDiff.style.display = (t==='diff') ? '' : 'none';
+        setTimeout(hideLoading, 300);
+      });
+    });
+
+    // Enhanced Lightbox functionality with keyboard navigation
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb?.querySelector('img');
+    const lbCap = lb?.querySelector('.cap');
+    const lbClose = document.getElementById('lightboxClose');
+    const lbPrev = document.getElementById('lightboxPrev');
+    const lbNext = document.getElementById('lightboxNext');
+    const lbCounter = document.getElementById('lightboxCounter');
+    const imgGrid = document.getElementById('imgGrid');
+    
+    let currentImageIndex = 0;
+    let allImages = [];
+
+    if (lb && lbImg && lbCap && imgGrid) {
+      // Collect all images for navigation
+      function updateImagesList() {
+        allImages = Array.from(imgGrid.querySelectorAll('.thumb')).filter(t => t.style.display !== 'none');
+      }
+      updateImagesList();
+
+      function showImage(index) {
+        if (index < 0) index = allImages.length - 1;
+        if (index >= allImages.length) index = 0;
+        currentImageIndex = index;
+
+        const thumb = allImages[index];
+        const img = thumb?.querySelector('img');
+        if (!img) return;
+
+        const src = img.src || img.dataset.src;
+        if (src) {
+          lbImg.src = src;
+          lbCap.textContent = decodeURIComponent(src.split('/').pop());
+          if (lbCounter) {
+            lbCounter.textContent = `${index + 1} / ${allImages.length}`;
+          }
+        }
+      }
+
+      // Click to open lightbox
+      imgGrid.addEventListener('click', e=>{
+        let img = null;
+        let thumb = null;
+        
+        if (e.target.tagName === 'IMG') {
+          img = e.target;
+          thumb = img.closest('.thumb');
+        } else {
+          thumb = e.target.closest('.thumb');
+          if (thumb) img = thumb.querySelector('img');
+        }
+
+        if (!img || !thumb) return;
+
+        updateImagesList();
+        currentImageIndex = allImages.indexOf(thumb);
+        showImage(currentImageIndex);
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Close button
+      if (lbClose) {
+        lbClose.addEventListener('click', e => {
+          e.stopPropagation();
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+
+      // Navigation buttons
+      if (lbPrev) {
+        lbPrev.addEventListener('click', e => {
+          e.stopPropagation();
+          showImage(currentImageIndex - 1);
+        });
+      }
+
+      if (lbNext) {
+        lbNext.addEventListener('click', e => {
+          e.stopPropagation();
+          showImage(currentImageIndex + 1);
+        });
+      }
+
+      // Close on overlay click (but not on image or caption)
+      lb.addEventListener('click', e=>{
+        if (e.target === lb) {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', e=>{
+        if (lb.classList.contains('open')) {
+          if (e.key === 'Escape') {
+            lb.classList.remove('open');
+            document.body.style.overflow = '';
+          } else if (e.key === 'ArrowLeft') {
+            showImage(currentImageIndex - 1);
+          } else if (e.key === 'ArrowRight') {
+            showImage(currentImageIndex + 1);
+          }
+        }
+      });
+    }
+
+    // Enhanced search with result count, clear button, and no-results state
+    const imgSearch = document.getElementById('imgSearch');
+    const searchClear = document.getElementById('searchClear');
+    const resultsCount = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
+    
+    if (imgSearch) {
+      function updateSearch(query) {
+        const items = Array.from(document.querySelectorAll('.thumb'));
+        const q = query.toLowerCase().trim();
+        const grid = document.getElementById('imgGrid');
+        
+        let visibleCount = 0;
+        items.forEach(t => {
+          const name = t.dataset.name || '';
+          const match = !q || name.includes(q);
+          t.style.display = match ? '' : 'none';
+          if (match) visibleCount++;
+        });
+
+        // Update results count
+        if (resultsCount) {
+          if (q) {
+            resultsCount.textContent = `${visibleCount} of ${items.length} images`;
+          } else {
+            resultsCount.textContent = `${items.length} images`;
+          }
+        }
+
+        // Show/hide clear button
+        if (searchClear) {
+          searchClear.classList.toggle('show', q.length > 0);
+        }
+
+        // Show/hide no-results state
+        if (noResults && grid) {
+          if (q && visibleCount === 0) {
+            noResults.style.display = 'block';
+            grid.style.display = 'none';
+          } else {
+            noResults.style.display = 'none';
+            grid.style.display = '';
+          }
+        }
+
+        // Keep lightbox image list in sync
+        updateImagesList();
+      }
+
+      imgSearch.addEventListener('input', e => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => updateSearch(e.target.value), 150);
+      });
+
+      if (searchClear) {
+        searchClear.addEventListener('click', () => {
+          imgSearch.value = '';
+          updateSearch('');
+          imgSearch.focus();
+        });
+      }
+
+      // Wire up the in-page clear button inside no-results message
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', () => {
+          imgSearch.value = '';
+          updateSearch('');
+          imgSearch.focus();
+        });
+      }
+
+      // Initial count
+      if (resultsCount) {
+        const items = document.querySelectorAll('.thumb');
+        resultsCount.textContent = `${items.length} images`;
+      }
+    }
+
+    const diffSearch = document.getElementById('diffSearch');
+    const diffBody = document.querySelector('.diff-body');
+    diffSearch?.addEventListener('change', ()=>{
+      const q = diffSearch.value.trim();
+      if(!diffBody) return;
+      diffBody.querySelectorAll('mark.hl').forEach(n=>n.classList.remove('hl'));
+      if(!q) return;
+
+      const walker = document.createTreeWalker(diffBody, NodeFilter.SHOW_TEXT);
+      const ranges = [];
+      while(walker.nextNode()){
+        const node = walker.currentNode;
+        if (!node.parentElement.closest('.diff-line')) continue;
+
+        const idx = node.nodeValue.toLowerCase().indexOf(q.toLowerCase());
+        if(idx>=0){
+          const range = document.createRange();
+          range.setStart(node, idx);
+          range.setEnd(node, idx+q.length);
+          ranges.push(range);
+        }
+      }
+      ranges.forEach(r=>{
+        const mark = document.createElement('mark'); mark.className='hl';
+        r.surroundContents(mark);
+      });
+    });
+  })();
+  </script>
   
 
 </main>

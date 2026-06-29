@@ -3,7 +3,7 @@
   
   <url>
     <loc>https://renegade2k6.github.io/LFULeaks/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -106,6 +106,12 @@
   <url>
     <loc>https://renegade2k6.github.io/LFULeaks/updates/2026-04-16/index.html</loc>
     <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://renegade2k6.github.io/LFULeaks/updates/2026-06-29/index.html</loc>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

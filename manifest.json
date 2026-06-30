@@ -4,14 +4,37 @@
   "description": "Last Fortress Underground game asset updates and leaks for educational purposes",
   "start_url": "/LFULeaks/",
   "display": "standalone",
-  "background_color": "#0b0d10",
-  "theme_color": "#6aa2ff",
+  "background_color": "#000000",
+  "theme_color": "#C8641B",
   "orientation": "any",
   "icons": [
     {
       "src": "/LFULeaks/favicon.ico",
       "sizes": "48x48",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/LFULeaks/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/LFULeaks/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/LFULeaks/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/LFULeaks/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "categories": ["games", "education", "reference"],

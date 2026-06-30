@@ -11,10 +11,11 @@
 <meta name="keywords" content="Last Fortress Underground, LFU, game assets, leaks, sprites, datamine, updates, game files">
 <meta name="author" content="Renegade2k6">
 <link rel="canonical" href="https://renegade2k6.github.io/LFULeaks/">
+<meta name="robots" content="noindex, follow">
 
 <!-- PWA Support -->
 <link rel="manifest" href="/LFULeaks/manifest.json">
-<meta name="theme-color" content="#6aa2ff">
+<meta name="theme-color" content="#C8641B">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="LFU Leaks">
@@ -22,18 +23,13 @@
 <meta name="application-name" content="LFU Leaks">
 <link rel="apple-touch-icon" href="/LFULeaks/apple-touch-icon-180x180.png">
 
-<!-- Cache Control - Prevent stale HTML -->
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-
 <!-- Security -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data: https://renegade2k6.github.io; script-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data: https://renegade2k6.github.io; script-src 'self' 'unsafe-inline'; connect-src 'self';">
 
 <!-- Enhanced Open Graph Meta -->
 <meta property="og:site_name" content="LFU Informer">
-<meta property="og:title" content="LFU Informer Leaks">
-<meta property="og:description" content="Last Fortress Underground game asset updates and leaks for educational purposes">
+<meta property="og:title" content="Raw Config Part 25/25 - LFU Informer">
+<meta property="og:description" content="Browse Last Fortress Underground game asset updates with image galleries and config diffs. Updated regularly with new content for educational purposes.">
 <meta property="og:image" content="https://renegade2k6.github.io/LFULeaks/preview.jpg">
 <meta property="og:url" content="https://renegade2k6.github.io/LFULeaks/">
 <meta property="og:type" content="website">
@@ -43,8 +39,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@Renegade2k6News">
 <meta name="twitter:creator" content="@Renegade2k6News">
-<meta name="twitter:title" content="LFU Informer Leaks">
-<meta name="twitter:description" content="Last Fortress Underground game asset updates and leaks for educational purposes">
+<meta name="twitter:title" content="Raw Config Part 25/25 - LFU Informer">
+<meta name="twitter:description" content="Browse Last Fortress Underground game asset updates with image galleries and config diffs. Updated regularly with new content for educational purposes.">
 <meta name="twitter:image" content="https://renegade2k6.github.io/LFULeaks/preview.jpg">
 
 <!-- Structured Data (Schema.org) for SEO -->
@@ -86,28 +82,43 @@
 
 <style>
 :root{
-  --bg:#0b0d10;
-  --fg:#e6e9ef;
-  --muted:#9aa4b2;
-  --card:#111318;
-  --accent:#6aa2ff;
-  --accent-hover:#8cb8ff;
-  --accent-glow:rgba(106, 162, 255, 0.3);
-  --border:#1b2027;
-  --add:#15351b;
-  --del:#3a1b1b;
-  --ctx:#1a1d23;
-  --warn-bg:rgba(234, 179, 8, 0.1);
-  --warn-border:rgba(234, 179, 8, 0.3);
-  --warn-text:#fef08a;
+  color-scheme:dark;
+  /* OLED Ember Tech — legacy names kept & repointed so downstream rules/JS still work */
+  --bg:#000000;
+  --fg:#F2F2F2;
+  --muted:#7A7A7A;
+  --card:#0A0A0A;
+  --accent:#C8641B;
+  --accent-hover:#E07822;
+  --accent-active:#A84F16;
+  --accent-soft:#3A1D0B;
+  --accent-glow:rgba(232, 120, 34, 0.35);
+  --border:#1C1C1C;
+  --border-strong:#2A2A2A;
+  --surface-1:#050505;
+  --surface-2:#0A0A0A;
+  --surface-3:#111111;
+  --add:#071A0D;
+  --del:#1F0707;
+  --ctx:#0A0A0A;
+  --warn-bg:rgba(245, 158, 11, 0.10);
+  --warn-border:rgba(245, 158, 11, 0.35);
+  --warn-text:#FCD34D;
+  /* technical/data font (system stack — no extra network request) */
+  --font-mono:'Cascadia Code','JetBrains Mono',Consolas,'Courier New',monospace;
+  --radius-sm:6px;
+  --radius-md:8px;
+  --radius-lg:12px;
+  /* shared sheen for premium buttons */
+  --btn-sheen:inset 0 1px 0 rgba(255,255,255,0.05);
 }
 *{box-sizing:border-box}
 body{
   margin:0;
   background:var(--bg);
   background-image:
-    radial-gradient(at 0% 0%, rgba(106, 162, 255, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(200, 100, 27, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(232, 120, 34, 0.05) 0px, transparent 50%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
   color:var(--fg);
   font-family:'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -121,17 +132,18 @@ body{
 a{color:var(--accent);text-decoration:none;transition:color 0.2s}
 a:hover{color:var(--accent-hover)}
 
-header{position:sticky;top:0;background:rgba(11,13,16,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 16px 20px;display:flex;flex-direction:column;align-items:center;z-index:50;box-shadow:0 4px 30px rgba(0,0,0,0.1)}
+header{position:sticky;top:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 16px 20px;display:flex;flex-direction:column;align-items:center;z-index:50;box-shadow:0 4px 30px rgba(0,0,0,0.1)}
 .header-content{position:relative;width:100%;max-width:700px;text-align:center}
-header h1{font-size:28px;margin:0;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(to right,#6aa2ff, #a855f7, #6aa2ff);background-size:200% auto;animation:shine 4s linear infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.header-line{height:3px;width:100%;background:linear-gradient(90deg, transparent, #6aa2ff, transparent);margin-top:8px;border-radius:2px;box-shadow:0 0 15px rgba(106,162,255,0.6);opacity:0.8}
-
-@keyframes shine { to { background-position: 200% center; } }
+.header-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);opacity:0.85;margin-bottom:7px}
+.header-stats{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:11px;display:flex;align-items:center;justify-content:center;gap:8px}
+.header-stats .hs-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;box-shadow:0 0 8px #22C55E;flex-shrink:0}
+header h1{font-size:27px;margin:0;font-weight:800;letter-spacing:4px;text-transform:uppercase;background:linear-gradient(135deg,#FFFFFF 0%, #F2F2F2 55%, var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header-line{height:2px;width:64px;background:linear-gradient(90deg, transparent, var(--accent), transparent);margin:12px auto 0;border-radius:2px;box-shadow:0 0 12px var(--accent-glow);opacity:0.9}
 
 .container{max-width:1200px;margin:0 auto;padding:24px 16px;}
 
 .card{
-  background:var(--card);
+  background:linear-gradient(180deg, var(--surface-2), var(--surface-1));
   border:1px solid var(--border);
   border-radius:12px;
   padding:20px;
@@ -159,106 +171,148 @@ a.card:hover{
 }
 a.card:hover::before{opacity:1}
 
+.intro-row{
+  display:flex;
+  gap:16px;
+  align-items:stretch;
+  margin-bottom:24px;
+}
+.intro-row .disclaimer{flex:1.25;margin-bottom:0}
+.intro-row .support-cta{flex:1;margin-bottom:0}
+@media(max-width:768px){
+  .intro-row{flex-direction:column;gap:14px}
+}
 .disclaimer{
-  background:linear-gradient(to right, var(--warn-bg), rgba(0,0,0,0));
-  border:1px solid var(--warn-border);
-  border-left:4px solid #eab308;
-  border-radius:12px;
-  padding:32px 40px;
-  margin-bottom:32px;
+  background:linear-gradient(180deg, var(--surface-2), var(--surface-1));
+  border:1px solid var(--border);
+  border-left:3px solid #F59E0B;
+  border-radius:var(--radius-lg);
+  padding:16px 20px;
+  margin-bottom:20px;
   max-width:100%;
 }
 .disclaimer h2{
-  margin:0 0 16px 0;
-  font-size:18px;
+  margin:0 0 8px 0;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
   color:var(--warn-text);
   display:flex;
   align-items:center;
-  gap:12px;
-  font-weight:700;
+  gap:8px;
+  font-weight:600;
+}
+.disclaimer-summary{
+  margin:0 0 10px 0;
+  color:var(--fg);
+  font-size:13px;
+  font-weight:600;
+  line-height:1.5;
 }
 .disclaimer-text{
-  color:var(--fg);
-  font-size:15px;
-  line-height:1.8;
+  color:#8A8A8A;
+  font-size:11.5px;
+  line-height:1.6;
   font-weight:400;
   max-width:none;
 }
 .disclaimer-text p{
-  margin:0 0 14px 0;
+  margin:0 0 8px 0;
 }
+.disclaimer-text strong{color:var(--fg);font-weight:600}
 
 /* Support CTA Section */
 .support-cta{
-  background:linear-gradient(135deg, rgba(106, 162, 255, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
-  border:1px solid rgba(106, 162, 255, 0.2);
-  border-radius:12px;
-  padding:32px 40px;
-  margin-bottom:32px;
+  background:linear-gradient(135deg, rgba(200, 100, 27, 0.12) 0%, rgba(232, 120, 34, 0.06) 100%);
+  border:1px solid rgba(200, 100, 27, 0.28);
+  border-radius:var(--radius-lg);
+  padding:18px 22px;
+  margin-bottom:24px;
   display:flex;
-  gap:32px;
-  align-items:center;
-  transition:all 0.3s;
+  flex-direction:column;
+  justify-content:center;
+  gap:0;
+  transition:all 0.25s;
   position:relative;
   overflow:hidden;
   max-width:100%;
+  box-shadow:0 0 0 1px rgba(200, 100, 27, 0.10), 0 6px 22px rgba(0,0,0,0.5);
 }
+.support-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.support-head h3{margin:0}
 .support-cta::before{
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(135deg, rgba(106, 162, 255, 0.05) 0%, transparent 50%);
+  background:linear-gradient(135deg, rgba(200, 100, 27, 0.05) 0%, transparent 50%);
   opacity:0;
   transition:opacity 0.3s;
   pointer-events:none;
 }
 .support-cta:hover::before{opacity:1}
 .support-cta:hover{
-  border-color:rgba(106, 162, 255, 0.4);
+  border-color:rgba(200, 100, 27, 0.4);
   transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(106, 162, 255, 0.1);
+  box-shadow:0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(200, 100, 27, 0.1);
 }
 .support-icon{
-  font-size:56px;
+  font-size:19px;
   line-height:1;
   flex-shrink:0;
-  filter:drop-shadow(0 2px 8px rgba(106, 162, 255, 0.3));
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, var(--accent-soft), #150b04);
+  border:1px solid rgba(200, 100, 27, 0.4);
+  box-shadow:0 0 18px var(--accent-glow), var(--btn-sheen);
 }
 .support-content{
-  flex:1;
+  width:100%;
   max-width:none;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 .support-content h3{
-  margin:0 0 16px 0;
-  font-size:24px;
+  margin:0 0 6px 0;
+  font-size:17px;
   font-weight:700;
-  background:linear-gradient(135deg, #6aa2ff 0%, #a855f7 100%);
+  letter-spacing:0.2px;
+  background:linear-gradient(135deg, var(--accent-hover) 0%, #F2F2F2 100%);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   background-clip:text;
   display:inline-block;
-  white-space:nowrap;
 }
 .support-content p{
-  margin:0 0 18px 0;
-  color:var(--fg);
-  font-size:15px;
-  line-height:1.8;
+  margin:0 0 12px 0;
+  color:#B7B7B7;
+  font-size:13px;
+  line-height:1.6;
   font-weight:400;
+  max-width:62ch;
 }
 .cta-button{
-  display:inline-flex;
+  display:flex;
+  width:100%;
   align-items:center;
-  gap:12px;
-  background:linear-gradient(135deg, #6aa2ff 0%, #5b8fd9 100%);
+  justify-content:center;
+  gap:10px;
+  background:linear-gradient(180deg, var(--accent-hover) 0%, var(--accent) 100%);
   color:#fff!important;
-  padding:12px 28px;
-  border-radius:8px;
+  padding:12px 24px;
+  border:1px solid var(--accent-hover);
+  border-radius:var(--radius-md);
   font-weight:700;
-  font-size:15px;
-  transition:all 0.3s;
+  font-size:14px;
+  letter-spacing:0.3px;
+  transition:all 0.18s ease-out;
   text-decoration:none;
-  box-shadow:0 4px 12px rgba(106, 162, 255, 0.2);
+  box-shadow:0 4px 14px var(--accent-glow), var(--btn-sheen);
   position:relative;
   overflow:hidden;
 }
@@ -272,20 +326,22 @@ a.card:hover::before{opacity:1}
 }
 .cta-button:hover::before{opacity:1}
 .cta-button:hover{
-  transform:translateY(-2px) scale(1.02);
-  box-shadow:0 8px 20px rgba(106, 162, 255, 0.35);
-  background:linear-gradient(135deg, #7ab0ff 0%, #6a9ee6 100%);
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px var(--accent-glow), var(--btn-sheen);
+  background:linear-gradient(180deg, #F19A4A 0%, var(--accent-hover) 100%);
+  border-color:#F19A4A;
 }
+.cta-button:active{transform:translateY(0);box-shadow:0 2px 10px var(--accent-glow)}
 .cta-arrow{
   transition:transform 0.3s;
   font-size:18px;
 }
 .cta-button:hover .cta-arrow{transform:translateX(4px)}
 .support-note{
-  font-size:12px!important;
-  color:rgba(255,255,255,0.6)!important;
-  margin:12px 0 0 0!important;
-  font-style:italic;
+  font-size:11px!important;
+  color:#7A7A7A!important;
+  margin:10px 0 0 0!important;
+  letter-spacing:0.2px;
 }
 
 .grid{display:grid;gap:16px}
@@ -304,12 +360,12 @@ a.card:hover::before{opacity:1}
 .thumb img{width:100%;height:180px;object-fit:contain;display:block;background:none;}
 .caption{font-size:11px;color:var(--muted);padding:8px;text-align:center;background:var(--card);border-top:1px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-.meta{display:flex;gap:16px;color:var(--muted);font-size:12px;margin-top:8px}
+.meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-family:var(--font-mono);font-size:11px;letter-spacing:0.3px;margin-top:8px}
 
-.tabs{display:flex;gap:4px;margin-bottom:16px;background:rgba(17,19,24,0.8);backdrop-filter:blur(8px);padding:4px;border-radius:10px;border:1px solid var(--border);width:fit-content;position:sticky;top:90px;z-index:40;margin-left:auto;margin-right:auto;}
-.tab-btn{padding:8px 16px;border:none;border-radius:6px;background:transparent;color:var(--muted);cursor:pointer;font-weight:500;font-size:13px;transition:all 0.2s}
-.tab-btn:hover{color:var(--fg)}
-.tab-btn.active{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(106,162,255,0.25)}
+.tabs{display:flex;gap:4px;margin-bottom:16px;background:rgba(10,10,10,0.8);backdrop-filter:blur(8px);padding:4px;border-radius:10px;border:1px solid var(--border);width:fit-content;position:sticky;top:90px;z-index:40;margin-left:auto;margin-right:auto;}
+.tab-btn{padding:8px 16px;border:1px solid transparent;border-radius:var(--radius-sm);background:transparent;color:var(--muted);cursor:pointer;font-weight:600;font-size:13px;letter-spacing:0.2px;transition:all 0.18s ease-out}
+.tab-btn:hover{color:var(--fg);background:var(--bg-hover,#17120E)}
+.tab-btn.active{background:linear-gradient(180deg, var(--accent-hover), var(--accent));color:#fff;border-color:var(--accent-hover);box-shadow:0 2px 10px var(--accent-glow), var(--btn-sheen)}
 
 .toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:sticky;top:145px;z-index:30;background:var(--bg);padding:8px 0;} 
 
@@ -351,8 +407,8 @@ input[type="search"]:focus{
   outline:none;
   border-color:var(--accent);
   box-shadow: 0 0 0 3px var(--accent-glow), 
-              0 4px 12px rgba(106, 162, 255, 0.2),
-              0 0 30px rgba(106, 162, 255, 0.1);
+              0 4px 12px rgba(200, 100, 27, 0.2),
+              0 0 30px rgba(200, 100, 27, 0.1);
 }
 
 .search-clear {
@@ -383,7 +439,7 @@ input[type="search"]:focus{
 
 .search-clear:hover {
   color: var(--accent);
-  background: rgba(106, 162, 255, 0.1);
+  background: rgba(200, 100, 27, 0.1);
 }
 
 .search-results-count {
@@ -395,20 +451,21 @@ input[type="search"]:focus{
 
 /* Keyboard help button */
 .keyboard-help-btn {
-  background: rgba(106, 162, 255, 0.1);
-  border: 1px solid rgba(106, 162, 255, 0.2);
-  color: var(--accent);
+  background: linear-gradient(180deg, var(--surface-3), var(--surface-2));
+  border: 1px solid var(--border-strong);
+  color: var(--accent-hover);
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.18s ease-out;
   margin-left: 12px;
+  box-shadow: var(--btn-sheen);
 }
 
 .keyboard-help-btn:hover {
-  background: rgba(106, 162, 255, 0.2);
-  border-color: rgba(106, 162, 255, 0.4);
+  background: rgba(200, 100, 27, 0.2);
+  border-color: rgba(200, 100, 27, 0.4);
   transform: translateY(-1px);
 }
 
@@ -520,8 +577,8 @@ input[type="search"]:focus{
 }
 
 .keyboard-shortcuts kbd {
-  background: rgba(106, 162, 255, 0.1);
-  border: 1px solid rgba(106, 162, 255, 0.3);
+  background: rgba(200, 100, 27, 0.1);
+  border: 1px solid rgba(200, 100, 27, 0.3);
   border-radius: 4px;
   padding: 4px 8px;
   font-family: 'Courier New', monospace;
@@ -538,17 +595,19 @@ input[type="search"]:focus{
 }
 
 .modal-close {
-  background: var(--accent);
+  background: linear-gradient(180deg, var(--accent-hover), var(--accent));
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  border: 1px solid var(--accent-hover);
+  padding: 11px 20px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.3px;
   margin-top: 24px;
   width: 100%;
-  transition: all 0.2s;
+  transition: all 0.18s ease-out;
+  box-shadow: var(--btn-sheen);
 }
 
 .modal-close:hover {
@@ -717,7 +776,7 @@ input[type="search"]:focus{
   left: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), #a855f7);
+  background: linear-gradient(90deg, var(--accent), #E07822);
   transition: width 0.3s;
   z-index: 10000;
   box-shadow: 0 0 10px var(--accent-glow);
@@ -740,7 +799,7 @@ input[type="search"]:focus{
 .diff-external a{color:var(--accent);font-weight:500}
 
 /* Footer */
-footer{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:40px;background:rgba(11,13,16,0.5)}
+footer{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:40px;background:rgba(0,0,0,0.5)}
 footer a{color:var(--accent);text-decoration:none;margin:0 4px}
 footer a:hover{color:var(--accent-hover);text-decoration:underline}
 footer p{margin:8px 0;width:100%}
@@ -779,10 +838,8 @@ html { scroll-behavior: smooth; }
 .thumb:hover img{transform:scale(1.05)}
 
 @keyframes lbFade { from{opacity:0} to{opacity:1} }
-@keyframes lbZoom { from{transform:scale(0.8) rotateX(10deg)} to{transform:scale(1) rotateX(0deg)} }
 .lightbox.open { animation: lbFade 0.25s ease-out; }
 .lightbox.open img {
-  animation: lbZoom 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow:0 30px 60px -20px rgba(0,0,0,0.8), 0 0 80px -20px var(--accent-glow);
 }
 
@@ -804,10 +861,10 @@ html { scroll-behavior: smooth; }
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--accent);
-  border: none;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(180deg, var(--accent-hover), var(--accent));
+  border: 1px solid var(--accent-hover);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -815,9 +872,9 @@ html { scroll-behavior: smooth; }
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s;
+  transition: all 0.25s ease-out;
   z-index: 100;
-  box-shadow: 0 4px 20px rgba(106, 162, 255, 0.4);
+  box-shadow: 0 4px 18px var(--accent-glow), var(--btn-sheen);
 }
 .back-to-top.show {
   opacity: 1;
@@ -825,7 +882,7 @@ html { scroll-behavior: smooth; }
 }
 .back-to-top:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 30px rgba(106, 162, 255, 0.6);
+  box-shadow: 0 6px 30px rgba(200, 100, 27, 0.6);
   background: var(--accent-hover);
 }
 .back-to-top svg {
@@ -849,13 +906,13 @@ html { scroll-behavior: smooth; }
 }
 .tab-btn:hover::before{opacity:0.1}
 .tab-btn.active{
-  box-shadow:0 4px 12px rgba(106, 162, 255, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow:0 4px 12px rgba(200, 100, 27, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 /* Improve searchbar */
 .searchbar{position:relative}
 .searchbar input:focus{
-  box-shadow:0 0 0 3px var(--accent-glow), 0 4px 12px rgba(106, 162, 255, 0.2);
+  box-shadow:0 0 0 3px var(--accent-glow), 0 4px 12px rgba(200, 100, 27, 0.2);
 }
 
 /* Mark highlight */
@@ -982,12 +1039,10 @@ p {
     gap: 16px;
   }
   
-  .support-icon {
-    font-size: 36px;
-    margin: 0 auto;
-    display: block;
+  .support-head {
+    justify-content: center;
   }
-  
+
   .support-content h3 {
     font-size: 18px;
     white-space: normal;
@@ -1133,43 +1188,6 @@ p {
    ENHANCED VISUAL EFFECTS
    ============================================ */
 
-/* Animated gradient header */
-@keyframes headerGlow {
-  0%, 100% { 
-    box-shadow: 0 4px 30px rgba(0,0,0,0.1), 0 0 40px rgba(106, 162, 255, 0.1);
-  }
-  50% { 
-    box-shadow: 0 4px 30px rgba(0,0,0,0.1), 0 0 60px rgba(106, 162, 255, 0.15);
-  }
-}
-
-header {
-  animation: headerGlow 4s ease-in-out infinite;
-}
-
-/* Floating animation for cards */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-4px); }
-}
-
-a.card {
-  animation: float 6s ease-in-out infinite;
-}
-
-a.card:nth-child(2n) {
-  animation-delay: 0.5s;
-}
-
-a.card:nth-child(3n) {
-  animation-delay: 1s;
-}
-
-/* Hover pause animation */
-a.card:hover {
-  animation-play-state: paused;
-}
-
 /* Enhanced gradient text for headings */
 .card h3 {
   background: linear-gradient(135deg, var(--fg) 0%, var(--accent) 100%);
@@ -1180,117 +1198,17 @@ a.card:hover {
 }
 
 a.card:hover h3 {
-  background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #E07822 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   transform: translateX(4px);
 }
 
-/* Pulse animation for support CTA */
-@keyframes pulse {
-  0%, 100% { 
-    box-shadow: 0 0 0 0 rgba(106, 162, 255, 0.4);
-  }
-  50% { 
-    box-shadow: 0 0 0 15px rgba(106, 162, 255, 0);
-  }
-}
-
-.cta-button {
-  animation: pulse 2s infinite;
-}
-
-.cta-button:hover {
-  animation: none;
-}
-
-/* Shimmer effect on images */
-@keyframes shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
-}
-
-.thumb::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    transparent 100%
-  );
-  animation: shimmer 3s infinite;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Particles effect on header line */
-@keyframes particles {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-.header-line::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%,
-    var(--accent) 20%,
-    var(--accent) 80%,
-    transparent 100%
-  );
-  filter: blur(2px);
-  animation: particles 2s ease-in-out infinite;
-}
-
 /* Glass morphism enhancement for cards */
 .card {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-
-/* Spotlight effect on hover */
-a.card::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(106, 162, 255, 0.1) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.5s;
-  pointer-events: none;
-}
-
-a.card:hover::after {
-  opacity: 1;
-}
-
-/* Stagger fade-in with scale */
-@keyframes fadeInScale {
-  from { 
-    opacity: 0; 
-    transform: translateY(30px) scale(0.95);
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0) scale(1);
-  }
-}
-
-.container > * {
-  animation: fadeInScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 
 /* Smooth scrollbar */
@@ -1305,7 +1223,7 @@ a.card:hover::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--accent) 0%, #5b8fd9 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, #A84F16 100%);
   border-radius: 10px;
   border: 2px solid var(--bg);
   transition: background 0.3s;
@@ -1313,11 +1231,6 @@ a.card:hover::after {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--accent-hover) 0%, var(--accent) 100%);
-}
-
-/* Icon animation */
-.support-icon {
-  animation: float 3s ease-in-out infinite;
 }
 
 /* Button ripple effect */
@@ -1336,72 +1249,8 @@ button:active::before,
 /* Glow on focus */
 input[type="search"]:focus {
   box-shadow: 0 0 0 3px var(--accent-glow), 
-              0 4px 12px rgba(106, 162, 255, 0.2),
-              0 0 30px rgba(106, 162, 255, 0.1);
-}
-
-/* Enhanced tab animation */
-.tab-btn.active {
-  animation: tabPulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes tabPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-/* Loading skeleton shimmer */
-@keyframes skeletonShimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
-}
-
-.thumb.loading {
-  background: linear-gradient(
-    90deg,
-    #1a1a1a 0px,
-    #242424 40px,
-    #1a1a1a 80px
-  );
-  background-size: 1000px 100%;
-  animation: skeletonShimmer 2s infinite;
-}
-
-/* Back to top entrance */
-.back-to-top.show {
-  animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes bounceIn {
-  0% { 
-    opacity: 0;
-    transform: scale(0.3) translateY(20px);
-  }
-  50% { 
-    transform: scale(1.05) translateY(0);
-  }
-  100% { 
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-/* Disclaimer attention animation */
-.disclaimer {
-  animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
-  animation-delay: 0.3s;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+              0 4px 12px rgba(200, 100, 27, 0.2),
+              0 0 30px rgba(200, 100, 27, 0.1);
 }
 
 /* Image hover zoom with glow */
@@ -1414,14 +1263,14 @@ input[type="search"]:focus {
 .meta span {
   display: inline-block;
   padding: 4px 8px;
-  background: rgba(106, 162, 255, 0.1);
+  background: rgba(200, 100, 27, 0.1);
   border-radius: 6px;
-  border: 1px solid rgba(106, 162, 255, 0.2);
+  border: 1px solid rgba(200, 100, 27, 0.2);
   transition: all 0.3s;
 }
 
 .meta span:hover {
-  background: rgba(106, 162, 255, 0.2);
+  background: rgba(200, 100, 27, 0.2);
   border-color: var(--accent);
   transform: translateY(-2px);
 }
@@ -1432,14 +1281,18 @@ input[type="search"]:focus {
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header role="banner">
   <div class="header-content">
+    <div class="header-eyebrow" aria-hidden="true">// LFU DATAMINE ARCHIVE</div>
     <h1>Raw Config Part 25/25 - LFU Informer</h1>
     <div class="header-line" role="presentation" aria-hidden="true"></div>
+    <div class="header-stats"><span class="hs-dot" aria-hidden="true"></span>19 Updates · 25,756 Assets · Live</div>
   </div>
 </header>
 <main id="main-content" class="container" role="main">
 
+  <div class="intro-row">
   <div class="disclaimer">
     <h2>⚠️ Fair Use Notice</h2>
+    <p class="disclaimer-summary">Images shown strictly for education, commentary &amp; news reporting — Fair Use under §107.</p>
     <div class="disclaimer-text">
       <p style="margin-top:0">The images and artwork used on this page are displayed strictly for educational, informational, commentary, and news reporting purposes.</p>
       <p>This constitutes <strong>Fair Use</strong> under Section 107 of the U.S. Copyright Act and similar copyright provisions worldwide. This content is not for commercial exploitation, and no ownership of the original works is claimed. All intellectual property rights remain with their respective copyright holders.</p>
@@ -1448,16 +1301,19 @@ input[type="search"]:focus {
   </div>
 
   <div class="support-cta">
-    <div class="support-icon">💙</div>
     <div class="support-content">
-      <h3>Support This Project</h3>
-      <p>If you value having instant access to the latest Last Fortress Underground updates and appreciate the time and effort invested in maintaining this resource, please consider supporting the project.</p>
+      <div class="support-head">
+        <div class="support-icon">💙</div>
+        <h3>Support This Project</h3>
+      </div>
+      <p>Keep LFU Leaks fast, free, updated &amp; completely ad-free.</p>
       <a href="https://buymeacoffee.com/renegade2kz" target="_blank" rel="noopener" class="cta-button">
-        <span class="cta-text">Buy me a coffee</span>
+        <span class="cta-text">☕ Buy me a coffee</span>
         <span class="cta-arrow">→</span>
       </a>
-      <p class="support-note">Your support helps keep this site running, updated, and completely ad-free!</p>
+      <p class="support-note">Every coffee helps keep the datamine running.</p>
     </div>
+  </div>
   </div>
 
 <div class="diff"><div class="diff-body"><div class="diff-line ctx">907964=RULES: \n1. Complete the missions throughout the event to obtain points and increase the Recruitment Trial level. The level will be reset after the event.\n2. There are 2 tiers of Recruitment Trial rewards, namely, common and advanced rewards. The common rewards can be obtained from missions; the advanced ones will be activated after the purchase.\n3. The missions will be refreshed in 2 ways. Please see the mission desc for more info.\n4. Rare Alliance present will be delivered after the advanced rewards are activated.</div><div class="diff-line ctx">907965=Legion War</div><div class="diff-line ctx">907966=Party Outfit Token</div><div class="diff-line ctx">907967=Used to redeem hero skins in the [Party Outfit] event.</div><div class="diff-line ctx">907968=Dark Moon Night</div><div class="diff-line ctx">907969=Musical Practice</div><div class="diff-line ctx">907970=RULES\n1. Complete the missions throughout the event to get some points and increase the [Musical Practice] level. The level will be reset after the event. \n2. There are 2 tiers of rewards, namely, common and advanced rewards. The common rewards can be obtained from missions; the advanced ones will be activated after the purchase.</div><div class="diff-line ctx">907971=Sharpen your musical skills to get tons of rewards.</div><div class="diff-line ctx">907972=[Musical Practice] Unclaimed Rewards</div><div class="diff-line ctx">907973=Dear Commander, \n\nBelow are the rewards not claimed in time in the "Musical Practice" event. Collect them now!</div><div class="diff-line ctx">907974=Fortress Decor Chest (Selectable)</div><div class="diff-line ctx">907975=Open it to choose one of the Fortress decors from below.</div><div class="diff-line ctx">907976=Decor Renewal</div><div class="diff-line ctx">907977=A meticulous design from a master architect; with the new look on, the Fortress will get even stronger!</div><div class="diff-line ctx">907978=Get any of the Prestige-quality decor to access the Prestige Skill. With more such decors obtained, you can further enhance the Prestige Skill's effect (progress: {0}/{1}).</div><div class="diff-line ctx">907981=Celebratory Fireworks City</div><div class="diff-line ctx">907982=Desert Palace</div><div class="diff-line ctx">907983=Timeless Music Box</div><div class="diff-line ctx">907984=Decor Chip</div><div class="diff-line ctx">907985=A chip that stores the know-how of master architects. Used to upgrade the Fortress appearances including [Celebratory Fireworks City], [Desert Palace], and [Timeless Music Box], and unlock Prestige-level Fortress Decor.</div><div class="diff-line ctx">907986=Please choose the item to use</div><div class="diff-line ctx">907987=Upgrade Decor</div><div class="diff-line ctx">907988=Permanent Attribute</div><div class="diff-line ctx">907989=Equipping Attribute</div><div class="diff-line ctx">907990=Renewal Preview</div><div class="diff-line ctx">907991=Purchase Streak</div><div class="diff-line ctx">907992=Purchase a total of {0} Diamonds to claim</div><div class="diff-line ctx">907993=Purchase Progress:</div><div class="diff-line ctx">907994=Not yet unlocked</div><div class="diff-line ctx">907995=1. During the event, the Diamonds you get from the bundles you purchase will be calculated; once you reach a certain amount, you can claim the due reward and get eligibility for the subsequent day's event. \n2. If you stop the purchases midway, the streak will be calculated all over again. EXAMPLE: you reach a random tier on day 1, but you do not reach any tier on day 2; then on day 3, the days of continuous purchases will be reset to day 1. \n3. The longer the continuous purchase streak, the better the rewards!</div><div class="diff-line ctx">907996=Purchase Exchange</div><div class="diff-line ctx">907997=Dark Gold Tickets obtained from purchases made during the event will be removed after the event ends.</div><div class="diff-line ctx">907998=1. During the event, you can get additional Dark Gold Tickets when purchasing bundles; the Dark Gold Tickets can be used to redeem the items you want. \n2. The Dark Gold Tickets will be recycled after the event ends, with {0} Diamonds returned to you for each recycled Dark Gold Ticket.</div><div class="diff-line ctx">907999=You can get additional Dark Gold Tickets by purchasing bundles during the event.</div><div class="diff-line ctx">908000=1. During the event, you can get additional Dark Gold Tickets when purchasing bundles; the Dark Gold Tickets can be used to redeem the items you want.</div><div class="diff-line ctx">908001=Dark Gold Ticket</div><div class="diff-line ctx">908002=Can be used in the "Purchase Exchange" event</div><div class="diff-line ctx">908003=Level {0}</div><div class="diff-line ctx">908004=Basic decor not owned</div><div class="diff-line ctx">908005=The configuration of the Basic Decor for renewal does not exist</div><div class="diff-line ctx">908006=This decor is not a permanent one.</div><div class="diff-line ctx">908007=Error with the configuration of the consumed item</div><div class="diff-line ctx">908008=You already have the skin you are trying to get from renewal.</div><div class="diff-line ctx">908009=The decor you try to renew does not exist.</div><div class="diff-line ctx">908010=Redeem any item of the preceding level to unlock</div><div class="diff-line ctx">908011=Not enough items</div><div class="diff-line ctx">908012=Cage found in the target facility; cannot place another one.</div><div class="diff-line ctx">908013=Drone deployed; you will see the Commanders and traps in the facility.</div><div class="diff-line ctx">908014=Lineup revived</div><div class="diff-line ctx">908015=Congratulations on getting your daily {0}</div><div class="diff-line ctx">908016=No lineup chosen</div><div class="diff-line ctx">908017=Lineup unlocks in {0}</div><div class="diff-line ctx">908018=Battlefield not open yet</div><div class="diff-line ctx">908019=Loading Battlefield</div><div class="diff-line ctx">908020=Battle in progress. Cannot perform the action.</div><div class="diff-line ctx">908021=1. When you have a Prestige-quality decor, you'll obtain the Prestige Fortress Skill. Activate the Prestige Fortress Skill to provide a great buff to you and your alliance members. \n2. When you have a certain elementary decor, you may consume another identical decor OR multiple Decor Chips to upgrade it into a Prestige-quality decor. \n3. The Prestige-quality decor will gain additional attributes. \n4. The Prestige-quality decor can be switched back to the original decor on the decor page. \n5. The more Prestige-quality decors you have, the more powerful the Fortress' Prestige Skill.</div><div class="diff-line ctx">908022=Prestige Fortress Skill available in {0}</div><div class="diff-line ctx">908023=Prestige Fortress Skill unavailable</div><div class="diff-line ctx">908024=Commander, below are the rewards not claimed in time for the [Purchase Exchange] event. Collect them now!</div><div class="diff-line ctx">908025=Commander, below are the rewards not claimed in time for the [Purchase Streak] event. Collect them now!</div><div class="diff-line ctx">908026=Countdown: {0}</div><div class="diff-line ctx">908027=Cannot challenge the Wrecker from 00:00-00:10 (Game Time)</div><div class="diff-line ctx">908028=Cost: {0}</div><div class="diff-line ctx">908029=Use All</div><div class="diff-line ctx">908030=Total Diamonds Purchased:</div><div class="diff-line ctx">908031=Sensation Token Mystery Box</div><div class="diff-line ctx">908032=Open it to get a random amount of Sensation Tokens.</div><div class="diff-line ctx">908033=Wilderness Scavenger</div><div class="diff-line ctx">908034=Perform the designated actions for a chance to receive additional special event items.</div><div class="diff-line ctx">908035=There is a chance to get special event items in the following ways.</div><div class="diff-line ctx">908036=Please select a type of material first</div><div class="diff-line ctx">908037=Activate</div><div class="diff-line ctx">908038=Activating</div><div class="diff-line ctx">908039=Prestige Skill will be ready in {0}</div><div class="diff-line ctx">908040=Are you sure you want to activate the Prestige Skill?</div><div class="diff-line ctx">908041=Wasteland Deal</div><div class="diff-line ctx">908042=Purchase event items to redeem commodities.</div><div class="diff-line ctx">908043=1. During the event, a batch of commodities will be released every day. You can ask for a bargain for the batch of commodities. After you get a bargain, you can purchase the commodities with Bargain Coins at a discounted price. \n2. You can send the bargaining request to chats, asking others to help you get a bargain. Some Aid Tickets will be consumed in each bargaining. If you successfully get a bargain, the Commanders who help you will receive some items as a reward. \n3. You can make a bargain for an item for no more than 3 times. After the event ends, the items for the event will be converted into Diamonds and delivered to your mailbox.</div><div class="diff-line ctx">908044=Item Removed</div><div class="diff-line ctx">908045=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your {0} will no longer be usable. Therefore, we recycled your unused {0} *{1} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">910001=Events expired. Use it to convert it into Xmas Token.</div><div class="diff-line ctx">910004=Off</div><div class="diff-line ctx">910005=FULL</div><div class="diff-line ctx">910006=MAX</div><div class="diff-line ctx">910007=MIN</div><div class="diff-line ctx">910008=DAY.{0}</div><div class="diff-line ctx">910009=km</div><div class="diff-line ctx">910010=FINISHED</div><div class="diff-line ctx">911001=Cooldown: {0}</div><div class="diff-line ctx">911002=HP</div><div class="diff-line ctx">911003=ATK</div><div class="diff-line ctx">911101=HP increase: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911102=ATK increase: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911103=DMG increase: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911104=Blast DMG: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911105=Blast count: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911106=Slowdown time: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911107=Burning DMG: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911108=Collision DMG: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911109=Duration: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911110=Traps: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911111=Extra amount: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911112=Blast radius: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911113=Magnifying %: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911114=Increased movement distance: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911115=Amount: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911116=Crit rate increase: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911117=Attack speed increase: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911118=Bullet penetration: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911119=Number of reflections: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911120=ATK decrease: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911121=Slowdown effect: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911122=Combo count: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911123=Shorter cooldown: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911124=Extra batches: {0}|{1}|{2}|{3}|{4}</div><div class="diff-line ctx">911201=Deploy landmines within an area; landmines could be detonated randomly within the area, dealing some DMG to enemies.</div><div class="diff-line ctx">911202=Increase the hero's basic HP and ATK.</div><div class="diff-line ctx">911203=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911204=Increase the number of blasts</div><div class="diff-line ctx">911205=The landmine area gets bigger, with the blast damage increased. Each blast will freeze the target for a short while.</div><div class="diff-line ctx">911206=Deploy multiple flame traps, subjecting enemies that pass across the traps to a burning status</div><div class="diff-line ctx">911207=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911208=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911209=Additionally boost the power of burning</div><div class="diff-line ctx">911210=Increase the duration of the trap, which will cause a short period of slowdown for the enemy.</div><div class="diff-line ctx">911211=Fires a shark missile, inflicting heavy DMG on the target and nearby enemies</div><div class="diff-line ctx">911212=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911213=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911214=Additionally boost the power of the explosion</div><div class="diff-line ctx">911215=Increase the power of the blast; meanwhile, an airflow impact during the blast will cause DMG to the enemy.</div><div class="diff-line ctx">911216=Throws a giant iron ball forward, inflicting crush DMG to enemies along its path</div><div class="diff-line ctx">911217=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911218=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911219=Increase the size of the iron ball.</div><div class="diff-line ctx">911220=The iron ball will leave a trail of flames when rolling around, causing damage to enemies along the trail.</div><div class="diff-line ctx">911221=Throws a sharp wheel and cuts enemies that come into contact with it</div><div class="diff-line ctx">911222=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911223=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911224=Additionally increase the power of the sharp wheel</div><div class="diff-line ctx">911225=Release two additional small wheels to the left and right sides respectively, causing some collision damage.</div><div class="diff-line ctx">911226=Summons multiple spikes to attack enemies</div><div class="diff-line ctx">911227=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911228=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911229=Additionally boost the power of the spikes</div><div class="diff-line ctx">911230=Additionally increase the power and size of the spikes</div><div class="diff-line ctx">911231=Arrows descending from the sky will deal AoE DMG to enemies</div><div class="diff-line ctx">911232=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911233=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911234=Additionally boost the power of the arrow shower</div><div class="diff-line ctx">911235=Additionally increase the coverage and power of the arrow shower</div><div class="diff-line ctx">911236=Fires a giant air blast at the enemies ahead</div><div class="diff-line ctx">911237=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911238=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911239=Additionally increases the power of the air blast</div><div class="diff-line ctx">911240=Continuously fire 2 small air blasts to both sides while moving around, causing some collision DMG.</div><div class="diff-line ctx">911241=Fires multiple card bombs to bombard the area ahead</div><div class="diff-line ctx">911242=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911243=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911244=Additionally boost the power of the explosion</div><div class="diff-line ctx">911245=Additionally increase the number and power of blasts</div><div class="diff-line ctx">911246=Increases the hero's crit rate and attack speed</div><div class="diff-line ctx">911247=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911248=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911249=Increases the ATK of all teammates</div><div class="diff-line ctx">911250=Enhances the hero's bullet penetration effect and increases its DMG</div><div class="diff-line ctx">911251=Quickly throws multiple bombs, dealing explosive DMG to enemies</div><div class="diff-line ctx">911252=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911253=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911254=Additionally boost the power of the bomb</div><div class="diff-line ctx">911255=Additionally increase the number and power of bombs</div><div class="diff-line ctx">911256=Slashes forward to create a slash arc, dealing DMG to enemies along its path</div><div class="diff-line ctx">911257=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911258=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911259=Additionally boost the power of the slash arc</div><div class="diff-line ctx">911261=Fires two fireworks that can even deal splashing DMG to enemies behind the target</div><div class="diff-line ctx">911262=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911263=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911264=Additionally increases the power of fireworks</div><div class="diff-line ctx">911266=Deploy multiple landmines on the field which, when triggered, will create explosions, dealing explosive DMG to nearby enemies.</div><div class="diff-line ctx">911267=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911268=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911269=Additionally boost the power of the landmines</div><div class="diff-line ctx">911271=Throws a Molotov at enemies, creating a burning ring on the ground that continuously deals AoE DMG</div><div class="diff-line ctx">911272=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911273=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911274=Additionally boost the power of the Molotov</div><div class="diff-line ctx">911276=Fires three miniature air blasts at the enemies ahead</div><div class="diff-line ctx">911277=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911278=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911279=Additionally increases the power of the air blast</div><div class="diff-line ctx">911281=Slashes forward to create three slash arcs, dealing DMG to enemies along its path</div><div class="diff-line ctx">911282=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911283=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911284=Additionally boost the power of the slash arc</div><div class="diff-line ctx">911286=Launches three arrows in a row at enemies ahead</div><div class="diff-line ctx">911287=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911288=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911289=Additionally boost the power of the crossbow</div><div class="diff-line ctx">911291=Launch multiple voodoo attacks against enemies</div><div class="diff-line ctx">911292=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911293=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911294=Additionally boost the power of voodoo magic</div><div class="diff-line ctx">911296=Slashes forward three times to create three slash arcs, dealing DMG to enemies along its path</div><div class="diff-line ctx">911297=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911298=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911299=Additionally boost the power of the slash arc</div><div class="diff-line ctx">911301=Fire multiple armor-piercing bullets toward the front</div><div class="diff-line ctx">911302=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911303=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911304=Additionally boost the power of the armor-piercing bullets</div><div class="diff-line ctx">911306=Place an electromagnetic induction device on the ground, creating an electromagnetic trap that deals sustained DMG</div><div class="diff-line ctx">911307=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911308=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911309=Additionally boost the power of the electromagnetic trap</div><div class="diff-line ctx">911311=Fire multiple bullets in a row to sweep enemies in the front</div><div class="diff-line ctx">911312=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911313=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911314=Additionally boost the power of the sweeping attack</div><div class="diff-line ctx">911316=Throw multiple bombs to inflict explosive DMG on enemies</div><div class="diff-line ctx">911317=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911318=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911319=Additionally boost the power of the bomb</div><div class="diff-line ctx">911321=Fire multiple powerful shotgun bullets toward the front, inflicting damage on enemies</div><div class="diff-line ctx">911322=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911323=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911324=Additionally boost the power of the shotgun</div><div class="diff-line ctx">911326=Throw multiple bombs to inflict explosive DMG on enemies</div><div class="diff-line ctx">911327=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911328=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911329=Additionally boost the power of the bomb</div><div class="diff-line ctx">911331=Launch multiple missiles to cause explosive DMG</div><div class="diff-line ctx">911332=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911333=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911334=Additionally boost the power of the missiles</div><div class="diff-line ctx">911336=Fire multiple bullets in a row to sweep enemies in the front</div><div class="diff-line ctx">911337=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911338=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911339=Additionally boost the power of the sweeping attack</div><div class="diff-line ctx">911341=Launch multiple missiles to cause explosive DMG</div><div class="diff-line ctx">911342=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911343=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911344=Additionally boost the power of the missiles</div><div class="diff-line ctx">911346=Throw multiple bombs to inflict explosive DMG on enemies</div><div class="diff-line ctx">911347=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911348=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911349=Additionally boost the power of the bomb</div><div class="diff-line ctx">911351=Launch multiple missiles to cause explosive DMG</div><div class="diff-line ctx">911352=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911353=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911354=Additionally boost the power of the missiles</div><div class="diff-line ctx">911356=Throw multiple bombs to inflict explosive DMG on enemies</div><div class="diff-line ctx">911357=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911358=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911359=Additionally boost the power of the bomb</div><div class="diff-line ctx">911361=Fire powerful shotgun bullets to knock back and damage enemies</div><div class="diff-line ctx">911362=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911363=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911364=Additionally boost the power of the shotgun</div><div class="diff-line ctx">911366=Fire multiple bullets in a row to sweep enemies in the front</div><div class="diff-line ctx">911367=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911368=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911369=Additionally boost the power of the sweeping attack</div><div class="diff-line ctx">911371=Throw multiple bombs to inflict explosive DMG on enemies</div><div class="diff-line ctx">911372=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911373=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911374=Additionally boost the power of the bomb</div><div class="diff-line ctx">911376=Launch an arrow from the crossbow to attack enemies in the front</div><div class="diff-line ctx">911377=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911378=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911379=Additionally boost the power of the crossbow</div><div class="diff-line ctx">911381=Throw multiple bombs to inflict explosive DMG on enemies</div><div class="diff-line ctx">911382=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911383=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911384=Additionally boost the power of the bomb</div><div class="diff-line ctx">911386=Fire multiple bullets in a row to sweep enemies in the front</div><div class="diff-line ctx">911387=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911388=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911389=Additionally boost the power of the sweeping attack</div><div class="diff-line ctx">911391=Throw multiple bombs to inflict explosive DMG on enemies</div><div class="diff-line ctx">911392=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911393=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911394=Additionally boost the power of the bomb</div><div class="diff-line ctx">911396=Launch multiple missiles to cause explosive DMG</div><div class="diff-line ctx">911397=Increase the hero's basic HP and ATK</div><div class="diff-line ctx">911398=Increase the hero's HP and ATK by a certain percentage.</div><div class="diff-line ctx">911399=Additionally boost the power of the missiles</div><div class="diff-line ctx">911401=Attribute Boost</div><div class="diff-line ctx">911402=Large Attribute Increase</div><div class="diff-line ctx">911403=Skill Boost</div><div class="diff-line ctx">911404=AoE DMG</div><div class="diff-line ctx">911405=DMG to Individuals</div><div class="diff-line ctx">911406=Creating Trap</div><div class="diff-line ctx">911407=Self-Enhancement</div><div class="diff-line ctx">911408=Group Enhancement</div><div class="diff-line ctx">911409=Enhanced Bullets</div><div class="diff-line ctx">911501=Landmine Planting</div><div class="diff-line ctx">911502=Shield of Justice</div><div class="diff-line ctx">911503=Guardian of Justice</div><div class="diff-line ctx">911504=Carpet Bombing</div><div class="diff-line ctx">911505=Landmine Trap</div><div class="diff-line ctx">911506=Hellfire</div><div class="diff-line ctx">911507=Body of Blaze</div><div class="diff-line ctx">911508=Fire Thrower</div><div class="diff-line ctx">911509=Arsonist</div><div class="diff-line ctx">911510=Blaze Trap</div><div class="diff-line ctx">911511=Sinister Missile</div><div class="diff-line ctx">911512=Ill-Tempered</div><div class="diff-line ctx">911513=Heavy Armor</div><div class="diff-line ctx">911514=Armor-Piercing Ammo</div><div class="diff-line ctx">911515=Shark-splosion</div><div class="diff-line ctx">911516=Punk Ball</div><div class="diff-line ctx">911517=Punk Spirit</div><div class="diff-line ctx">911518=Band Festival</div><div class="diff-line ctx">911519=Blast Rhapsody</div><div class="diff-line ctx">911520=Punk Wheel</div><div class="diff-line ctx">911521=Sharp Wheel</div><div class="diff-line ctx">911522=Frenzy of Rage</div><div class="diff-line ctx">911523=Rebel's Tune</div><div class="diff-line ctx">911524=Demolisher's Tune</div><div class="diff-line ctx">911525=Heavy Metal Roar</div><div class="diff-line ctx">911526=Earth Spike</div><div class="diff-line ctx">911527=Faith to Survive</div><div class="diff-line ctx">911528=Will Power</div><div class="diff-line ctx">911529=Sharp Rock</div><div class="diff-line ctx">911530=Spike Storm</div><div class="diff-line ctx">911531=Arrow Shower</div><div class="diff-line ctx">911532=Natural Barriers</div><div class="diff-line ctx">911533=Wildlings Leader</div><div class="diff-line ctx">911534=Across the Air</div><div class="diff-line ctx">911535=Arrow Downpour</div><div class="diff-line ctx">911536=Air Blast</div><div class="diff-line ctx">911537=Safeguarder</div><div class="diff-line ctx">911538=Watchers Leader</div><div class="diff-line ctx">911539=Air Cannon</div><div class="diff-line ctx">911540=Cyclone</div><div class="diff-line ctx">911541=Sweet Card</div><div class="diff-line ctx">911542=Black Cat</div><div class="diff-line ctx">911543=Kitten Power</div><div class="diff-line ctx">911544=Mystic Card</div><div class="diff-line ctx">911545=Hunting Time</div><div class="diff-line ctx">911546=Wolf's Shadow</div><div class="diff-line ctx">911547=Dog Eat Dog</div><div class="diff-line ctx">911548=Corporate Arsenal</div><div class="diff-line ctx">911549=Fire Suppression</div><div class="diff-line ctx">911550=Flaming Strike</div><div class="diff-line ctx">911551=Rose Blast</div><div class="diff-line ctx">911552=Bomb Expert</div><div class="diff-line ctx">911553=Art of the Boom</div><div class="diff-line ctx">911554=Cluster Bomb</div><div class="diff-line ctx">911555=Bomb Show</div><div class="diff-line ctx">911556=Unsheathing Slay</div><div class="diff-line ctx">911557=Sharp Blade</div><div class="diff-line ctx">911558=Sakura Resonance</div><div class="diff-line ctx">911559=Unsheathe: Ultimate</div><div class="diff-line ctx">911561=Shooting Star</div><div class="diff-line ctx">911562=Pinpoint Aim</div><div class="diff-line ctx">911563=Nimble Movement</div><div class="diff-line ctx">911564=Meteor Shower</div><div class="diff-line ctx">911566=Landmine Deployment</div><div class="diff-line ctx">911567=Survival of Light</div><div class="diff-line ctx">911568=Blessing of Light</div><div class="diff-line ctx">911569=Landmine Expert</div><div class="diff-line ctx">911571=Molotov</div><div class="diff-line ctx">911572="Saw" What You See</div><div class="diff-line ctx">911573=Outrageous</div><div class="diff-line ctx">911574=Inflammable Powder</div><div class="diff-line ctx">911576=Gas Bomb</div><div class="diff-line ctx">911577=Knuckle Dusters</div><div class="diff-line ctx">911578=Dreadnought</div><div class="diff-line ctx">911579=Air Punch</div><div class="diff-line ctx">911581=Hidden Blade - Void Cut</div><div class="diff-line ctx">911582=Samurai Spirit</div><div class="diff-line ctx">911583=At One with the Sword</div><div class="diff-line ctx">911584=Void Cut: Ultimate</div><div class="diff-line ctx">911586=Pinpoint Shot</div><div class="diff-line ctx">911587=Hunter's Intuition</div><div class="diff-line ctx">911588=Zombie Slayer</div><div class="diff-line ctx">911589=Cloud-Piercing Arrow</div><div class="diff-line ctx">911591=Voodoo Potion</div><div class="diff-line ctx">911592=Voodoo Therapy</div><div class="diff-line ctx">911593=Witchcraft</div><div class="diff-line ctx">911594=Corrosion Potion</div><div class="diff-line ctx">911596=Masamune Flash</div><div class="diff-line ctx">911597=Blade</div><div class="diff-line ctx">911598=Sharp Blade</div><div class="diff-line ctx">911599=Flash Swing</div><div class="diff-line ctx">911601=Armor-Piercing Ammo</div><div class="diff-line ctx">911602=Agility</div><div class="diff-line ctx">911603=Espionage</div><div class="diff-line ctx">911604=Secret Mod</div><div class="diff-line ctx">911606=Magnetic Storm</div><div class="diff-line ctx">911607=Scholar's Wit</div><div class="diff-line ctx">911608=Data Analysis</div><div class="diff-line ctx">911609=Electromagnetic Storm</div><div class="diff-line ctx">911611=Rifle Strafe</div><div class="diff-line ctx">911612=Chariot's Crush</div><div class="diff-line ctx">911613=Chariot's Defense</div><div class="diff-line ctx">911614=Precision Trajectory</div><div class="diff-line ctx">911616=Bomb Launcher</div><div class="diff-line ctx">911617=Tough Defense</div><div class="diff-line ctx">911618=Flash Support</div><div class="diff-line ctx">911619=Compressed Powder</div><div class="diff-line ctx">911621=shotgun</div><div class="diff-line ctx">911622=Tough Resistance</div><div class="diff-line ctx">911623=Bull's Force</div><div class="diff-line ctx">911624=Armor-Piercing Shotgun</div><div class="diff-line ctx">911626=Bomb Launcher</div><div class="diff-line ctx">911627=Turning Tide</div><div class="diff-line ctx">911628=Deft Figure</div><div class="diff-line ctx">911629=Compressed Powder</div><div class="diff-line ctx">911631=Missile Pursuit</div><div class="diff-line ctx">911632=Cannon Repair</div><div class="diff-line ctx">911633=Nomad's Technique</div><div class="diff-line ctx">911634=Cruise Missile</div><div class="diff-line ctx">911636=Rifle Strafe</div><div class="diff-line ctx">911637=Bounty Hunter</div><div class="diff-line ctx">911638=Bounty Reward</div><div class="diff-line ctx">911639=Precision Trajectory</div><div class="diff-line ctx">911641=Missile Pursuit</div><div class="diff-line ctx">911642=Bodyguard</div><div class="diff-line ctx">911643=Money Talks</div><div class="diff-line ctx">911644=Cruise Missile</div><div class="diff-line ctx">911646=Bomb Launcher</div><div class="diff-line ctx">911647=Lucky Dog</div><div class="diff-line ctx">911648=Field Defense</div><div class="diff-line ctx">911649=Compressed Powder</div><div class="diff-line ctx">911651=Missile Pursuit</div><div class="diff-line ctx">911652=Fine Armament</div><div class="diff-line ctx">911653=Merc Squad</div><div class="diff-line ctx">911654=Cruise Missile</div><div class="diff-line ctx">911656=Bomb Launcher</div><div class="diff-line ctx">911657=Automatic Pistol</div><div class="diff-line ctx">911658=Flash-like Figure</div><div class="diff-line ctx">911659=Compressed Powder</div><div class="diff-line ctx">911661=shotgun</div><div class="diff-line ctx">911662=Cold-faced Sheriff</div><div class="diff-line ctx">911663=Stunning Skill</div><div class="diff-line ctx">911664=Armor-Piercing Shotgun</div><div class="diff-line ctx">911666=Rifle Strafe</div><div class="diff-line ctx">911667=Weapon Defense</div><div class="diff-line ctx">911668=Rampage</div><div class="diff-line ctx">911669=Precision Trajectory</div><div class="diff-line ctx">911671=Bomb Launcher</div><div class="diff-line ctx">911672=Ammo Reserve</div><div class="diff-line ctx">911673=Forage</div><div class="diff-line ctx">911674=Compressed Powder</div><div class="diff-line ctx">911676=Sundering Arrow</div><div class="diff-line ctx">911677=Hummingbird Defender</div><div class="diff-line ctx">911678=Hummingbird Crossbow</div><div class="diff-line ctx">911679=Cloud-Piercing Arrow</div><div class="diff-line ctx">911681=Bomb Launcher</div><div class="diff-line ctx">911682=Heart of Nature</div><div class="diff-line ctx">911683=Preacher's Wear</div><div class="diff-line ctx">911684=Compressed Powder</div><div class="diff-line ctx">911686=Rifle Strafe</div><div class="diff-line ctx">911687=Camouflage</div><div class="diff-line ctx">911688=Repo Men</div><div class="diff-line ctx">911689=Precision Trajectory</div><div class="diff-line ctx">911691=Bomb Launcher</div><div class="diff-line ctx">911692=Two-Faced</div><div class="diff-line ctx">911693=Trouble Stirrer</div><div class="diff-line ctx">911694=Compressed Powder</div><div class="diff-line ctx">911696=Missile Pursuit</div><div class="diff-line ctx">911697=Armor Up</div><div class="diff-line ctx">911698=Bullet-Proof Shield</div><div class="diff-line ctx">911699=Cruise Missile</div><div class="diff-line ctx">911700=Final Wave</div><div class="diff-line ctx">912000=Restricted Energy Zone (beta)</div><div class="diff-line ctx">912001=Amidst the smoke and gunfire, an epic showdown of strategy and power kicks start.</div><div class="diff-line ctx">912002=Registration starts in</div><div class="diff-line ctx">912003=Alliances ranking among the top and meeting certain conditions can participate in the event.</div><div class="diff-line ctx">912004=Starting Soon</div><div class="diff-line ctx">912005=Join alliance</div><div class="diff-line ctx">912006=Legion Leader:</div><div class="diff-line ctx">912007=Vacant</div><div class="diff-line ctx">912008=Members:</div><div class="diff-line ctx">912009=Registration ends:</div><div class="diff-line ctx">912010=Sign Up Now</div><div class="diff-line ctx">912011=Change Time</div><div class="diff-line ctx">912012=Apply for Battle</div><div class="diff-line ctx">912013=After you submit the application, it will be sent to the Legion management. You will be able to join the fight on behalf of the corresponding Legion after gaining approval. Send it now?</div><div class="diff-line ctx">912014=Battle application sent successfully</div><div class="diff-line ctx">912015=Signed Up</div><div class="diff-line ctx">912016=Combat begins in</div><div class="diff-line ctx">912017=Battlefield Duration</div><div class="diff-line ctx">912018=Wins:</div><div class="diff-line ctx">912019=Legion Rating:</div><div class="diff-line ctx">912020=After relocating to the [Restricted Energy Zone], the Peace Treaty will be deactivated immediately!</div><div class="diff-line ctx">912021=Sorry, you are not qualified for participation.</div><div class="diff-line ctx">912022=You are not in any Legion. Please contact Legion Management if you wish to join the battle.</div><div class="diff-line ctx">912023=Backups can only enter the battlefield {0} min after the combat starts.</div><div class="diff-line ctx">912024=Local Time: {0}</div><div class="diff-line ctx">912025=Applied</div><div class="diff-line ctx">912026=Not signed up</div><div class="diff-line ctx">912027=Management</div><div class="diff-line ctx">912028=Locked</div><div class="diff-line ctx">912029=Unlocks at Alliance Lv. {0}</div><div class="diff-line ctx">912030=Game Time: {0}</div><div class="diff-line ctx">912031=You can adjust the participant list before the sign-up deadline. After the sign-up ends, the list will be locked.</div><div class="diff-line ctx">912032=Session Selection</div><div class="diff-line ctx">912033=Please note: After signing up, the participant list will be locked; no adjustments can be made by then. You can cancel your sign-up before the deadline though; after canceling, you can make some adjustments.</div><div class="diff-line ctx">912034=Sign Up</div><div class="diff-line ctx">912035=Cancel Sign-Up</div><div class="diff-line ctx">912036=Manage Participants</div><div class="diff-line ctx">912037=No Permission</div><div class="diff-line ctx">912038=Legion Leader ({0}/{1})</div><div class="diff-line ctx">912039=Deputy Legion Leader ({0}/{1})</div><div class="diff-line ctx">912040=Key Members ({0}/{1})</div><div class="diff-line ctx">912041=Backup Members ({0}/{1})</div><div class="diff-line ctx">912042=After you exit the Legion, your participation status will be canceled.</div><div class="diff-line ctx">912043={0} | Participant Management - Member Settings</div><div class="diff-line ctx">912044=Member Filter</div><div class="diff-line ctx">912045=Identity Filter</div><div class="diff-line ctx">912046=Absent in last match</div><div class="diff-line ctx">912047=Engaging in last match</div><div class="diff-line ctx">912048=Your Legion has registered; participating members have been locked; cannot be modified.</div><div class="diff-line ctx">912049=Select All</div><div class="diff-line ctx">912050=Cancel All</div><div class="diff-line ctx">912051=Battlefield accessible soon</div><div class="diff-line ctx">912052=Ignore</div><div class="diff-line ctx">912053=Go</div><div class="diff-line ctx">912054=Battlefield opening</div><div class="diff-line ctx">912055=Legion [{1}] of [{0}] occupied the [{2}].</div><div class="diff-line ctx">912056={0} will soon unlock.</div><div class="diff-line ctx">912057=Energy Shop</div><div class="diff-line ctx">912058=Every bit of energy will help you advance further.</div><div class="diff-line ctx">912059=Your alliance is not eligible for the event</div><div class="diff-line ctx">912060=You are not qualified to participate in this battle</div><div class="diff-line ctx">912061=You have troops outside the Fortress; Relocation is unavailable at the moment.</div><div class="diff-line ctx">912062=You have Fortress construction site outside; Relocation is unavailable at the moment.</div><div class="diff-line ctx">912063=Your Fortress is in combat right now. Cannot relocate now.</div><div class="diff-line ctx">912064=Floating Fortress is in flight. Cannot relocate now.</div><div class="diff-line ctx">912065=Battlefield closes in {0} min.</div><div class="diff-line ctx">912067=Insufficient Energy Coins</div><div class="diff-line ctx">912068=View now</div><div class="diff-line ctx">912069=Spectate</div><div class="diff-line ctx">912070=Local Time</div><div class="diff-line ctx">912071=Game Time</div><div class="diff-line ctx">912072=Field Infirmary</div><div class="diff-line ctx">912073=Total Treated:</div><div class="diff-line ctx">912074=Treated</div><div class="diff-line ctx">912075=Untreated</div><div class="diff-line ctx">912076=Total injured</div><div class="diff-line ctx">912077=Treatment Speed:</div><div class="diff-line ctx">912078=1. Occupy the Field Infirmary on the battlefield to raise the soldier treatment speed. \n2. There could be a delay in the display of the number of casualties.</div><div class="diff-line ctx">912079=Legion Strength:</div><div class="diff-line ctx">912080=Rules</div><div class="diff-line ctx">912081=History</div><div class="diff-line ctx">912082=Rewards</div><div class="diff-line ctx">912083=Management</div><div class="diff-line ctx">912084=Shop</div><div class="diff-line ctx">912085=Core Refinery</div><div class="diff-line ctx">912086=The Core Refinery is a place with the highest crystal output. It is a key facility of the Restricted Energy Zone. Occupy it to gain a massive amount of ultra-energy crystals; it is a key resource plot that could shape the result of the battle.</div><div class="diff-line ctx">912087=Intermediate Refinery I</div><div class="diff-line ctx">912088=Intermediate Refinery II</div><div class="diff-line ctx">912089=The crystal reserve and output of the Intermediate Refinery are at a moderate level. Occupy it to acquire a significant amount of ultra-energy crystals.</div><div class="diff-line ctx">912090=Basic Refinery I</div><div class="diff-line ctx">912091=Basic Refinery II</div><div class="diff-line ctx">912092=The Basic Refinery has the lowest crystal reserve and a relatively lower output. Occupy it to gain a small amount of ultra-energy crystals.</div><div class="diff-line ctx">912093=Radar I</div><div class="diff-line ctx">912094=Radar II</div><div class="diff-line ctx">912095=Radar is a crucial command and mobility device on the battlefield with unique strategic functionalities. Occupy it to shorten the cooldown for battlefield relocation; the initial cooldown is 3 minutes; occupy the Radar to reduce it by 1 minute and increase the travel speed by 50%.</div><div class="diff-line ctx">912096=Prep Room</div><div class="diff-line ctx">912097=The Prep Room is one of the key facilities on the battlefield; used for troop equipping and battle preparation. Occupy it to increase the damage bonus by 20%.</div><div class="diff-line ctx">912099=Outer Ring Facilities</div><div class="diff-line ctx">912100=Inner Ring Facilities</div><div class="diff-line ctx">912101=Central Facilities</div><div class="diff-line ctx">912102=Energy Coin</div><div class="diff-line ctx">912103=Used to redeem items in the Energy Shop.</div><div class="diff-line ctx">912104=Crystal Mine</div><div class="diff-line ctx">912105=Collect crystals to gain battlefield points.</div><div class="diff-line ctx">912106=Matching...please wait a while</div><div class="diff-line ctx">912107=Go</div><div class="diff-line ctx">912108=Spectate</div><div class="diff-line ctx">912109=Filter within your Zone</div><div class="diff-line ctx">912110=Filter within your Zone cluster</div><div class="diff-line ctx">912111=Participants</div><div class="diff-line ctx">912112=Participants: {0}/{1}</div><div class="diff-line ctx">912113=Already in this Legion</div><div class="diff-line ctx">912114=Relocate</div><div class="diff-line ctx">912115=Infirmary</div><div class="diff-line ctx">912116=Field Infirmary</div><div class="diff-line ctx">912117=Rally</div><div class="diff-line ctx">912118=Your Legion has a bye and automatically wins this round. All Legion members will receive the highest tier personal point reward.</div><div class="diff-line ctx">912119=Leave Legion</div><div class="diff-line ctx">912120=Are you sure you want to enter the battlefield?</div><div class="diff-line ctx">912121=Legion Leader</div><div class="diff-line ctx">912122=Deputy Legion Leader</div><div class="diff-line ctx">912123=Key Member</div><div class="diff-line ctx">912124=Backup</div><div class="diff-line ctx">912125=A maximum of 2 Legions can register for the same session.</div><div class="diff-line ctx">912126=To be selected</div><div class="diff-line ctx">912127=Save</div><div class="diff-line ctx">912128=Total score calculated based on the overall strength of Legion members and their performance on the battlefield.</div><div class="diff-line ctx">912129=1. After the battlefield opens, you can use Battlefield Relocation directly. \n2. After using Battlefield Relocation, a cooldown period will be triggered. Once the cooldown ends, you can use Battlefield Relocation again.</div><div class="diff-line ctx">912130=Cooldown: {0}</div><div class="diff-line ctx">912131=Battlefield Relocation available</div><div class="diff-line ctx">912132=Relocate</div><div class="diff-line ctx">912133=Each Battlefield Relocation has a cooldown of {0} min. \nYou may relocate to any position except the enemy's safe zone.</div><div class="diff-line ctx">912134=Please relocate your Fortress to any position outside the enemy's safe zone.</div><div class="diff-line ctx">912135=Max appointed for this role</div><div class="diff-line ctx">912136=[Restricted Energy Zone] Battlefield Notice</div><div class="diff-line ctx">912137=Cannot perform the action, as you are on the Restricted Energy Zone battlefield.</div><div class="diff-line ctx">912138=Legion</div><div class="diff-line ctx">912139=I set up a Legion Marker</div><div class="diff-line ctx">912140=I have edited the Legion Marker</div><div class="diff-line ctx">912141=I have shared the Legion Marker</div><div class="diff-line ctx">912142=Legion Marker</div><div class="diff-line ctx">912143=Mail sent</div><div class="diff-line ctx">912144=Change Legion name</div><div class="diff-line ctx">912145=Enter Legion name</div><div class="diff-line ctx">912146=Legion {0}</div><div class="diff-line ctx">912147=Combat info</div><div class="diff-line ctx">912148=Participants:</div><div class="diff-line ctx">912149=Points in this match</div><div class="diff-line ctx">912150=Killing Points</div><div class="diff-line ctx">912151=Capture pts</div><div class="diff-line ctx">912152=Gathering pts</div><div class="diff-line ctx">912153={0} soldiers/min</div><div class="diff-line ctx">912154=Crystal mines refreshed. Collect crystals to earn points!</div><div class="diff-line ctx">912155=Battle Rewards</div><div class="diff-line ctx">912156=Point Reward</div><div class="diff-line ctx">912157=Participation Reward</div><div class="diff-line ctx">912158=Qualification to Participation</div><div class="diff-line ctx">912159=Commander, your alliance won this Restricted Energy Zone battle. Here is your Victory Reward.</div><div class="diff-line ctx">912160=Commander, your alliance lost this Restricted Energy Zone battle. Here is your Reward.</div><div class="diff-line ctx">912161=Commander, your alliance won this Restricted Energy Zone battle. Here is your Participation Reward.</div><div class="diff-line ctx">912162=Commander, your alliance lost this Restricted Energy Zone battle. Here is your Participation Reward.</div><div class="diff-line ctx">912163=Commander, your alliance won this Restricted Energy Zone battle. Your personal points are {0}. Here is your reward.</div><div class="diff-line ctx">912164=Commander, your alliance lost this Restricted Energy Zone battle. Your personal points are {0}. Here is your reward.</div><div class="diff-line ctx">912165=Commander, congratulations! Your alliance is exceptional in strength and has earned the qualification to participate in the Restricted Energy Zone.</div><div class="diff-line ctx">912166=Crystal Mine Reserve:</div><div class="diff-line ctx">912167=Scattered Crystal Shard</div><div class="diff-line ctx">912168=During the fierce battle, crystal containers were damaged; a large number of crystal shards were scattered on the ground.</div><div class="diff-line ctx">912169=Your Legion has registered; participating members are locked and cannot exit the Legion.</div><div class="diff-line ctx">912170=There must be some members in your Legion before you can register for the battle.</div><div class="diff-line ctx">912171=Facility Capture</div><div class="diff-line ctx">912172=Commander, your Legion is trying to occupy {0}. Lend a hand now!</div><div class="diff-line ctx">912173=Congratulations, Commander! Your Legion has occupied {0}!</div><div class="diff-line ctx">912174=Commander, the {0} previously held by your Legion has been taken by others!</div><div class="diff-line ctx">912175=Battlefield has opened; cannot perform this action.</div><div class="diff-line ctx">912176=Background Story</div><div class="diff-line ctx">912177=Commanders were delighted to find a hidden space that remained untouched by the zombie virus. More importantly, it was full of precious ultra-energy crystals. Explore that place and occupy it! It will be the key to reviving civilization in the apocalypse! On the other side of this dimension, however, the lights of the spacetime portal keep flashing. Looks like this gonna be a tough battle. Commanders, time to fight for survival and our future!</div><div class="diff-line ctx">912178=Registration</div><div class="diff-line ctx">912179=Battlefield registration will last {0}d. After registration ends, matching will begin. The battle will start on Sunday; after it concludes, all alliance members will receive rewards, with additional individual rewards (delivered based on personal points) for the Commanders participating in the event.</div><div class="diff-line ctx">912180=Rules</div><div class="diff-line ctx">912181=1. After entering the battlefield, Commanders will join a faction's Main City with their alliance and enter a preparation phase of {0} min, during which period no actions can be taken. \n2. Once the preparation phase ends, the combat begins. Commanders can take actions freely. There are many Facilities and crystal mines on the battlefield; occupy the Facilities or collect resources at crystal mines to gain substantial points for the alliance; eliminate enemy soldiers to gain personal points. When the battlefield closes, the faction with higher alliance points wins the [Restricted Energy Zone] battle (if points are tied, the faction reaching that point first wins). \n3. The Destructive Might of Commanders' vehicles will temporarily increase to {1} points on the battlefield. Commanders can relocate their Fortresses by building a Fortress construction site or using the [Battlefield Relocation] feature in the event. After using the [Battlefield Relocation], a cooldown of {2} min will be triggered; you can reduce the cooldown by occupying Facilities. \n4. If your Fortress is destroyed by other Commanders on the battlefield, you will get relocated back to your faction's Main City. You'll need to wait for a reconstruction of {3} min. During this period, you cannot travel around, relocate, or initiate/participate in rallies. Moreover, Fortresses located within the Main City cannot be attacked, ensuring they remain safe. \n5. If a Commander chooses to leave the battlefield midway, all troops will be instantly recalled, the Fortress construction site will be demolished, and a cooldown period will ensue. after {4} min later, the Commander can enter the battlefield again. \n6. After the event ends, all troops on the battlefield will be removed. Please rest assured that there will be no actual soldier loss in this battlefield event.</div><div class="diff-line ctx">912182=Facilities</div><div class="diff-line ctx">912183=1. Point Facilities: Capturing them for the first time will grant you a substantial amount of points. Hold them to get a stable supply of points for both the alliance and yourself. The Point Facilities include Core Refinery, Intermediate Refinery, and Basic Refinery. The points they offer decrease in order. The Core Refinery will unlock {0} min into the event. \n2. Functional Facilities: Capturing them for the first time will grant you a certain amount of points; hold them to get a small amount of points regularly for both the alliance and yourself. While you hold the facilities, they will continuously provide powerful buffs to alliance members. \n3. Crystal Mines: They will spawn on the battlefield regularly; collect resources from them to get your alliance a certain number of points. They spawn at fixed intervals.</div><div class="diff-line ctx">912184=Settlement</div><div class="diff-line ctx">912185=1. {0} min into the Restricted Energy Zone event, the settlement will start. The winner will be determined based on the points; rewards will be distributed accordingly. \n2. All Commanders participating in this event will receive different tier rewards based on their personal points obtained on the battlefield.</div><div class="diff-line ctx">912186=Guide</div><div class="diff-line ctx">912187=Restricted Energy Zone closed. Heading back...</div><div class="diff-line ctx">912188=Capture</div><div class="diff-line ctx">912189=Using Battlefield Relocation will immediately withdraw your troops outside the Fortress. Proceed now?</div><div class="diff-line ctx">912190=Battlefield Relocation cooldown reduced by {0}s</div><div class="diff-line ctx">912191=Restore {0} highest-level soldiers per minute</div><div class="diff-line ctx">912192=Participating</div><div class="diff-line ctx">912193=Not participating</div><div class="diff-line ctx">912194=You are not in an alliance; cannot participate in the event.</div><div class="diff-line ctx">912195=City for Attack</div><div class="diff-line ctx">912196=City for Defense</div><div class="diff-line ctx">912197=Kill</div><div class="diff-line ctx">912198=Killing Score</div><div class="diff-line ctx">912199=Restricted Energy Zone event has ended</div><div class="diff-line ctx">912200=Battlefield closes in:</div><div class="diff-line ctx">912201=Alliance {0} captured this Facility</div><div class="diff-line ctx">912202=Garrisoned units: {0}</div><div class="diff-line ctx">912203=Facility was scouted!</div><div class="diff-line ctx">912204={0} scouted your facility</div><div class="diff-line ctx">912205=Commander! Our facility {0} was scouted just now by {1}. Stay alert and get ready for defense.</div><div class="diff-line ctx">912206=Battle for the [Restricted Energy Zone] is on! Remember, the one who controls the Core Refinery is closer to victory. Commanders, get ready for the battle of victory and glory!</div><div class="diff-line ctx">912207=At the start of the battle, enemies are divided into two factions: red and blue. Combat begins from their spawning areas. The Core Refinery is located in the center of the battlefield; capturing it will grant your legion and yourself a stable supply of points; &lt;color=#FF0000&gt;points are the key to victory&lt;/color&gt;.</div><div class="diff-line ctx">912208=The Prep Room and Defense Room are &lt;color=#FF0000&gt;the key buildings on the battlefield&lt;/color&gt;. The Prep Room provides DMG Bonus, while the Defense Room offers DMG Mitigation.</div><div class="diff-line ctx">912209=Intermediate Refinery and Basic Refinery provide a certain amount of points.</div><div class="diff-line ctx">912210=There are Field Infirmaries at both ends of the battlefield. Capturing a Field Infirmary will provide you with a healing bonus: restoring up to 5 highest-level soldiers every 10 seconds.</div><div class="diff-line ctx">912211=Capture the Radar to reduce the cooldown for battlefield relocation by 1 minute and increase travel speed by 50%.</div><div class="diff-line ctx">912212=Occupied facilities will provide you with a stable supply of points. With enough points, 50% of the produced points will go to the occupying side, while 50% be credited to [Defense Points]. If the defense fails, the [Defense Points] will be lost.</div><div class="diff-line ctx">912213=If a facility is captured by the enemy, the [Defense Points] will be lost in the form of [Scattered Crystal Shards], which will be scattered around the facility. Both sides can pick them up to gain points.</div><div class="diff-line ctx">912214=At regular intervals, some crystal mines will spawn on the battlefield; dispatch troops there to gather resources and earn points.</div><div class="diff-line ctx">912215=Battlefield Map</div><div class="diff-line ctx">912216=Are you sure you want to enter the spectating mode?</div><div class="diff-line ctx">912217=Legion you are in</div><div class="diff-line ctx">912218=Defense Room</div><div class="diff-line ctx">912219=The Defense Room is a key facility on the battlefield; it can enhance defense and resist enemy attacks. Capturing it grants you a 20% DMG Mitigation.</div><div class="diff-line ctx">912220=Medical Center I</div><div class="diff-line ctx">912221=Medical Center II</div><div class="diff-line ctx">912222=Medical Center III</div><div class="diff-line ctx">912223=Medical Center IV</div><div class="diff-line ctx">912224=The Medical Center is a key support facility on the battlefield; it can restore injured troops. Capturing it grants you a healing bonus; it restores 120 soldiers of any level every minute.</div><div class="diff-line ctx">912225=Battlefield Relocation cooling down...</div><div class="diff-line ctx">912226=[Restricted Energy Zone] Registration</div><div class="diff-line ctx">912227=Your alliance [Legion {0}] has registered for the [Restricted Energy Zone]. The battle will begin at {1} (Game Time) (the one who made registration for this session: {2}). If any members of the Legion leave the alliance during the registration phase, the alliance will have to re-register for the battle.</div><div class="diff-line ctx">912228=[Restricted Energy Zone] Registration Ended</div><div class="diff-line ctx">912229=Congratulations! You have been selected as a participant of [Legion {0}] in the Restricted Energy Zone battle. Fight for the honor of your alliance!</div><div class="diff-line ctx">912230=[Restricted Energy Zone] Match Result</div><div class="diff-line ctx">912231=Your alliance, [Legion {0}], has completed matchmaking for the battle, which will take place on {1} (Game Time) \nYou may head to the event page to view opponent information; more details will be displayed after the battle begins. \nBefore joining the battle, participating Commanders must make sure that there are no deployed or scouting troops outside, no reinforcement troops from other Commanders in the fortress, and no construction site outside.</div><div class="diff-line ctx">913001=Kitty Sweetie ({0})</div><div class="diff-line ctx">913002=Tidy Puppy ({0})</div><div class="diff-line ctx">913003=Cap of tomorrow's drops +{0}</div><div class="diff-line ctx">913004=Bargain Coin</div><div class="diff-line ctx">913005=A valuable item used to redeem goods in the [Wasteland Deal] event.</div><div class="diff-line ctx">913006=Aid Ticket</div><div class="diff-line ctx">913007=A special item used to help others get discounts on goods in the [Wasteland Deal] event.</div><div class="diff-line ctx">913008=Bargain</div><div class="diff-line ctx">913009=Hide bargain requests</div><div class="diff-line ctx">913010=Commander {0} helped you get a discount! You can spend {1} less Bargain Coins to get the goods.</div><div class="diff-line ctx">913011=Share the info with your friends and ask them to help you get a bigger discount.</div><div class="diff-line ctx">913012=Help</div><div class="diff-line ctx">913013=I need some help with the bargain. Those who help me get a discount will receive gifts! Help me out, please!</div><div class="diff-line ctx">913014=Bargain</div><div class="diff-line ctx">913015=Please help me with the bargain. You'll receive a gift in return if I get a discount.</div><div class="diff-line ctx">913016=Superb Bargain</div><div class="diff-line ctx">913017=Get it to obtain tons of Bargain Coins</div><div class="diff-line ctx">913018=Friend in Need</div><div class="diff-line ctx">913019=Get it to obtain tons of Aid Tickets</div><div class="diff-line ctx">913020=Unlocks at Control Center Lv. 21</div><div class="diff-line ctx">913021=Record Mystery Box (Large)</div><div class="diff-line ctx">913022=Record Mystery Box (Small)</div><div class="diff-line ctx">913024=Purchase attempts left: {0}</div><div class="diff-line ctx">913025=SPECIAL</div><div class="diff-line ctx">913026=Bargain</div><div class="diff-line ctx">913027=(Tap the Help button to share your bargaining request)</div><div class="diff-line ctx">913028=Drops from event</div><div class="diff-line ctx">913038={0} In Effect</div><div class="diff-line ctx">913039=Can only be used on the Facility the troops are stationed at.</div><div class="diff-line ctx">913040=Cannot be used on the Facility the troops are stationed at.</div><div class="diff-line ctx">913041=C4 placed</div><div class="diff-line ctx">913042=High-quality buffs cannot be replaced with low-quality ones.</div><div class="diff-line ctx">913043=An airdrop containing a large amount of rare materials has appeared on the map.</div><div class="diff-line ctx">913044=Tap a Facility to deploy your troops, making them travel between Facilities, search for supplies, get away from Toxic Fog, or engage in combat.</div><div class="diff-line ctx">913045=After getting to a Facility and exploring it, you can collect the supplies inside the Facility.</div><div class="diff-line ctx">913046=Toxic Fog will close in toward the center of the battlefield; be sure to move to the safe zone in time.</div><div class="diff-line ctx">913047=If Commanders meet each other in a Facility, they'll be matched in pairs and engage in one-on-one combat. During the break period after the battle, they can use items or deploy troops to head to other Facilities.</div><div class="diff-line ctx">913048=Battlefield items can provide powerful assistance; use them wisely to beat the opponents stronger than you.</div><div class="diff-line ctx">913049=Battlefield rewards will be calculated based on your ranking upon elimination.</div><div class="diff-line ctx">913050=Only one C4 can be placed in a Facility.</div><div class="diff-line ctx">913052=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your Dark Gold Tickets will no longer be usable. Therefore, we recycled your {0} unused Dark Gold Tickets and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">913055=Bargained</div><div class="diff-line ctx">913056=I helped with your bargaining and reduced the price by {0} Bargain Coins.</div><div class="diff-line ctx">913057=Clear Threat</div><div class="diff-line ctx">913058=Open the Iron Door</div><div class="diff-line ctx">913060=Commander &lt;color=#a159be&gt;{0}&lt;/color&gt; obtained {1} *{2} from "Lucky Purchase"</div><div class="diff-line ctx">913061=Expired</div><div class="diff-line ctx">913063=Steam Age</div><div class="diff-line ctx">913064=Steam Age ({0})</div><div class="diff-line ctx">913065=Use it to change the avatar frame into [Steam Age].</div><div class="diff-line ctx">913066=Steam Age Message Frame</div><div class="diff-line ctx">913067=Steam Age Message Frame ({0})</div><div class="diff-line ctx">913068=Use it to change the Message Frame into [Steam Age Message Frame].</div><div class="diff-line ctx">913069=Steam Age Nameplate</div><div class="diff-line ctx">913070=Steam Age Nameplate ({0})</div><div class="diff-line ctx">913071=Use it to change the Nameplate into [Steam Age Nameplate].</div><div class="diff-line ctx">913072=Blazing Lion</div><div class="diff-line ctx">913073=Blazing Lion ({0})</div><div class="diff-line ctx">913074=Use it to change the appearance of the Fortress into [Blazing Lion].</div><div class="diff-line ctx">913075=Glittering Lion</div><div class="diff-line ctx">913076=Glittering Lion ({0})</div><div class="diff-line ctx">913077=Use it to change the appearance of the Fortress into [Glittering Lion].</div><div class="diff-line ctx">913078=Frozen Heart</div><div class="diff-line ctx">913079=The bone-chilling cold would freeze everything in the world.</div><div class="diff-line ctx">913080=Steam Tank</div><div class="diff-line ctx">913081=Steam Tank ({0})</div><div class="diff-line ctx">913082=Use it to change the appearance of the APC into [Steam Tank].</div><div class="diff-line ctx">913083=1. The stuff cannot be taken back once they are gifted to others, so please proceed with caution. \n2. No designated items will be consumed when you gift stuff to Commanders in your Zone, but some designated items will be consumed when you try to gift stuff to Commanders in another Zone.</div><div class="diff-line ctx">913084=Summer Chill</div><div class="diff-line ctx">913085=Summer Sunlight Trial</div><div class="diff-line ctx">913086=Cooling-off Quests</div><div class="diff-line ctx">913087=Summer Purchase &amp; Exchange</div><div class="diff-line ctx">913088=Summer Energy</div><div class="diff-line ctx">913089=Used to upgrade the level of Summer Sunlight Trial.</div><div class="diff-line ctx">913090=The summer sunlight comes with great gifts.</div><div class="diff-line ctx">913091=Collect Summer Drinks to upgrade the trial level.</div><div class="diff-line ctx">913092=1. Complete the specified tasks to increase the trial progress. \n2. Increase the trial progress to get the due rewards. \n3. Purchase the Advanced Trial to unlock more rewards.</div><div class="diff-line ctx">913093=Summer Drink</div><div class="diff-line ctx">913094=1. During the event, you can get additional Dark Gold Tickets when purchasing bundles; the Dark Gold Tickets can be used to redeem the items you want. \n2. The Dark Gold Tickets will be recycled after the event ends, with some items returned to you for the recycled Dark Gold Tickets.</div><div class="diff-line ctx">913095=Rewards of the Rings (Anniversary)</div><div class="diff-line ctx">913096=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your Aid Tickets will no longer be usable. Therefore, we recycled your {0} unused Aid Tickets and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">913097=Stamp Deal</div><div class="diff-line ctx">913098=Deliver stuff across the wasteland with Stamps.</div><div class="diff-line ctx">913099=Inter-Zone Stamp</div><div class="diff-line ctx">913100=Used to gift stuff across Zones.</div><div class="diff-line ctx">913101=Underwater World</div><div class="diff-line ctx">913102=Underwater World ({0})</div><div class="diff-line ctx">913103=Use it to change the avatar frame into [Underwater World].</div><div class="diff-line ctx">913104=Underwater World Message Frame</div><div class="diff-line ctx">913105=Underwater World Message Frame ({0})</div><div class="diff-line ctx">913106=Use it to change the Message Frame into [Underwater World Message Frame].</div><div class="diff-line ctx">913107=Underwater World Nameplate</div><div class="diff-line ctx">913108=Underwater World Nameplate ({0})</div><div class="diff-line ctx">913109=Use it to change the Nameplate into [Underwater World Nameplate].</div><div class="diff-line ctx">913110=Underwater World</div><div class="diff-line ctx">913111=Underwater World ({0})</div><div class="diff-line ctx">913112=Use it to change the appearance of the Fortress into [Underwater World].</div><div class="diff-line ctx">913113=Cross-Zone Gifting</div><div class="diff-line ctx">913114=Swipe left or right to control the character</div><div class="diff-line ctx">913115=Commander {0} got the jackpot, &lt;color=#ff9809&gt;{1} *9,999&lt;/color&gt;, in the [Wish Trove] event! Congrats!</div><div class="diff-line ctx">913116=Enter next stage upon completion</div><div class="diff-line ctx">913117=You're now at the final stage</div><div class="diff-line ctx">913118=Great Team</div><div class="diff-line ctx">913119=1. The event contains multiple stages. Enhance the quality of heroes to complete tasks and obtain stage rewards. \n2. New tasks will spawn after you claim the task rewards.</div><div class="diff-line ctx">913120=Scarlet Wolf's Trial</div><div class="diff-line ctx">913121=Unlock the trial to get the Elite Hero right away! Don't miss out!</div><div class="diff-line ctx">913122=RULES: \n1. Complete the missions throughout the event to obtain points and increase the Scarlet Wolf's Trial level. The level will be reset after the event. \n2. There are 2 tiers of Scarlet Wolf's Trial rewards, namely, common and advanced rewards. The common rewards can be obtained from missions; the advanced ones will be activated after the purchase. \n3. Rare Alliance present will be delivered after the advanced rewards are activated.</div><div class="diff-line ctx">913123=Complete the mission first</div><div class="diff-line ctx">913124=Insufficient Wishlists</div><div class="diff-line ctx">913125=Please enter the name</div><div class="diff-line ctx">913126=Can only be used in S{0} or later seasons.</div><div class="diff-line ctx">913127=Can be gifted {0}d after the creation of the server.</div><div class="diff-line ctx">913128=Use 1,500 Microphones</div><div class="diff-line ctx">913129=Use 3,750 Microphones</div><div class="diff-line ctx">913130=Use 7,500 Microphones</div><div class="diff-line ctx">913131=Use 15,000 Microphones</div><div class="diff-line ctx">913132=Use 22,500 Microphones</div><div class="diff-line ctx">913133=Use 30,000 Microphones</div><div class="diff-line ctx">913134=Enhance hero quality to get great rewards.</div><div class="diff-line ctx">913135=Timed Exchange</div><div class="diff-line ctx">913136=Timed exchange available now! Come redeem what you want!</div><div class="diff-line ctx">913137=Next Session</div><div class="diff-line ctx">913138=Stella Coin</div><div class="diff-line ctx">913139=Used to redeem items in the Timed Exchange.</div><div class="diff-line ctx">913140=Perform Alliance Hunting *{0}</div><div class="diff-line ctx">913141=Rid {0} room(s) of zombies</div><div class="diff-line ctx">913142=Complete four Subway battles</div><div class="diff-line ctx">913143=Collect intel</div><div class="diff-line ctx">913144=Clear threat</div><div class="diff-line ctx">913145=Joint hunting</div><div class="diff-line ctx">913146=1. Complete missions during the event to get rewards. \n2. Mission progress will be reset daily.</div><div class="diff-line ctx">913147=Price has changed. Please refresh and try again.</div><div class="diff-line ctx">913148=No more attempts</div><div class="diff-line ctx">913149=Please complete the Block-digging mission first.</div><div class="diff-line ctx">913150=Transferring: {0}</div><div class="diff-line ctx">913151=Receiving: {0}</div><div class="diff-line ctx">913152=Cherry Blossom Courtyard</div><div class="diff-line ctx">913153=Cherry Blossom Courtyard ({0})</div><div class="diff-line ctx">913154=Use it to change the appearance of the Fortress into [Cherry Blossom Courtyard]</div><div class="diff-line ctx">913155=Violet Courtyard</div><div class="diff-line ctx">913156=Violet Courtyard ({0})</div><div class="diff-line ctx">913157=Use it to change the appearance of the Fortress into the [Violet Courtyard]</div><div class="diff-line ctx">913158=Cherry Blossom Rain</div><div class="diff-line ctx">913159=Cherry Blossom Rain ({0})</div><div class="diff-line ctx">913160=Use it to change the avatar frame into [Cherry Blossom Rain].</div><div class="diff-line ctx">913161=Violet Paper Fans</div><div class="diff-line ctx">913162=Violet Paper Fans ({0})</div><div class="diff-line ctx">913163=Use it to change the avatar frame into [Violet Paper Fans].</div><div class="diff-line ctx">913164=Cherry Blossom Rain Message Frame</div><div class="diff-line ctx">913165=Cherry Blossom Rain Message Frame ({0})</div><div class="diff-line ctx">913166=Use it to change the Message Frame into [Cherry Blossom Rain Message Frame]</div><div class="diff-line ctx">913167=Violet Paper Fans Message Frame</div><div class="diff-line ctx">913168=Violet Paper Fans Message Frame ({0})</div><div class="diff-line ctx">913169=Use it to change the Message Frame into [Violet Paper Fans Message Frame]</div><div class="diff-line ctx">913170=Cherry Blossom Rain Nameplate</div><div class="diff-line ctx">913171=Cherry Blossom Rain Nameplate ({0})</div><div class="diff-line ctx">913172=Use it to change the Nameplate into [Cherry Blossom Rain Nameplate]</div><div class="diff-line ctx">913173=Violet Paper Fans Nameplate</div><div class="diff-line ctx">913174=Violet Paper Fans Nameplate ({0})</div><div class="diff-line ctx">913175=Use it to change the Nameplate into [Violet Paper Fans Nameplate]</div><div class="diff-line ctx">913176=Airship</div><div class="diff-line ctx">913177=Airship ({0})</div><div class="diff-line ctx">913178=Use it to change the appearance of the Fortress into the [Airship]</div><div class="diff-line ctx">913179=Airship</div><div class="diff-line ctx">913180=Airship ({0})</div><div class="diff-line ctx">913181=Use it to change the avatar frame into [Airship].</div><div class="diff-line ctx">913182=Airship Message Frame</div><div class="diff-line ctx">913183=Airship Message Frame ({0})</div><div class="diff-line ctx">913184=Use it to change the Message Frame into [Airship Message Frame].</div><div class="diff-line ctx">913185=Airship Nameplate</div><div class="diff-line ctx">913186=Airship Nameplate ({0})</div><div class="diff-line ctx">913187=Use it to change the Nameplate into [Airship Nameplate]</div><div class="diff-line ctx">913188=1. Commanders will have one free hunting opportunity every day; a certain discount will be available for ten consecutive hunts performed at once. \n2. Each hunt will grant you a reward. The Commanders who successfully kill the Zombie King will receive a fantastic reward and act as a treasure hunter to bring benefits to other Commanders.\n3. During the period when the treasure hunter appears, the entire Zone will get 10% off each hunt. The members in the same alliance as the lucky Commander will also receive an additional free hunting opportunity. \n4. The cumulative number of zombies killed in the entire Zone will be recorded; the corresponding rewards can be obtained when a goal is reached. \n5. Tap the reward to view the rewards you have already received. Only the latest 100 entries of the log can be viewed. \n6. Tap the current best prize button to preview all the rewards that can be obtained in the ongoing phase. \n7. Tap the Hunter's Shop to head to the shop where you can purchase your favorite items. \n8. The initial probability of becoming a Treasure Hunter is 0.05%, which will increase gradually with the progress of zombie killing. When a Commander becomes a Treasure Hunter, the probability will be reset to its initial level. \nGood luck and happy hunting!</div><div class="diff-line ctx">913189=Repair Power Generator</div><div class="diff-line ctx">913190=Failed to send. Commander not found.</div><div class="diff-line ctx">913191=Failed to send. As a GM player, you cannot gift it to another GM player.</div><div class="diff-line ctx">913192=Failed to send. The recipient is on a server that was created not long ago.</div><div class="diff-line ctx">913193=Not enough items. Failed to send.</div><div class="diff-line ctx">913196=Max purchases made</div><div class="diff-line ctx">913197=Insufficient number of purchases</div><div class="diff-line ctx">913198=Decor Renewal feature unlocked. Head to the decor page to have a look!</div><div class="diff-line ctx">913199=Wish Trove</div><div class="diff-line ctx">913200=Free Wish</div><div class="diff-line ctx">913201=Wish 10x</div><div class="diff-line ctx">913202=Wish 99x</div><div class="diff-line ctx">913203=For every wish, chance to get</div><div class="diff-line ctx">913204=For every {0} wishes, you could get Wishlist *{1}.</div><div class="diff-line ctx">913205=The wishing time for the Wish Trove has ended; please head to the Trove to redeem the items. \n(After the event ends, unused Wishlists will be removed.)</div><div class="diff-line ctx">913207=Probability</div><div class="diff-line ctx">913208=Trove Exchange</div><div class="diff-line ctx">913209=Trove Coin</div><div class="diff-line ctx">913210=A shiny coin used to make a wish in the [Wish Trove].</div><div class="diff-line ctx">913211=Wishlist</div><div class="diff-line ctx">913212=Used to redeem items in the [Wish Trove]. The item will be removed after the event ends.</div><div class="diff-line ctx">913213=1. During the event, use [Trove Coins] to make wishes. One free wish can be made each day. \n2. Each wish will grant you a random item or a certain number of Wishlists; for details, please see the probability overview. \n3. For every 10 wishes you make, you'll gain a certain number of Wishlists additionally. \n4. Tap on the [Trove Exchange] to see the Trove Shop, where you can use your [Wishlists] to redeem the items you want. The [Trove Exchange] will stay open for one more day after the wishing event ends. \n5. Wishlists obtained from making wishes are subject to a valid period, so be sure to use them promptly during the event. Unused Wishlists will be removed after the event ends; you'll be notified via mail by then.</div><div class="diff-line ctx">913214=Machine Strife</div><div class="diff-line ctx">913215=Please enter the name</div><div class="diff-line ctx">913216=This item cannot be gifted across Zones.</div><div class="diff-line ctx">913217=Mech Warrior</div><div class="diff-line ctx">913218=Mech Lion</div><div class="diff-line ctx">913219=You can get</div><div class="diff-line ctx">913220=Commander {1} of Zone #{0} hit Mech Lion heavily in the {2} and got [Micro-Missile] *{3}.</div><div class="diff-line ctx">913221=Exchange failed; items on the shelf have changed.</div><div class="diff-line ctx">913222=Daily Reward Preview</div><div class="diff-line ctx">913223=Defeat {0} Mech Warriors daily to obtain the following rewards.</div><div class="diff-line ctx">913224=Attacking Reward</div><div class="diff-line ctx">913225=Victory Reward</div><div class="diff-line ctx">913226=Beating Progress</div><div class="diff-line ctx">913227=Attack</div><div class="diff-line ctx">913228=Auto Attack</div><div class="diff-line ctx">913229=1. An unidentified mech legion is attacking our Fortress! Join the defense now! \n2. During the event, use Micro-Missiles to attack the mech invaders and obtain various rewards. \n3. Each time a [Mech Warrior] is defeated, a great reward will be offered, but there is a chance to arouse the attention of the powerful [Mech Lion]. \n4. The Mech Lion is fairly vigilant. It could run away every time it's being attacked. By attacking Mech Lion, you can not only obtain attacking rewards, but also have a chance to obtain additional rewards from the prize pool. \n5. When using [Micro-Missiles] to attack the invaders, there is a chance to trigger zero-cost attacks, where no [Micro-Missiles] are consumed in the next several attacks. \n6. Auto Attack will only take effect when you stay on the event page. \n7. After the event ends, the remaining [Micro-Missiles] will be auto-converted into Diamonds and sent to your mailbox.</div><div class="diff-line ctx">913230=Auto Launch Micro-Missiles</div><div class="diff-line ctx">913231=Set the number of launches</div><div class="diff-line ctx">913232=Expected to use</div><div class="diff-line ctx">913233=Auto Use</div><div class="diff-line ctx">913234=You got Mech Lion's secret treasure:</div><div class="diff-line ctx">913235=Lion King Is Here</div><div class="diff-line ctx">913236=Wasteland Engineering</div><div class="diff-line ctx">913237=Help increase the construction level of the wasteland.</div><div class="diff-line ctx">913238=1. During the event, gain points by consuming items to increase the construction level, which will be reset after the event ends. \n2. There are two types of rewards: common and advanced rewards. Common rewards can be obtained by increasing points, while advanced rewards can be obtained by purchasing and activating them. \n3. Purchase and activate advanced rewards to get rare alliance presents. \n4. There are multiple ways to obtain items during the event, and you can participate in the serial events to obtain them.</div><div class="diff-line ctx">913239=Machine Recycle</div><div class="diff-line ctx">913240=1. During the event, there is a chance to obtain items by performing specific actions. \n2. There is an upper limit on the number of event items you can obtain, and this limit will increase as the event progresses. \n3. The obtained event items will be directly sent to your Inventory.</div><div class="diff-line ctx">913241=Growth Plan</div><div class="diff-line ctx">913242=Complete missions and the puzzle to get rewards.</div><div class="diff-line ctx">913243=1. During the event, complete certain missions to get due rewards. \n2. When you complete all missions in a row or column, the gear at one end will be lit up. Once a certain number of gears are lit, you can claim progress rewards.</div><div class="diff-line ctx">913244=Machine Crisis</div><div class="diff-line ctx">913245=Mech Lion took his troops to attack our Fortress. Perhaps we can draw some inspiration from their techs.</div><div class="diff-line ctx">913246=Wings Chest (Selectable)</div><div class="diff-line ctx">913247=Open it to choose one of the wings.</div><div class="diff-line ctx">913248=Micro-Missile</div><div class="diff-line ctx">913249=Used to attack mech monsters in the event.</div><div class="diff-line ctx">913250=Mechanical Product</div><div class="diff-line ctx">913251=An amazing product used to increase construction level in the event.</div><div class="diff-line ctx">913252=Micro-Missile Pack</div><div class="diff-line ctx">913253=Purchase it to get a large number of Micro-Missiles.</div><div class="diff-line ctx">913254=Machine Mystery Box (Large)</div><div class="diff-line ctx">913255=Cap of tomorrow's drops +{0}</div><div class="diff-line ctx">913256=Mechanical Gift</div><div class="diff-line ctx">913257=Get more Mechanical Products.</div><div class="diff-line ctx">913258=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Micro-Missile] will no longer be usable. Therefore, we recycled your unused [Micro-Missile] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">913259=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Mechanical Product] will no longer be usable. Therefore, we recycled your unused [Mechanical Product] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">913260=Dear Commander, \n\nYou ranked #{0} in the [Wasteland Engineering] event. Below are your ranking rewards. Collect them now!</div><div class="diff-line ctx">913261=Open it to receive a random number of Mechanical Products.</div><div class="diff-line ctx">913262=Crab Fort</div><div class="diff-line ctx">913263=Crab Fort ({0})</div><div class="diff-line ctx">913264=Use it to change the appearance of the Fortress into [Crab Fort]</div><div class="diff-line ctx">913265=Beat the sabotaging bots to win great rewards.</div><div class="diff-line ctx">913266=Now is the resetting time for city transfer and acceptance. The city, {0}, of [{1}] is stopped from being transferred.</div><div class="diff-line ctx">913267=Event configuration does not exist.</div><div class="diff-line ctx">913268=Wrong lucky draw category.</div><div class="diff-line ctx">913269=Only one lucky draw can be made in the free trial.</div><div class="diff-line ctx">913270=This event does not allow a free lucky draw.</div><div class="diff-line ctx">913271=Not the free trial time. Cannot perform a free lucky draw.</div><div class="diff-line ctx">913272=Wished Treasure</div><div class="diff-line ctx">913273=Legion Mail</div><div class="diff-line ctx">913274=Get Trove Coins to make your wishes come true!</div><div class="diff-line ctx">913275=City transfer/acceptance attempts reset: {0}</div><div class="diff-line ctx">913276=Not enough Wishlists; please go to the Wish Trove to get more.</div><div class="diff-line ctx">913277=Advanced War Beast Blueprint Chest (Selectable)</div><div class="diff-line ctx">913278=Open it to choose one out of the options: Metallic Dragon Blueprint, Crimson Predator Blueprint, Mega Gorilla Blueprint, and Lunar Viper Blueprint.</div><div class="diff-line ctx">913279=Redeem the item with {1} *{0}?</div><div class="diff-line ctx">913280=Prestige Fortress Skill activated</div><div class="diff-line ctx">913281=Paths Crossed</div><div class="diff-line ctx">913282=Romance Ruiner</div><div class="diff-line ctx">913283=They are those who brought disasters and ruined the beautiful life.</div><div class="diff-line ctx">913284=Love Supply</div><div class="diff-line ctx">913285=Collect the love on the map to get fabulous rewards.</div><div class="diff-line ctx">913286=1. While the [Romance Ruiner] shows up, all Commanders with a Fortress of Lv. 8 or above can send their troops to challenge it. \n2. You can challenge the [Romance Ruiner] up to 5 times a day, but you'll have to challenge it alone. \n3. With a certain number of challenges completed, you can receive some rewards, which will be delivered to your mailbox. The challenge count will reset daily. \n4. Commanders will be ranked by their highest DMG of the day; the higher the highest DMG, the better the rewards. The leaderboard will be reset at 0:00 (Game Time) daily. \n5. No Stamina will be cost in challenging the [Romance Ruiner].</div><div class="diff-line ctx">913287=1. During the event, a large number of Love Supplies will spawn in the world every day. \n2. Commanders have 5 attempts each day to deploy, and the number of attempts resets at 0:00 (Game Time) every day. \n3. Open the Love Supply to get lots of precious rewards!</div><div class="diff-line ctx">913288=Romantic Challenge</div><div class="diff-line ctx">913289=1. Complete the specified tasks to increase the challenge progress. \n2. Increase the challenge progress to get the due rewards. \n3. Purchase the Advanced Challenge to unlock more rewards.</div><div class="diff-line ctx">913290=Collect Love Energy to raise the challenge level and get more rewards.</div><div class="diff-line ctx">913291=Love Energy</div><div class="diff-line ctx">913292=Used to upgrade the "Romantic Challenge" level.</div><div class="diff-line ctx">913293=Event reward preview</div><div class="diff-line ctx">913294=Build Homeland</div><div class="diff-line ctx">913295=Investigate into Control Center</div><div class="diff-line ctx">913296=Remove the Blocks leading to Power Generator</div><div class="diff-line ctx">913297=Keep exploring</div><div class="diff-line ctx">913298=Remove the Blocks leading to Satellite Nexus</div><div class="diff-line ctx">913299=Remove the Blocks leading to the Mine</div><div class="diff-line ctx">913300=Collect Resources</div><div class="diff-line ctx">913301=Remove the Blocks leading to the door of a lower floor</div><div class="diff-line ctx">913302=Remove the Blocks leading to Warehouse</div><div class="diff-line ctx">913303=New Home</div><div class="diff-line ctx">913304=Tech Planning</div><div class="diff-line ctx">913305=Wish {0}x</div><div class="diff-line ctx">913306=Redeemable</div><div class="diff-line ctx">913307=Next Session</div><div class="diff-line ctx">913308=Promo Time</div><div class="diff-line ctx">913309=Best in Next Session</div><div class="diff-line ctx">913310=Valuable supplies that appeared along with the event; tons of treasures inside.</div><div class="diff-line ctx">913311={0}%\n&lt;color=#ffce24&gt;Off&lt;/color&gt;</div><div class="diff-line ctx">913312=Redeem {3} *{2} using {1} *{0}?</div><div class="diff-line ctx">913313=Purchase bundles to gain Diamond *500</div><div class="diff-line ctx">913314=Find It If You Can!</div><div class="diff-line ctx">913315=Try to look for the images as required!</div><div class="diff-line ctx">913316=You can choose one of the items below.</div><div class="diff-line ctx">913317=You can choose one of the decors below.</div><div class="diff-line ctx">913318=Auto-Attack unlocks in {0} attack(s)</div><div class="diff-line ctx">913319=Meet {0}'s Team Dawnbreaker!</div><div class="diff-line ctx">913320=Thank you, Commanders, for your support and active participation in the event! The powerful Team Dawnbreaker and Rising Dawnbreaker have been unveiled! (The names below are listed in random order.)</div><div class="diff-line ctx">913321=Team Dawnbreaker in {0}</div><div class="diff-line ctx">913322=Rising Dawnbreaker in {0}</div><div class="diff-line ctx">913323=Team Dawnbreaker Rewards of {0}</div><div class="diff-line ctx">913324=Dear Commander, \n\nThe Team Dawnbreaker competition of {0} has come to a successful end! Thank you for your active participation and strong support! Congratulations to your alliance on winning the title of Team Dawnbreaker in {0}. Here is your reward. Collect it now!</div><div class="diff-line ctx">913325=Rising Dawnbreaker Rewards of {0}</div><div class="diff-line ctx">913326=Dear Commander, \n\nThe Team Dawnbreaker competition of {0} has come to a successful end! Thank you for your active participation and strong support! Congratulations to your alliance on winning the title of [Rising Dawnbreaker] in {0}. Here is your reward. Collect it now!</div><div class="diff-line ctx">913327=Wish 1x</div><div class="diff-line ctx">913328=Redeeming Time</div><div class="diff-line ctx">913329=Summertime</div><div class="diff-line ctx">913330=Join us to feel the summer vibe!</div><div class="diff-line ctx">913331=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Wishlists] will no longer be usable. Therefore, we recycled your {0} unused [Wishlists] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">913332=Supreme Shop</div><div class="diff-line ctx">913333=Exchange ends in:</div><div class="diff-line ctx">913334=Mech Lion Is Here</div><div class="diff-line ctx">913335=Supreme Gold Ticket</div><div class="diff-line ctx">913336=Use it to redeem items you like in Supreme Shop.</div><div class="diff-line ctx">913337=1. Spend a certain amount of Supreme Gold Tickets to get the items you want. \n2. The items in the Supreme Shop will be refreshed once a month for free. You can have a preview of the items in the next session via the "Next Session" page.</div><div class="diff-line ctx">913338=Mechanical Core Coin</div><div class="diff-line ctx">913339=A relic of previous civilizations; still circulating as currency in the wasteland today.</div><div class="diff-line ctx">913340=Mechanical Civilization</div><div class="diff-line ctx">913341=Get it to obtain tons of Mechanical Core Coins.</div><div class="diff-line ctx">913342=Commander, HELP!</div><div class="diff-line ctx">913343=Explore the Fortress to find the item used for unlocking it</div><div class="diff-line ctx">913344=Go</div><div class="diff-line ctx">913345=Tap to use the item used for unlocking it and complete the rescue.</div><div class="diff-line ctx">913346=Wasteland Trading Post</div><div class="diff-line ctx">913347=A trading post that appears regularly in the wasteland; rest assured that all goods here are tagged with a fair price.</div><div class="diff-line ctx">913348=Event ends in</div><div class="diff-line ctx">913349=Points</div><div class="diff-line ctx">913350=Redeemable</div><div class="diff-line ctx">913351=Point Progress</div><div class="diff-line ctx">913352=Current points</div><div class="diff-line ctx">913353=Refreshing Result Preview</div><div class="diff-line ctx">913354=Refreshes in:</div><div class="diff-line ctx">913355=Landscape Purchase Streak</div><div class="diff-line ctx">913356=Purchase all rewards during the event to claim the final reward.</div><div class="diff-line ctx">913357=Investigate the Confinement Cell</div><div class="diff-line ctx">913358={0} joined the team</div><div class="diff-line ctx">913359=Reward preview of day {0}</div><div class="diff-line ctx">913360=Get the Landscape bundle to light up today's star.</div><div class="diff-line ctx">913361=Best Reward Preview</div><div class="diff-line ctx">913362=Light up all the stars to get the final prize.</div><div class="diff-line ctx">913363=Please complete the preceding mission first.</div><div class="diff-line ctx">913364=Make your first purchase to get help from a mighty hero!</div><div class="diff-line ctx">913365=Unlock the trial to boost your Lineup's power!</div><div class="diff-line ctx">913366=Machine Vault</div><div class="diff-line ctx">913367=Machine Coin</div><div class="diff-line ctx">913368=Use it to randomly receive a reward in the event "Machine Vault"</div><div class="diff-line ctx">913369=Open the treasure vault to seek the relics from the mechanical age!</div><div class="diff-line ctx">913370=1. During the event, consume specified items to randomly receive a reward from the [Machine Vault]. \n2. You can claim additional rewards based on the cumulative number of rewards obtained.</div><div class="diff-line ctx">913371=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Machine Coin] will no longer be usable. Therefore, we recycled your unused [Machine Coin] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">913372=Mechanical Supply</div><div class="diff-line ctx">913373=Get it to obtain tons of [Machine Coins].</div><div class="diff-line ctx">913374=NEW HERO</div><div class="diff-line ctx">913375={0} has adjusted the position of {1} from {2} to Legion Member.</div><div class="diff-line ctx">913376=Due to the R5 of alliance {0} being adjusted from {1} to {2}, the Legion Leader has been adjusted to {2}.</div><div class="diff-line ctx">913377=Gilded Honor</div><div class="diff-line ctx">913378=Gilded Honor ({0})</div><div class="diff-line ctx">913379=Use it to change the avatar frame into [Gilded Honor].</div><div class="diff-line ctx">913380=I set up the Legion Marker</div><div class="diff-line ctx">913381=I have edited the Legion Marker</div><div class="diff-line ctx">913382=I have shared the Legion Marker</div><div class="diff-line ctx">913383=Power output (h)</div><div class="diff-line ctx">913389=Unlocks after S{0}</div><div class="diff-line ctx">913390=Available after S{0}</div><div class="diff-line ctx">913391=Exclusive Gear of S0 Hero - Weapon Chest (Selectable)</div><div class="diff-line ctx">913392=Exclusive Gear of S0 Hero - Helmet Chest (Selectable)</div><div class="diff-line ctx">913393=Exclusive Gear of S0 Hero - Armor Chest (Selectable)</div><div class="diff-line ctx">913394=Exclusive Gear of S0 Hero - Accessory Chest (Selectable)</div><div class="diff-line ctx">913395=Open it to select one of the following S0 heroes and obtain a piece of exclusive gear (weapon) of that hero.</div><div class="diff-line ctx">913396=Open it to select one of the following S0 heroes and obtain a piece of exclusive gear (Helmet) of that hero.</div><div class="diff-line ctx">913397=Open it to select one of the following S0 heroes and obtain a piece of exclusive gear (Armor) of that hero.</div><div class="diff-line ctx">913398=Open it to select one of the following S0 heroes and obtain a piece of exclusive gear (Accessory) of that hero.</div><div class="diff-line ctx">913399=Growth Challenge</div><div class="diff-line ctx">913400=Complete technology research to receive great rewards.</div><div class="diff-line ctx">913401=Tech "{0}" reaches level {1}</div><div class="diff-line ctx">913402=Battlefield Island (Beta)</div><div class="diff-line ctx">913403=This item cannot be gifted across Zones.</div><div class="diff-line ctx">913404=Congratulations to Commander {0} on receiving the best prize of this session of the event: {1}.</div><div class="diff-line ctx">913405=Not enough attempts for drawing.</div><div class="diff-line ctx">913406=Use default Relocation Animation of the skin</div><div class="diff-line ctx">913407=Osmanthus</div><div class="diff-line ctx">913408=Bunny Bread</div><div class="diff-line ctx">913409=Moon Candy</div><div class="diff-line ctx">913410=Moonlit Autumn Night</div><div class="diff-line ctx">913411=Autumn Fest</div><div class="diff-line ctx">913412=Collect materials, make cakes, and join your alliance members for the Autumn Fest!</div><div class="diff-line ctx">913413=Mooncake</div><div class="diff-line ctx">913414=Autumn Match Frenzy</div><div class="diff-line ctx">913415=Clear identical items to earn points and claim rewards.</div><div class="diff-line ctx">913416=1. During the event, clear the pieces by using certain items. \n2. When tapping any piece to clear it, all identical neighboring pieces will be cleared as well. \n3. You can receive corresponding progress rewards based on the points earned from the pieces you clear.</div><div class="diff-line ctx">913417=Item used to participate in Autumn Match Frenzy.</div><div class="diff-line ctx">913418=Speed Up</div><div class="diff-line ctx">913419=Dismiss</div><div class="diff-line ctx">913420=Making your lineup travel faster when looting materials from others in the [Autumn Fest].</div><div class="diff-line ctx">913421=Dismissing the lineup that tries to loot your materials in the [Autumn Fest].</div><div class="diff-line ctx">913422=Autumn Zombie Horde</div><div class="diff-line ctx">913423=Affected by the Full Moon in autumn, zombies are drawn to the moonlight. Defeat them to earn great rewards!</div><div class="diff-line ctx">913424=Full Moon Night</div><div class="diff-line ctx">913425=Autumn Zombie</div><div class="diff-line ctx">913426=1. During the event, a large number of [Autumn Zombies] will spawn in the world every day. \n2. You have {0} attempts each day to attack them. The number of attempts resets at 0:00 (Game Time) every day. \n3. Kill [Autumn Zombies] to get lots of precious rewards!</div><div class="diff-line ctx">913427=Zombies gaze at the moon dumbly without any intention to fight.</div><div class="diff-line ctx">913428=Please go to the event page to claim it</div><div class="diff-line ctx">913429=The timed reward for the [Autumn Fest] has been distributed near the Main City. Claim it now!</div><div class="diff-line ctx">913431=After looting the Material Warehouse of {0}, you found Osmanthus *{1}, Bunny Bread *{2}, Cream *{3}, and Moon Candy *{4}. You obtained a total of {5} points.</div><div class="diff-line ctx">913432=[Autumn Fest] Alliance Cake Leaderboard</div><div class="diff-line ctx">913433=Dear Commander, \n\nHappy Mid-Autumn Festival!\n\nCongrats! Your alliance ranked #{0} on the cake leaderboard. Here are your rewards!</div><div class="diff-line ctx">913434=[Autumn Fest] Individual Contribution Ranking</div><div class="diff-line ctx">913435=Dear Commander, \n\nHappy Mid-Autumn Festival!\n\nCongrats on your #{0} place in the Personal Contribution Rankings. Here are the rewards!</div><div class="diff-line ctx">913436=[Autumn Fest] Unclaimed Stage Rewards</div><div class="diff-line ctx">FXT10002488=Avatar Frame Chest (Selectable)</div><div class="diff-line ctx"></div></div></div>

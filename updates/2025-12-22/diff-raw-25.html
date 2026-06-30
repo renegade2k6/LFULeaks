@@ -11,10 +11,11 @@
 <meta name="keywords" content="Last Fortress Underground, LFU, game assets, leaks, sprites, datamine, updates, game files">
 <meta name="author" content="Renegade2k6">
 <link rel="canonical" href="https://renegade2k6.github.io/LFULeaks/">
+<meta name="robots" content="noindex, follow">
 
 <!-- PWA Support -->
 <link rel="manifest" href="/LFULeaks/manifest.json">
-<meta name="theme-color" content="#6aa2ff">
+<meta name="theme-color" content="#C8641B">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="LFU Leaks">
@@ -22,18 +23,13 @@
 <meta name="application-name" content="LFU Leaks">
 <link rel="apple-touch-icon" href="/LFULeaks/apple-touch-icon-180x180.png">
 
-<!-- Cache Control - Prevent stale HTML -->
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-
 <!-- Security -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data: https://renegade2k6.github.io; script-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data: https://renegade2k6.github.io; script-src 'self' 'unsafe-inline'; connect-src 'self';">
 
 <!-- Enhanced Open Graph Meta -->
 <meta property="og:site_name" content="LFU Informer">
-<meta property="og:title" content="LFU Informer Leaks">
-<meta property="og:description" content="Last Fortress Underground game asset updates and leaks for educational purposes">
+<meta property="og:title" content="Raw Config Part 25/25 - LFU Informer">
+<meta property="og:description" content="Browse Last Fortress Underground game asset updates with image galleries and config diffs. Updated regularly with new content for educational purposes.">
 <meta property="og:image" content="https://renegade2k6.github.io/LFULeaks/preview.jpg">
 <meta property="og:url" content="https://renegade2k6.github.io/LFULeaks/">
 <meta property="og:type" content="website">
@@ -43,8 +39,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@Renegade2k6News">
 <meta name="twitter:creator" content="@Renegade2k6News">
-<meta name="twitter:title" content="LFU Informer Leaks">
-<meta name="twitter:description" content="Last Fortress Underground game asset updates and leaks for educational purposes">
+<meta name="twitter:title" content="Raw Config Part 25/25 - LFU Informer">
+<meta name="twitter:description" content="Browse Last Fortress Underground game asset updates with image galleries and config diffs. Updated regularly with new content for educational purposes.">
 <meta name="twitter:image" content="https://renegade2k6.github.io/LFULeaks/preview.jpg">
 
 <!-- Structured Data (Schema.org) for SEO -->
@@ -86,28 +82,43 @@
 
 <style>
 :root{
-  --bg:#0b0d10;
-  --fg:#e6e9ef;
-  --muted:#9aa4b2;
-  --card:#111318;
-  --accent:#6aa2ff;
-  --accent-hover:#8cb8ff;
-  --accent-glow:rgba(106, 162, 255, 0.3);
-  --border:#1b2027;
-  --add:#15351b;
-  --del:#3a1b1b;
-  --ctx:#1a1d23;
-  --warn-bg:rgba(234, 179, 8, 0.1);
-  --warn-border:rgba(234, 179, 8, 0.3);
-  --warn-text:#fef08a;
+  color-scheme:dark;
+  /* OLED Ember Tech — legacy names kept & repointed so downstream rules/JS still work */
+  --bg:#000000;
+  --fg:#F2F2F2;
+  --muted:#7A7A7A;
+  --card:#0A0A0A;
+  --accent:#C8641B;
+  --accent-hover:#E07822;
+  --accent-active:#A84F16;
+  --accent-soft:#3A1D0B;
+  --accent-glow:rgba(232, 120, 34, 0.35);
+  --border:#1C1C1C;
+  --border-strong:#2A2A2A;
+  --surface-1:#050505;
+  --surface-2:#0A0A0A;
+  --surface-3:#111111;
+  --add:#071A0D;
+  --del:#1F0707;
+  --ctx:#0A0A0A;
+  --warn-bg:rgba(245, 158, 11, 0.10);
+  --warn-border:rgba(245, 158, 11, 0.35);
+  --warn-text:#FCD34D;
+  /* technical/data font (system stack — no extra network request) */
+  --font-mono:'Cascadia Code','JetBrains Mono',Consolas,'Courier New',monospace;
+  --radius-sm:6px;
+  --radius-md:8px;
+  --radius-lg:12px;
+  /* shared sheen for premium buttons */
+  --btn-sheen:inset 0 1px 0 rgba(255,255,255,0.05);
 }
 *{box-sizing:border-box}
 body{
   margin:0;
   background:var(--bg);
   background-image:
-    radial-gradient(at 0% 0%, rgba(106, 162, 255, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(200, 100, 27, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(232, 120, 34, 0.05) 0px, transparent 50%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
   color:var(--fg);
   font-family:'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -121,17 +132,18 @@ body{
 a{color:var(--accent);text-decoration:none;transition:color 0.2s}
 a:hover{color:var(--accent-hover)}
 
-header{position:sticky;top:0;background:rgba(11,13,16,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 16px 20px;display:flex;flex-direction:column;align-items:center;z-index:50;box-shadow:0 4px 30px rgba(0,0,0,0.1)}
+header{position:sticky;top:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 16px 20px;display:flex;flex-direction:column;align-items:center;z-index:50;box-shadow:0 4px 30px rgba(0,0,0,0.1)}
 .header-content{position:relative;width:100%;max-width:700px;text-align:center}
-header h1{font-size:28px;margin:0;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:linear-gradient(to right,#6aa2ff, #a855f7, #6aa2ff);background-size:200% auto;animation:shine 4s linear infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.header-line{height:3px;width:100%;background:linear-gradient(90deg, transparent, #6aa2ff, transparent);margin-top:8px;border-radius:2px;box-shadow:0 0 15px rgba(106,162,255,0.6);opacity:0.8}
-
-@keyframes shine { to { background-position: 200% center; } }
+.header-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);opacity:0.85;margin-bottom:7px}
+.header-stats{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:11px;display:flex;align-items:center;justify-content:center;gap:8px}
+.header-stats .hs-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;box-shadow:0 0 8px #22C55E;flex-shrink:0}
+header h1{font-size:27px;margin:0;font-weight:800;letter-spacing:4px;text-transform:uppercase;background:linear-gradient(135deg,#FFFFFF 0%, #F2F2F2 55%, var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header-line{height:2px;width:64px;background:linear-gradient(90deg, transparent, var(--accent), transparent);margin:12px auto 0;border-radius:2px;box-shadow:0 0 12px var(--accent-glow);opacity:0.9}
 
 .container{max-width:1200px;margin:0 auto;padding:24px 16px;}
 
 .card{
-  background:var(--card);
+  background:linear-gradient(180deg, var(--surface-2), var(--surface-1));
   border:1px solid var(--border);
   border-radius:12px;
   padding:20px;
@@ -159,106 +171,148 @@ a.card:hover{
 }
 a.card:hover::before{opacity:1}
 
+.intro-row{
+  display:flex;
+  gap:16px;
+  align-items:stretch;
+  margin-bottom:24px;
+}
+.intro-row .disclaimer{flex:1.25;margin-bottom:0}
+.intro-row .support-cta{flex:1;margin-bottom:0}
+@media(max-width:768px){
+  .intro-row{flex-direction:column;gap:14px}
+}
 .disclaimer{
-  background:linear-gradient(to right, var(--warn-bg), rgba(0,0,0,0));
-  border:1px solid var(--warn-border);
-  border-left:4px solid #eab308;
-  border-radius:12px;
-  padding:32px 40px;
-  margin-bottom:32px;
+  background:linear-gradient(180deg, var(--surface-2), var(--surface-1));
+  border:1px solid var(--border);
+  border-left:3px solid #F59E0B;
+  border-radius:var(--radius-lg);
+  padding:16px 20px;
+  margin-bottom:20px;
   max-width:100%;
 }
 .disclaimer h2{
-  margin:0 0 16px 0;
-  font-size:18px;
+  margin:0 0 8px 0;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
   color:var(--warn-text);
   display:flex;
   align-items:center;
-  gap:12px;
-  font-weight:700;
+  gap:8px;
+  font-weight:600;
+}
+.disclaimer-summary{
+  margin:0 0 10px 0;
+  color:var(--fg);
+  font-size:13px;
+  font-weight:600;
+  line-height:1.5;
 }
 .disclaimer-text{
-  color:var(--fg);
-  font-size:15px;
-  line-height:1.8;
+  color:#8A8A8A;
+  font-size:11.5px;
+  line-height:1.6;
   font-weight:400;
   max-width:none;
 }
 .disclaimer-text p{
-  margin:0 0 14px 0;
+  margin:0 0 8px 0;
 }
+.disclaimer-text strong{color:var(--fg);font-weight:600}
 
 /* Support CTA Section */
 .support-cta{
-  background:linear-gradient(135deg, rgba(106, 162, 255, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
-  border:1px solid rgba(106, 162, 255, 0.2);
-  border-radius:12px;
-  padding:32px 40px;
-  margin-bottom:32px;
+  background:linear-gradient(135deg, rgba(200, 100, 27, 0.12) 0%, rgba(232, 120, 34, 0.06) 100%);
+  border:1px solid rgba(200, 100, 27, 0.28);
+  border-radius:var(--radius-lg);
+  padding:18px 22px;
+  margin-bottom:24px;
   display:flex;
-  gap:32px;
-  align-items:center;
-  transition:all 0.3s;
+  flex-direction:column;
+  justify-content:center;
+  gap:0;
+  transition:all 0.25s;
   position:relative;
   overflow:hidden;
   max-width:100%;
+  box-shadow:0 0 0 1px rgba(200, 100, 27, 0.10), 0 6px 22px rgba(0,0,0,0.5);
 }
+.support-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.support-head h3{margin:0}
 .support-cta::before{
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(135deg, rgba(106, 162, 255, 0.05) 0%, transparent 50%);
+  background:linear-gradient(135deg, rgba(200, 100, 27, 0.05) 0%, transparent 50%);
   opacity:0;
   transition:opacity 0.3s;
   pointer-events:none;
 }
 .support-cta:hover::before{opacity:1}
 .support-cta:hover{
-  border-color:rgba(106, 162, 255, 0.4);
+  border-color:rgba(200, 100, 27, 0.4);
   transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(106, 162, 255, 0.1);
+  box-shadow:0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(200, 100, 27, 0.1);
 }
 .support-icon{
-  font-size:56px;
+  font-size:19px;
   line-height:1;
   flex-shrink:0;
-  filter:drop-shadow(0 2px 8px rgba(106, 162, 255, 0.3));
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, var(--accent-soft), #150b04);
+  border:1px solid rgba(200, 100, 27, 0.4);
+  box-shadow:0 0 18px var(--accent-glow), var(--btn-sheen);
 }
 .support-content{
-  flex:1;
+  width:100%;
   max-width:none;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 .support-content h3{
-  margin:0 0 16px 0;
-  font-size:24px;
+  margin:0 0 6px 0;
+  font-size:17px;
   font-weight:700;
-  background:linear-gradient(135deg, #6aa2ff 0%, #a855f7 100%);
+  letter-spacing:0.2px;
+  background:linear-gradient(135deg, var(--accent-hover) 0%, #F2F2F2 100%);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   background-clip:text;
   display:inline-block;
-  white-space:nowrap;
 }
 .support-content p{
-  margin:0 0 18px 0;
-  color:var(--fg);
-  font-size:15px;
-  line-height:1.8;
+  margin:0 0 12px 0;
+  color:#B7B7B7;
+  font-size:13px;
+  line-height:1.6;
   font-weight:400;
+  max-width:62ch;
 }
 .cta-button{
-  display:inline-flex;
+  display:flex;
+  width:100%;
   align-items:center;
-  gap:12px;
-  background:linear-gradient(135deg, #6aa2ff 0%, #5b8fd9 100%);
+  justify-content:center;
+  gap:10px;
+  background:linear-gradient(180deg, var(--accent-hover) 0%, var(--accent) 100%);
   color:#fff!important;
-  padding:12px 28px;
-  border-radius:8px;
+  padding:12px 24px;
+  border:1px solid var(--accent-hover);
+  border-radius:var(--radius-md);
   font-weight:700;
-  font-size:15px;
-  transition:all 0.3s;
+  font-size:14px;
+  letter-spacing:0.3px;
+  transition:all 0.18s ease-out;
   text-decoration:none;
-  box-shadow:0 4px 12px rgba(106, 162, 255, 0.2);
+  box-shadow:0 4px 14px var(--accent-glow), var(--btn-sheen);
   position:relative;
   overflow:hidden;
 }
@@ -272,20 +326,22 @@ a.card:hover::before{opacity:1}
 }
 .cta-button:hover::before{opacity:1}
 .cta-button:hover{
-  transform:translateY(-2px) scale(1.02);
-  box-shadow:0 8px 20px rgba(106, 162, 255, 0.35);
-  background:linear-gradient(135deg, #7ab0ff 0%, #6a9ee6 100%);
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px var(--accent-glow), var(--btn-sheen);
+  background:linear-gradient(180deg, #F19A4A 0%, var(--accent-hover) 100%);
+  border-color:#F19A4A;
 }
+.cta-button:active{transform:translateY(0);box-shadow:0 2px 10px var(--accent-glow)}
 .cta-arrow{
   transition:transform 0.3s;
   font-size:18px;
 }
 .cta-button:hover .cta-arrow{transform:translateX(4px)}
 .support-note{
-  font-size:12px!important;
-  color:rgba(255,255,255,0.6)!important;
-  margin:12px 0 0 0!important;
-  font-style:italic;
+  font-size:11px!important;
+  color:#7A7A7A!important;
+  margin:10px 0 0 0!important;
+  letter-spacing:0.2px;
 }
 
 .grid{display:grid;gap:16px}
@@ -304,12 +360,12 @@ a.card:hover::before{opacity:1}
 .thumb img{width:100%;height:180px;object-fit:contain;display:block;background:none;}
 .caption{font-size:11px;color:var(--muted);padding:8px;text-align:center;background:var(--card);border-top:1px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-.meta{display:flex;gap:16px;color:var(--muted);font-size:12px;margin-top:8px}
+.meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-family:var(--font-mono);font-size:11px;letter-spacing:0.3px;margin-top:8px}
 
-.tabs{display:flex;gap:4px;margin-bottom:16px;background:rgba(17,19,24,0.8);backdrop-filter:blur(8px);padding:4px;border-radius:10px;border:1px solid var(--border);width:fit-content;position:sticky;top:90px;z-index:40;margin-left:auto;margin-right:auto;}
-.tab-btn{padding:8px 16px;border:none;border-radius:6px;background:transparent;color:var(--muted);cursor:pointer;font-weight:500;font-size:13px;transition:all 0.2s}
-.tab-btn:hover{color:var(--fg)}
-.tab-btn.active{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(106,162,255,0.25)}
+.tabs{display:flex;gap:4px;margin-bottom:16px;background:rgba(10,10,10,0.8);backdrop-filter:blur(8px);padding:4px;border-radius:10px;border:1px solid var(--border);width:fit-content;position:sticky;top:90px;z-index:40;margin-left:auto;margin-right:auto;}
+.tab-btn{padding:8px 16px;border:1px solid transparent;border-radius:var(--radius-sm);background:transparent;color:var(--muted);cursor:pointer;font-weight:600;font-size:13px;letter-spacing:0.2px;transition:all 0.18s ease-out}
+.tab-btn:hover{color:var(--fg);background:var(--bg-hover,#17120E)}
+.tab-btn.active{background:linear-gradient(180deg, var(--accent-hover), var(--accent));color:#fff;border-color:var(--accent-hover);box-shadow:0 2px 10px var(--accent-glow), var(--btn-sheen)}
 
 .toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;position:sticky;top:145px;z-index:30;background:var(--bg);padding:8px 0;} 
 
@@ -351,8 +407,8 @@ input[type="search"]:focus{
   outline:none;
   border-color:var(--accent);
   box-shadow: 0 0 0 3px var(--accent-glow), 
-              0 4px 12px rgba(106, 162, 255, 0.2),
-              0 0 30px rgba(106, 162, 255, 0.1);
+              0 4px 12px rgba(200, 100, 27, 0.2),
+              0 0 30px rgba(200, 100, 27, 0.1);
 }
 
 .search-clear {
@@ -383,7 +439,7 @@ input[type="search"]:focus{
 
 .search-clear:hover {
   color: var(--accent);
-  background: rgba(106, 162, 255, 0.1);
+  background: rgba(200, 100, 27, 0.1);
 }
 
 .search-results-count {
@@ -395,20 +451,21 @@ input[type="search"]:focus{
 
 /* Keyboard help button */
 .keyboard-help-btn {
-  background: rgba(106, 162, 255, 0.1);
-  border: 1px solid rgba(106, 162, 255, 0.2);
-  color: var(--accent);
+  background: linear-gradient(180deg, var(--surface-3), var(--surface-2));
+  border: 1px solid var(--border-strong);
+  color: var(--accent-hover);
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.18s ease-out;
   margin-left: 12px;
+  box-shadow: var(--btn-sheen);
 }
 
 .keyboard-help-btn:hover {
-  background: rgba(106, 162, 255, 0.2);
-  border-color: rgba(106, 162, 255, 0.4);
+  background: rgba(200, 100, 27, 0.2);
+  border-color: rgba(200, 100, 27, 0.4);
   transform: translateY(-1px);
 }
 
@@ -520,8 +577,8 @@ input[type="search"]:focus{
 }
 
 .keyboard-shortcuts kbd {
-  background: rgba(106, 162, 255, 0.1);
-  border: 1px solid rgba(106, 162, 255, 0.3);
+  background: rgba(200, 100, 27, 0.1);
+  border: 1px solid rgba(200, 100, 27, 0.3);
   border-radius: 4px;
   padding: 4px 8px;
   font-family: 'Courier New', monospace;
@@ -538,17 +595,19 @@ input[type="search"]:focus{
 }
 
 .modal-close {
-  background: var(--accent);
+  background: linear-gradient(180deg, var(--accent-hover), var(--accent));
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  border: 1px solid var(--accent-hover);
+  padding: 11px 20px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.3px;
   margin-top: 24px;
   width: 100%;
-  transition: all 0.2s;
+  transition: all 0.18s ease-out;
+  box-shadow: var(--btn-sheen);
 }
 
 .modal-close:hover {
@@ -717,7 +776,7 @@ input[type="search"]:focus{
   left: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), #a855f7);
+  background: linear-gradient(90deg, var(--accent), #E07822);
   transition: width 0.3s;
   z-index: 10000;
   box-shadow: 0 0 10px var(--accent-glow);
@@ -740,7 +799,7 @@ input[type="search"]:focus{
 .diff-external a{color:var(--accent);font-weight:500}
 
 /* Footer */
-footer{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:40px;background:rgba(11,13,16,0.5)}
+footer{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;border-top:1px solid var(--border);margin-top:40px;background:rgba(0,0,0,0.5)}
 footer a{color:var(--accent);text-decoration:none;margin:0 4px}
 footer a:hover{color:var(--accent-hover);text-decoration:underline}
 footer p{margin:8px 0;width:100%}
@@ -779,10 +838,8 @@ html { scroll-behavior: smooth; }
 .thumb:hover img{transform:scale(1.05)}
 
 @keyframes lbFade { from{opacity:0} to{opacity:1} }
-@keyframes lbZoom { from{transform:scale(0.8) rotateX(10deg)} to{transform:scale(1) rotateX(0deg)} }
 .lightbox.open { animation: lbFade 0.25s ease-out; }
 .lightbox.open img {
-  animation: lbZoom 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow:0 30px 60px -20px rgba(0,0,0,0.8), 0 0 80px -20px var(--accent-glow);
 }
 
@@ -804,10 +861,10 @@ html { scroll-behavior: smooth; }
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--accent);
-  border: none;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(180deg, var(--accent-hover), var(--accent));
+  border: 1px solid var(--accent-hover);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -815,9 +872,9 @@ html { scroll-behavior: smooth; }
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s;
+  transition: all 0.25s ease-out;
   z-index: 100;
-  box-shadow: 0 4px 20px rgba(106, 162, 255, 0.4);
+  box-shadow: 0 4px 18px var(--accent-glow), var(--btn-sheen);
 }
 .back-to-top.show {
   opacity: 1;
@@ -825,7 +882,7 @@ html { scroll-behavior: smooth; }
 }
 .back-to-top:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 30px rgba(106, 162, 255, 0.6);
+  box-shadow: 0 6px 30px rgba(200, 100, 27, 0.6);
   background: var(--accent-hover);
 }
 .back-to-top svg {
@@ -849,13 +906,13 @@ html { scroll-behavior: smooth; }
 }
 .tab-btn:hover::before{opacity:0.1}
 .tab-btn.active{
-  box-shadow:0 4px 12px rgba(106, 162, 255, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow:0 4px 12px rgba(200, 100, 27, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 /* Improve searchbar */
 .searchbar{position:relative}
 .searchbar input:focus{
-  box-shadow:0 0 0 3px var(--accent-glow), 0 4px 12px rgba(106, 162, 255, 0.2);
+  box-shadow:0 0 0 3px var(--accent-glow), 0 4px 12px rgba(200, 100, 27, 0.2);
 }
 
 /* Mark highlight */
@@ -982,12 +1039,10 @@ p {
     gap: 16px;
   }
   
-  .support-icon {
-    font-size: 36px;
-    margin: 0 auto;
-    display: block;
+  .support-head {
+    justify-content: center;
   }
-  
+
   .support-content h3 {
     font-size: 18px;
     white-space: normal;
@@ -1133,43 +1188,6 @@ p {
    ENHANCED VISUAL EFFECTS
    ============================================ */
 
-/* Animated gradient header */
-@keyframes headerGlow {
-  0%, 100% { 
-    box-shadow: 0 4px 30px rgba(0,0,0,0.1), 0 0 40px rgba(106, 162, 255, 0.1);
-  }
-  50% { 
-    box-shadow: 0 4px 30px rgba(0,0,0,0.1), 0 0 60px rgba(106, 162, 255, 0.15);
-  }
-}
-
-header {
-  animation: headerGlow 4s ease-in-out infinite;
-}
-
-/* Floating animation for cards */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-4px); }
-}
-
-a.card {
-  animation: float 6s ease-in-out infinite;
-}
-
-a.card:nth-child(2n) {
-  animation-delay: 0.5s;
-}
-
-a.card:nth-child(3n) {
-  animation-delay: 1s;
-}
-
-/* Hover pause animation */
-a.card:hover {
-  animation-play-state: paused;
-}
-
 /* Enhanced gradient text for headings */
 .card h3 {
   background: linear-gradient(135deg, var(--fg) 0%, var(--accent) 100%);
@@ -1180,117 +1198,17 @@ a.card:hover {
 }
 
 a.card:hover h3 {
-  background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #E07822 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   transform: translateX(4px);
 }
 
-/* Pulse animation for support CTA */
-@keyframes pulse {
-  0%, 100% { 
-    box-shadow: 0 0 0 0 rgba(106, 162, 255, 0.4);
-  }
-  50% { 
-    box-shadow: 0 0 0 15px rgba(106, 162, 255, 0);
-  }
-}
-
-.cta-button {
-  animation: pulse 2s infinite;
-}
-
-.cta-button:hover {
-  animation: none;
-}
-
-/* Shimmer effect on images */
-@keyframes shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
-}
-
-.thumb::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    transparent 100%
-  );
-  animation: shimmer 3s infinite;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Particles effect on header line */
-@keyframes particles {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-.header-line::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%,
-    var(--accent) 20%,
-    var(--accent) 80%,
-    transparent 100%
-  );
-  filter: blur(2px);
-  animation: particles 2s ease-in-out infinite;
-}
-
 /* Glass morphism enhancement for cards */
 .card {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-
-/* Spotlight effect on hover */
-a.card::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(106, 162, 255, 0.1) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.5s;
-  pointer-events: none;
-}
-
-a.card:hover::after {
-  opacity: 1;
-}
-
-/* Stagger fade-in with scale */
-@keyframes fadeInScale {
-  from { 
-    opacity: 0; 
-    transform: translateY(30px) scale(0.95);
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0) scale(1);
-  }
-}
-
-.container > * {
-  animation: fadeInScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 
 /* Smooth scrollbar */
@@ -1305,7 +1223,7 @@ a.card:hover::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--accent) 0%, #5b8fd9 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, #A84F16 100%);
   border-radius: 10px;
   border: 2px solid var(--bg);
   transition: background 0.3s;
@@ -1313,11 +1231,6 @@ a.card:hover::after {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--accent-hover) 0%, var(--accent) 100%);
-}
-
-/* Icon animation */
-.support-icon {
-  animation: float 3s ease-in-out infinite;
 }
 
 /* Button ripple effect */
@@ -1336,72 +1249,8 @@ button:active::before,
 /* Glow on focus */
 input[type="search"]:focus {
   box-shadow: 0 0 0 3px var(--accent-glow), 
-              0 4px 12px rgba(106, 162, 255, 0.2),
-              0 0 30px rgba(106, 162, 255, 0.1);
-}
-
-/* Enhanced tab animation */
-.tab-btn.active {
-  animation: tabPulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes tabPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-/* Loading skeleton shimmer */
-@keyframes skeletonShimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
-}
-
-.thumb.loading {
-  background: linear-gradient(
-    90deg,
-    #1a1a1a 0px,
-    #242424 40px,
-    #1a1a1a 80px
-  );
-  background-size: 1000px 100%;
-  animation: skeletonShimmer 2s infinite;
-}
-
-/* Back to top entrance */
-.back-to-top.show {
-  animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes bounceIn {
-  0% { 
-    opacity: 0;
-    transform: scale(0.3) translateY(20px);
-  }
-  50% { 
-    transform: scale(1.05) translateY(0);
-  }
-  100% { 
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-/* Disclaimer attention animation */
-.disclaimer {
-  animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
-  animation-delay: 0.3s;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+              0 4px 12px rgba(200, 100, 27, 0.2),
+              0 0 30px rgba(200, 100, 27, 0.1);
 }
 
 /* Image hover zoom with glow */
@@ -1414,14 +1263,14 @@ input[type="search"]:focus {
 .meta span {
   display: inline-block;
   padding: 4px 8px;
-  background: rgba(106, 162, 255, 0.1);
+  background: rgba(200, 100, 27, 0.1);
   border-radius: 6px;
-  border: 1px solid rgba(106, 162, 255, 0.2);
+  border: 1px solid rgba(200, 100, 27, 0.2);
   transition: all 0.3s;
 }
 
 .meta span:hover {
-  background: rgba(106, 162, 255, 0.2);
+  background: rgba(200, 100, 27, 0.2);
   border-color: var(--accent);
   transform: translateY(-2px);
 }
@@ -1432,14 +1281,18 @@ input[type="search"]:focus {
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header role="banner">
   <div class="header-content">
+    <div class="header-eyebrow" aria-hidden="true">// LFU DATAMINE ARCHIVE</div>
     <h1>Raw Config Part 25/25 - LFU Informer</h1>
     <div class="header-line" role="presentation" aria-hidden="true"></div>
+    <div class="header-stats"><span class="hs-dot" aria-hidden="true"></span>19 Updates · 25,756 Assets · Live</div>
   </div>
 </header>
 <main id="main-content" class="container" role="main">
 
+  <div class="intro-row">
   <div class="disclaimer">
     <h2>⚠️ Fair Use Notice</h2>
+    <p class="disclaimer-summary">Images shown strictly for education, commentary &amp; news reporting — Fair Use under §107.</p>
     <div class="disclaimer-text">
       <p style="margin-top:0">The images and artwork used on this page are displayed strictly for educational, informational, commentary, and news reporting purposes.</p>
       <p>This constitutes <strong>Fair Use</strong> under Section 107 of the U.S. Copyright Act and similar copyright provisions worldwide. This content is not for commercial exploitation, and no ownership of the original works is claimed. All intellectual property rights remain with their respective copyright holders.</p>
@@ -1448,16 +1301,19 @@ input[type="search"]:focus {
   </div>
 
   <div class="support-cta">
-    <div class="support-icon">💙</div>
     <div class="support-content">
-      <h3>Support This Project</h3>
-      <p>If you value having instant access to the latest Last Fortress Underground updates and appreciate the time and effort invested in maintaining this resource, please consider supporting the project.</p>
+      <div class="support-head">
+        <div class="support-icon">💙</div>
+        <h3>Support This Project</h3>
+      </div>
+      <p>Keep LFU Leaks fast, free, updated &amp; completely ad-free.</p>
       <a href="https://buymeacoffee.com/renegade2kz" target="_blank" rel="noopener" class="cta-button">
-        <span class="cta-text">Buy me a coffee</span>
+        <span class="cta-text">☕ Buy me a coffee</span>
         <span class="cta-arrow">→</span>
       </a>
-      <p class="support-note">Your support helps keep this site running, updated, and completely ad-free!</p>
+      <p class="support-note">Every coffee helps keep the datamine running.</p>
     </div>
+  </div>
   </div>
 
 <div class="diff"><div class="diff-body"><div class="diff-line ctx">805000661=Mr. Turkey ({0})</div><div class="diff-line ctx">805000662=The stylish Mr. Turkey often hangs out in lively and vibrant places. Use it to change the Pendant into [Mr. Turkey].</div><div class="diff-line ctx">603100406=Zone:</div><div class="diff-line ctx">603100501=Pillage Mission</div><div class="diff-line ctx">603100502=Complete {0} pillage mission(s)</div><div class="diff-line ctx">603100503=Complete {0} pillage mission(s)</div><div class="diff-line ctx">603100504=Available after lineup {0} is unlocked</div><div class="diff-line ctx">603100505=Unlocks at VIP {0} or above</div><div class="diff-line ctx">603100506=Transportation is settled according to the time and will take place between various cities; transportation is completed once time runs out.</div><div class="diff-line ctx">603100507=Check out this pillage info</div><div class="diff-line ctx">603100508=Go</div><div class="diff-line ctx">603100509=Region:</div><div class="diff-line ctx">802000905=Get the Gene Chip Supply to train super soldiers!</div><div class="diff-line ctx">700000401=Please read and check the box to agree to the info above.</div><div class="diff-line ctx">700000403=Please enter the verification code in the email</div><div class="diff-line ctx">700000302=Please try again {0}s later</div><div class="diff-line ctx">700000303=Failed to send the email. Please try again later.</div><div class="diff-line ctx">700000404=Verification code has been sent to your email.</div><div class="diff-line ctx">809400001=Skyripper</div><div class="diff-line ctx">809400002=Skyripper Blueprint</div><div class="diff-line ctx">809400003=Used to unlock and upgrade the war beast, Skyripper.</div><div class="diff-line ctx">603100510=Unlock the third lineup for transport</div><div class="diff-line ctx">700000402=You are trying to delete your account. Please complete the verification first. Tap [Send], and a verification code will be sent to the email linked to this account.</div><div class="diff-line ctx">700000405=Send</div><div class="diff-line ctx">806000601=Gene Chip Supply</div><div class="diff-line ctx">806000602=Limited Offer Every Friday</div><div class="diff-line ctx">802000906=Gene Chip Supply</div><div class="diff-line ctx">703000067=Upgraded Facility Exterior</div><div class="diff-line ctx">703000068=Get a new appearance for the Facility.</div><div class="diff-line ctx">703000069=Upgraded Fortress Interior</div><div class="diff-line ctx">703000070=Get an advanced interior appearance for your Fortress.</div><div class="diff-line ctx">603100511=Unable to relocate to this region.</div><div class="diff-line ctx">803009002=Display period ends in:</div><div class="diff-line ctx">803009003=The event has ended; rewards not claimed in time will be delivered to the mailbox; be sure to check your mailbox.</div><div class="diff-line ctx">601000302=Donations completed</div><div class="diff-line ctx">707000138=Palmer | Dice of Fate</div><div class="diff-line ctx">707000139=Soros | Haunting Scythe</div><div class="diff-line ctx">707000140=Observe the stars to look for predictions of your fate.</div><div class="diff-line ctx">707000141=Is it merely a nightmare, or a sinister ending?</div><div class="diff-line ctx">707000142=Palmer | Dice of Fate Ultimate Weapon Blueprint</div><div class="diff-line ctx">707000143=Soros | Haunting Scythe Ultimate Weapon Blueprint</div><div class="diff-line ctx">707000144=Used to unlock and increase the stars of Palmer | Dice of Fate.</div><div class="diff-line ctx">707000145=Used to unlock and increase the star of Soros | Haunting Scythe.</div><div class="diff-line ctx">809100061=Christmas Frenzy</div><div class="diff-line ctx">809100062=Colorful Christmas</div><div class="diff-line ctx">809100063=Frosty Guardian</div><div class="diff-line ctx">809100064=Winter's Messenger</div><div class="diff-line ctx">809100065=Reindeer Pixie</div><div class="diff-line ctx">809100066=Christmas Frenzy ({0})</div><div class="diff-line ctx">809100067=Colorful Christmas ({0})</div><div class="diff-line ctx">809100068=Frosty Guardian ({0})</div><div class="diff-line ctx">809100069=Winter's Messenger ({0})</div><div class="diff-line ctx">809100070=Reindeer Pixie ({0})</div><div class="diff-line ctx">809100071=Use it to change Enrique's skin to [Christmas Frenzy]</div><div class="diff-line ctx">809100072=Use it to change Blanche's skin to [Colorful Christmas]</div><div class="diff-line ctx">809100073=Use it to change Kin Ogawa's skin to [Frosty Guardian]</div><div class="diff-line ctx">809100074=Use it to change Laurel's skin to [Winter's Messenger]</div><div class="diff-line ctx">809100075=Use it to change Kelly's skin to [Reindeer Pixie]</div><div class="diff-line ctx">803008066=Thanksgiving Mystery Box</div><div class="diff-line ctx">803008067=Turkey Mystery Box</div><div class="diff-line ctx">606000282=Iron Output {0}/hr * Iron Mine amount</div><div class="diff-line ctx">606000283=Stone Output {0}/hr * Stone Quarry amount</div><div class="diff-line ctx">606000284=Power Output {0}/hr * Power Generator amount</div><div class="diff-line ctx">606000285=Z Coin Output {0}/hr * Mint amount</div><div class="diff-line ctx">315117=Upon the end of this chapter (whether the goal is attained or not), Lv. &lt;color=#C80700&gt;{0}&lt;/color&gt; neutral cities will be accessible. Capture them to win tons of rewards! The number of &lt;color=#C80700&gt;territories&lt;/color&gt; an alliance can hold will be increased to &lt;color=#C80700&gt;8&lt;/color&gt;; larger alliance territory heralds more opportunities!</div><div class="diff-line ctx">315118=Upon the end of this chapter (whether the goal is attained or not), Lv. &lt;color=#C80700&gt;{0}&lt;/color&gt; neutral cities will be accessible. Capture them to win tons of rewards! The number of &lt;color=#C80700&gt;territories&lt;/color&gt; an alliance can hold will be increased to &lt;color=#C80700&gt;12&lt;/color&gt;; larger alliance territory heralds more opportunities!</div><div class="diff-line ctx">806000801=Warm-up</div><div class="diff-line ctx">806000802=Matching</div><div class="diff-line ctx">806000803=Matching ended</div><div class="diff-line ctx">806000804=Event starts</div><div class="diff-line ctx">802000602=Prestige Fortress Set</div><div class="diff-line ctx">802000607=Please select {0}/{1} random items</div><div class="diff-line ctx">809400004=Lunar Viper | Golden Viper Coating</div><div class="diff-line ctx">809400009=Behold the glow of nobility and mystery; its golden scales shimmer under the sunlight.</div><div class="diff-line ctx">809400010=Meticulously designed; an embodiment of the wild yet elegant snake.</div><div class="diff-line ctx">809400011=Ruler of the forest; silently strangling enemies in the darkness.</div><div class="diff-line ctx">809400012=Inspired by dazzling stars; each scale shimmers amid the light and shadow, like a proof of ancient legends and myths.</div><div class="diff-line ctx">809400013=A gaze that can see through people; it can freeze enemies in an instant, making all bow down.</div><div class="diff-line ctx">809400014=An all-new war beast, Lunar Viper. Take it to the battlefield to win more battles!</div><div class="diff-line ctx">809400015=Skyripper - Lava Coating</div><div class="diff-line ctx">809400016=The ultimate interpretation of strength and an ode of courage.</div><div class="diff-line ctx">809400017=An all-new war beast, Skyripper. Take it to the battlefield to win more battles!</div><div class="diff-line ctx">802000609=Wrong number skins consumed for ascending.</div><div class="diff-line ctx">802000610=Basic appearance not owned</div><div class="diff-line ctx">802000606=Prestige Wings Set</div><div class="diff-line ctx">809400005=Lunar Viper | Crimson-banded Coating</div><div class="diff-line ctx">809400006=Lunar Viper | Black Anaconda Coating</div><div class="diff-line ctx">809400007=Lunar Viper | Shimmering Scales Coating</div><div class="diff-line ctx">809400008=Lunar Viper | Medusa Coating</div><div class="diff-line ctx">802000601=Coming Soon</div><div class="diff-line ctx">802000605=Duration:</div><div class="diff-line ctx">802000608=Selected: {0}</div><div class="diff-line ctx">707000202=公测开启！</div><div class="diff-line ctx">707000203=各位指挥官：\n《黎明堡垒》国服公测正式开启！为了让大家能够在游戏上线的第一时间顺利进入游戏，我们将于2024年12月13日上午10:00开放游戏预下载通道。具体注意事项如下：\n1.游戏正式开服时间为2024年12月14日上午10:00。正式开服前，指挥官们将暂时无法进入游戏，请耐心等候。\n2.下载时请确保网络顺畅，如遇到下载不成功可以尝试切换网络。\n3.如下载遇到问题无法解决，可点击客服按钮，联系客服。\n公测将临，《黎明堡垒》工作室准备了海量新玩法与新内容等着大家来一探究竟，期待与您相遇！</div><div class="diff-line ctx">802001001=付费测试充值返利回馈</div><div class="diff-line ctx">802001002=感谢您参与付费测试，现将根据您在付费测试期间的充值记录为您献上好礼。\n请注意：每个账号仅能选择一个角色领取一次奖励，奖励发放后切换其他角色将无法再次领取奖励。</div><div class="diff-line ctx">316100=Top Hat Making</div><div class="diff-line ctx">906048=1. Choose the reward you want during the event. After your selection, the items available will be updated accordingly. \n2. The drawing progress will be accumulated.</div><div class="diff-line ctx">601001001=Perform faction recruitment or summit recruitment *{1}</div><div class="diff-line ctx">803010001=Winter Fest</div><div class="diff-line ctx">803010002=1. Log in to the game every day during the event to claim rewards. \n2. If you log in on a day but forget to claim the due reward, the reward can still be claimed when you log in later. \n3. Rewards not claimed in time will be sent to the mailbox after the event ends. \n4. Please refer to the countdown for the actual event duration. \n5. By the time the countdown ends, let's welcome Christmas this year!</div><div class="diff-line ctx">803010003=Chill &amp; Thrill</div><div class="diff-line ctx">803010004=Winter Present</div><div class="diff-line ctx">803010005=Winter Gift</div><div class="diff-line ctx">803010006=Collect the [Winter Orbuculum] to redeem rewards in the event.</div><div class="diff-line ctx">803010007=Winter Quests</div><div class="diff-line ctx">803010008=Complete daily missions to receive [Gingerbread Men].</div><div class="diff-line ctx">803010009=Frosty Journey</div><div class="diff-line ctx">803010010=Collect the [Gingerbread Man] to listen to his adventurous tales.</div><div class="diff-line ctx">803010011=Gingerbread Man</div><div class="diff-line ctx">803010012=Orbuculum</div><div class="diff-line ctx">803010013=An item for the [Chill &amp; Thrill] events; will be removed after the event ends.</div><div class="diff-line ctx">803010014=Gingerbread Man's Gift</div><div class="diff-line ctx">803010015=Winter Exchange Shop</div><div class="diff-line ctx">803010016=Special exchange available for a limited time. Redeem the items you want now!</div><div class="diff-line ctx">803010018=1. Special commodities will be available for purchase in the shop during the event. \n2. Redeem commodities by using items.</div><div class="diff-line ctx">803010019=1. During the event, gain points by consuming items to increase the level in the event, which will be reset after the event ends. \n2. There are two types of rewards: common and advanced rewards. Common rewards can be obtained by increasing points, while advanced rewards can be obtained by purchasing and activating them. \n3. Purchase and activate advanced rewards to get rare alliance presents. \n4. After the event ends, the event items will be removed with some Diamonds returned to you.</div><div class="diff-line ctx">803010020=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Gingerbread Man] will no longer be usable. Therefore, we recycled your {0} unused [Gingerbread Men] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">803010021=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Orbuculum] will no longer be usable. Therefore, we recycled your {0} unused [Orbuculum] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!!</div><div class="diff-line ctx">803010022=Winter Zombie</div><div class="diff-line ctx">803010023=Putting on Christmas hat, the zombie is pretending to be Santa Claus.</div><div class="diff-line ctx">803010024=Winter Supply</div><div class="diff-line ctx">803010025=A balloon from afar sends you a box of presents, together with a large amount of supplies.</div><div class="diff-line ctx">803010026=1. During the event, a large number of [Winter Zombies] will spawn in the world every day. \n2. You have {0} attempts each day to attack them. The number of attempts resets at 0:00 (Game Time) every day. \n3. Kill [Winter Zombies] to get lots of precious rewards!</div><div class="diff-line ctx">803010027=1. During the event, a large number of [Winter Supplies] will spawn in the world every day. \n2. Commanders have 5 attempts each day to deploy troops, and the number of deploying attempts resets at 0:00 (Game Time) every day. \n3. Gather supplies to get lots of precious rewards.</div><div class="diff-line ctx">805000688=Red Hawk</div><div class="diff-line ctx">805000689=Red Hawk ({0})</div><div class="diff-line ctx">805000690=Equipped with the most advanced security system, it will always protect the Fortress. Use it to change the Pendant into [Red Hawk].</div><div class="diff-line ctx">805000691=Christmas Firework</div><div class="diff-line ctx">805000692=Christmas Firework ({0})</div><div class="diff-line ctx">805000693=Dazzling fireworks flicker over the Fortress; everyone is immersed in the joyful vibe. Use it to change the Pendant into [Christmas Firework].</div><div class="diff-line ctx">805000703=Fancy Nebula</div><div class="diff-line ctx">805000704=Fancy Nebula ({0})</div><div class="diff-line ctx">805000705=The wings are as stunning as dreamlike nebula; the wings will take you through the infinite universe. Use it to change the wings into [Fancy Nebula].</div><div class="diff-line ctx">805000706=Steel-like Protection</div><div class="diff-line ctx">805000707=Steel-like Protection ({0})</div><div class="diff-line ctx">805000708=As solid as steel, the wings will safeguard your faith till the very end. Use it to change the wings into [Steel-like Protection].</div><div class="diff-line ctx">805000709=Blazing Soul</div><div class="diff-line ctx">805000710=Blazing Soul ({0})</div><div class="diff-line ctx">805000711=Just as the blazing flame never dies, the morale will never allow you to surrender. Use it to change the wings into [Blazing Soul].</div><div class="diff-line ctx">805000751=Miraculous Christmas</div><div class="diff-line ctx">805000752=Use it to change the medal into [Miraculous Christmas]</div><div class="diff-line ctx">805000753=Obtained from Christmas events</div><div class="diff-line ctx">806000556=Stationed: {0}/{1}</div><div class="diff-line ctx">806000557=&lt;color=#00ff00&gt;Explorers accommodated: {0}&lt;/color&gt;</div><div class="diff-line ctx">806000558=Secret Trail</div><div class="diff-line ctx">806000559=Used to redeem items in the [Lost Realm]. The item will be removed after the event ends.</div><div class="diff-line ctx">806000560=Secret Key</div><div class="diff-line ctx">806000561=Used to get more capture attempts in the [Lost Realm]</div><div class="diff-line ctx">806000562=Secret Hourglass</div><div class="diff-line ctx">806000563=Used to extend the reward duration of the day in the [Lost Realm]</div><div class="diff-line ctx">802000617=Mini Christmas Tree</div><div class="diff-line ctx">802000618=The tree, standing for joy and hope, is a precious and warm item in the Fortress.</div><div class="diff-line ctx">805000712=Jolly New Year</div><div class="diff-line ctx">805000713=Jolly New Year ({0})</div><div class="diff-line ctx">805000714=Use it to change the avatar frame into [Jolly New Year]</div><div class="diff-line ctx">805000715=Jolly New Year Message Frame</div><div class="diff-line ctx">805000716=Jolly New Year Message Frame ({0})</div><div class="diff-line ctx">805000717=Use it to change the Message Frame into [Jolly New Year Message Frame]</div><div class="diff-line ctx">805000718=Jolly New Year Nameplate</div><div class="diff-line ctx">805000719=Jolly New Year Nameplate ({0})</div><div class="diff-line ctx">805000720=Use it to change the Nameplate into [Jolly New Year Nameplate]</div><div class="diff-line ctx">770115=Crimson Predator Landscape</div><div class="diff-line ctx">770116=With Crimson Predator as the stereotype, the model features crimson mech and heroic posture, perfectly showing the fearless image on the battlefield.</div><div class="diff-line ctx">805000700=Special Christmas Relocation Animation</div><div class="diff-line ctx">805000701=Special Christmas Relocation Animation ({0})</div><div class="diff-line ctx">805000702=Use it to change the Relocation Animation into [Special Christmas Relocation Animation]</div><div class="diff-line ctx">806000501=Lost Realm</div><div class="diff-line ctx">806000502=Cannot capture. Please leave this realm first.</div><div class="diff-line ctx">806000503=Cannot capture. Already captured for the max number of times allowed today.</div><div class="diff-line ctx">806000504=Capture ended. Your gains will be sent to the mailbox.</div><div class="diff-line ctx">806000505=Revenue Time Left Today:</div><div class="diff-line ctx">806000506=Total revenue time:</div><div class="diff-line ctx">806000507=Lineup</div><div class="diff-line ctx">806000508=Shop</div><div class="diff-line ctx">806000513=Explorers accommodated: {0}</div><div class="diff-line ctx">806000515=No capturer</div><div class="diff-line ctx">806000516=Gains every 5 min</div><div class="diff-line ctx">806000517=Capture</div><div class="diff-line ctx">806000518=Time capturable: {0}</div><div class="diff-line ctx">806000519=Captured</div><div class="diff-line ctx">806000521=Edit Lineup</div><div class="diff-line ctx">806000523=Time captured: {0}</div><div class="diff-line ctx">806000524=Abandon realm</div><div class="diff-line ctx">806000525=After giving up the realm, all members inside it will be stopped from capturing. Capturable time left today: &lt;color=FFDC143C&gt;{0}&lt;/color&gt;. Are you sure you want to give it up?</div><div class="diff-line ctx">806000526=Cannot join. Stationed members full.</div><div class="diff-line ctx">806000527=Successfully joined</div><div class="diff-line ctx">806000528=Capturable time left today: &lt;color=FFDC143C&gt;{0}&lt;/color&gt;. Are you sure you want to terminate the stationing?</div><div class="diff-line ctx">806000529=Terminate</div><div class="diff-line ctx">806000530=Exclusive Legion for Lost Realm</div><div class="diff-line ctx">806000531=Captured</div><div class="diff-line ctx">806000532=Failed to capture</div><div class="diff-line ctx">806000533=Lost Realm Report</div><div class="diff-line ctx">806000534=Dear Commander, \n\nYou occupied the {0} for {1} in the [Lost Realm] event. Here are the rewards you have obtained. Collect them now!</div><div class="diff-line ctx">806000535=Increase daily capturing time by {0}h</div><div class="diff-line ctx">806000536=Seize</div><div class="diff-line ctx">806000537=Join</div><div class="diff-line ctx">806000538=End stationing</div><div class="diff-line ctx">806000539=Capturing attempts left today: {0}</div><div class="diff-line ctx">806000540=Stationed Members</div><div class="diff-line ctx">806000541=Remaining revenue time today reached the limit</div><div class="diff-line ctx">806000542=Cannot fight to seize it. Please leave this realm first.</div><div class="diff-line ctx">806000543={0} occupied the {1} in the [Lost Realm] event. Alliance members can now station troops there! [Tap to view]</div><div class="diff-line ctx">806000545=Capture ended. You have no gains, as you captured the place for less than 5 min.</div><div class="diff-line ctx">806000546={0} attacked the troops of {2} in the {1} of the [Lost Realm] event.</div><div class="diff-line ctx">806000548=Share detailed info on {0}</div><div class="diff-line ctx">806000549=Increase the capturing attempts by {0}</div><div class="diff-line ctx">806000550=Cannot station. Please leave this realm first.</div><div class="diff-line ctx">806000551=This is your Lost Realm reward. Collect it now.</div><div class="diff-line ctx">806000553=Lost Realm Shop</div><div class="diff-line ctx">806000554=Redeem the item with Secret Trail *{0}?</div><div class="diff-line ctx">806000555=Not enough [Secret Trail]. Get more from the [Lost Realm].</div><div class="diff-line ctx">803010028=Turkey Trial</div><div class="diff-line ctx">803010029=Turkey Points</div><div class="diff-line ctx">803010030=Collect [Turkey Points] to upgrade the trial level.</div><div class="diff-line ctx">908021=1. When you have a Prestige-quality decor, you'll obtain the Prestige Fortress Skill. Activate the Prestige Fortress Skill to provide a great buff to you and your alliance members. \n2. When you have a certain elementary decor, you may consume another identical decor OR multiple Decor Chips to upgrade it into a Prestige-quality decor. \n3. The Prestige-quality decor will gain additional attributes. \n4. The Prestige-quality decor can be switched back to the original decor on the decor page. \n5. The more Prestige-quality decors you have, the more powerful the Fortress' Prestige Skill.</div><div class="diff-line ctx">810210011=Lawbringers Ultimate Weapon Upgrade Chip</div><div class="diff-line ctx">810210012=Used to upgrade the Ultimate Weapons of Lawbringers</div><div class="diff-line ctx">810210013=Wreakers Ultimate Weapon Upgrade Chip</div><div class="diff-line ctx">810210014=Used to upgrade the Ultimate Weapons of Wreakers</div><div class="diff-line ctx">810210015=Lawbringers Ultimate Weapon Breakthru Chip</div><div class="diff-line ctx">810210016=Used in the Ultimate Weapon breakthrough for Lawbringers; it can be used when the Ultimate Weapon is upgraded to a certain level</div><div class="diff-line ctx">810210017=Wreakers Ultimate Weapon Breakthru Chip</div><div class="diff-line ctx">810210018=Used in the Ultimate Weapon breakthrough for Wreakers; it can be used when the Ultimate Weapon is upgraded to a certain level</div><div class="diff-line ctx">810210019=Legendary Ultimate Weapon Upgrade Chip Chest (Selectable)</div><div class="diff-line ctx">810210020=Open it to choose an Ultimate Weapon Upgrade Chip for either Lawbringers or Wreakers</div><div class="diff-line ctx">810210021=Legendary Ultimate Weapon Breakthru Chip Chest (Selectable)</div><div class="diff-line ctx">810210022=Open it to choose an Ultimate Weapon Breakthru Chip for either Lawbringers or Wreakers</div><div class="diff-line ctx">810210023=Legendary Ultimate Weapon Blueprint Chest (Selectable)</div><div class="diff-line ctx">810210024=Open it to choose one of the Ultimate Weapon blueprints for either Lawbringers or Wreakers</div><div class="diff-line ctx">810210025=Each time "Nascent Glow" is cast, applies 1 layer of "Fate" to all teammates; each layer of Fate grants them {0} TAC ATK, {1} WPN ATK, and {2} points of Shield effect, stackable for up to {3} layers. If Nascent Glow is cast in a round, gains 1 layer of "Star" effect at the end of that round.</div><div class="diff-line ctx">810210026=Each time "Nascent Glow" is cast, applies 1 layer of "Fate" to all teammates; each layer of Fate grants them {0} TAC ATK, {1} WPN ATK, and {2} points of Shield effect, stackable for up to {3} layers. If Nascent Glow is cast in a round, gains 1 layer of "Star" effect at the end of that round; {4} chance to gain 1 more layer.</div><div class="diff-line ctx">810210027=When not in demon form, ignore {0} DEF of the target in attacks.</div><div class="diff-line ctx">810210028=When not in demon form, ignore {0} DEF of the target in attacks. When in demon form, steals {1} of the target's max HP to heal the hero, every time the hero kills a target.</div><div class="diff-line ctx">810210029=Immune to the first fatal damage, restores {0} of max HP.</div><div class="diff-line ctx">810210030=Immune to the first fatal damage, restores {0} of max HP; targets the enemy with the highest ATK and unleashes the Seven-Sided Strike, dealing {1} WPN DMG.</div><div class="diff-line ctx">606000286=Enhance human immunity through Genetic Engineering? Sounds like a huge breakthrough! Does it come with any side effects?</div><div class="diff-line ctx">606000287=We've all seen what Genetic Engineering could do. No need to doubt its effect.</div><div class="diff-line ctx">606000288=One can only relocate within alliance territory and its adjacent cities, right?</div><div class="diff-line ctx">606000289=Yes, it'll ensure we move around within a relatively safer range.</div><div class="diff-line ctx">606000290=I see. This map shows the alliance territory and adjacent cities... Now I'm clear about what I'm supposed to do.</div><div class="diff-line ctx">606000291=Good, Fernando. This is a critical step in tactical planning. Good to know we are on the same page now. Do keep this rule in mind.</div><div class="diff-line ctx">805000115=[Classic]</div><div class="diff-line ctx">805000116=[Rare]</div><div class="diff-line ctx">805000117=[Supreme]</div><div class="diff-line ctx">805000118=[Prestige]</div><div class="diff-line ctx">805000721=Icy Wonderland Peace Treaty</div><div class="diff-line ctx">805000722=Icy Wonderland Peace Treaty ({0})</div><div class="diff-line ctx">805000723=Use it to change the Peace Treaty into [Icy Wonderland Peace Treaty]</div><div class="diff-line ctx">810310001=Expedition</div><div class="diff-line ctx">810310003=Station</div><div class="diff-line ctx">810310004=Reset in</div><div class="diff-line ctx">810310005=Stage info</div><div class="diff-line ctx">810310006=Enemy Troops: {0}</div><div class="diff-line ctx">810310007=First Completion Reward</div><div class="diff-line ctx">810310008=Edit Lineup</div><div class="diff-line ctx">810310009=Unlocks in {0}</div><div class="diff-line ctx">810310010=Reward Record</div><div class="diff-line ctx">810310012=Cleared</div><div class="diff-line ctx">810310013=The road ahead is under maintenance; accessible next week.</div><div class="diff-line ctx">810310017=Lock Lineup</div><div class="diff-line ctx">810310018=Auto Challenge</div><div class="diff-line ctx">810310019=Not enough teams</div><div class="diff-line ctx">900653=Wonderful Wings</div><div class="diff-line ctx">900654=Wonderful Wings ({0})</div><div class="diff-line ctx">905064=Dreamy Aurora</div><div class="diff-line ctx">901088=Dreamy Aurora ({0})</div><div class="diff-line ctx">907929=Desert Palace ({0})</div><div class="diff-line ctx">907930=Desert Palace</div><div class="diff-line ctx">907931=Use it to change the appearance of the Fortress into [Desert Palace]</div><div class="diff-line ctx">907932=Celebratory Fireworks City</div><div class="diff-line ctx">907933=Celebratory Fireworks City ({0})</div><div class="diff-line ctx">907934=Use it to change the appearance of the Fortress into [Celebratory Fireworks City]</div><div class="diff-line ctx">907935=Party Yacht</div><div class="diff-line ctx">907936=Party Yacht ({0})</div><div class="diff-line ctx">907937=Use it to change the decor of the APC into [Party Yacht]</div><div class="diff-line ctx">907981=Celebratory Fireworks City</div><div class="diff-line ctx">907982=Desert Palace</div><div class="diff-line ctx">907983=Timeless Music Box</div><div class="diff-line ctx">805000439=Please rush again until the countdown ends.</div><div class="diff-line ctx">805000440=Rush</div><div class="diff-line ctx">805000443=Event points for the [Christmas Raid]; will contribute to the alliance's Fortress construction and can be used to get ranking rewards.</div><div class="diff-line ctx">805000444=[Christmas Raid] Mission rewards</div><div class="diff-line ctx">805000445=Commander, below are the mission rewards not claimed in time from the [Christmas Raid] event.</div><div class="diff-line ctx">805000446=[Christmas Raid] Personal construction ranking rewards</div><div class="diff-line ctx">805000447=Commander, the construction stage of this session of the [Christmas Raid] has ended. Your ranking this round: #{0}; your points: {1}. Below are your rewards.</div><div class="diff-line ctx">805000448=[Christmas Raid] Alliance construction ranking rewards</div><div class="diff-line ctx">805000449=Commander, the construction stage of this session of the [Christmas Raid] has ended. Your alliance's ranking: #{0}; Alliance Points: {1}. Below are your rewards.</div><div class="diff-line ctx">805000450=[Christmas Raid] Personal combat ranking rewards</div><div class="diff-line ctx">805000451=Commander, the combat stage of this session of the [Christmas Raid] has ended. Your ranking this round: #{0}; total DMG you dealt: {1}. Below are your rewards.</div><div class="diff-line ctx">805000452=[Christmas Raid] Alliance combat ranking rewards</div><div class="diff-line ctx">805000453=Commander, the combat stage of this session of the [Christmas Raid] has ended. Your alliance's ranking: #{0}; total DMG your alliance dealt: {1}. Below are your rewards.</div><div class="diff-line ctx">806000509=Super Realm</div><div class="diff-line ctx">806000510=Advanced Realm</div><div class="diff-line ctx">806000511=Intermediate Realm</div><div class="diff-line ctx">806000512=Basic Realm</div><div class="diff-line ctx">806000514=Stationed:</div><div class="diff-line ctx">806000520=You are now the owner of the super realm. The realm needs your protection! Edit your lineup to defend the realm.</div><div class="diff-line ctx">806000522=Bonus rewards:</div><div class="diff-line ctx">806000544=Stationing time left:</div><div class="diff-line ctx">806000547=I found {0} [Tap to view]</div><div class="diff-line ctx">806000564=You are not in a Zone that falls into the matchmaking Zone cluster of this event; please head back to your original Zone.</div><div class="diff-line ctx">606000292=The new world looks a bit...strange to me. What are we supposed to know about the place?</div><div class="diff-line ctx">606000293=First thing first, one can only relocate and launch attacks within alliance territory and its adjacent cities. Keep the rule in mind.</div><div class="diff-line ctx">606000294=That is to say, we gotta work with our allies to expand our sphere of influence, right?</div><div class="diff-line ctx">606000295=Exactly. Remember, siege attacks can bring us better benefits. We gotta leverage the rules to thrive in this world.</div><div class="diff-line ctx">707000302=Commander, Merry Christmas! This year, we've prepared awesome events and perks for you! Don't miss out!</div><div class="diff-line ctx">707000303=The train heading to &lt;color=#ff4500&gt;Winter Fest&lt;/color&gt; will arrive soon. Be sure to drop by daily to grab your login rewards!</div><div class="diff-line ctx">707000304=Commanders who check in for ten days in a row can get a deluxe present! What a good way to celebrate the winter and our encounter!</div><div class="diff-line ctx">803010031=Snowy Night Strife</div><div class="diff-line ctx">803010032=On a peaceful snowy night, king snowman sneaked upon our Fortress. Fight off the opponent to defend our Fortress!</div><div class="diff-line ctx">806000565=You haven't saved your lineups yet. Please edit the formation before occupying the realm.</div><div class="diff-line ctx">803011007=腾蛇献瑞</div><div class="diff-line ctx">803011008=元旦快乐</div><div class="diff-line ctx">803011009=元旦烟花</div><div class="diff-line ctx">803011010=元旦活动中使用的道具，活动结束后回收</div><div class="diff-line ctx">803011011=美好的祝愿送给你，愿你元旦快乐！</div><div class="diff-line ctx">803011012=元旦赠礼</div><div class="diff-line ctx">802000907=公爵的新装</div><div class="diff-line ctx">802000908=使用后可以获取整套罗兰专属装备。</div><div class="diff-line ctx">803014040=[Great Prankster] Challenge Reward</div><div class="diff-line ctx">803014041=[Great Prankster] Ranking Reward</div><div class="diff-line ctx">803014042=Dear Commander, \n\nThe [Great Prankster] event has ended. Your ranking this round: {0}, highest DMG: {1}. Below are your rewards.</div><div class="diff-line ctx">700000409=登录数据异常，请使用您初次注册的官方渠道安装包登录，以保障账号数据安全</div><div class="diff-line ctx">900575=1. Commanders will have one free hunting opportunity every day; a certain discount will be available for ten consecutive hunts performed at once. \n2. Each hunt will grant you a reward. The Commanders who successfully kill the Zombie King will receive a fantastic reward and act as a treasure hunter to bring benefits to other Commanders.\n3. During the period when the treasure hunter appears, the entire Zone will get 10% off each hunt. The members in the same alliance as the lucky Commander will also receive an additional free hunting opportunity. \n4. The cumulative number of zombies killed in the entire Zone will be recorded; the corresponding rewards can be obtained when a goal is reached. \n5. Tap the reward to view the rewards you have already received. Only the latest 100 entries of the log can be viewed. \n6. Tap the current best prize button to preview all the rewards that can be obtained in the ongoing phase. \n7. Tap the Hunter's Shop to head to the shop where you can purchase your favorite items. \n8. The initial probability of becoming a Treasure Hunter is 0.05%, which will increase gradually with the progress of zombie killing. When a Commander becomes a Treasure Hunter, the probability will be reset to its initial level. \n9. Supreme-quality treasure guaranteed within 3500 cumulative draws. \nGood luck and happy hunting!</div><div class="diff-line ctx">803015152=Antique Coin</div><div class="diff-line ctx">804000420=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Antique Coins] will no longer be usable. Therefore, we recycled your unused [Antique Coin] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">805002211=1. During the event, use Megalodon Landscape Draw Tickets to make lucky draws. \n2. Each draw grants you a random item. Check the probability page for details. \n3. Collect all Landscape structures in the set and upgrade them to the required level to unlock the special Landscape, Megalodon. Megalodon of level 3 or above can be displayed on the map.</div><div class="diff-line ctx">803018065=Ultimate Showdown</div><div class="diff-line ctx">803018066=Celebration Mystery Box</div><div class="diff-line ctx">803018067=Tech Mystery Box</div><div class="diff-line ctx">802002513=Crystal Flower</div><div class="diff-line ctx">802002514=By gifting it, the giver gains 1 Care Point and the recipient gains 1 Charm Point.</div><div class="diff-line ctx">802002515=Cocktail</div><div class="diff-line ctx">802002516=By gifting it, the giver gains 10 Care Points and the recipient gains 10 Charm Points.</div><div class="diff-line ctx">802002517=Music Box</div><div class="diff-line ctx">802002518=By gifting it, the giver gains 500 Care Points and the recipient gains 500 Charm Points.</div><div class="diff-line ctx">809400020=Panda</div><div class="diff-line ctx">809400021=Panda Blueprint</div><div class="diff-line ctx">809400022=Used to unlock and upgrade the war beast, Panda.</div><div class="diff-line ctx">810210099=When opening common and fine artifact chests, {0} chance to make an extra draw. For every {1} point(s) of LUK obtained, the chance to trigger the effect increases by 1% additionally.</div><div class="diff-line ctx">802002519=sent you a gift worth {0} Charm Point(s)</div><div class="diff-line ctx">802002520=sent the Commander a gift worth {0} Care Point(s)</div><div class="diff-line ctx">802002522=Increase a total of {0} Care Points</div><div class="diff-line ctx">802000505=Halo Chest (Selectable)</div><div class="diff-line ctx">802000506=Use it to choose one Halo skin from the options below.</div><div class="diff-line ctx">802000507=Use 1 Common Pot</div><div class="diff-line ctx">802000508=Use 1 Premium Pot</div><div class="diff-line ctx">805002218=1. During the event, use Landscape Draw Tickets to make lucky draws. \n2. Each draw grants you a random item. Check the probability page for details. \n3. A Supreme-quality Landscape is guaranteed in the 50th draw. \n4. The event lasts from 00:00:00, 6/16/2025 to 23:59:59, 6/29/2025, Game Time.</div><div class="diff-line ctx">806001302=Your alliance needs you, Commander! Please work with your allies to earn more points.</div><div class="diff-line ctx">303143=Persistent Fighter</div><div class="diff-line ctx">303144=Pioneer</div><div class="diff-line ctx">329206=You contributed a lot to the federal mission. Below are your participation reward and a reward for all: {0} feats and the reward below. Collect them now!</div><div class="diff-line ctx">605007001=New season rewards fully upgraded! Abundant resources and rare items accelerate growth, helping you rise quickly and achieve dominance!</div><div class="diff-line ctx">605007002=Season reward upgrade</div><div class="diff-line ctx">605007003=New season rewards fully upgraded! Abundant resources and rare items accelerate growth, helping you rise quickly and achieve dominance! (Note: Clean Energy items are only available in the Legion of Order Dimension.)</div><div class="diff-line ctx">605007004=New season rewards fully upgraded! Abundant resources and rare items accelerate growth, helping you rise quickly and achieve dominance! (Note: Selectable Old Elite Hero Card items are only available in the Legion of Order Dimension, and Selectable Master Ultimate Weapon Blueprint Boxes are only available in the Sunflower Dimension.)</div><div class="diff-line ctx">810210124=Maintenance Level Lv.</div><div class="diff-line ctx">810210146=Tap the pottery to switch the selected artifact set</div><div class="diff-line ctx">805005089=Spirit's Favor</div><div class="diff-line ctx">805005090=Spirit's Favor (Advanced)</div><div class="diff-line ctx">805005091=Spirit's Favor (Advanced &amp; Deluxe)</div><div class="diff-line ctx">805005092=Spirit's Favor (Deluxe)</div><div class="diff-line ctx">805005093=Gourd Points</div><div class="diff-line ctx">805005094=Used to join the [Spirit's Favor] event; will be removed after the event ends.</div><div class="diff-line ctx">805005095=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Gourd Points] will no longer be usable. Therefore, we recycled your {0} unused [Gourd Points] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">805005096=Dear Commander,\n\nYou ranked #{0} in the [Spirit's Favor] with {1} EXP! Below are your rewards! Collect them now.</div><div class="diff-line ctx">805005097=Spirit's Favor Chest</div><div class="diff-line ctx">805005098=Sweet Party</div><div class="diff-line ctx">805005099=Sweet Party (Advanced)</div><div class="diff-line ctx">805005100=Sweet Party (Advanced &amp; Deluxe)</div><div class="diff-line ctx">805005101=Sweet Party (Deluxe)</div><div class="diff-line ctx">805005102=Candy Points</div><div class="diff-line ctx">805005103=Used to join the [Sweet Party] event; will be removed after the event ends.</div><div class="diff-line ctx">805005104=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Candy Points] will no longer be usable. Therefore, we recycled your {0} unused [Candy Points] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">805005105=Dear Commander,\n\nYou ranked #{0} in the [Sweet Party] with {1} EXP! Below are your rewards! Collect them now.</div><div class="diff-line ctx">805005106=Sweet Party Chest</div><div class="diff-line ctx">810210147=Joseph | Venomous Blade</div><div class="diff-line ctx">810210148=C'mon. I'll make it quick for ya. You won't feel a thing!</div><div class="diff-line ctx">810210149=Joseph | Venomous Blade Blueprint</div><div class="diff-line ctx">810210150=Used to unlock and increase the stars of Joseph | Venomous Blade</div><div class="diff-line ctx">810210151=Focus Report</div><div class="diff-line ctx">810210152=News Coverage</div><div class="diff-line ctx">810210153=In-Depth Interview</div><div class="diff-line ctx">810210154=Key Message</div><div class="diff-line ctx">810210155=Joint Signature</div><div class="diff-line ctx">810210156=Everyone Gets a Share!</div><div class="diff-line ctx">810210157=Survive First!</div><div class="diff-line ctx">810210158=Come Prepared!</div><div class="diff-line ctx">810210159=Ready for Amputation!</div><div class="diff-line ctx">810210160=Get Even Stronger!</div><div class="diff-line ctx">810210161=Deals {0} TAC DMG to all enemies and applies 1 layer of the [Focused] status (each layer makes the targets take {1} more DMG, stackable for up to {2} layers).</div><div class="diff-line ctx">810210163=When attacking an enemy, applies the [Poisoned] status to the target, dealing {0} TAC DMG at the end of the round, lasting {1} round(s).</div><div class="diff-line ctx">810210164=Her normal attacks and Focus Skills apply 1 extra layer of the [Focused] status to the target. The stackable layers of the [Focused] status are increased by {0}.</div><div class="diff-line ctx">810210165=Teammates deal {0} more Poisoned, Burning, and Bleeding DMG. The DMG will be increased by {1} for every Minuteman deployed to the lineup.</div><div class="diff-line ctx">810210166=When teammates inflict Poisoned, Bleeding, or Burning statuses on enemies, Margaret deals {0} more DMG, stackable for up to {1} layers.</div><div class="diff-line ctx">810210167=When teammates inflict Poisoned, Bleeding, or Burning statuses on enemies, Margaret deals {0} more DMG, stackable for up to {1} layers. When the target exits Poisoned, Bleeding, or Burning statuses, reduces their ATK by {2}, stackable for up to {3} layers.</div><div class="diff-line ctx">810210168=Deals {0} WPN DMG to the target and the enemies behind the target. If there are no front-row enemies, attacks all back-row enemies instead. Applies 1 layer of the [Cutter] status to the targets (each layer reduces their DEF by {1}, stackable for up to {2} layers).</div><div class="diff-line ctx">810210169=Converts {0} of the DMG dealt by normal attacks and Focus Skills into a self-healing effect for the hero. Applies 1 extra layer of the [Cutter] status to the target.</div><div class="diff-line ctx">810210170=When any enemy receives healing or shield effects, the hero gains {0} crit rate, stackable for up to {1} layers.</div><div class="diff-line ctx">810210171=The Focus Skill inflicts some additional DMG equal to {0} of the target's max HP. Each layer of the [Cutter] status increases this DMG by {1} additionally (no more than {2} of the hero's WPN DMG).</div><div class="diff-line ctx">810210172=The hero's WPN DMG increases by {0}. For every Vindicator deployed to the lineup, the hero's WPN DMG additionally increases by {1}.</div><div class="diff-line ctx">810210173=When Joseph joins a battle, crit rate increases by {0}, with DMG Mitigation increasing by {1}. The figures drop by {2} of their max value each round.</div><div class="diff-line ctx">810210174=When Joseph joins a battle, crit rate increases by {0}, with DMG Mitigation increasing by {1}. The figures drop by {2} of their max value each round. When normal attacks and Focus Skills trigger a crit attack, the Crit DMG increases by {3}, stackable for up to {4} layers.</div><div class="diff-line ctx">803018100=Fantasy Showdown</div><div class="diff-line ctx">803018101=Warning! Viridian Hound invasion! Beware: its &lt;color=#ee1d24&gt;attacks&lt;/color&gt; come with debuffs. Let's fight it off together!</div><div class="diff-line ctx">803018102=Rules \n1. During the event, {0} will show up in the Homeworld; it will appear again somewhere else after being beaten. \n2. Commanders with a Fortress of Lv. {1} or above can dispatch troops for the challenge, with a maximum of {2} challenges allowed per day. \n3. {0} occupies desolate territories, where it hoards plundered chests. Defeating it to grab the chests, with a maximum of {3} chests obtainable per day. \n4. With a specified number of challenges completed, you can receive corresponding rewards, which will be distributed to the mailbox. The challenge attempts reset daily. \n5. Rankings will be determined by your highest damage of the day; higher damage means better rewards. The leaderboard resets daily at 0:00 (Game Time).</div><div class="diff-line ctx">803018103=Viridian Hound</div><div class="diff-line ctx">607000101=Shire Hub</div><div class="diff-line ctx">810210162=When the enemy target exits the Poisoned, Bleeding, or Burning status, {0} chance to apply the same status again to the target. At the end of the round, deals {1} TAC DMG, stackable for up to {2} layers.</div><div class="diff-line ctx">607000201=Blazing Rose</div><div class="diff-line ctx">607000202=The blaze-like petals are just like the strong affection. Use it in the [Blazing Love] event to redeem precious items.</div><div class="diff-line ctx">607000203=Blazing Love</div><div class="diff-line ctx">607000204=Collect Blazing Roses to redeem precious items</div><div class="diff-line ctx">607000205=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Blazing Roses] will no longer be usable. Therefore, we recycled your unused [Blazing Rose] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">607000206=Get it to obtain a large number of Blazing Roses.</div><div class="diff-line ctx">607000207=Fall in Love</div><div class="diff-line ctx">607000208=Fall in Love - Inception Pack</div><div class="diff-line ctx">607000209=Fall in Love - Surprise Pack</div><div class="diff-line ctx">607000210=Fall in Love - Advanced Pack</div><div class="diff-line ctx">607000211=Fall in Love - Premium Pack</div><div class="diff-line ctx">607000212=Fall in Love - Deluxe Pack</div><div class="diff-line ctx">810210179=In battles, friendly heroes' TAC DMG Bonus increases by {0}, lasting till the battle ends.</div><div class="diff-line ctx">810210180=In battle, friendly heroes' TAC DMG Bonus increases by {0}, lasting till the battle ends. Archer hero's crit rate increases by {1} at the start of each round, stackable for up to {2} layers.</div><div class="diff-line ctx">810210181=In battles, friendly heroes' WPN DMG Bonus increases by {0}, lasting till the battle ends.</div><div class="diff-line ctx">810210182=In battles, friendly heroes' WPN DMG Bonus increases by {0}, lasting till the battle ends. Commando hero's crit rate increases by {1} at the start of each round, stackable for up to {2} layers.</div><div class="diff-line ctx">810210183=In battles, friendly heroes' TAC DMG Mitigation increases by {0}, lasting till the battle ends.</div><div class="diff-line ctx">810210184=In battles, friendly heroes' TAC DMG Mitigation increases by {0}, lasting till the battle ends. Each time a friendly hero takes damage, Crit Immunity Rate increases by {1}, stackable for up to {2} layers.</div><div class="diff-line ctx">810210185=When Archer hero's crit effect hits max layers stackable, Crit DMG increases by {0}, lasting till the battle ends.</div><div class="diff-line ctx">810210186=When Commando hero's crit effect hits max layers stackable, Crit DMG increases by {0}, lasting till the battle ends.</div><div class="diff-line ctx">810210187=When a friendly hero's crit immunity effect hits the max stackable layers, DMG Mitigation increases by {0}, lasting {1} round(s).</div><div class="diff-line ctx">810210188=Eye of Horus</div><div class="diff-line ctx">810210189=A symbol of Horus, who represents royalty, majesty, and fairness. Horus is in the protection of each pharaoh.</div><div class="diff-line ctx">810210190=The Creation of Adam</div><div class="diff-line ctx">810210191=Part of a famous Renaissance chapel ceiling painting. An epitome of his exceptional painting skills.</div><div class="diff-line ctx">810210192=Five-Reign Coins</div><div class="diff-line ctx">810210193=A string of coins issued during the reigns of five emperors in the Qing Dynasty. Legend has it that the one who collects all five coins can be favored by good fortune.</div><div class="diff-line ctx">810210194=Power of Love</div><div class="diff-line ctx">810210195=Little demons are trying to break the dimensional barrier and assimilate us into evil beings! Fight them off to prevent our world from being ruined!</div><div class="diff-line ctx">810210196=1. Little demons found our world. They are now sending a vanguard troop to attack us. The only thing that can drive them away is the arrow of love! Defend our world with the power of love! \n2. Use Arrows of Love to attack the demon legion and earn rewards. \n3. For every demon you defeat, you can get a nice reward. Beware that a more powerful demon king could show up as a result. \n4. The demon king is backed by a strong evil force, and thus can't be completely wiped out. But they can be driven away for a while. By attacking the demon king, there is a chance to get both attacker rewards and the demon's treasure. \n5. There is a chance to trigger a zero-cost effect, where no Arrows of Love are consumed in several subsequent attacks against the demons. \n6. Auto-attack only works when you stay on the event page. \n7. After the event ends, unused Arrows of Love will be converted into Diamonds and sent to your mailbox.</div><div class="diff-line ctx">810210197=Little Demon</div><div class="diff-line ctx">810210198=Demon King</div><div class="diff-line ctx">810210199=Demon Mystery Box</div><div class="diff-line ctx">810210200=Demon King Mystery Box</div><div class="diff-line ctx">810210201=Arrow of Love</div><div class="diff-line ctx">810210202=Demon's Scheme</div><div class="diff-line ctx">810210203=Grab Arrows of Love to feel the power of love</div><div class="diff-line ctx">810210204=Sweet Arrow</div><div class="diff-line ctx">810210205=Shoot the enemy with the enemy's arrows</div><div class="diff-line ctx">810210206=Doki Doki</div><div class="diff-line ctx">810210207=Get it to obtain tons of Hearts.</div><div class="diff-line ctx">810210208=Congratulations, Commander! You've unlocked the demon's treasure and received the rewards.</div><div class="diff-line ctx">810210209=Defeat {0} Little Demons daily to receive the following rewards</div><div class="diff-line ctx">810210211=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Heart] will no longer be usable. Therefore, we recycled your unused [Heart] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">810210097=Sophia can discover one Lv.{0} Common Artifact Chest in the Museum each day. Open it for a chance to get a Common Pot or some Restoration Toolkit.</div><div class="diff-line ctx">810210098=Sophia discovers one Lv. {0} premium artifact chest weekly in the Museum. Open it for a chance to get the Common Pot, Premium Pot, or Slot Key.</div><div class="diff-line ctx">607000308=Ace Trooper Program</div><div class="diff-line ctx">607000309=Get multiple supplies to train your own ace soldiers!</div><div class="diff-line ctx">607000310=1. Log in daily to claim rewards. \n2. Rewards of the day not claimed in time can be collected later during the event via the event page. \n3. Rewards for days on which you do not log in cannot be claimed, nor can missed days be made up.</div><div class="diff-line ctx">607000311=Check in daily for tons of amazing rewards!</div><div class="diff-line ctx">607000401=Autumn Special</div><div class="diff-line ctx">607000402=Autumn Special - Inception Pack</div><div class="diff-line ctx">607000403=Autumn Special  - Surprise Pack</div><div class="diff-line ctx">607000404=Autumn Special  - Advanced Pack</div><div class="diff-line ctx">607000405=Autumn Special - Premium Pack</div><div class="diff-line ctx">607000406=Autumn Special  - Deluxe Pack</div><div class="diff-line ctx">607000407=Wishes under Moonlight</div><div class="diff-line ctx">607000408=Autumn Snack</div><div class="diff-line ctx">607000409=Look at the tempting golden glow around it! Used to redeem precious items in the [Wishes under Moonlight] event.</div><div class="diff-line ctx">607000410=Collect [Autumn Snacks] to redeem rare items.</div><div class="diff-line ctx">607000411=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Autumn Snacks] will no longer be usable. Therefore, we recycled your unused [Autumn Snack] *{0} and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">607000412=Get it to obtain tons of [Autumn Snacks].</div><div class="diff-line ctx">607000413=Moon-Bound Journey</div><div class="diff-line ctx">607000414=Some Autumn Snacks are scattered in various corners of the wasteland. Go find them!</div><div class="diff-line ctx">607000415=1. During the event, Moon Wells will spawn on the map daily. \n2. You have 5 attempts daily to march toward them. The attempts will be reset daily at 0:00, Game Time. \n3. Explore the Moon Wells to find precious rewards.</div><div class="diff-line ctx">607000416=Moon Wells are scattered across the wasteland. Saw that mysterious glow? There could be surprises inside them!</div><div class="diff-line ctx">607000417=Mid-Autumn Check-In</div><div class="diff-line ctx">607000418=Full Moon Challenge</div><div class="diff-line ctx">607000419=Complete designated tasks, and complete the puzzle to claim great rewards.</div><div class="diff-line ctx">805100301=Moonlit Bunny Fort</div><div class="diff-line ctx">805100302=Moonlit Bunny Fort ({0})</div><div class="diff-line ctx">805100303=Use it to change the appearance of the Fortress into [Moonlit Bunny Fort]</div><div class="diff-line ctx">805100304=Lunar Bunny</div><div class="diff-line ctx">805100305=Lunar Bunny ({0})</div><div class="diff-line ctx">805100306=Use it to change the Nameplate into [Lunar Bunny]</div><div class="diff-line ctx">805100307=Lunar Bunny</div><div class="diff-line ctx">805100308=Lunar Bunny ({0})</div><div class="diff-line ctx">805100309=Use it to change the avatar frame into [Lunar Bunny]</div><div class="diff-line ctx">805100310=Reunion Night</div><div class="diff-line ctx">805100311=Reunion Night ({0})</div><div class="diff-line ctx">805100312=Enjoy the night of reunion in the season of harvest! Use it to change the Pendant into [Reunion Night]</div><div class="diff-line ctx">805100313=Lunar Bunny</div><div class="diff-line ctx">805100314=Lunar Bunny ({0})</div><div class="diff-line ctx">805100315=Believe it or not, the bunny is the messenger from the moon. Use it to change the Profile Card Frame into [Lunar Bunny].</div><div class="diff-line ctx">805100316=Moon Palace Explorer</div><div class="diff-line ctx">805100317=Moon Palace Explorer ({0})</div><div class="diff-line ctx">805100318=Explore the Moon Palace on this Mid-Autumn Festival! Use it to change the APC appearance into [Moon Palace Explorer].</div><div class="diff-line ctx">805100319=Lunar Bunny</div><div class="diff-line ctx">805100320=Lunar Bunny ({0})</div><div class="diff-line ctx">805100321=Use it to change the Chat Bubble to [Lunar Bunny].</div><div class="diff-line ctx">113203=Improper words detected. Please enter again.</div><div class="diff-line ctx">113204=Pay {0} to purchase this bundle?</div><div class="diff-line ctx">113205=Minors cannot enter the game.</div><div class="diff-line ctx">113206=Confirm</div><div class="diff-line ctx">607000420=Bright Moon</div><div class="diff-line ctx">607000421=Moon Well</div><div class="diff-line ctx">607000501=Muted. To be lifted at {0}, Game Time.</div><div class="diff-line ctx">607000502=Your avatar did not pass the review. Reason: Inappropriate content detected.</div><div class="diff-line ctx">607000503=Your avatar did not pass the review! Reason: Suspected to contain ads.</div><div class="diff-line ctx">607000504=Your avatar did not pass the review! Reason: Other.</div><div class="diff-line ctx">607000505=Your avatar did not pass the review! Reason: Suspected to contain pornographic content</div><div class="diff-line ctx">607000506=Your avatar did not pass the review! Reason: Away from keyboard</div><div class="diff-line ctx">607000507=Your avatar did not pass the review! Reason: Possibly contains ads</div><div class="diff-line ctx">607000508=Your avatar did not pass the review. Reason: Suspected violation of ethics</div><div class="diff-line ctx">607000509=Your avatar did not pass the review! Reason: Suspected violent and terrorist content</div><div class="diff-line ctx">607000510=Your avatar did not pass the review! Reason: Suspected vulgar content</div><div class="diff-line ctx">607000511=Your avatar did not pass the review! Reason: Suspected prohibited content</div><div class="diff-line ctx">607000512=Your avatar did not pass the review! Reason: Suspected to contain QR code</div><div class="diff-line ctx">607000513=Your avatar did not pass the review! Reason: Suspected to contain political content</div><div class="diff-line ctx">607000514=Your avatar did not pass the review! Reason: Suspected of containing insults to others</div><div class="diff-line ctx">607000515=Your avatar did not pass the review! Reason: Suspected to be an invalid image</div><div class="diff-line ctx">607000516=Your avatar did not pass the review! Reason: Suspected to be invalid content</div><div class="diff-line ctx">607000726=Dear Commander,\n\nThe event has ended. Thank you for your participation. After the event ends, your [Mithril Hammers] will no longer be usable. Therefore, we recycled your {0} unused [Mithril Hammers] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">150961=Nora</div><div class="diff-line ctx">150962=Lantern Carrier</div><div class="diff-line ctx">150963=Tucker</div><div class="diff-line ctx">150964=Whisker Sentinel</div><div class="diff-line ctx">805100097=Halloween Hand</div><div class="diff-line ctx">810210212=Nora | Telepathy</div><div class="diff-line ctx">810210216=Tucker | Cat Loves You</div><div class="diff-line ctx">810210220=Prayers for the Dead</div><div class="diff-line ctx">810210221=Among the Souls</div><div class="diff-line ctx">810210222=Ancestral Blessings</div><div class="diff-line ctx">810210223=Support from Immortals</div><div class="diff-line ctx">810210224=Wildlings' Resonance</div><div class="diff-line ctx">810210232=The Tucker Shield!</div><div class="diff-line ctx">810210233=Drop Your Weapon!</div><div class="diff-line ctx">810210234=Take Your Share!</div><div class="diff-line ctx">810210235=Peekaboo!</div><div class="diff-line ctx">810210236=Play with Me!</div><div class="diff-line ctx">805100098=Halloween Hand ({0})</div><div class="diff-line ctx">805100099=Use it to change the Fortress appearance to [Halloween Hand].</div><div class="diff-line ctx">810210213=The spirits of the ancestors gather here, singing triumphantly, relying on their protection.</div><div class="diff-line ctx">810210214=Nora | Telepathy Ultimate Weapon Blueprint</div><div class="diff-line ctx">810210215=Used to unlock and Star Up Nora | Telepathy.</div><div class="diff-line ctx">810210217=Human, the cat really likes you.</div><div class="diff-line ctx">810210218=Tucker | Cat Loves You Ultimate Weapon Blueprint</div><div class="diff-line ctx">810210219=Used to unlock and Star Up Tucker | Cat Loves You.</div><div class="diff-line ctx">810210237=Your Side All acquire a Shield equal to {0} Max HP, and self receives an enhancement of {1} ATK and {2} Speed, lasting 2 rounds.</div><div class="diff-line ctx">810210238=The normal attack prioritizes the Enemy Unit with the highest ATK, applying a Weakness Status that reduces the Target's {0} ATK and {1} Speed, lasting 2 rounds.</div><div class="diff-line ctx">810210239=After releasing the Focus Skill, enhance Your Side Teammates' {0} ATK and {1} Speed, lasting 2 rounds.</div><div class="diff-line ctx">810210240=The normal attack deals additional DMG equal to {0} Max HP (up to a maximum of {1} of self ATK).</div><div class="diff-line ctx">810210241=Your Side All Heroes' HP and DMG are enhanced by {0}%, and Watchers Heroes additionally acquire a 50% enhancement Effect.</div><div class="diff-line ctx">810210242=When releasing a Focus Skill, the Unit with the highest and lowest HP on Your Side acquires a Shield equal to {0} of their max HP, reducing DMG Taken by {1}, lasting {2} rounds.</div><div class="diff-line ctx">810210243=When releasing a Focus Skill, the Unit with the highest and lowest HP on Your Side acquires a Shield equal to {0} of their max HP and reduces DMG Taken by {1} for {2} rounds. The Unit with the highest and lowest HP on the Enemy Side has DMG Taken increased by {3} for {4} rounds.</div><div class="diff-line ctx">814000101=Flag Message</div><div class="diff-line ctx">814000102=Flag Avatar</div><div class="diff-line ctx">814000103=Reason</div><div class="diff-line ctx">814000104=Politically sensitive</div><div class="diff-line ctx">814000105=Vulgar or sexually explicit</div><div class="diff-line ctx">814000106=Suspicion of gambling</div><div class="diff-line ctx">814000107=Fraud &amp; ad</div><div class="diff-line ctx">814000108=Game cheats</div><div class="diff-line ctx">814000109=Other</div><div class="diff-line ctx">814000113=Content</div><div class="diff-line ctx">805100601=Grill Fort</div><div class="diff-line ctx">805100604=Bumper Harvest</div><div class="diff-line ctx">805100610=Blazing Feather</div><div class="diff-line ctx">805100613=Bumper Harvest</div><div class="diff-line ctx">805100616=Turkey Parade</div><div class="diff-line ctx">805000496=Thanksgiving Feast</div><div class="diff-line ctx">805000491=Pumpkin Pie Point</div><div class="diff-line ctx">814000110=Tap to input reason, mandatory when selecting [Other]</div><div class="diff-line ctx">814000111={0} characters remaining</div><div class="diff-line ctx">814000112=Please input other reason</div><div class="diff-line ctx">814000114=Please select the content you want to report</div><div class="diff-line ctx">814000115=Please select a reason for reporting</div><div class="diff-line ctx">607000570=If you haven't received the verification email, check your spam folder or confirm if the email address you entered is correct.\nNote: To protect your account security, [mailbox account] cannot be unlinked.</div><div class="diff-line ctx">805100602=Grill Fort{0})</div><div class="diff-line ctx">805100603=Can you smell the aroma? It's the stunning turkey feast! Use it to change the fortress appearance to [Grill Fort]</div><div class="diff-line ctx">805100605=Bumper Harvest({0})</div><div class="diff-line ctx">805100606=Use it to change the Nameplate into [Bumper Harvest]</div><div class="diff-line ctx">805100611=Blazing Feather({0})</div><div class="diff-line ctx">805100612=It hovers, radiating colorful feathers. Use it to change the pendant to [Blazing Feather]</div><div class="diff-line ctx">805100614=Bumper Harvest({0})</div><div class="diff-line ctx">805100615=It's the season of gratitude and harvest! Use it to change the profile card frame to [Bumper Harvest]</div><div class="diff-line ctx">805100617=Turkey Parade({0})</div><div class="diff-line ctx">805100618=A majestic turkey parading around! Use it to change the APC appearance to [Turkey Parade]</div><div class="diff-line ctx">805100619=Bumper Harvest</div><div class="diff-line ctx">805100620=Bumper Harvest({0})</div><div class="diff-line ctx">805100621=Use it to change the Message Frame into [Bumper Harvest]</div><div class="diff-line ctx">805000488=[Thanksgiving Feast] Advanced</div><div class="diff-line ctx">805000489=[Thanksgiving Feast] Advanced &amp; Deluxe</div><div class="diff-line ctx">805000490=[Thanksgiving Feast] Deluxe</div><div class="diff-line ctx">805000492=Used to join the [Thanksgiving Feast] event; will be removed after the event ends.</div><div class="diff-line ctx">805000493=Dear Commander,\n\nThe event has ended. Thank you for your participation. After the event ends, your [Pumpkin Pie Points] will no longer be usable. Therefore, we recycled your {0} unused [Pumpkin Pie Points] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">805000494=Dear Commander,\n\nYou ranked #{0} in the [Thanksgiving Feast] with {1} EXP! Below are your rewards! Collect them now.</div><div class="diff-line ctx">805000495=[Thanksgiving Feast] Chest</div><div class="diff-line ctx">810210225=Deals {0} TAC DMG to all enemy targets, reduces DMG Mitigation of their front-row units by {1}, reduces DMG dealt by their back-row units by {2}, and enhances self DMG and DMG Mitigation by {3}. All effects last 2 rounds.</div><div class="diff-line ctx">810210226=When any ally hero is KIA, other ally heroes' ATK is enhanced by {0}; when any enemy hero is KIA, the DEF of remaining enemy heroes is reduced by {1} (can trigger up to 4 times per fight).</div><div class="diff-line ctx">810210227=Each time treated, self DMG is enhanced by {0}, stacking up to 5 layers.</div><div class="diff-line ctx">810210228=When casting "Prayers for the Dead," DMG is enhanced by {0}, and skill effect is enhanced by {1}.</div><div class="diff-line ctx">810210229=Increases self TAC ATK by {0}, and additionally enhances by {1} for each deployed Wildling.</div><div class="diff-line ctx">810210230=When any ally hero is KIA, recovers {0} Focus.</div><div class="diff-line ctx">810210231=When any ally hero is KIA, recovers {0} Focus and restores {1} max HP for all ally units (can trigger up to 3 times per fight).</div><div class="diff-line ctx">805200001=Skyripper Model</div><div class="diff-line ctx">805200002=Panda Model</div><div class="diff-line ctx">805200003=A model forged with the war beast Skyripper as the prototype, featuring sharp eyes and a soaring posture, truly the king of the skies.</div><div class="diff-line ctx">805200004=A model forged with the war beast Panda as the prototype, featuring sturdy armor and a robust physique, truly the king of the battlefield.</div><div class="diff-line ctx">805200005=Storage Battery</div><div class="diff-line ctx">805200006=Storage Crystal</div><div class="diff-line ctx">805200009=Unlock Skill</div><div class="diff-line ctx">805200010=Skill Upgrade Effect</div><div class="diff-line ctx">805200011=Beast's Trail - Light</div><div class="diff-line ctx">805200012=Beast's Trail - Deep</div><div class="diff-line ctx">805100607=Bumper Harvest</div><div class="diff-line ctx">805100608=Bumper Harvest ({0})</div><div class="diff-line ctx">805100609=Use it to change the avatar frame to [Bumper Harvest].</div><div class="diff-line ctx">607000801=Thanksgiving Special</div><div class="diff-line ctx">607000802=Thanksgiving Special - Inception Pack</div><div class="diff-line ctx">607000803=Thanksgiving Special - Surprise Pack</div><div class="diff-line ctx">607000804=Thanksgiving Special - Advanced Pack</div><div class="diff-line ctx">607000805=Thanksgiving Special - Premium Pack</div><div class="diff-line ctx">607000806=Thanksgiving Special - Deluxe Pack</div><div class="diff-line ctx">607000807=Bountiful Adventure</div><div class="diff-line ctx">607000808=Tasty Pumpkins are scattered across the land. Search for them now!</div><div class="diff-line ctx">607000809=1. During the event, Pumpkin Fields will refresh daily across the World.\n2. Commanders have a daily deployment limit of 5 times, which resets at 0:00 (Game Time).\n3. Explore Pumpkin Fields to acquire precious rewards.</div><div class="diff-line ctx">607000810=It looks like an ordinary Pumpkin Field, but surprises may be hidden inside!</div><div class="diff-line ctx">607000811=Pumpkin Field</div><div class="diff-line ctx">607000812=Warning! Ferocious monsters are invading! Beware: their &lt;color=#ee1d24&gt;ATK&lt;/color&gt; causes negative effects. Face them bravely and quell the chaos!</div><div class="diff-line ctx">607000813=The golden waves of wheat are swallowed by its shadow, making it hard to resist.</div><div class="diff-line ctx">607000814=Rules \n1. During the event, {0} will show up in the Homeworld; it will appear again somewhere else after being beaten. \n2. Commanders with a Fortress of Lv. {1} or above can dispatch troops for the challenge, with a maximum of {2} challenges allowed per day. \n3. {0} occupies desolate territories, where it hoards plundered chests. Defeating it to grab the chests, with a maximum of {3} chests obtainable per day. \n4. With a specified number of challenges completed, you can receive corresponding rewards, which will be distributed to the mailbox. The challenge attempts reset daily. \n5. Rankings will be determined by your highest damage of the day; higher damage means better rewards. The leaderboard resets daily at 0:00 (Game Time).</div><div class="diff-line ctx">607000815=Killed {0}</div><div class="diff-line ctx">607000816=Dear Commander, \n\nYou launched {1} attacks in the [{0}] event. Below are your rewards.</div><div class="diff-line ctx">607000817=Greedy Tyrant</div><div class="diff-line ctx">607000818=Harvest Crisis</div><div class="diff-line ctx">607000819=The Thanksgiving Feast is about to begin, but the scent of harvest has drawn the embodiment of disaster. The Greedy Tyrant has awakened from the darkness!</div><div class="diff-line ctx">607000820=Thanksgiving Chest</div><div class="diff-line ctx">607000821=The chest radiates residual warmth, seemingly still carrying the aroma of the Feast.</div><div class="diff-line ctx">607000822="Harvest Crisis" Challenge Reward</div><div class="diff-line ctx">607000823="Harvest Crisis" Ranking Reward</div><div class="diff-line ctx">607000824=Dear Commander,\n\nThe "Harvest Crisis" ranking event has ended. Your ranking this round: {0}, highest DMG: {1}. Below are your rewards.</div><div class="diff-line ctx">607000825=Pumpkin Feast</div><div class="diff-line ctx">607000826=Collect Tasty Pumpkins to redeem rare items.</div><div class="diff-line ctx">607000827=Tasty Pumpkin</div><div class="diff-line ctx">607000828=The overflowing aroma adds to the joy of the harvest. Can be redeemed for rare items in the Phantom Market.</div><div class="diff-line ctx">607000829=Dear Commander, \n\nThe event has ended. Thank you for your participation. After the event ends, your [Tasty Pumpkins] will no longer be usable. Therefore, we recycled your {0} unused [Tasty Pumpkins] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">607000830=Upon purchase, acquire a large number of Tasty Pumpkins.</div><div class="diff-line ctx">607000831=Thanksgiving Check-in</div><div class="diff-line ctx">814000116=Golden Sun Bird</div><div class="diff-line ctx">814000117=An artifact from China's Shang and Zhou dynasties, showcasing the exquisite craftsmanship of ancient Chinese people and their worship of the sun.</div><div class="diff-line ctx">814000118=Jackal-headed Statue</div><div class="diff-line ctx">814000119=A jackal-headed guide for souls in Egyptian mythology—not a dog!</div><div class="diff-line ctx">814000120=User Agreement &amp; Terms of Services</div><div class="diff-line ctx">814000121=I agree to all the Last Fortress terms: I agree to the Terms of Use (required), agree to the collection and use of my personal data (required), agree to the collection and use of my personal data (optional), agree to receive promotional information (optional), and confirm I am over 14 years old (required).</div><div class="diff-line ctx">814000122=Agree to Terms of Use &lt;color=#ee1d24&gt;(required)&lt;/color&gt;</div><div class="diff-line ctx">814000123=https://www.im30.net/tos.html</div><div class="diff-line ctx">814000124=Agree to the collection and use of my personal data &lt;color=#ee1d24&gt;(required)&lt;/color&gt;</div><div class="diff-line ctx">814000125=Agree to the collection and use of my personal data (optional)</div><div class="diff-line ctx">814000126=https://www.im30.net/collect.html</div><div class="diff-line ctx">814000127=Agree to receive promotional information (optional)</div><div class="diff-line ctx">814000128=(Agree to receive updates on events/benefits provided by Last Fortress via mobile phone and email.)</div><div class="diff-line ctx">814000129=I confirm I am over 14 years old &lt;color=#ee1d24&gt;(required)&lt;/color&gt;</div><div class="diff-line ctx">814000130=https://www.im30.net/privacy.html</div><div class="diff-line ctx">814000131=Please tick all required items</div><div class="diff-line ctx">814000132=Wasteland Coin *5</div><div class="diff-line ctx">805200007=Storage Battery containing powerful energy, used to charge the Enercore.</div><div class="diff-line ctx">805200008=Energy Crystal that instantly releases immense energy to trigger an Enercore Breakthru.</div><div class="diff-line ctx">805200035=Charging</div><div class="diff-line ctx">805200036=Charge</div><div class="diff-line ctx">805200037=Enercore stats</div><div class="diff-line ctx">805200038=Unlocking Condition</div><div class="diff-line ctx">805200039=Decor Preview</div><div class="diff-line ctx">805200040=Skill Description</div><div class="diff-line ctx">805200041=Go charge to activate the Enercore.</div><div class="diff-line ctx">805200042=Display Beast's Trail?</div><div class="diff-line ctx">805200043=The current Enercore can undergo a Breakthru. Go to Breakthru?</div><div class="diff-line ctx">805200044=Charging Breakthru</div><div class="diff-line ctx">805200045=Charge to Star-Up</div><div class="diff-line ctx">805200046=Enercore and charging are not yet unlocked. Coming Soon.</div><div class="diff-line ctx">805200047=Consume items to proceed with the Breakthru?</div><div class="diff-line ctx">805200048=Enercore Stats</div><div class="diff-line ctx">805200049=Reset the current war beast's Enercore?\nResetting will refund {0} of the item cost.</div><div class="diff-line ctx">805200013=Energy Vault</div><div class="diff-line ctx">805200014=Open the Energy Vault to acquire powerful tech energy!</div><div class="diff-line ctx">805200015=1. During the event, consume specified items to randomly acquire a reward from the Energy Vault.\n2. Additional rewards can be claimed based on the accumulated number of rewards obtained.</div><div class="diff-line ctx">805200016=Energy Supply</div><div class="diff-line ctx">805200017=Purchase to acquire a large number of Energy Keys.</div><div class="diff-line ctx">805200018=Energy Key</div><div class="diff-line ctx">805200019=Use this key to open the [Energy Vault] and randomly acquire a reward.</div><div class="diff-line ctx">805200020=Storage Battery Sale</div><div class="diff-line ctx">805200021=Energy Crystal Sale</div><div class="diff-line ctx">805200022=Fountain</div><div class="diff-line ctx">805200023=Flower Bed</div><div class="diff-line ctx">805200024=Bellflower</div><div class="diff-line ctx">805200025=Cactus</div><div class="diff-line ctx">805200026=Floral Floor</div><div class="diff-line ctx">805200027=Acquire the Manor Landscape, Garden Fountain</div><div class="diff-line ctx">805200028=Acquire the Manor Landscape, Flower Bed</div><div class="diff-line ctx">805200029=Acquire the Manor Landscape, Bellflower</div><div class="diff-line ctx">805200030=Acquire the Manor Landscape, Cactus</div><div class="diff-line ctx">805200031=Acquire the Manor Landscape, Floral Floor</div><div class="diff-line ctx">805200032=Garden</div><div class="diff-line ctx">805200033=Floral Adventure</div><div class="diff-line ctx">805200034=1. During the event, use Landscape Draw Tickets to make lucky draws. \n2. Each draw grants you a random item. Check the probability page for details. \n3. A Supreme-quality Landscape is guaranteed in the 50th draw.</div><div class="diff-line ctx">813000106=Mutated Zombies</div><div class="diff-line ctx">813000107=A new season has arrived! Mutated Zombie rewards are enhanced, and you can additionally acquire a new item—Storage Battery!</div><div class="diff-line ctx">813000108=During the event, kill Mutated Zombies to acquire the new reward item, Storage Battery. The higher the level of the Mutated Zombie defeated, the more you will obtain!</div><div class="diff-line ctx">813000109=Exclusive Challenge Extra Rewards</div><div class="diff-line ctx">813000111=Attempts Refresh Time:</div><div class="diff-line ctx">813000112=Go to Challenge</div><div class="diff-line ctx">810210244=Drako Judgement</div><div class="diff-line ctx">810210245=Outrageous Strike</div><div class="diff-line ctx">810210246=Draco Armor</div><div class="diff-line ctx">810210247=During the fight, all ally heroes' STR, INT, AGI, and VIT are increased by 3%, while all enemy heroes' STR, INT, AGI, and VIT are decreased by 3%.</div><div class="diff-line ctx">810210248=During the fight, all ally heroes' STR, INT, AGI, and VIT are increased by 3%, while all enemy heroes' STR, INT, AGI, and VIT are decreased by 3%. At the end of each round, there is a 60% probability that an ally hero will clear 1 negative status.</div><div class="diff-line ctx">810210251=During the fight, all ally heroes' DMG Taken is reduced by 10%, and there is a 20% probability to be immune to the damage when taking damage.</div><div class="diff-line ctx">805200053=1. War beasts require blueprints to activate. Once activated, they can participate in battles in the World.\n2. Each war beast has basic attributes that are effective for all heroes without needing to deploy the war beast.\n3. Use blueprints to upgrade war beasts, enhancing their basic attributes and unlocking new module slots.\n4. Modules can be equipped in module slots, with each slot only supporting a specific type of module.\n5. Modules have levels, and the sum of equipped module levels determines the war beast's modification level.\n6. Increasing the modification level grants corresponding modification attributes; higher levels mean stronger attributes.\n7. Modification attributes are only effective in battles for heroes deployed in your team.\n8. In the "Module" function, low-level modules can be fused into advanced modules.\n9. When a war beast reaches max level, its Enercore can be unlocked and charged, continuously enhancing its attributes.\n10. Each Enercore requires six charges, with each charge increasing its star level. Once fully charged, tap to break through the Enercore, improving its quality.\n11. Enercore breakthroughs significantly enhance existing attributes or unlock powerful war beast skills.</div><div class="diff-line ctx">461046=1. War beasts require blueprints to activate. Once activated, they can participate in battles in the World.\n2. Each war beast has basic attributes that are effective for all heroes without needing to deploy the war beast.\n3. Use blueprints to upgrade war beasts, enhancing their basic attributes and unlocking new module slots.\n4. Modules can be equipped in module slots, with each slot only supporting a specific type of module.\n5. Modules have levels, and the sum of equipped module levels determines the war beast's modification level.\n6. Increasing the modification level grants corresponding modification attributes; higher levels mean stronger attributes.\n7. Modification attributes are only effective in battles for heroes deployed in your team.\n8. In the "Module" function, low-level modules can be fused into advanced modules.</div><div class="diff-line ctx">621068=Total CP reaches {0}</div><div class="diff-line ctx">805200050=Enercore attribute (Max Level)</div><div class="diff-line ctx">805200051=Enercore</div><div class="diff-line ctx">805200052=Max stars</div><div class="diff-line ctx">805200054=Unlock Enercore after war beast reaches Max Level</div><div class="diff-line ctx">805200055=Hide Beast's Trail?</div><div class="diff-line ctx">810210249=During the fight, enhance all ally heroes' Focus DMG by 10%. At the start of each round, all ally heroes recover 100 Focus Value.</div><div class="diff-line ctx">810210250=During the fight, enhance all ally heroes' Focus DMG by 20%. At the start of each round, all ally heroes recover 100 Focus Value and reduce 100 Focus Value from one random enemy hero.</div><div class="diff-line ctx">810210252=During the fight, all ally heroes' DMG Taken is reduced by 15%, and there is a 30% probability to be immune to the current DMG when taking damage. At the end of each round, the ally hero with the lowest HP percentage recovers 10% Max HP.</div><div class="diff-line ctx">803018016=Frozen Defense</div><div class="diff-line ctx">803018019=Snowman</div><div class="diff-line ctx">803018020=Snowman King</div><div class="diff-line ctx">607000901=Christmas Party</div><div class="diff-line ctx">607000902=Christmas Check-in</div><div class="diff-line ctx">607000904=Santa's Scavenger Hunt</div><div class="diff-line ctx">607000907=Miraculous Tree</div><div class="diff-line ctx">607000909=Winter Hunt</div><div class="diff-line ctx">607000912=Christmas Zombie</div><div class="diff-line ctx">607000914=Santa's Gift Vault</div><div class="diff-line ctx">607000920=Surprise Christmas Mystery Box</div><div class="diff-line ctx">607000921=Jolly Christmas Mystery Box</div><div class="diff-line ctx">607000922=Christmas Mystery Box</div><div class="diff-line ctx">607000923=Winter Special</div><div class="diff-line ctx">607000929=Frosty Fang Raider</div><div class="diff-line ctx">607000931=Desperate Frozen Night</div><div class="diff-line ctx">607000933=Icy Chest</div><div class="diff-line ctx">607000938=Christmas Supplies</div><div class="diff-line ctx">607000944=Snowman Mystery Box</div><div class="diff-line ctx">607000945=Snowman King Mystery Box</div><div class="diff-line ctx">607000946=Boom Bomb</div><div class="diff-line ctx">607000949=Boom Perk</div><div class="diff-line ctx">805100701=Aurora Fort</div><div class="diff-line ctx">805100704=Snow Fiesta</div><div class="diff-line ctx">805100710=Jolly Snowman</div><div class="diff-line ctx">805100716=Snowball APC</div><div class="diff-line ctx">1010000105=Candy Cane</div><div class="diff-line ctx">805000468=Gingerbread</div><div class="diff-line ctx">805000201=Christmas Is Here</div><div class="diff-line ctx">805000271=Frosty Baron</div><div class="diff-line ctx">607000916=Ice Coin</div><div class="diff-line ctx">803011017=Doomsday Clan</div><div class="diff-line ctx">803011018=Paw Brawler</div><div class="diff-line ctx">805100419=Snowy Christmas</div><div class="diff-line ctx">803018025=Commander {1} of Zone {0} defeated the Snowman King in the {2} event, earning Boom Bomb *{3}.</div><div class="diff-line ctx">803018026=Defeat {0} Snowmen daily to acquire the following rewards.</div><div class="diff-line ctx">607000903=1. During the event, log in to claim the daily check-in rewards.\n2. If you miss a day, you can remedy it by spending a specified number of Diamonds.\n3. If you log in but don't claim the reward, you can claim it the next day.</div><div class="diff-line ctx">607000905=Rumor has it that Santa Claus likes to place presents under the Christmas tree outside. Let's go find them!</div><div class="diff-line ctx">607000906=1. During the event, Miraculous Trees will refresh daily across the world.\n2. Commanders have a daily deployment limit of 5 times, which resets at 0:00 (Game Time).\n3. Explore the Miraculous Trees to acquire tons of precious rewards.</div><div class="diff-line ctx">607000908=Presents are placed under the Christmas tree, and faintly written in the snow nearby: 'Meeting you is a miracle.'</div><div class="diff-line ctx">607000910=On this special festival, zombies are stirring. We must eliminate them!</div><div class="diff-line ctx">607000911=1. During the event, a large number of Christmas Zombies will refresh daily across the world.\n2. Commanders have {0} deployment attempts daily, which reset at 0:00 (Game Time).\n3. Defeat Christmas Zombies to acquire tons of precious rewards.</div><div class="diff-line ctx">607000913=Zombies wearing Christmas hats look even more ferocious.</div><div class="diff-line ctx">607000915=Collect Ice Coins to redeem rare items. Thank you for your continued support and companionship!</div><div class="diff-line ctx">607000918=Dear Commander,\n\nThe event has ended. Thank you for your active participation. After the event, your [Ice Coins] will no longer be usable. Therefore, we have recycled your {0} unused [Ice Coins] and provided the following items as compensation. Thank you for your great support, and enjoy the game!</div><div class="diff-line ctx">607000919=After purchase, acquire tons of Ice Coins.</div><div class="diff-line ctx">607000924=Winter Special - Inception Pack</div><div class="diff-line ctx">607000925=Winter Special - Surprise Pack</div><div class="diff-line ctx">607000926=Winter Special - Advanced Pack</div><div class="diff-line ctx">607000927=Winter Special - Premium Pack</div><div class="diff-line ctx">607000928=Winter Special - Deluxe Pack</div><div class="diff-line ctx">607000930=Clad in armor encrusted with ice crystals, it emits a chilling aura, making it a fearsome hound to behold.</div><div class="diff-line ctx">607000932=Christmas night is about to begin, and suddenly the Frosty Fang Raider appears, its deafening roar echoing from afar...</div><div class="diff-line ctx">607000934=A chest once tightly gripped by the Frosty Fang Raider over a great distance, still exuding a biting chill.</div><div class="diff-line ctx">607000935=Desperate Frozen Night Challenge Reward</div><div class="diff-line ctx">607000936=Desperate Frozen Night Ranking Reward</div><div class="diff-line ctx">607000937=Dear Commander, \n\nThe [Desperate Frozen Night] ranking event has ended. Your ranking this round: {0}, highest DMG: {1}. Below are your rewards.</div><div class="diff-line ctx">607000939=Frozen Defense</div><div class="diff-line ctx">607000940=Snowmen have magically appeared in this world. Kill them to guard our homeworld!</div><div class="diff-line ctx">607000941=1. Snowmen have discovered our world and sent a vanguard to attack. Use bombs to repel them and guard our homeworld!\n2. During the event, use Boom Bombs to attack the Snowman Legion and acquire various rewards.\n3. Each time you kill a Snowman, you will receive a generous victory reward, but it may also attract a stronger Snowman King.\n4. The Snowman King is the leader of the Snowmen and cannot be completely destroyed but can be temporarily repelled. Attacking the Snowman King not only grants richer attack rewards but also a chance to win Winter Treasures.\n5. When using Boom Bombs to attack, there is a probability of triggering a no-cost effect. Once triggered, subsequent attacks for a certain number of times will not consume Boom Bombs.\n6. Auto-attack is only effective when the event interface is open.\n7. After the event ends, unused Boom Bombs will be automatically redeemed for Diamonds and sent to your mailbox.</div><div class="diff-line ctx">607000942=Snowman</div><div class="diff-line ctx">607000943=Snowman King</div><div class="diff-line ctx">607000947=The fiery bomb contains terrifying power, making it the ultimate item to counter Snowmen!</div><div class="diff-line ctx">607000948=Snowman King Incoming</div><div class="diff-line ctx">607000950=The power of bombs, Snowman Buster!</div><div class="diff-line ctx">607000951=Kill {0} Snowmen daily to acquire the following rewards.</div><div class="diff-line ctx">607000952=Dear Commander, \n\nThe event has ended. Thank you for your active participation. After the event, your [Boom Bombs] are no longer usable. Therefore, we have recycled your {0} unused [Boom Bombs] and provided the following items as compensation. Thank you for your support, and enjoy the game!</div><div class="diff-line ctx">805100702=Aurora Fort {0}</div><div class="diff-line ctx">805100703=Can you hear the sound of reindeer running? Santa Claus is on his way to deliver presents! Use it to change the fortress appearance to [Aurora Fort].</div><div class="diff-line ctx">805100705=Snow Fiesta ({0})</div><div class="diff-line ctx">805100706=Use it to change the Nameplate into [Snow Fiesta].</div><div class="diff-line ctx">805100707=Snow Fiesta</div><div class="diff-line ctx">805100708=Snow Fiesta ({0})</div><div class="diff-line ctx">805100709=Use it to change the avatar frame into [Snow Fiesta].</div><div class="diff-line ctx">805100711=Christmas Snowman ({0})</div><div class="diff-line ctx">805100712=A snowman dressed in Christmas attire, dancing in the air. Use it to change the pendant to [Christmas Snowman].</div><div class="diff-line ctx">805100713=Snow Fiesta</div><div class="diff-line ctx">805100714=Snow Fiesta ({0})</div><div class="diff-line ctx">805100715=Ready to receive the blessings of the Christmas season? Use it to change the profile card frame to [Snow Fiesta].</div><div class="diff-line ctx">805100717=Snowball APC ({0})</div><div class="diff-line ctx">805100718=It's not pushing a snowball, but a festive surprise rolling to your doorstep! Use it to change the APC appearance to [Snowball APC].</div><div class="diff-line ctx">805100719=Snow Fiesta</div><div class="diff-line ctx">805100720=Snow Fiesta ({0})</div><div class="diff-line ctx">805100721=Use it to change the message frame to [Snow Fiesta].</div><div class="diff-line ctx">1010000101=Christmas Party</div><div class="diff-line ctx">1010000102=[Christmas Party] Advanced</div><div class="diff-line ctx">1010000103=[Christmas Party] Advanced &amp; Deluxe</div><div class="diff-line ctx">1010000104=[Christmas Party] Deluxe</div><div class="diff-line ctx">1010000106=Used to join the [Christmas Party] event; will be recycled after the event ends.</div><div class="diff-line ctx">1010000107=Dear Commander,\n\nThe event has ended. Thank you for your participation. After the event ends, your [Candy Cane Points] will no longer be usable. Therefore, we recycled your {0} unused [Candy Cane Points] and would like to send you the following items as compensation. Thank you for your support. Happy gaming!</div><div class="diff-line ctx">1010000108=Dear Commander,\n\nYou ranked #{0} in the [Christmas Party] with {1} EXP! Congratulations on acquiring the following rewards! Collect them now.</div><div class="diff-line ctx">1010000109=[Christmas Party] Chest</div><div class="diff-line ctx">805000469=Event Points for [Christmas Is Here] can support the alliance's Fortress Construction and help compete for leaderboard rewards.</div><div class="diff-line ctx">805000470=[Christmas Is Here] Mission rewards</div><div class="diff-line ctx">805000471=Dear Commander, below are the mission rewards you have not yet claimed from the [Christmas Is Here] event.</div><div class="diff-line ctx">805000472=[Christmas Is Here] Personal Construction Stage leaderboard Rewards</div><div class="diff-line ctx">805000473=Dear Commander, the construction stage ranking event of this session of [Christmas Is Here] has ended. Your ranking this round: #{0}; your points: {1}. Below are your rewards.</div><div class="diff-line ctx">805000474=[Christmas Is Here] Alliance Construction Stage leaderboard rewards</div><div class="diff-line ctx">805000475=Dear Commander, the construction stage of this session of the [Christmas Is Here] event has ended. Your alliance's ranking: #{0}; Alliance Points: {1}. Below are your rewards.</div><div class="diff-line ctx">805000476=[Christmas Is Here] Personal combat ranking rewards</div><div class="diff-line ctx">805000477=Dear Commander, the combat stage of this session of the [Christmas Is Here] event has ended. Your ranking this round: #{0}; total DMG you dealt: {1}. Below are your rewards.</div><div class="diff-line ctx">805000478=[Christmas Is Here] Alliance Fight Stage leaderboard rewards</div><div class="diff-line ctx">805000479=Dear Commander, the combat stage of this session of the [Christmas Is Here] event has ended. Your alliance's ranking: #{0}; total DMG your alliance dealt: {1}. Below are your rewards.</div><div class="diff-line ctx">805000441=The Frosty Baron has not been summoned yet; please go to the Event Page to summon it.</div><div class="diff-line ctx">805000442={0} Frosty Baron has been relocated; Go to Fight.</div><div class="diff-line ctx">805000454=The Frosty Baron is about to appear.</div><div class="diff-line ctx">805000212=Deep in the snowy plains lies a treehouse, which has undergone a magical transformation before Christmas.</div><div class="diff-line ctx">805000214=Event Rules:\n1. Warm-up Period\n- If the Commander does not join an alliance before the warm-up period ends, they cannot participate in the Christmas Is Here event.\n2. Construction Period\n- Commanders can earn points and rewards during the construction period by completing daily missions, achievement missions, and donation tasks.\n- Points contribute to the alliance's Treehouse fortress construction progress. Once the fortress is completed, a buff will be granted: 5% DMG increase against the Frosty Baron.\n- Ranking rewards for points will be distributed via mailbox after the construction period ends.\n- Commanders must achieve a certain number of points to qualify for alliance point leaderboard rewards.\n3. Combat Period\n- During the combat period, R4 or the alliance leader can summon the Frosty Baron, and alliance members can attack it. The higher the total damage dealt to the Frosty Baron, the higher the ranking.\n- Damage ranking rewards will be distributed via mailbox after the combat period ends.\n- Commanders must deal a certain amount of damage to qualify for alliance damage leaderboard rewards.\n4. Display Period\n- During the display period, Commanders can view their own and their alliance's leaderboard information.</div><div class="diff-line ctx">805000243=The Frosty Baron is about to descend.</div><div class="diff-line ctx">805000245=1. Commanders can earn points and rewards by completing daily missions, achievement missions, and donation tasks.\n2. Achievement missions are one-time tasks and cannot be repeated.\n3. Points contribute to the alliance's Treehouse fortress construction progress. Once the fortress is completed, a buff will be granted: 5% DMG increase against the Frosty Baron.</div><div class="diff-line ctx">805000266=[{0}] Frosty Baron</div><div class="diff-line ctx">805000272=The Frosty Baron has descended; Go to ATK.</div><div class="diff-line ctx">805000277=The alliance has not summoned the Frosty Baron.</div><div class="diff-line ctx">805000280=Buff from completed Fortress construction: 5% DMG increase against the Frosty Baron.</div><div class="diff-line ctx">805000283=Tap to Summon the Frosty Baron.</div><div class="diff-line ctx">805000286={0} Frosty Baron has appeared.</div><div class="diff-line ctx">805000287={0} Frosty Baron has appeared; Go to Fight.</div><div class="diff-line ctx">805000296={0} Frosty Baron</div><div class="diff-line ctx">805000297={0} Frosty Baron</div><div class="diff-line ctx">805000407=Welcome to the Christmas Is Here event.</div><div class="diff-line ctx">805000409=Points support the alliance's Fortress construction. Completing the Fortress grants a DMG Bonus against the Frosty Baron.</div><div class="diff-line ctx">805000411=When entering the combat stage of the event, alliance R4 and above members can summon the Frosty Baron.</div><div class="diff-line ctx">805000412=The cumulative DMG dealt to the Frosty Baron daily will contribute to personal and alliance damage rankings, with rewards distributed based on rankings.</div><div class="diff-line ctx">805000413=Fight side by side with your allies, build your homeworld, and battle against the Frosty Baron!</div><div class="diff-line ctx">607000917=A currency made of ice, its crystal-clear appearance reveals its high value. It can be redeemed for rare items in Santa's Gift Vault.</div><div class="diff-line ctx">805100420=Snowy Christmas ({0})</div><div class="diff-line ctx">805100421=Wings born in the snow during Christmas, symbolizing light, joy, and blessings. Use it to grow a pair of ice and snow wings behind the fortress.</div><div class="diff-line ctx">810210253=In battles, ally heroes' DMG Mitigation increases by {0}, lasting till the battle ends.</div><div class="diff-line ctx">810210254=In battles, ally heroes' DMG Mitigation increases by {0}, lasting till the battle ends. Defender heroes' Crit Immunity Rate increases by {1} at the start of each round, stackable for up to {2} layers.</div><div class="diff-line ctx">810210255=When ally heroes' Crit Immunity Rate effect reaches the limit, DEF increases by {0}, lasting {1} round(s).</div><div class="diff-line ctx">810210256=In battles, ally heroes' WPN DMG Mitigation increases by {0}, lasting till the battle ends.</div><div class="diff-line ctx">810210257=In battles, ally heroes' WPN DMG Mitigation increases by {0}, lasting till the battle ends. At the start of the battle, the ally hero with the highest ATK deals {1} more DMG, lasting 3 rounds.</div><div class="diff-line ctx">810210258=Starting from round 4, the ally hero with the highest current ATK deals {0} more DMG each round, stackable for up to 5 layers, lasting till the battle ends.</div><div class="diff-line ctx">371212=Use 1 Storage Battery</div><div class="diff-line ctx">371213=Use 1 Energy Crystal</div><div class="diff-line ctx">371214=Use 1 Restoration Toolkit</div><div class="diff-line ctx">810210259=Samantha acquires {0} layers of Strangler status at the start of each round.</div><div class="diff-line ctx">810210260=At the start of each round, Samantha enhances her crit rate by {0} and Crit DMG by {1}, up to a maximum of {2}.</div><div class="diff-line ctx">810210261=At the end of each round, Bobbie enhances the DEF of the ally with the lowest HP percentage by {0} for 1 round.</div><div class="diff-line ctx">810210262=When Bobbie casts Jungle's Protection, all allied heroes acquire {0} Focus, and their DMG Dealt is enhanced by {1} for 2 rounds.</div><div class="diff-line ctx"></div></div></div>

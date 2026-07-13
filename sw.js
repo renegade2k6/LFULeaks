@@ -5,7 +5,7 @@
  * Cache version is updated on each deploy via deploy.bat
  */
 
-const CACHE_VERSION = "1783897803";
+const CACHE_VERSION = "1783984202";
 const CACHE_NAME = `lfuleaks-v${CACHE_VERSION}`;
 
 const urlsToCache = [

@@ -760,6 +760,7 @@ main {
   border-radius: var(--radius-md);
   background: #020202;
   overflow: hidden;
+  cursor: pointer;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
@@ -964,6 +965,26 @@ main {
 
   h1 {
     font-size: 2.8rem;
+  }
+
+  .lightbox-close,
+  .lightbox-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .lightbox-prev {
+    left: 12px;
+  }
+
+  .lightbox-next {
+    right: 12px;
   }
 }
 

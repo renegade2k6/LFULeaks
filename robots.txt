@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://renegade2kz.github.io/LFULeaks/sitemap.xml
+Sitemap: https://renegade2k6.github.io/LFULeaks/sitemap.xml

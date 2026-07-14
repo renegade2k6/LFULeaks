@@ -5,9 +5,16 @@
     <link>https://renegade2k6.github.io/LFULeaks/</link>
     <description>Last Fortress Underground game asset updates and leaks</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jul 2026 23:10:02 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 03:33:47 GMT</lastBuildDate>
     <atom:link href="https://renegade2k6.github.io/LFULeaks/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Update 2026-07-14</title>
+      <link>https://renegade2k6.github.io/LFULeaks/updates/2026-07-14/</link>
+      <description>42 new images, 120 new config lines</description>
+      <pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://renegade2k6.github.io/LFULeaks/updates/2026-07-14/</guid>
+    </item>
     <item>
       <title>Update 2026-06-30</title>
       <link>https://renegade2k6.github.io/LFULeaks/updates/2026-06-30/</link>

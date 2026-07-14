@@ -1,0 +1,720 @@
+{
+  "generated": [
+    {
+      "update_id": "2026-07-14_07-59-29",
+      "manifest": {
+        "images_added": 42,
+        "reports": [
+          "version_summary.md",
+          "version_details.md",
+          "version_update_summary.md",
+          "new_images.md"
+        ],
+        "source": "android",
+        "tables_added": 0,
+        "tables_changed": 25,
+        "tables_removed": 0
+      },
+      "confirmed_new": [
+        "Ice Dragonling",
+        "Ice Dragon Prince",
+        "Beach Festival"
+      ],
+      "changed_existing": [
+        "Summer Special",
+        "Summer Special",
+        "Summer Special",
+        "Summer Special",
+        "Summer Special",
+        "Summer Chill",
+        "Wasteland Store",
+        "Blanche | Midnight Poodle",
+        "Enrique | Dark Shark",
+        "Quinn | Mr. Bomb",
+        "Barron | Crimson Drill",
+        "Max | Spark Rider",
+        "Bolton | AC Shield",
+        "Laurel | Buried Rose",
+        "Kelly | Spine Whip",
+        "Harman | Chimera Anchor",
+        "Marlen | Ruby Dragon",
+        "Kobayakawa | Kitten's Daydream",
+        "Loong | Dragon-Headed Nunchucks",
+        "Buccaneer | Shark Cruise",
+        "Mira | Mirage",
+        "Casino | Hellfire Axe",
+        "Heytex 103 | Blaze Shark",
+        "Ricardo | Grand Debut"
+      ],
+      "groups": [
+        {
+          "title": "Summer 2026 / Beach Festival",
+          "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+          "status": "Linked in game data",
+          "entries": [
+            "Beach Festival"
+          ],
+          "images": [
+            {
+              "filename": "bgSummer_activities_jungle_3.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Resource_pointTable.json",
+                  "row_id": "600161",
+                  "field": "Pic",
+                  "label": "Map/resource point #600161 - Pic"
+                },
+                {
+                  "table": "Resource_pointTable.json",
+                  "row_id": "600162",
+                  "field": "Pic",
+                  "label": "Map/resource point #600162 - Pic"
+                }
+              ]
+            },
+            {
+              "filename": "icon_garden_xiari_bp_chest01.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8999890",
+                  "field": "Icon",
+                  "label": "Item #8999890 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "ICON_Talk_zhounianqing2607.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "500069",
+                  "field": "Picture",
+                  "label": "Cosmetic #500069 - Picture"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "440130",
+                  "field": "Icon",
+                  "label": "Item #440130 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "440131",
+                  "field": "Icon",
+                  "label": "Item #440131 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_xiari_dhsd_beike.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8999891",
+                  "field": "Icon",
+                  "label": "Item #8999891 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "UI_mingpai_zhounianqing2607.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "400054",
+                  "field": "DisplayResource",
+                  "label": "Cosmetic #400054 - DisplayResource"
+                },
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "400054",
+                  "field": "Icon",
+                  "label": "Cosmetic #400054 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "UI_Talk_qipao_zhounianqing2607.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "500069",
+                  "field": "DisplayResource",
+                  "label": "Cosmetic #500069 - DisplayResource"
+                },
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "500069",
+                  "field": "Icon",
+                  "label": "Cosmetic #500069 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "UIFormation_gaizhuangche_zhounianqing2607.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "600042",
+                  "field": "Picture",
+                  "label": "Cosmetic #600042 - Picture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Water Dragon / Ice Dragon",
+          "summary": "Dragon-themed monsters and UI assets. Some data is linked now, while several images look staged for later use.",
+          "status": "Linked in game data",
+          "entries": [
+            "Ice Dragonling",
+            "Ice Dragon Prince"
+          ],
+          "images": [
+            {
+              "filename": "icon_summer2026_dragon01.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8220106",
+                  "field": "Icon",
+                  "label": "Item #8220106 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_summer2026_dragon02.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8220107",
+                  "field": "Icon",
+                  "label": "Item #8220107 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_summer2026_dragon03.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8220105",
+                  "field": "Icon",
+                  "label": "Item #8220105 - Icon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Frame Rewards",
+          "summary": "Avatar frame and reward-frame assets linked to cosmetic or item data.",
+          "status": "Linked in game data",
+          "entries": [],
+          "images": [
+            {
+              "filename": "icon_item_frame_jingcaidaren.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "300211",
+                  "field": "Icon",
+                  "label": "Cosmetic #300211 - Icon"
+                },
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "300211",
+                  "field": "Picture",
+                  "label": "Cosmetic #300211 - Picture"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "410287",
+                  "field": "Icon",
+                  "label": "Item #410287 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_item_frame_jingcaixinxiu.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "300212",
+                  "field": "Icon",
+                  "label": "Cosmetic #300212 - Icon"
+                },
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "300212",
+                  "field": "Picture",
+                  "label": "Cosmetic #300212 - Picture"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "410289",
+                  "field": "Icon",
+                  "label": "Item #410289 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_item_frame_yuyanfashi.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "300210",
+                  "field": "Icon",
+                  "label": "Cosmetic #300210 - Icon"
+                },
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "300210",
+                  "field": "Picture",
+                  "label": "Cosmetic #300210 - Picture"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "410285",
+                  "field": "Icon",
+                  "label": "Item #410285 - Icon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Summer Pack / Battle Pass",
+          "summary": "Summer pack and battle-pass style interface assets.",
+          "status": "Linked in game data",
+          "entries": [],
+          "images": [
+            {
+              "filename": "banner_Summer2026_packGift.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Activity_panelTable.json",
+                  "row_id": "273141",
+                  "field": "ActivityBanner",
+                  "label": "Event panel #273141 - ActivityBanner"
+                }
+              ]
+            },
+            {
+              "filename": "bg_bp_summer2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Activity_panelTable.json",
+                  "row_id": "273141",
+                  "field": "BgPic",
+                  "label": "Event panel #273141 - BgPic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Other Linked Images",
+          "summary": "Images referenced by changed game data but not confidently grouped yet.",
+          "status": "Linked in game data",
+          "entries": [],
+          "images": [
+            {
+              "filename": "icon_halo_fukongbaolei.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "2100000",
+                  "field": "Icon",
+                  "label": "Cosmetic #2100000 - Icon"
+                },
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "2100000",
+                  "field": "Picture",
+                  "label": "Cosmetic #2100000 - Picture"
+                }
+              ]
+            },
+            {
+              "filename": "icon_halo_jianzhugongdi.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "2000000",
+                  "field": "Icon",
+                  "label": "Cosmetic #2000000 - Icon"
+                },
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "2000000",
+                  "field": "Picture",
+                  "label": "Cosmetic #2000000 - Picture"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "unlinked_groups": [
+        {
+          "title": "Water Dragon / Ice Dragon",
+          "summary": "Dragon-themed monsters and UI assets. Some data is linked now, while several images look staged for later use.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "bg_Water_Dragon_0.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Water_Dragon_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Water_Dragon_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "btn_Water_Dragon_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "btn_Water_Dragon_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "btn_Water_Dragon_3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "grid_Water_Dragon_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_Water_Dragon_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "title_Water_Dragon_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "title_Water_Dragon_3.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        },
+        {
+          "title": "Summer Pack / Battle Pass",
+          "summary": "Summer pack and battle-pass style interface assets.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "btn_bp_summer2026_cost.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "btn_bp_summer2026_pay.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_bp_summer2026_shell.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_summer2026_line.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_summer2026_self.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_summer2026_title.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        },
+        {
+          "title": "Summer 2026 / Beach Festival",
+          "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "img_bp_garden_xiari_02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_xiari_03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_xiari_04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_xiari_05.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_xiari_pack.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        },
+        {
+          "title": "Frame Rewards",
+          "summary": "Avatar frame and reward-frame assets linked to cosmetic or item data.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "UI_Frame_jingcaidaren_a.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_Frame_jingcaixinxiu_a.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_Frame_yuyanfashi_a.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        },
+        {
+          "title": "Unclassified Images",
+          "summary": "Images found in this update that are not linked to changed game data and do not have enough filename evidence for a stronger group.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "img_bg_num_summer2026.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "archive": [
+    {
+      "date": "2025-08-28",
+      "href": "updates/2025-08-28/index.html",
+      "summary": "Imported legacy update page",
+      "images": 48,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2025-09-08",
+      "href": "updates/2025-09-08/index.html",
+      "summary": "Imported legacy update page",
+      "images": 12,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2025-09-22",
+      "href": "updates/2025-09-22/index.html",
+      "summary": "Imported legacy update page",
+      "images": 65,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2025-10-14",
+      "href": "updates/2025-10-14/index.html",
+      "summary": "Imported legacy update page",
+      "images": 54,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2025-11-11",
+      "href": "updates/2025-11-11/index.html",
+      "summary": "Imported legacy update page",
+      "images": 76,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2025-11-24",
+      "href": "updates/2025-11-24/index.html",
+      "summary": "Imported legacy update page",
+      "images": 53,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2025-12-08",
+      "href": "updates/2025-12-08/index.html",
+      "summary": "Imported legacy update page",
+      "images": 247,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2025-12-22",
+      "href": "updates/2025-12-22/index.html",
+      "summary": "Imported legacy update page",
+      "images": 49,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-01-09",
+      "href": "updates/2026-01-09/index.html",
+      "summary": "Imported legacy update page",
+      "images": 40,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-01-19",
+      "href": "updates/2026-01-19/index.html",
+      "summary": "Imported legacy update page",
+      "images": 114,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-02-04",
+      "href": "updates/2026-02-04/index.html",
+      "summary": "Imported legacy update page",
+      "images": 165,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-03-04",
+      "href": "updates/2026-03-04/index.html",
+      "summary": "Imported legacy update page",
+      "images": 35,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-03-18",
+      "href": "updates/2026-03-18/index.html",
+      "summary": "Imported legacy update page",
+      "images": 58,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-03-20",
+      "href": "updates/2026-03-20/index.html",
+      "summary": "Imported legacy update page",
+      "images": 3,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-03-30",
+      "href": "updates/2026-03-30/index.html",
+      "summary": "Imported legacy update page",
+      "images": 173,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-04-16",
+      "href": "updates/2026-04-16/index.html",
+      "summary": "Imported legacy update page",
+      "images": 160,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-06-29",
+      "href": "updates/2026-06-29/index.html",
+      "summary": "Imported legacy update page",
+      "images": 215,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-06-30",
+      "href": "updates/2026-06-30/index.html",
+      "summary": "Imported legacy update page",
+      "images": 52,
+      "linked": null,
+      "tables": null,
+      "source": "legacy"
+    },
+    {
+      "date": "2026-07-14",
+      "href": "updates/2026-07-14/index.html",
+      "summary": "Grouped image and game-data status",
+      "images": 42,
+      "linked": 17,
+      "tables": 25,
+      "source": "generated"
+    }
+  ]
+}

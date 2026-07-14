@@ -46,9 +46,14 @@
 
     let images = [];
     let index = 0;
+    let lastFocused = null;
 
     function collectImages() {
       images = Array.from(document.querySelectorAll('.image-card img'));
+    }
+
+    function getFocusable() {
+      return Array.from(lb.querySelectorAll('button')).filter((el) => !el.disabled);
     }
 
     function show(i) {
@@ -67,13 +72,20 @@
     function open(i) {
       collectImages();
       show(i);
+      lastFocused = document.activeElement;
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
+      const focusable = getFocusable();
+      if (focusable.length) focusable[0].focus();
     }
 
     function close() {
       lb.classList.remove('open');
       document.body.style.overflow = '';
+      if (lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+      }
+      lastFocused = null;
     }
 
     document.querySelectorAll('.image-grid').forEach((grid) => {
@@ -113,6 +125,19 @@
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') show(index - 1);
       else if (e.key === 'ArrowRight') show(index + 1);
+      else if (e.key === 'Tab') {
+        const focusable = getFocusable();
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
   }
 

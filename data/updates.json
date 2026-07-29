@@ -542,6 +542,245 @@
           ]
         }
       ]
+    },
+    {
+      "update_id": "2026-07-29_04-34-33",
+      "manifest": {
+        "images_added": 40,
+        "reports": [
+          "version_summary.md",
+          "version_details.md",
+          "version_update_summary.md",
+          "new_images.md"
+        ],
+        "source": "android",
+        "tables_added": 0,
+        "tables_changed": 24,
+        "tables_removed": 0
+      },
+      "confirmed_new": [],
+      "changed_existing": [
+        "Fashion Icon;",
+        "Summer Special",
+        "Summer Special",
+        "Summer Special",
+        "Summer Special",
+        "Summer Special",
+        "Mystery Box Machine",
+        "Advanced Elite Hero Selection Medal",
+        "Lucky Purchase;"
+      ],
+      "groups": [],
+      "unlinked_groups": [
+        {
+          "title": "Unclassified Images",
+          "summary": "Images found in this update that are not linked to changed game data and do not have enough filename evidence for a stronger group.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "Buff_D_Silence.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "hero_half_Hanna.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "hero_half_Sasha.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "hero_head_Hanna.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "hero_head_Sasha.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Hanna_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Hanna_02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Hanna_03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Hanna_04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Hanna_05.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Hanna_woman_exclusive_show_red.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_mijing_item_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_mijing_paihang.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_PLUS_Hanna_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_PLUS_Sasha_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_qcw_xiaqi.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Sasha_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Sasha_02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Sasha_03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Sasha_04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Sasha_05.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Sasha_woman_exclusive_show_red.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_warmachine_liebiao_34.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_zhuzai_tuzhuang_34.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_herotraining_Hanna.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_herotraining_Sasha.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_operationscenter_statue_0072_81.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_operationscenter_statue_0072_82.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_qcw_bg.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_qcw_jianglidi.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ui_chouka_Hanna_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ui_chouka_Sasha_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_Hanna_woman_exclusive_show_red.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ui_libaohalf_Hanna.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ui_libaohalf_Sasha.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ui_libaoHanna.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ui_libaoSasha.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ui_S23kachi_yeqian_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ui_S23kachi_yeqian_02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_Sasha_woman_exclusive_show_red.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        }
+      ]
     }
   ],
   "archive": [
@@ -714,6 +953,15 @@
       "images": 42,
       "linked": 17,
       "tables": 25,
+      "source": "generated"
+    },
+    {
+      "date": "2026-07-29",
+      "href": "updates/2026-07-29/index.html",
+      "summary": "Grouped image and game-data status",
+      "images": 40,
+      "linked": 0,
+      "tables": 24,
       "source": "generated"
     }
   ]

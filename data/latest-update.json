@@ -1,7 +1,7 @@
 {
-  "update_id": "2026-07-29_04-34-33",
+  "update_id": "2026-08-13_13-17-24",
   "manifest": {
-    "images_added": 40,
+    "images_added": 89,
     "reports": [
       "version_summary.md",
       "version_details.md",
@@ -9,24 +9,626 @@
       "new_images.md"
     ],
     "source": "android",
-    "tables_added": 0,
-    "tables_changed": 24,
+    "tables_added": 6,
+    "tables_changed": 50,
     "tables_removed": 0
   },
-  "confirmed_new": [],
-  "changed_existing": [
-    "Fashion Icon;",
-    "Summer Special",
-    "Summer Special",
-    "Summer Special",
-    "Summer Special",
-    "Summer Special",
-    "Mystery Box Machine",
-    "Advanced Elite Hero Selection Medal",
-    "Lucky Purchase;"
+  "confirmed_new": [
+    "Moonnight Romance",
+    "Moonnight Romance  Images: banner_qixi_Store2026.png (ResourceBookmark)",
+    "Launch for Love"
   ],
-  "groups": [],
+  "changed_existing": [
+    "Firework Prep",
+    "Mysterious Fireworks Show",
+    "Fireworks Making",
+    "Light Fireworks",
+    "Light Fireworks",
+    "War Beast Challenge",
+    "War Beast Joins the Fight",
+    "War Beast Shop",
+    "Rebuild Homeland",
+    "Mass Construction",
+    "Construction Prep",
+    "Blueprint Design",
+    "Masterpiece",
+    "Hero Growth",
+    "Call for Heroes",
+    "Zombie Queen Is Here",
+    "Unrivaled Strength",
+    "Ultimate Weapon Extension",
+    "Enhanced Ultimate Weapon",
+    "Military Drill",
+    "Rebuild Homeland",
+    "Mass Construction",
+    "Construction Prep",
+    "Blueprint Design"
+  ],
+  "groups": [
+    {
+      "title": "Frame Rewards",
+      "summary": "Avatar frame and reward-frame assets linked to cosmetic or item data.",
+      "status": "Linked in game data",
+      "entries": [],
+      "images": [
+        {
+          "filename": "icon_item_Frame_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "300213",
+              "field": "Icon",
+              "label": "Cosmetic #300213 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "300213",
+              "field": "Picture",
+              "label": "Cosmetic #300213 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "410291",
+              "field": "Icon",
+              "label": "Item #410291 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "410292",
+              "field": "Icon",
+              "label": "Item #410292 - Icon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Other Linked Images",
+      "summary": "Images referenced by changed game data but not confidently grouped yet.",
+      "status": "Linked in game data",
+      "entries": [],
+      "images": [
+        {
+          "filename": "ActBigPictureGiftPackBGQixi2026.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23522",
+              "field": "BgPrefab",
+              "label": "Event panel #23522 - BgPrefab"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23523",
+              "field": "BgPrefab",
+              "label": "Event panel #23523 - BgPrefab"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23524",
+              "field": "BgPrefab",
+              "label": "Event panel #23524 - BgPrefab"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23525",
+              "field": "BgPrefab",
+              "label": "Event panel #23525 - BgPrefab"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23526",
+              "field": "BgPrefab",
+              "label": "Event panel #23526 - BgPrefab"
+            }
+          ]
+        },
+        {
+          "filename": "banner_Qixi2026_activities.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "273200",
+              "field": "ActivityBanner",
+              "label": "Event panel #273200 - ActivityBanner"
+            }
+          ]
+        },
+        {
+          "filename": "banner_qixi_Store2026.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "CollectTable.json",
+              "row_id": "30",
+              "field": "ResourceBookmark",
+              "label": "CollectTable #30 - ResourceBookmark"
+            }
+          ]
+        },
+        {
+          "filename": "bg_qixi_check_in2026.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "273200",
+              "field": "BgPic",
+              "label": "Event panel #273200 - BgPic"
+            }
+          ]
+        },
+        {
+          "filename": "icon_garden_qixi_bp_chest01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8999880",
+              "field": "Icon",
+              "label": "Item #8999880 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "ICON_mingpai_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "497209",
+              "field": "Icon",
+              "label": "Item #497209 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "497210",
+              "field": "Icon",
+              "label": "Item #497210 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_qixi2026_bg.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8999881",
+              "field": "Icon",
+              "label": "Item #8999881 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "ICON_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "100123",
+              "field": "Icon",
+              "label": "Cosmetic #100123 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "100123",
+              "field": "Picture",
+              "label": "Cosmetic #100123 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "400274",
+              "field": "Icon",
+              "label": "Item #400274 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "400275",
+              "field": "Icon",
+              "label": "Item #400275 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_qixi_Store2026.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8220184",
+              "field": "Icon",
+              "label": "Item #8220184 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "ICON_Talk_qipao_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "500070",
+              "field": "Picture",
+              "label": "Cosmetic #500070 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "440132",
+              "field": "Icon",
+              "label": "Item #440132 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "440133",
+              "field": "Icon",
+              "label": "Item #440133 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "img_fhj_zc1_bg.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160081",
+              "field": "BgPic",
+              "label": "Event panel #10160081 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160082",
+              "field": "BgPic",
+              "label": "Event panel #10160082 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160083",
+              "field": "BgPic",
+              "label": "Event panel #10160083 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160084",
+              "field": "BgPic",
+              "label": "Event panel #10160084 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160135",
+              "field": "BgPic",
+              "label": "Event panel #10160135 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160136",
+              "field": "BgPic",
+              "label": "Event panel #10160136 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160137",
+              "field": "BgPic",
+              "label": "Event panel #10160137 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160138",
+              "field": "BgPic",
+              "label": "Event panel #10160138 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160183",
+              "field": "BgPic",
+              "label": "Event panel #10160183 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160184",
+              "field": "BgPic",
+              "label": "Event panel #10160184 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160185",
+              "field": "BgPic",
+              "label": "Event panel #10160185 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160186",
+              "field": "BgPic",
+              "label": "Event panel #10160186 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "274501",
+              "field": "BgPic",
+              "label": "Event panel #274501 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "274502",
+              "field": "BgPic",
+              "label": "Event panel #274502 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "274503",
+              "field": "BgPic",
+              "label": "Event panel #274503 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "274504",
+              "field": "BgPic",
+              "label": "Event panel #274504 - BgPic"
+            }
+          ]
+        },
+        {
+          "filename": "img_waixian_gaizhuangche_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "600043",
+              "field": "Icon",
+              "label": "Cosmetic #600043 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "420099",
+              "field": "Icon",
+              "label": "Item #420099 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "420100",
+              "field": "Icon",
+              "label": "Item #420100 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "item_guashi_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "1500033",
+              "field": "Icon",
+              "label": "Cosmetic #1500033 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "1500033",
+              "field": "Picture",
+              "label": "Cosmetic #1500033 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "446068",
+              "field": "Icon",
+              "label": "Item #446068 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "446069",
+              "field": "Icon",
+              "label": "Item #446069 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "item_mingpian_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "1600026",
+              "field": "Icon",
+              "label": "Cosmetic #1600026 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "1600026",
+              "field": "Picture",
+              "label": "Cosmetic #1600026 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "447050",
+              "field": "Icon",
+              "label": "Item #447050 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "447051",
+              "field": "Icon",
+              "label": "Item #447051 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "mingpian_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "1600026",
+              "field": "DisplayResource",
+              "label": "Cosmetic #1600026 - DisplayResource"
+            }
+          ]
+        },
+        {
+          "filename": "relics_item_xxwz.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SkillTable.json",
+              "row_id": "1012101",
+              "field": "Icon",
+              "label": "SkillTable #1012101 - Icon"
+            },
+            {
+              "table": "SkillTable.json",
+              "row_id": "1012102",
+              "field": "Icon",
+              "label": "SkillTable #1012102 - Icon"
+            },
+            {
+              "table": "SkillTable.json",
+              "row_id": "1012103",
+              "field": "Icon",
+              "label": "SkillTable #1012103 - Icon"
+            },
+            {
+              "table": "SkillTable.json",
+              "row_id": "1012104",
+              "field": "Icon",
+              "label": "SkillTable #1012104 - Icon"
+            },
+            {
+              "table": "SkillTable.json",
+              "row_id": "1012105",
+              "field": "Icon",
+              "label": "SkillTable #1012105 - Icon"
+            },
+            {
+              "table": "SkillTable.json",
+              "row_id": "1012106",
+              "field": "Icon",
+              "label": "SkillTable #1012106 - Icon"
+            },
+            {
+              "table": "SkillTable.json",
+              "row_id": "1012107",
+              "field": "Icon",
+              "label": "SkillTable #1012107 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "UI_mingpai_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "400055",
+              "field": "DisplayResource",
+              "label": "Cosmetic #400055 - DisplayResource"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "400055",
+              "field": "Icon",
+              "label": "Cosmetic #400055 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "400055",
+              "field": "Picture",
+              "label": "Cosmetic #400055 - Picture"
+            }
+          ]
+        },
+        {
+          "filename": "UI_qiancheng_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "900017",
+              "field": "Icon",
+              "label": "Cosmetic #900017 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "900017",
+              "field": "Picture",
+              "label": "Cosmetic #900017 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "410295",
+              "field": "Icon",
+              "label": "Item #410295 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "410296",
+              "field": "Icon",
+              "label": "Item #410296 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "UI_Talk_qipao_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "500070",
+              "field": "DisplayResource",
+              "label": "Cosmetic #500070 - DisplayResource"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "500070",
+              "field": "Icon",
+              "label": "Cosmetic #500070 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "UIFormation_gaizhuangche_qixi2608.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "600043",
+              "field": "Picture",
+              "label": "Cosmetic #600043 - Picture"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "unlinked_groups": [
+    {
+      "title": "Summer 2026 / Beach Festival",
+      "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+      "status": "Found but not active yet",
+      "entries": [],
+      "images": [
+        {
+          "filename": "btn_com_Summer_activities2026.png",
+          "active": false,
+          "uses": []
+        }
+      ]
+    },
+    {
+      "title": "Frame Rewards",
+      "summary": "Avatar frame and reward-frame assets linked to cosmetic or item data.",
+      "status": "Found but not active yet",
+      "entries": [],
+      "images": [
+        {
+          "filename": "UI_Frame_qixi2608_a.png",
+          "active": false,
+          "uses": []
+        }
+      ]
+    },
     {
       "title": "Unclassified Images",
       "summary": "Images found in this update that are not linked to changed game data and do not have enough filename evidence for a stronger group.",
@@ -34,202 +636,332 @@
       "entries": [],
       "images": [
         {
-          "filename": "Buff_D_Silence.png",
+          "filename": "banner_qixi2026_Feast01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "hero_half_Hanna.png",
+          "filename": "banner_qixi2026_Feast02.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "hero_half_Sasha.png",
+          "filename": "bg_Crown_bp.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "hero_head_Hanna.png",
+          "filename": "bg_Crown_ganenjie_tab01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "hero_head_Sasha.png",
+          "filename": "bg_Crown_ganenjie_tab02.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Hanna_01.png",
+          "filename": "bg_Crown_ganenjie_tab03.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Hanna_02.png",
+          "filename": "bg_Crown_ganenjie_tab04.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Hanna_03.png",
+          "filename": "bg_Crown_ganenjie_tab05.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Hanna_04.png",
+          "filename": "bg_Crown_ganenjie_tab06.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Hanna_05.png",
+          "filename": "bg_Crown_ottery_2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Hanna_woman_exclusive_show_red.png",
+          "filename": "bg_dzhjr_qixi_tab01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_mijing_item_1.png",
+          "filename": "bg_dzhjr_qixi_tab02.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_mijing_paihang.png",
+          "filename": "bg_dzhjr_qixi_tab03.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_PLUS_Hanna_01.png",
+          "filename": "bg_dzhjr_qixi_tab04.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_PLUS_Sasha_01.png",
+          "filename": "bg_dzhjr_qixi_tab05.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_qcw_xiaqi.png",
+          "filename": "bg_dzhjr_qixi_tab06.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Sasha_01.png",
+          "filename": "bg_qixi_check02_in2026.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Sasha_02.png",
+          "filename": "bg_qixi_di01_Store2026.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Sasha_03.png",
+          "filename": "bg_qixi_di02_Store2026.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Sasha_04.png",
+          "filename": "bg_qixi_di03_Store2026.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Sasha_05.png",
+          "filename": "bg_Qixi_Seven_day2026.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_Sasha_woman_exclusive_show_red.png",
+          "filename": "bg_qixi_Store2026.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_warmachine_liebiao_34.png",
+          "filename": "grid_Crown_bp_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_zhuzai_tuzhuang_34.png",
+          "filename": "grid_Crown_bp_10.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_herotraining_Hanna.png",
+          "filename": "grid_Crown_bp_2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_herotraining_Sasha.png",
+          "filename": "grid_Crown_bp_3.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_operationscenter_statue_0072_81.png",
+          "filename": "grid_Crown_bp_4.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_operationscenter_statue_0072_82.png",
+          "filename": "grid_Crown_bp_5.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_qcw_bg.png",
+          "filename": "grid_Crown_bp_6.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_qcw_jianglidi.png",
+          "filename": "grid_Crown_bp_7.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ui_chouka_Hanna_01.png",
+          "filename": "grid_Crown_bp_8.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ui_chouka_Sasha_01.png",
+          "filename": "grid_Crown_bp_9.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "UI_Hanna_woman_exclusive_show_red.png",
+          "filename": "grid_Crown_bp_buy.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ui_libaohalf_Hanna.png",
+          "filename": "grid_Crown_ottery_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ui_libaohalf_Sasha.png",
+          "filename": "grid_Crown_ottery_2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ui_libaoHanna.png",
+          "filename": "grid_Crown_rank_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ui_libaoSasha.png",
+          "filename": "grid_Crown_rank_2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ui_S23kachi_yeqian_01.png",
+          "filename": "grid_Crown_rank_3.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ui_S23kachi_yeqian_02.png",
+          "filename": "icon_bp_garden_qixi_title.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "UI_Sasha_woman_exclusive_show_red.png",
+          "filename": "Icon_Crown_entrance.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_Crown_jiangli.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_Crown_jifen.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_other_common_01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_qixi_entrance.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_qixi_lihe_in2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_qixihp_biaozhi.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_jindutiao.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_qixi_01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_qixi_02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_qixi_03.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_qixi_04.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_qixi_05.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_qixi_06.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_qixi_09.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_qixi_11.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_Crown_dhsd_dk.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_datulibao_qixi2026_dk01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_datulibao_qixi2026_dk02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_fhj_zc3_tishitiao.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_qixi2026_Feast_line.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_qixi_daye_bannerboss.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_qixi_list01_in2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_qixi_list02_in2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_qixi_zc1_yeqian2026_bg2.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_qixidzh_bg.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_qixitask2026_listdi.png",
           "active": false,
           "uses": []
         }

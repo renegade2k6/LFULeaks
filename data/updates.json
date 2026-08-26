@@ -48,43 +48,11 @@
       ],
       "groups": [
         {
-          "title": "Summer 2026 / Beach Festival",
-          "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+          "title": "Anniversary Cosmetics",
+          "summary": "Anniversary-themed (zhounianqing) cosmetic and reward-frame assets — badges, nameplates, frames.",
           "status": "Linked in game data",
-          "entries": [
-            "Beach Festival"
-          ],
+          "entries": [],
           "images": [
-            {
-              "filename": "bgSummer_activities_jungle_3.png",
-              "active": true,
-              "uses": [
-                {
-                  "table": "Resource_pointTable.json",
-                  "row_id": "600161",
-                  "field": "Pic",
-                  "label": "Map/resource point #600161 - Pic"
-                },
-                {
-                  "table": "Resource_pointTable.json",
-                  "row_id": "600162",
-                  "field": "Pic",
-                  "label": "Map/resource point #600162 - Pic"
-                }
-              ]
-            },
-            {
-              "filename": "icon_garden_xiari_bp_chest01.png",
-              "active": true,
-              "uses": [
-                {
-                  "table": "GoodsTable.json",
-                  "row_id": "8999890",
-                  "field": "Icon",
-                  "label": "Item #8999890 - Icon"
-                }
-              ]
-            },
             {
               "filename": "ICON_Talk_zhounianqing2607.png",
               "active": true,
@@ -106,18 +74,6 @@
                   "row_id": "440131",
                   "field": "Icon",
                   "label": "Item #440131 - Icon"
-                }
-              ]
-            },
-            {
-              "filename": "icon_xiari_dhsd_beike.png",
-              "active": true,
-              "uses": [
-                {
-                  "table": "GoodsTable.json",
-                  "row_id": "8999891",
-                  "field": "Icon",
-                  "label": "Item #8999891 - Icon"
                 }
               ]
             },
@@ -166,6 +122,58 @@
                   "row_id": "600042",
                   "field": "Picture",
                   "label": "Cosmetic #600042 - Picture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Summer 2026 / Beach Festival",
+          "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+          "status": "Linked in game data",
+          "entries": [
+            "Beach Festival"
+          ],
+          "images": [
+            {
+              "filename": "bgSummer_activities_jungle_3.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Resource_pointTable.json",
+                  "row_id": "600161",
+                  "field": "Pic",
+                  "label": "Map/resource point #600161 - Pic"
+                },
+                {
+                  "table": "Resource_pointTable.json",
+                  "row_id": "600162",
+                  "field": "Pic",
+                  "label": "Map/resource point #600162 - Pic"
+                }
+              ]
+            },
+            {
+              "filename": "icon_garden_xiari_bp_chest01.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8999890",
+                  "field": "Icon",
+                  "label": "Item #8999890 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_xiari_dhsd_beike.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8999891",
+                  "field": "Icon",
+                  "label": "Item #8999891 - Icon"
                 }
               ]
             }
@@ -3567,16 +3575,11 @@
       ],
       "unlinked_groups": [
         {
-          "title": "Summer 2026 / Beach Festival",
-          "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+          "title": "Anniversary Cosmetics",
+          "summary": "Anniversary-themed (zhounianqing) cosmetic and reward-frame assets — badges, nameplates, frames.",
           "status": "Found but not active yet",
           "entries": [],
           "images": [
-            {
-              "filename": "com_btn_Summer_activities2026.png",
-              "active": false,
-              "uses": []
-            },
             {
               "filename": "icon_halo_zhounianqing2609.png",
               "active": false,
@@ -3664,6 +3667,19 @@
             },
             {
               "filename": "UIFormation_gaizhuangche_zhounianqing2609.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        },
+        {
+          "title": "Summer 2026 / Beach Festival",
+          "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "com_btn_Summer_activities2026.png",
               "active": false,
               "uses": []
             }

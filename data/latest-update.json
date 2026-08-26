@@ -1812,16 +1812,11 @@
   ],
   "unlinked_groups": [
     {
-      "title": "Summer 2026 / Beach Festival",
-      "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+      "title": "Anniversary Cosmetics",
+      "summary": "Anniversary-themed (zhounianqing) cosmetic and reward-frame assets — badges, nameplates, frames.",
       "status": "Found but not active yet",
       "entries": [],
       "images": [
-        {
-          "filename": "com_btn_Summer_activities2026.png",
-          "active": false,
-          "uses": []
-        },
         {
           "filename": "icon_halo_zhounianqing2609.png",
           "active": false,
@@ -1909,6 +1904,19 @@
         },
         {
           "filename": "UIFormation_gaizhuangche_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        }
+      ]
+    },
+    {
+      "title": "Summer 2026 / Beach Festival",
+      "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+      "status": "Found but not active yet",
+      "entries": [],
+      "images": [
+        {
+          "filename": "com_btn_Summer_activities2026.png",
           "active": false,
           "uses": []
         }

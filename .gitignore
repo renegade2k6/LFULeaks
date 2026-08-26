@@ -1,58 +1,16 @@
-# Dependencies
-node_modules/
-package-lock.json
-
-# Build tools (not needed on GitHub Pages)
-tools/
-.claude/
-
-# Source files (not for deployment)
-inbox/
-site/
-
-# Build scripts
-*.bat
-*.ps1
+# Local deploy helpers
+deploy-local.ps1
+deploy-local.bat
+deploy.ps1
 deploy.bat
-rebuild-site.bat
-auto-deploy.ps1
+auto-deploy.log
 
-# CI/CD
-.github/
+# Local tooling/dependency folders
+node_modules/
+.claude/
+inbox/
+tools/
 
-# Configuration files
-package.json
-.eslintrc.json
-.prettierrc.json
-.eslintignore
-.prettierignore
-
-# Documentation (except README.md)
-DEVELOPER.md
-IMPROVEMENTS.md
-session.md
-CLAUDE.md
-META DATA.txt
-
-# Archives and temp files
-*.rar
-*.zip
-*.log
-*.tmp
-tmp_*.txt
-
-# OS files
-.DS_Store
+# OS/editor noise
 Thumbs.db
-desktop.ini
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Keep README.md for GitHub
-!README.md
-CHANGELOG.md
-README.md
+.DS_Store

@@ -1,0 +1,2549 @@
+{
+  "update_id": "2026-08-26_05-35-45",
+  "manifest": {
+    "images_added": 221,
+    "reports": [
+      "version_summary.md",
+      "version_details.md",
+      "version_update_summary.md",
+      "new_images.md"
+    ],
+    "source": "android",
+    "tables_added": 1,
+    "tables_changed": 52,
+    "tables_removed": 0
+  },
+  "confirmed_new": [
+    "Activity_panelTable #273206  Images: bg_bp_WeekendCardBp.png (BgPic), img_bp_WeekendCardBp_tab.png (ActivityBanner)",
+    "Activity_panelTable #10160202  Images: img__Anniversary2026_bg.png (BgPic), img_bp_Anniversary2026_tab.png (ActivityBanner)",
+    "Hero_skin_listTable #231402  Images: hero_head_AdaPlus.png (IconHead), hero_skin_AdaPlus.png (HeroSkinPic), ui_chouka_AdaPlus_01.png (RecruitFront, RecruitRear)",
+    "Hero_skin_listTable #210002  Images: hero_head_BotonPlus.png (IconHead), hero_skin_BotonPlus.png (HeroSkinPic), ui_chouka_BotonPlus_01.png (RecruitFront, RecruitRear)",
+    "Hero_skin_listTable #211102  Images: hero_head_MiraPlus.png (IconHead), hero_skin_MiraPlus.png (HeroSkinPic), ui_chouka_MiraPlus_01.png (RecruitFront, RecruitRear)",
+    "Hero_skin_listTable #221502  Images: hero_head_ClaraPlus.png (IconHead), hero_skin_ClaraPlus.png (HeroSkinPic), ui_chouka_ClaraPlus_01.png (RecruitFront, RecruitRear)",
+    "Maincity_levelTable #131  Images: honor_LvIcon_bg.png (LevelBottom)",
+    "Maincity_levelTable #132  Images: honor_LvIcon_bg.png (LevelBottom)",
+    "Maincity_levelTable #133  Images: honor_LvIcon_bg.png (LevelBottom)",
+    "Maincity_levelTable #134  Images: honor_LvIcon_bg.png (LevelBottom)",
+    "Maincity_levelTable #135  Images: honor_LvIcon_01.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_01.png (HonorLvIconStar)",
+    "Maincity_levelTable #136  Images: honor_LvIcon_01.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_02.png (HonorLvIconStar)",
+    "Maincity_levelTable #137  Images: honor_LvIcon_01.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_03.png (HonorLvIconStar)",
+    "Maincity_levelTable #138  Images: honor_LvIcon_01.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_04.png (HonorLvIconStar)",
+    "Maincity_levelTable #139  Images: honor_LvIcon_01.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_05.png (HonorLvIconStar)",
+    "Maincity_levelTable #140  Images: honor_LvIcon_02.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_01.png (HonorLvIconStar)",
+    "Maincity_levelTable #141  Images: honor_LvIcon_02.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_02.png (HonorLvIconStar)",
+    "Maincity_levelTable #142  Images: honor_LvIcon_02.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_03.png (HonorLvIconStar)",
+    "Maincity_levelTable #143  Images: honor_LvIcon_02.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_04.png (HonorLvIconStar)",
+    "Maincity_levelTable #144  Images: honor_LvIcon_02.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_05.png (HonorLvIconStar)",
+    "Maincity_levelTable #145  Images: honor_LvIcon_03.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_01.png (HonorLvIconStar)",
+    "Maincity_levelTable #146  Images: honor_LvIcon_03.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_02.png (HonorLvIconStar)",
+    "Maincity_levelTable #147  Images: honor_LvIcon_03.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_03.png (HonorLvIconStar)",
+    "Maincity_levelTable #148  Images: honor_LvIcon_03.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_04.png (HonorLvIconStar)",
+    "Maincity_levelTable #149  Images: honor_LvIcon_03.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_05.png (HonorLvIconStar)",
+    "Maincity_levelTable #150  Images: honor_LvIcon_04.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_01.png (HonorLvIconStar)",
+    "Maincity_levelTable #151  Images: honor_LvIcon_04.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_02.png (HonorLvIconStar)",
+    "Maincity_levelTable #152  Images: honor_LvIcon_04.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_03.png (HonorLvIconStar)",
+    "Maincity_levelTable #153  Images: honor_LvIcon_04.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_04.png (HonorLvIconStar)",
+    "Maincity_levelTable #154  Images: honor_LvIcon_04.png (HonorLvIcon), honor_LvIcon_bg.png (LevelBottom), honor_LvIcon_star_05.png (HonorLvIconStar)",
+    "... 1 more evidence rows not shown"
+  ],
+  "changed_existing": [
+    "Activity_panelTable #23522  Images: ActBigPictureGiftPackBGAnniversary2026.png (BgPrefab)",
+    "Activity_panelTable #23523  Images: ActBigPictureGiftPackBGAnniversary2026.png (BgPrefab)",
+    "Activity_panelTable #23524  Images: ActBigPictureGiftPackBGAnniversary2026.png (BgPrefab)",
+    "Activity_panelTable #23525  Images: ActBigPictureGiftPackBGAnniversary2026.png (BgPrefab)",
+    "Activity_panelTable #23526  Images: ActBigPictureGiftPackBGAnniversary2026.png (BgPrefab)",
+    "Duckie Vibe;",
+    "Defender Lv. 10;",
+    "Commando Lv.1;",
+    "Commando Lv.2;",
+    "Commando Lv.3;",
+    "Commando Lv.4;",
+    "Commando Lv.5;",
+    "Commando Lv.6;",
+    "Commando Lv.7;",
+    "Commando Lv.8;",
+    "Commando Lv.9;",
+    "Commando Lv. 10;",
+    "Archer Lv.1;",
+    "Archer Lv.2;",
+    "Archer Lv.3;",
+    "Archer Lv.4;",
+    "Archer Lv.5;",
+    "Archer Lv.6;",
+    "Archer Lv.7;"
+  ],
+  "groups": [
+    {
+      "title": "Other Linked Images",
+      "summary": "Images referenced by changed game data but not confidently grouped yet.",
+      "status": "Linked in game data",
+      "entries": [],
+      "images": [
+        {
+          "filename": "ActBigPictureGiftPackBGAnniversary2026.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23522",
+              "field": "BgPrefab",
+              "label": "Event panel #23522 - BgPrefab"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23523",
+              "field": "BgPrefab",
+              "label": "Event panel #23523 - BgPrefab"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23524",
+              "field": "BgPrefab",
+              "label": "Event panel #23524 - BgPrefab"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23525",
+              "field": "BgPrefab",
+              "label": "Event panel #23525 - BgPrefab"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "23526",
+              "field": "BgPrefab",
+              "label": "Event panel #23526 - BgPrefab"
+            }
+          ]
+        },
+        {
+          "filename": "bg_Anniversary2026_battle.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "273208",
+              "field": "BgPic",
+              "label": "Event panel #273208 - BgPic"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "273210",
+              "field": "BgPic",
+              "label": "Event panel #273210 - BgPic"
+            }
+          ]
+        },
+        {
+          "filename": "bg_bp_WeekendCardBp.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "273206",
+              "field": "BgPic",
+              "label": "Event panel #273206 - BgPic"
+            }
+          ]
+        },
+        {
+          "filename": "equip_Iris_body.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "6142113",
+              "field": "Icon",
+              "label": "EquipmentTable #6142113 - Icon"
+            },
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "9142113",
+              "field": "Icon",
+              "label": "EquipmentTable #9142113 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "equip_Iris_helmet.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "6142112",
+              "field": "Icon",
+              "label": "EquipmentTable #6142112 - Icon"
+            },
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "9142112",
+              "field": "Icon",
+              "label": "EquipmentTable #9142112 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "equip_Iris_jewelry.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "6142114",
+              "field": "Icon",
+              "label": "EquipmentTable #6142114 - Icon"
+            },
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "9142114",
+              "field": "Icon",
+              "label": "EquipmentTable #9142114 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "equip_Iris_weapon.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "6142111",
+              "field": "Icon",
+              "label": "EquipmentTable #6142111 - Icon"
+            },
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "9142111",
+              "field": "Icon",
+              "label": "EquipmentTable #9142111 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "equip_Thomas_body.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "6143113",
+              "field": "Icon",
+              "label": "EquipmentTable #6143113 - Icon"
+            },
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "9143113",
+              "field": "Icon",
+              "label": "EquipmentTable #9143113 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "equip_Thomas_helmet.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "6143112",
+              "field": "Icon",
+              "label": "EquipmentTable #6143112 - Icon"
+            },
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "9143112",
+              "field": "Icon",
+              "label": "EquipmentTable #9143112 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "equip_Thomas_jewelry.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "6143114",
+              "field": "Icon",
+              "label": "EquipmentTable #6143114 - Icon"
+            },
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "9143114",
+              "field": "Icon",
+              "label": "EquipmentTable #9143114 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "equip_Thomas_weapon.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "6143111",
+              "field": "Icon",
+              "label": "EquipmentTable #6143111 - Icon"
+            },
+            {
+              "table": "EquipmentTable.json",
+              "row_id": "9143111",
+              "field": "Icon",
+              "label": "EquipmentTable #9143111 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "hero_head_AdaPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "231402",
+              "field": "IconHead",
+              "label": "Hero skin listTable #231402 - IconHead"
+            }
+          ]
+        },
+        {
+          "filename": "hero_head_BotonPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "210002",
+              "field": "IconHead",
+              "label": "Hero skin listTable #210002 - IconHead"
+            }
+          ]
+        },
+        {
+          "filename": "hero_head_ClaraPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "221502",
+              "field": "IconHead",
+              "label": "Hero skin listTable #221502 - IconHead"
+            }
+          ]
+        },
+        {
+          "filename": "hero_head_MiraPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "211102",
+              "field": "IconHead",
+              "label": "Hero skin listTable #211102 - IconHead"
+            }
+          ]
+        },
+        {
+          "filename": "hero_skin_Ada.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "231401",
+              "field": "HeroSkinPic",
+              "label": "Hero skin listTable #231401 - HeroSkinPic"
+            }
+          ]
+        },
+        {
+          "filename": "hero_skin_AdaPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "231402",
+              "field": "HeroSkinPic",
+              "label": "Hero skin listTable #231402 - HeroSkinPic"
+            }
+          ]
+        },
+        {
+          "filename": "hero_skin_Boton.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "210001",
+              "field": "HeroSkinPic",
+              "label": "Hero skin listTable #210001 - HeroSkinPic"
+            }
+          ]
+        },
+        {
+          "filename": "hero_skin_BotonPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "210002",
+              "field": "HeroSkinPic",
+              "label": "Hero skin listTable #210002 - HeroSkinPic"
+            }
+          ]
+        },
+        {
+          "filename": "hero_skin_Clara.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "221501",
+              "field": "HeroSkinPic",
+              "label": "Hero skin listTable #221501 - HeroSkinPic"
+            }
+          ]
+        },
+        {
+          "filename": "hero_skin_ClaraPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "221502",
+              "field": "HeroSkinPic",
+              "label": "Hero skin listTable #221502 - HeroSkinPic"
+            }
+          ]
+        },
+        {
+          "filename": "hero_skin_Mira.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "211101",
+              "field": "HeroSkinPic",
+              "label": "Hero skin listTable #211101 - HeroSkinPic"
+            }
+          ]
+        },
+        {
+          "filename": "hero_skin_MiraPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "211102",
+              "field": "HeroSkinPic",
+              "label": "Hero skin listTable #211102 - HeroSkinPic"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "135",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #135 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "136",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #136 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "137",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #137 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "138",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #138 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "139",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #139 - HonorLvIcon"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_02.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "140",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #140 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "141",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #141 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "142",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #142 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "143",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #143 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "144",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #144 - HonorLvIcon"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_03.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "145",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #145 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "146",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #146 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "147",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #147 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "148",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #148 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "149",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #149 - HonorLvIcon"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_04.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "150",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #150 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "151",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #151 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "152",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #152 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "153",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #153 - HonorLvIcon"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "154",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #154 - HonorLvIcon"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_05.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "155",
+              "field": "HonorLvIcon",
+              "label": "Maincity levelTable #155 - HonorLvIcon"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_bg.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "131",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #131 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "132",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #132 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "133",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #133 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "134",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #134 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "135",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #135 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "136",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #136 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "137",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #137 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "138",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #138 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "139",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #139 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "140",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #140 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "141",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #141 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "142",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #142 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "143",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #143 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "144",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #144 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "145",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #145 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "146",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #146 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "147",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #147 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "148",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #148 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "149",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #149 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "150",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #150 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "151",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #151 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "152",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #152 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "153",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #153 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "154",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #154 - LevelBottom"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "155",
+              "field": "LevelBottom",
+              "label": "Maincity levelTable #155 - LevelBottom"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_star_01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "135",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #135 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "140",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #140 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "145",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #145 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "150",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #150 - HonorLvIconStar"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_star_02.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "136",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #136 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "141",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #141 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "146",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #146 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "151",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #151 - HonorLvIconStar"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_star_03.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "137",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #137 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "142",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #142 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "147",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #147 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "152",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #152 - HonorLvIconStar"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_star_04.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "138",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #138 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "143",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #143 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "148",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #148 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "153",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #153 - HonorLvIconStar"
+            }
+          ]
+        },
+        {
+          "filename": "honor_LvIcon_star_05.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "139",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #139 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "144",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #144 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "149",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #149 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "154",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #154 - HonorLvIconStar"
+            },
+            {
+              "table": "Maincity_levelTable.json",
+              "row_id": "155",
+              "field": "HonorLvIconStar",
+              "label": "Maincity levelTable #155 - HonorLvIconStar"
+            }
+          ]
+        },
+        {
+          "filename": "icon_Anniversary2026_bp_beike.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8999871",
+              "field": "Icon",
+              "label": "Item #8999871 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8999873",
+              "field": "Icon",
+              "label": "Item #8999873 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_Anniversary2026_bp_chest01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8999870",
+              "field": "Icon",
+              "label": "Item #8999870 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8999872",
+              "field": "Icon",
+              "label": "Item #8999872 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_Anniversary2026_shop_chest.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8220198",
+              "field": "Icon",
+              "label": "Item #8220198 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_BuildFortresszhounianq_1.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "9000003",
+              "field": "Icon",
+              "label": "Item #9000003 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_crimsoncore.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "200440",
+              "field": "Icon",
+              "label": "Item #200440 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_crimsoncrystal.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "200442",
+              "field": "Icon",
+              "label": "Item #200442 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_crimsonmatrix.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "200441",
+              "field": "Icon",
+              "label": "Item #200441 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "5",
+              "field": "Icon",
+              "label": "Building honorlevelTable #5 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "6",
+              "field": "Icon",
+              "label": "Building honorlevelTable #6 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "7",
+              "field": "Icon",
+              "label": "Building honorlevelTable #7 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "8",
+              "field": "Icon",
+              "label": "Building honorlevelTable #8 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "9",
+              "field": "Icon",
+              "label": "Building honorlevelTable #9 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_01_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "5",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #5 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "6",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #6 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "7",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #7 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "8",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #8 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "9",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #9 - IconSmall"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_02.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "10",
+              "field": "Icon",
+              "label": "Building honorlevelTable #10 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "11",
+              "field": "Icon",
+              "label": "Building honorlevelTable #11 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "12",
+              "field": "Icon",
+              "label": "Building honorlevelTable #12 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "13",
+              "field": "Icon",
+              "label": "Building honorlevelTable #13 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "14",
+              "field": "Icon",
+              "label": "Building honorlevelTable #14 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_02_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "10",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #10 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "11",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #11 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "12",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #12 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "13",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #13 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "14",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #14 - IconSmall"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_03.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "15",
+              "field": "Icon",
+              "label": "Building honorlevelTable #15 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "16",
+              "field": "Icon",
+              "label": "Building honorlevelTable #16 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "17",
+              "field": "Icon",
+              "label": "Building honorlevelTable #17 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "18",
+              "field": "Icon",
+              "label": "Building honorlevelTable #18 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "19",
+              "field": "Icon",
+              "label": "Building honorlevelTable #19 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_03_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "15",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #15 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "16",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #16 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "17",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #17 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "18",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #18 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "19",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #19 - IconSmall"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_04.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "20",
+              "field": "Icon",
+              "label": "Building honorlevelTable #20 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "21",
+              "field": "Icon",
+              "label": "Building honorlevelTable #21 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "22",
+              "field": "Icon",
+              "label": "Building honorlevelTable #22 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "23",
+              "field": "Icon",
+              "label": "Building honorlevelTable #23 - Icon"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "24",
+              "field": "Icon",
+              "label": "Building honorlevelTable #24 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_04_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "20",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #20 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "21",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #21 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "22",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #22 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "23",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #23 - IconSmall"
+            },
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "24",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #24 - IconSmall"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_05.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "25",
+              "field": "Icon",
+              "label": "Building honorlevelTable #25 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_rongyao_05_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Building_honorlevelTable.json",
+              "row_id": "25",
+              "field": "IconSmall",
+              "label": "Building honorlevelTable #25 - IconSmall"
+            }
+          ]
+        },
+        {
+          "filename": "icon_skin_AdaPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700056",
+              "field": "Icon",
+              "label": "Cosmetic #700056 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700056",
+              "field": "Picture",
+              "label": "Cosmetic #700056 - Picture"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700057",
+              "field": "Icon",
+              "label": "Cosmetic #700057 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700057",
+              "field": "Picture",
+              "label": "Cosmetic #700057 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "450118",
+              "field": "Icon",
+              "label": "Item #450118 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "450119",
+              "field": "Icon",
+              "label": "Item #450119 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_skin_BotonPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700058",
+              "field": "Icon",
+              "label": "Cosmetic #700058 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700058",
+              "field": "Picture",
+              "label": "Cosmetic #700058 - Picture"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700059",
+              "field": "Icon",
+              "label": "Cosmetic #700059 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700059",
+              "field": "Picture",
+              "label": "Cosmetic #700059 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "450120",
+              "field": "Icon",
+              "label": "Item #450120 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "450121",
+              "field": "Icon",
+              "label": "Item #450121 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_skin_ClaraPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700062",
+              "field": "Icon",
+              "label": "Cosmetic #700062 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700062",
+              "field": "Picture",
+              "label": "Cosmetic #700062 - Picture"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700063",
+              "field": "Icon",
+              "label": "Cosmetic #700063 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700063",
+              "field": "Picture",
+              "label": "Cosmetic #700063 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "450124",
+              "field": "Icon",
+              "label": "Item #450124 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "450125",
+              "field": "Icon",
+              "label": "Item #450125 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_skin_MiraPlus.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700060",
+              "field": "Icon",
+              "label": "Cosmetic #700060 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700060",
+              "field": "Picture",
+              "label": "Cosmetic #700060 - Picture"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700061",
+              "field": "Icon",
+              "label": "Cosmetic #700061 - Icon"
+            },
+            {
+              "table": "AppearanceTable.json",
+              "row_id": "700061",
+              "field": "Picture",
+              "label": "Cosmetic #700061 - Picture"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "450122",
+              "field": "Icon",
+              "label": "Item #450122 - Icon"
+            },
+            {
+              "table": "GoodsTable.json",
+              "row_id": "450123",
+              "field": "Icon",
+              "label": "Item #450123 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_WeekendCardBp_box.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8999874",
+              "field": "Icon",
+              "label": "Item #8999874 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "icon_WeekendCardBp_currency.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "GoodsTable.json",
+              "row_id": "8999875",
+              "field": "Icon",
+              "label": "Item #8999875 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_baoxiang01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "1",
+              "field": "Icon",
+              "label": "SixBirthdayCarnivalTable #1 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_baoxiang02.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "2",
+              "field": "Icon",
+              "label": "SixBirthdayCarnivalTable #2 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_baoxiang03.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "3",
+              "field": "Icon",
+              "label": "SixBirthdayCarnivalTable #3 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_baoxiang04.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "4",
+              "field": "Icon",
+              "label": "SixBirthdayCarnivalTable #4 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_baoxiang05.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "5",
+              "field": "Icon",
+              "label": "SixBirthdayCarnivalTable #5 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_baoxiang06.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "6",
+              "field": "Icon",
+              "label": "SixBirthdayCarnivalTable #6 - Icon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_huizhang04_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "1",
+              "field": "RankingIcon",
+              "label": "SixBirthdayCarnivalTable #1 - RankingIcon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_huizhang05_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "2",
+              "field": "RankingIcon",
+              "label": "SixBirthdayCarnivalTable #2 - RankingIcon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_huizhang06_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "3",
+              "field": "RankingIcon",
+              "label": "SixBirthdayCarnivalTable #3 - RankingIcon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_huizhang07_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "4",
+              "field": "RankingIcon",
+              "label": "SixBirthdayCarnivalTable #4 - RankingIcon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_huizhang08_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "5",
+              "field": "RankingIcon",
+              "label": "SixBirthdayCarnivalTable #5 - RankingIcon"
+            }
+          ]
+        },
+        {
+          "filename": "Icon_zhounianMain_huizhang09_small.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "SixBirthdayCarnivalTable.json",
+              "row_id": "6",
+              "field": "RankingIcon",
+              "label": "SixBirthdayCarnivalTable #6 - RankingIcon"
+            }
+          ]
+        },
+        {
+          "filename": "img__Anniversary2026_bg.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160202",
+              "field": "BgPic",
+              "label": "Event panel #10160202 - BgPic"
+            }
+          ]
+        },
+        {
+          "filename": "img_bp_Anniversary2026_tab.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "10160202",
+              "field": "ActivityBanner",
+              "label": "Event panel #10160202 - ActivityBanner"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "273208",
+              "field": "ActivityBanner",
+              "label": "Event panel #273208 - ActivityBanner"
+            },
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "273210",
+              "field": "ActivityBanner",
+              "label": "Event panel #273210 - ActivityBanner"
+            }
+          ]
+        },
+        {
+          "filename": "img_bp_WeekendCardBp_tab.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "273206",
+              "field": "ActivityBanner",
+              "label": "Event panel #273206 - ActivityBanner"
+            }
+          ]
+        },
+        {
+          "filename": "img_gongjianbaolei_yeqian_zhounianq2.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Activity_panelTable.json",
+              "row_id": "500006",
+              "field": "ActivityBanner",
+              "label": "Event panel #500006 - ActivityBanner"
+            }
+          ]
+        },
+        {
+          "filename": "img_gongjianbaolei_znq2026_boss.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Field_monsterTable.json",
+              "row_id": "670011",
+              "field": "IconBody",
+              "label": "Field monsterTable #670011 - IconBody"
+            }
+          ]
+        },
+        {
+          "filename": "img_znq_daye_bannerboss_2026.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Field_monsterTable.json",
+              "row_id": "8220011",
+              "field": "IconBody",
+              "label": "Field monsterTable #8220011 - IconBody"
+            },
+            {
+              "table": "Field_monsterTable.json",
+              "row_id": "8220012",
+              "field": "IconBody",
+              "label": "Field monsterTable #8220012 - IconBody"
+            }
+          ]
+        },
+        {
+          "filename": "ui_chouka_AdaPlus_01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "231402",
+              "field": "RecruitFront",
+              "label": "Hero skin listTable #231402 - RecruitFront"
+            },
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "231402",
+              "field": "RecruitRear",
+              "label": "Hero skin listTable #231402 - RecruitRear"
+            }
+          ]
+        },
+        {
+          "filename": "ui_chouka_BotonPlus_01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "210002",
+              "field": "RecruitFront",
+              "label": "Hero skin listTable #210002 - RecruitFront"
+            },
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "210002",
+              "field": "RecruitRear",
+              "label": "Hero skin listTable #210002 - RecruitRear"
+            }
+          ]
+        },
+        {
+          "filename": "ui_chouka_ClaraPlus_01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "221502",
+              "field": "RecruitFront",
+              "label": "Hero skin listTable #221502 - RecruitFront"
+            },
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "221502",
+              "field": "RecruitRear",
+              "label": "Hero skin listTable #221502 - RecruitRear"
+            }
+          ]
+        },
+        {
+          "filename": "ui_chouka_MiraPlus_01.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "211102",
+              "field": "RecruitFront",
+              "label": "Hero skin listTable #211102 - RecruitFront"
+            },
+            {
+              "table": "Hero_skin_listTable.json",
+              "row_id": "211102",
+              "field": "RecruitRear",
+              "label": "Hero skin listTable #211102 - RecruitRear"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unlinked_groups": [
+    {
+      "title": "Summer 2026 / Beach Festival",
+      "summary": "Beach Festival and summer-themed cosmetics, rewards, and event presentation assets.",
+      "status": "Found but not active yet",
+      "entries": [],
+      "images": [
+        {
+          "filename": "com_btn_Summer_activities2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_halo_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_halo_zhounianqing2609_plus.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "ICON_mingpai_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_pfjj_26zhounianqing01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_pfjj_26zhounianqing02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "ICON_Talk_qipao_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_wing_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_wing_zhounianqing2609_plus.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "ICON_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "ICON_zhounianqing2609_01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "ICON_zhounianqing2609_low.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_waixian_gaizhuangche_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "item_guashi_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "item_mingpian_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "mingpian_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "UI_mingpai_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "UI_Talk_qipao_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "UIFormation_gaizhuangche_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        }
+      ]
+    },
+    {
+      "title": "Frame Rewards",
+      "summary": "Avatar frame and reward-frame assets linked to cosmetic or item data.",
+      "status": "Found but not active yet",
+      "entries": [],
+      "images": [
+        {
+          "filename": "icon_item_Frame_zhounianqing2609.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "UI_Frame_zhounianqing2609_a.png",
+          "active": false,
+          "uses": []
+        }
+      ]
+    },
+    {
+      "title": "Unclassified Images",
+      "summary": "Images found in this update that are not linked to changed game data and do not have enough filename evidence for a stronger group.",
+      "status": "Found but not active yet",
+      "entries": [],
+      "images": [
+        {
+          "filename": "bg_Anniversary2026_tab.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_dzhjr_znqMain_tab01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_dzhjr_znqMain_tab02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_dzhjr_znqMain_tab03.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_dzhjr_znqMain_tab04.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_dzhjr_znqMain_tab05.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_dzhjr_znqMain_tab06.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_weekpass-ban.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_weekpass-ban2.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_weekpass-tips.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_weekpass.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_weekpass_case.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_weekpass_tips1.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_weekpass_tips2.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_znq_check02_in2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_znq_di01_Store2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_znq_di02_Store2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_znq_di03_Store2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "bg_znq_Store2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "btn_bp_Anniversary2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "btn_bp_ziyuanchubei_02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "btn_zhounianMain_choujiang.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "btn_zhounianMain_choujiang_xuanzhong.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "btn_zhounianMain_choujiang_zhuanpan.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "btn_zhounianMain_qfcj.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "btn_zhounianMain_rz_01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "btn_zhounianMain_rz_02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_bp_Anniversary2026_title.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_bp_garden_ziyuanchubei.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_bzzj_djd_tb12.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_bzzj_djd_tb13.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_bzzj_djd_tb14.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_bzzj_djd_tb15.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_crimsoncrystal_jian.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_gongjianbaolei_tiaozhuan.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_pfjj_26chibang01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_pfjj_26chibang02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_pfjj_26halo01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_pfjj_26halo02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "ICON_soliderLv_11.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_07.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_08.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_09.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_10.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_entrance.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_huizhang01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_huizhang02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_huizhang03.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_ka.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_zhounianMain_ka_show.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Icon_znq_entrance.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_znq_lihe_in2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_znq_Seven_boss.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_35_banner_libao01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_35_banner_libao02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_35_banner_libao03.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_35_banner_libao04.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_35_banner_libao05.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_35_banner_libao06.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_Act_Anniversary2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_Anniversary2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_Anniversary2026_01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_Anniversary2026_02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_Anniversary2026_03.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_Anniversary2026_04.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_Anniversary2026_05.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_Anniversary2026_self.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_Anniversary_pack.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_bar_Anniversary2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_ziyuanchubei_01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_ziyuanchubei_02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_ziyuanchubei_03.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_ziyuanchubei_04.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_ziyuanchubei_05.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_ziyuanchubei_06.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_garden_ziyuanchubei_07.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_num_Anniversary2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_WeekendCardBp_pack.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_ziyuanchubei_09.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_bp_ziyuanchubei_11.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_datulibao_znq2026_dk02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_1jie.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_2jie.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_3jie.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_4jie.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_bg.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_znq_jindu.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_znq_jindudi.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_znq_list01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_znq_list02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_gongjianbaolei_znq_list03.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_30hg_biaoqian.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_30hg_box.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_30hg_box02.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_30hg_di01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_30hg_di03.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_30hg_icon.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_30hg_wancheng.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_choujiang_di.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_choujiang_jindu.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_choujiang_jindudi.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_choujiang_jindudi2.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_qfcj_BG.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_qfcj_list.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_qfcj_list2.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_qiandao_list.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_qiandao_list2.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_qiandao_list3.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_qiandao_list4.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_qiandao_suo.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_qiandao_wancheng.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_rz_banner01.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_rz_BG.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Img_zhounianMain_rz_list.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_znq_caiji_bannerboss.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_znq_caiji_bg.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_znq_list01_in2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_znq_list02_in2026.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "img_znqhp_listdi.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "jianzhu_qrcj_dangao.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "Mail_icon_soliderLv_11.png",
+          "active": false,
+          "uses": []
+        }
+      ]
+    }
+  ]
+}

@@ -450,6 +450,51 @@ main {
   font-size: 14px;
 }
 
+.collapsible > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-3);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.collapsible > summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapsible > summary::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-right: 2px solid var(--text-secondary);
+  border-bottom: 2px solid var(--text-secondary);
+  transform: rotate(-45deg);
+  transition: transform var(--transition-fast);
+}
+
+.collapsible[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+.collapsible > summary:hover {
+  border-color: var(--border-accent);
+}
+
+.collapsible > .highlight-list,
+.collapsible > .feature-stack {
+  margin-top: 10px;
+}
+
 .feature-stack {
   display: grid;
   gap: 14px;

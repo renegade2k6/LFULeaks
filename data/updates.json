@@ -4317,6 +4317,144 @@
           ]
         }
       ]
+    },
+    {
+      "update_id": "2026-09-07_13-12-56",
+      "manifest": {
+        "images_added": 5,
+        "reports": [
+          "version_summary.md",
+          "version_details.md",
+          "version_update_summary.md",
+          "new_images.md"
+        ],
+        "source": "android",
+        "tables_added": 1,
+        "tables_changed": 38,
+        "tables_removed": 0
+      },
+      "confirmed_new": [
+        "Aerospace Mothership"
+      ],
+      "changed_existing": [
+        "Crown Shop",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Strongest Alliance",
+        "Exclusive | Mechanical Arm",
+        "Exclusive | Toolkit",
+        "Exclusive | Mechanical Arm",
+        "Exclusive | Toolkit",
+        "Lucky Hero Card;",
+        "Minutemen - Elite Hero Medal",
+        "Wildlings - Elite Hero Medal",
+        "Vindicators - Elite Hero Medal",
+        "Watchers - Elite Hero Medal",
+        "Advanced Elite Hero Selection Medal",
+        "Elite Hero Medal;",
+        "Interactive emote;"
+      ],
+      "groups": [
+        {
+          "title": "Anniversary Cosmetics",
+          "summary": "Anniversary-themed (zhounianqing) cosmetic and reward-frame assets — badges, nameplates, frames.",
+          "status": "Linked in game data",
+          "entries": [],
+          "images": [
+            {
+              "filename": "item_guangquan_2026zhounianqing01.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Appearance_auraTable.json",
+                  "row_id": "6",
+                  "field": "Picture",
+                  "label": "Appearance auraTable #6 - Picture"
+                }
+              ]
+            },
+            {
+              "filename": "item_guangquan_2026zhounianqing02.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Appearance_auraTable.json",
+                  "row_id": "7",
+                  "field": "Picture",
+                  "label": "Appearance auraTable #7 - Picture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Other Linked Images",
+          "summary": "Images referenced by changed game data but not confidently grouped yet.",
+          "status": "Linked in game data",
+          "entries": [],
+          "images": [
+            {
+              "filename": "ICON_baohuzhao_QiXi2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "AppearanceTable.json",
+                  "row_id": "1300011",
+                  "field": "Icon",
+                  "label": "Cosmetic #1300011 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "410297",
+                  "field": "Icon",
+                  "label": "Item #410297 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "410298",
+                  "field": "Icon",
+                  "label": "Item #410298 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "item_pfjj_kejihexin_red.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "780003",
+                  "field": "Icon",
+                  "label": "Item #780003 - Icon"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "unlinked_groups": [
+        {
+          "title": "Unclassified Images",
+          "summary": "Images found in this update that are not linked to changed game data and do not have enough filename evidence for a stronger group.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "UI_qiancheng_ganen2026.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        }
+      ]
     }
   ],
   "archive": [
@@ -4516,6 +4654,15 @@
       "images": 221,
       "linked": 79,
       "tables": 52,
+      "source": "generated"
+    },
+    {
+      "date": "2026-09-07",
+      "href": "updates/2026-09-07/index.html",
+      "summary": "Grouped image and game-data status",
+      "images": 5,
+      "linked": 4,
+      "tables": 38,
       "source": "generated"
     }
   ]

@@ -4455,6 +4455,1080 @@
           ]
         }
       ]
+    },
+    {
+      "update_id": "2026-09-23_05-18-00",
+      "manifest": {
+        "images_added": 162,
+        "reports": [
+          "version_summary.md",
+          "version_details.md",
+          "version_update_summary.md",
+          "new_images.md"
+        ],
+        "source": "android",
+        "tables_added": 1,
+        "tables_changed": 31,
+        "tables_removed": 0
+      },
+      "confirmed_new": [
+        "Activity_panelTable #273216  Images: bg_bp_Halloween2026.png (BgPic), img_bp_Halloween2026_tab.png (ActivityBanner)"
+      ],
+      "changed_existing": [
+        "Fashion Icon;",
+        "Samurai Fujiwara's Treasure",
+        "Defender Lv. 11;",
+        "Commando Lv.1;",
+        "Commando Lv.2;",
+        "Commando Lv.3;",
+        "Commando Lv.4;",
+        "Commando Lv.5;",
+        "Commando Lv.6;",
+        "Commando Lv.7;",
+        "Commando Lv.8;",
+        "Commando Lv.9;",
+        "Commando Lv. 10;",
+        "Commando Lv. 11;",
+        "Archer Lv.1;",
+        "Archer Lv.2;",
+        "Archer Lv.3;",
+        "Archer Lv.4;",
+        "Archer Lv.5;",
+        "Archer Lv.6;",
+        "Archer Lv.7;",
+        "Archer Lv.8;",
+        "Archer Lv.9;",
+        "Rifleman Lv. 10;"
+      ],
+      "groups": [
+        {
+          "title": "Frame Rewards",
+          "summary": "Avatar frame and reward-frame assets linked to cosmetic or item data.",
+          "status": "Linked in game data",
+          "entries": [],
+          "images": [
+            {
+              "filename": "ICON_Item_Frame_wanshenjie2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "410301",
+                  "field": "Icon",
+                  "label": "Item #410301 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "410302",
+                  "field": "Icon",
+                  "label": "Item #410302 - Icon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Other Linked Images",
+          "summary": "Images referenced by changed game data but not confidently grouped yet.",
+          "status": "Linked in game data",
+          "entries": [],
+          "images": [
+            {
+              "filename": "bg_bp_Halloween2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Activity_panelTable.json",
+                  "row_id": "273216",
+                  "field": "BgPic",
+                  "label": "Event panel #273216 - BgPic"
+                }
+              ]
+            },
+            {
+              "filename": "ico_honor_01.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "ArmsTable.json",
+                  "row_id": "107212",
+                  "field": "Icon",
+                  "label": "ArmsTable #107212 - Icon"
+                },
+                {
+                  "table": "ArmsTable.json",
+                  "row_id": "107213",
+                  "field": "Icon",
+                  "label": "ArmsTable #107213 - Icon"
+                },
+                {
+                  "table": "ArmsTable.json",
+                  "row_id": "107214",
+                  "field": "Icon",
+                  "label": "ArmsTable #107214 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "ico_honor_02.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "ArmsTable.json",
+                  "row_id": "107012",
+                  "field": "Icon",
+                  "label": "ArmsTable #107012 - Icon"
+                },
+                {
+                  "table": "ArmsTable.json",
+                  "row_id": "107013",
+                  "field": "Icon",
+                  "label": "ArmsTable #107013 - Icon"
+                },
+                {
+                  "table": "ArmsTable.json",
+                  "row_id": "107014",
+                  "field": "Icon",
+                  "label": "ArmsTable #107014 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "ico_honor_03.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "ArmsTable.json",
+                  "row_id": "107112",
+                  "field": "Icon",
+                  "label": "ArmsTable #107112 - Icon"
+                },
+                {
+                  "table": "ArmsTable.json",
+                  "row_id": "107113",
+                  "field": "Icon",
+                  "label": "ArmsTable #107113 - Icon"
+                },
+                {
+                  "table": "ArmsTable.json",
+                  "row_id": "107114",
+                  "field": "Icon",
+                  "label": "ArmsTable #107114 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_Halloween2026_box_3.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8999863",
+                  "field": "Icon",
+                  "label": "Item #8999863 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_Halloween2026_pumpkin.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8999864",
+                  "field": "Icon",
+                  "label": "Item #8999864 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_halloween_Store2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8220201",
+                  "field": "Icon",
+                  "label": "Item #8220201 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "ICON_mingpai_wanshenjie2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "497213",
+                  "field": "Icon",
+                  "label": "Item #497213 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "497214",
+                  "field": "Icon",
+                  "label": "Item #497214 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "ICON_Talk_qipao_wanshenjie2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "440136",
+                  "field": "Icon",
+                  "label": "Item #440136 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "440137",
+                  "field": "Icon",
+                  "label": "Item #440137 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "ICON_wanshenjie2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "400282",
+                  "field": "Icon",
+                  "label": "Item #400282 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "400283",
+                  "field": "Icon",
+                  "label": "Item #400283 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "img_bp_Halloween2026_tab.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Activity_panelTable.json",
+                  "row_id": "273216",
+                  "field": "ActivityBanner",
+                  "label": "Event panel #273216 - ActivityBanner"
+                }
+              ]
+            },
+            {
+              "filename": "img_wanxian_gaizhuangche_wanshenjie2026_b.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "420103",
+                  "field": "Icon",
+                  "label": "Item #420103 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "420104",
+                  "field": "Icon",
+                  "label": "Item #420104 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "item_guashi_wanshenjie2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "446072",
+                  "field": "Icon",
+                  "label": "Item #446072 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "446073",
+                  "field": "Icon",
+                  "label": "Item #446073 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "item_mingpian_wanshenjie2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "447054",
+                  "field": "Icon",
+                  "label": "Item #447054 - Icon"
+                },
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "447055",
+                  "field": "Icon",
+                  "label": "Item #447055 - Icon"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "unlinked_groups": [
+        {
+          "title": "Frame Rewards",
+          "summary": "Avatar frame and reward-frame assets linked to cosmetic or item data.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "UI_Frame_wanshenjie2026_b.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        },
+        {
+          "title": "Unclassified Images",
+          "summary": "Images found in this update that are not linked to changed game data and do not have enough filename evidence for a stronger group.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "ActBigPictureGiftPackBGHalloween2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "activity_banner_Nutcracker_tab.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_di02_Store2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_di03_Store2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Halloween_collection_jungle2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Halloween_fuhuojie.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Halloween_fuhuojie_tab01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Halloween_fuhuojie_tab02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Halloween_fuhuojie_tab03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Halloween_fuhuojie_tab04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Halloween_fuhuojie_tab05.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Halloween_fuhuojie_tab06.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Halloween_Seven_day_collection.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_halloween_Store2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bt_halloween_rukou_buqian.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "common_btn_bigPack.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Halloween_img_arrow.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_Halloween2026_title.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_Halloween_collection_jungle2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Halloween_entrance.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_Halloween_tangguo.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_Halloween_time.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_10_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_10_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_1_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_1_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_1_3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_1_4.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_2_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_2_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_2_3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_2_4.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_3_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_3_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_3_3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_3_4.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_4_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_4_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_4_3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_4_4.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_5_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_5_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_5_3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_5_4.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_6_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_6_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_6_3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_6_4.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_7_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_7_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_7_3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_7_4.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_8_1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_8_2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Nutcracker_Entrance.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_Nutcracker_Voucher.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_skin_moren_honorLv1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_skin_moren_honorLv2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_skin_moren_honorLv3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_skin_moren_honorLv4.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_skin_moren_honorLv5.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_soliderLv_12.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_soliderLv_13.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_soliderLv_14.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_soliderLv_15.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_startmaking_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_startmaking_02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_startmaking_03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_startmaking_04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_startmaking_05.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_startmakingi_06.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_Halloween2026_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_Halloween2026_02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_Halloween2026_03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_Halloween2026_04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_Halloween2026_06.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_Halloween2026_11.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_Halloween2026_pack.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_Nutcracker_pack2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_fuhuojie_dhsd_dk.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_halloween_dikuang.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_halloween_qiandaotiao.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_halloween_qiandaotiaoliang.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_landscape_Nutcracker.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_Nutcracker_pack.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_yxd_baolei.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_yxd_train.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_zhuanwu_banner_libao03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_zhuanwu_banner_libao04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "meme_num27.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "meme_num28.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "mingpian_wanshenjie2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_fhjd.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_kzhy.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_ljnsz.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_lst.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_mysj.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_nyfz.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_plmxs.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_shgj.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_tly.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "relics_item_ysw.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ResHalloween2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_bg_beijing.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_bt_biaoqian01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_bt_biaoqian02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_bt_zhizuo.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_baoxiang.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_changyin01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_changyin02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_cuoi.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_dui.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_shop01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_shop02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang05.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang06.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang07.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang08.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang09.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_tangjiang10.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_teyin01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_teyin02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_icon_yinjiuquan.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_iconentrance.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_ban.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_ban2.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_ban3.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_batai.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_biaoti.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_dikuang.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_jiubapai.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_liantiao.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_libaotu02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_libaotu1.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_tankuang.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_tankuangdingdan.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "startmaking_img_xuanzhong.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "thalloween2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_mingpai_wanshenjie2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_Talk_qipao_wanshenjie2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UIFormation_gaizhuangche_wanshenjie2026_b.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        }
+      ]
     }
   ],
   "archive": [
@@ -4663,6 +5737,15 @@
       "images": 5,
       "linked": 4,
       "tables": 38,
+      "source": "generated"
+    },
+    {
+      "date": "2026-09-23",
+      "href": "updates/2026-09-23/index.html",
+      "summary": "Grouped image and game-data status",
+      "images": 162,
+      "linked": 15,
+      "tables": 31,
       "source": "generated"
     }
   ]

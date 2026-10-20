@@ -1,7 +1,7 @@
 {
-  "update_id": "2026-09-23_05-18-00",
+  "update_id": "2026-10-20_04-42-27",
   "manifest": {
-    "images_added": 162,
+    "images_added": 89,
     "reports": [
       "version_summary.md",
       "version_details.md",
@@ -9,66 +9,45 @@
       "new_images.md"
     ],
     "source": "android",
-    "tables_added": 1,
-    "tables_changed": 31,
+    "tables_added": 4,
+    "tables_changed": 46,
     "tables_removed": 0
   },
   "confirmed_new": [
-    "Activity_panelTable #273216  Images: bg_bp_Halloween2026.png (BgPic), img_bp_Halloween2026_tab.png (ActivityBanner)"
+    "10x · Little Devil",
+    "10x · Arch Demon",
+    "Midnight Circus",
+    "Walnut Feast",
+    "Record - Last Fort：Survival",
+    "Record - Last Train: Survival"
   ],
   "changed_existing": [
-    "Fashion Icon;",
-    "Samurai Fujiwara's Treasure",
-    "Defender Lv. 11;",
-    "Commando Lv.1;",
-    "Commando Lv.2;",
-    "Commando Lv.3;",
-    "Commando Lv.4;",
-    "Commando Lv.5;",
-    "Commando Lv.6;",
-    "Commando Lv.7;",
-    "Commando Lv.8;",
-    "Commando Lv.9;",
+    "Pumpkin Gift Bundle",
+    "Pumpkin Gift Bundle",
+    "Pumpkin Gift Bundle",
+    "Pumpkin Gift Bundle",
+    "Pumpkin Gift Bundle",
+    "Wasteland Store",
+    "Defender Lv. 10;",
+    "Crimson Crystal Defender · Tier 1;",
+    "Crimson Crystal Defender · Tier 2;",
+    "Crimson Crystal Defender · Tier 3;",
+    "Crimson Crystal Defender · Tier 4;",
+    "Crimson Source Defender;",
     "Commando Lv. 10;",
-    "Commando Lv. 11;",
-    "Archer Lv.1;",
-    "Archer Lv.2;",
-    "Archer Lv.3;",
-    "Archer Lv.4;",
-    "Archer Lv.5;",
-    "Archer Lv.6;",
-    "Archer Lv.7;",
-    "Archer Lv.8;",
-    "Archer Lv.9;",
-    "Rifleman Lv. 10;"
+    "Crimson Crystal Commando · Tier 1;",
+    "Crimson Crystal Commando · Tier 2;",
+    "Crimson Crystal Commando · Tier 3;",
+    "Crimson Crystal Commando · Tier 4;",
+    "Crimson Source Commando;",
+    "Rifleman Lv. 10;",
+    "Crimson Crystal Archer · Tier 1;",
+    "Crimson Crystal Archer · Tier 2;",
+    "Crimson Crystal Archer · Tier 3;",
+    "Crimson Crystal Archer · Tier 4;",
+    "Crimson Source Archer;"
   ],
   "groups": [
-    {
-      "title": "Frame Rewards",
-      "summary": "Avatar frame and reward-frame assets linked to cosmetic or item data.",
-      "status": "Linked in game data",
-      "entries": [],
-      "images": [
-        {
-          "filename": "ICON_Item_Frame_wanshenjie2026.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "GoodsTable.json",
-              "row_id": "410301",
-              "field": "Icon",
-              "label": "Item #410301 - Icon"
-            },
-            {
-              "table": "GoodsTable.json",
-              "row_id": "410302",
-              "field": "Icon",
-              "label": "Item #410302 - Icon"
-            }
-          ]
-        }
-      ]
-    },
     {
       "title": "Other Linked Images",
       "summary": "Images referenced by changed game data but not confidently grouped yet.",
@@ -76,242 +55,158 @@
       "entries": [],
       "images": [
         {
-          "filename": "bg_bp_Halloween2026.png",
+          "filename": "icon_gaizhuangche_liebiao_07_2.png",
           "active": true,
           "uses": [
             {
-              "table": "Activity_panelTable.json",
-              "row_id": "273216",
-              "field": "BgPic",
-              "label": "Event panel #273216 - BgPic"
-            }
-          ]
-        },
-        {
-          "filename": "ico_honor_01.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "ArmsTable.json",
-              "row_id": "107212",
+              "table": "AppearanceTable.json",
+              "row_id": "1000012",
               "field": "Icon",
-              "label": "ArmsTable #107212 - Icon"
-            },
-            {
-              "table": "ArmsTable.json",
-              "row_id": "107213",
-              "field": "Icon",
-              "label": "ArmsTable #107213 - Icon"
-            },
-            {
-              "table": "ArmsTable.json",
-              "row_id": "107214",
-              "field": "Icon",
-              "label": "ArmsTable #107214 - Icon"
-            }
-          ]
-        },
-        {
-          "filename": "ico_honor_02.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "ArmsTable.json",
-              "row_id": "107012",
-              "field": "Icon",
-              "label": "ArmsTable #107012 - Icon"
-            },
-            {
-              "table": "ArmsTable.json",
-              "row_id": "107013",
-              "field": "Icon",
-              "label": "ArmsTable #107013 - Icon"
-            },
-            {
-              "table": "ArmsTable.json",
-              "row_id": "107014",
-              "field": "Icon",
-              "label": "ArmsTable #107014 - Icon"
-            }
-          ]
-        },
-        {
-          "filename": "ico_honor_03.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "ArmsTable.json",
-              "row_id": "107112",
-              "field": "Icon",
-              "label": "ArmsTable #107112 - Icon"
-            },
-            {
-              "table": "ArmsTable.json",
-              "row_id": "107113",
-              "field": "Icon",
-              "label": "ArmsTable #107113 - Icon"
-            },
-            {
-              "table": "ArmsTable.json",
-              "row_id": "107114",
-              "field": "Icon",
-              "label": "ArmsTable #107114 - Icon"
-            }
-          ]
-        },
-        {
-          "filename": "icon_Halloween2026_box_3.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "GoodsTable.json",
-              "row_id": "8999863",
-              "field": "Icon",
-              "label": "Item #8999863 - Icon"
-            }
-          ]
-        },
-        {
-          "filename": "icon_Halloween2026_pumpkin.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "GoodsTable.json",
-              "row_id": "8999864",
-              "field": "Icon",
-              "label": "Item #8999864 - Icon"
-            }
-          ]
-        },
-        {
-          "filename": "icon_halloween_Store2026.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "GoodsTable.json",
-              "row_id": "8220201",
-              "field": "Icon",
-              "label": "Item #8220201 - Icon"
-            }
-          ]
-        },
-        {
-          "filename": "ICON_mingpai_wanshenjie2026.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "GoodsTable.json",
-              "row_id": "497213",
-              "field": "Icon",
-              "label": "Item #497213 - Icon"
+              "label": "Cosmetic #1000012 - Icon"
             },
             {
               "table": "GoodsTable.json",
-              "row_id": "497214",
+              "row_id": "459001",
               "field": "Icon",
-              "label": "Item #497214 - Icon"
+              "label": "Item #459001 - Icon"
+            },
+            {
+              "table": "Vehicle_skinTable.json",
+              "row_id": "109",
+              "field": "Pic",
+              "label": "Vehicle skinTable #109 - Pic"
             }
           ]
         },
         {
-          "filename": "ICON_Talk_qipao_wanshenjie2026.png",
+          "filename": "icon_gaizhuangche_liebiao_08_2.png",
           "active": true,
           "uses": [
             {
-              "table": "GoodsTable.json",
-              "row_id": "440136",
+              "table": "AppearanceTable.json",
+              "row_id": "1000014",
               "field": "Icon",
-              "label": "Item #440136 - Icon"
+              "label": "Cosmetic #1000014 - Icon"
             },
             {
               "table": "GoodsTable.json",
-              "row_id": "440137",
+              "row_id": "459002",
               "field": "Icon",
-              "label": "Item #440137 - Icon"
-            }
-          ]
-        },
-        {
-          "filename": "ICON_wanshenjie2026.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "GoodsTable.json",
-              "row_id": "400282",
-              "field": "Icon",
-              "label": "Item #400282 - Icon"
+              "label": "Item #459002 - Icon"
             },
             {
-              "table": "GoodsTable.json",
-              "row_id": "400283",
-              "field": "Icon",
-              "label": "Item #400283 - Icon"
+              "table": "Vehicle_skinTable.json",
+              "row_id": "111",
+              "field": "Pic",
+              "label": "Vehicle skinTable #111 - Pic"
             }
           ]
         },
         {
-          "filename": "img_bp_Halloween2026_tab.png",
+          "filename": "img_waixian_gaizhuangche_fenseyinfu.png",
           "active": true,
           "uses": [
             {
-              "table": "Activity_panelTable.json",
-              "row_id": "273216",
-              "field": "ActivityBanner",
-              "label": "Event panel #273216 - ActivityBanner"
-            }
-          ]
-        },
-        {
-          "filename": "img_wanxian_gaizhuangche_wanshenjie2026_b.png",
-          "active": true,
-          "uses": [
-            {
-              "table": "GoodsTable.json",
-              "row_id": "420103",
-              "field": "Icon",
-              "label": "Item #420103 - Icon"
+              "table": "AppearanceTable.json",
+              "row_id": "1000014",
+              "field": "Picture",
+              "label": "Cosmetic #1000014 - Picture"
             },
             {
-              "table": "GoodsTable.json",
-              "row_id": "420104",
-              "field": "Icon",
-              "label": "Item #420104 - Icon"
+              "table": "Vehicle_skinTable.json",
+              "row_id": "111",
+              "field": "AppearancePic",
+              "label": "Vehicle skinTable #111 - AppearancePic"
             }
           ]
         },
         {
-          "filename": "item_guashi_wanshenjie2026.png",
+          "filename": "img_waixian_gaizhuangche_nihong.png",
           "active": true,
           "uses": [
             {
-              "table": "GoodsTable.json",
-              "row_id": "446072",
-              "field": "Icon",
-              "label": "Item #446072 - Icon"
+              "table": "AppearanceTable.json",
+              "row_id": "1000012",
+              "field": "Picture",
+              "label": "Cosmetic #1000012 - Picture"
             },
             {
-              "table": "GoodsTable.json",
-              "row_id": "446073",
-              "field": "Icon",
-              "label": "Item #446073 - Icon"
+              "table": "Vehicle_skinTable.json",
+              "row_id": "109",
+              "field": "AppearancePic",
+              "label": "Vehicle skinTable #109 - AppearancePic"
             }
           ]
         },
         {
-          "filename": "item_mingpian_wanshenjie2026.png",
+          "filename": "UI_ziyuanbuzu_gaizhuangshop.png",
           "active": true,
           "uses": [
             {
-              "table": "GoodsTable.json",
-              "row_id": "447054",
-              "field": "Icon",
-              "label": "Item #447054 - Icon"
+              "table": "Lack_res_linkTable.json",
+              "row_id": "3659",
+              "field": "Pic",
+              "label": "Lack res linkTable #3659 - Pic"
             },
             {
-              "table": "GoodsTable.json",
-              "row_id": "447055",
-              "field": "Icon",
-              "label": "Item #447055 - Icon"
+              "table": "Lack_res_linkTable.json",
+              "row_id": "3660",
+              "field": "Pic",
+              "label": "Lack res linkTable #3660 - Pic"
+            },
+            {
+              "table": "Lack_res_linkTable.json",
+              "row_id": "3661",
+              "field": "Pic",
+              "label": "Lack res linkTable #3661 - Pic"
+            },
+            {
+              "table": "Lack_res_linkTable.json",
+              "row_id": "3663",
+              "field": "Pic",
+              "label": "Lack res linkTable #3663 - Pic"
+            },
+            {
+              "table": "Lack_res_linkTable.json",
+              "row_id": "3664",
+              "field": "Pic",
+              "label": "Lack res linkTable #3664 - Pic"
+            },
+            {
+              "table": "Lack_res_linkTable.json",
+              "row_id": "3665",
+              "field": "Pic",
+              "label": "Lack res linkTable #3665 - Pic"
+            },
+            {
+              "table": "Lack_res_linkTable.json",
+              "row_id": "3666",
+              "field": "Pic",
+              "label": "Lack res linkTable #3666 - Pic"
+            }
+          ]
+        },
+        {
+          "filename": "UIformation_gaizhuangche_fenseyinfu.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Vehicle_skinTable.json",
+              "row_id": "111",
+              "field": "PicFormation",
+              "label": "Vehicle skinTable #111 - PicFormation"
+            }
+          ]
+        },
+        {
+          "filename": "UIformation_gaizhuangche_nihong.png",
+          "active": true,
+          "uses": [
+            {
+              "table": "Vehicle_skinTable.json",
+              "row_id": "109",
+              "field": "PicFormation",
+              "label": "Vehicle skinTable #109 - PicFormation"
             }
           ]
         }
@@ -326,7 +221,12 @@
       "entries": [],
       "images": [
         {
-          "filename": "UI_Frame_wanshenjie2026_b.png",
+          "filename": "icon_item_Frame_dakehu2610.png",
+          "active": false,
+          "uses": []
+        },
+        {
+          "filename": "icon_item_Frame_dakehu2610_b.png",
           "active": false,
           "uses": []
         }
@@ -339,732 +239,402 @@
       "entries": [],
       "images": [
         {
-          "filename": "ActBigPictureGiftPackBGHalloween2026.png",
+          "filename": "banner_libaoshangcheng_libao1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "activity_banner_Nutcracker_tab.png",
+          "filename": "banner_libaoshangcheng_libao2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_di02_Store2026.png",
+          "filename": "banner_libaoshangcheng_libao3.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_di03_Store2026.png",
+          "filename": "banner_libaoshangcheng_libao4.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_Halloween_collection_jungle2026.png",
+          "filename": "bg_gaizhuangche.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_Halloween_fuhuojie.png",
+          "filename": "bth_shoucang_jin.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_Halloween_fuhuojie_tab01.png",
+          "filename": "bth_shoucang_jin2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_Halloween_fuhuojie_tab02.png",
+          "filename": "bth_shoucang_jin3.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_Halloween_fuhuojie_tab03.png",
+          "filename": "bth_shoucang_wenhao.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_Halloween_fuhuojie_tab04.png",
+          "filename": "bth_shoucang_yixuanze.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_Halloween_fuhuojie_tab05.png",
+          "filename": "Buff_A_Arista.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_Halloween_fuhuojie_tab06.png",
+          "filename": "Buff_F_FireDown.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_Halloween_Seven_day_collection.png",
+          "filename": "Button_gaizhuangshop_anniu1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bg_halloween_Store2026.png",
+          "filename": "Button_gaizhuangshop_anniu1b.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "bt_halloween_rukou_buqian.png",
+          "filename": "Button_gaizhuangshop_anniu2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "common_btn_bigPack.png",
+          "filename": "Button_gaizhuangshop_anniu2b.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Halloween_img_arrow.png",
+          "filename": "Button_gaizhuangshop_anniu3.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_Halloween2026_title.png",
+          "filename": "Button_gaizhuangshop_anniu3b.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_Halloween_collection_jungle2026.png",
+          "filename": "common_btn_add.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Halloween_entrance.png",
+          "filename": "gzc_bg_num.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_Halloween_tangguo.png",
+          "filename": "hero_half_Oria.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_Halloween_time.png",
+          "filename": "hero_half_Saro.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_10_1.png",
+          "filename": "hero_head_Oria.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_10_2.png",
+          "filename": "hero_head_Saro.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_1_1.png",
+          "filename": "icon_gzc_gaizhuang2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_1_2.png",
+          "filename": "icon_gzc_huobi.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_1_3.png",
+          "filename": "icon_gzc_huobi2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_1_4.png",
+          "filename": "Icon_Nutcracker_1_4_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_2_1.png",
+          "filename": "Icon_Nutcracker_2_4_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_2_2.png",
+          "filename": "Icon_Nutcracker_3_4_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_2_3.png",
+          "filename": "Icon_Nutcracker_4_4_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_2_4.png",
+          "filename": "Icon_Nutcracker_5_4_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_3_1.png",
+          "filename": "Icon_Nutcracker_6_4_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_3_2.png",
+          "filename": "Icon_Nutcracker_7_4_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_3_3.png",
+          "filename": "Icon_Nutcracker_8_2_1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_3_4.png",
+          "filename": "ICON_Oria_01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_4_1.png",
+          "filename": "ICON_Oria_02.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_4_2.png",
+          "filename": "ICON_Oria_03.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_4_3.png",
+          "filename": "ICON_Oria_04.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_4_4.png",
+          "filename": "ICON_Oria_05.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_5_1.png",
+          "filename": "ICON_Oria_woman_exclusive_show_red.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_5_2.png",
+          "filename": "ICON_PLUS_Oria_01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_5_3.png",
+          "filename": "ICON_PLUS_Saro_01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_5_4.png",
+          "filename": "ICON_Saro_01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_6_1.png",
+          "filename": "ICON_Saro_02.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_6_2.png",
+          "filename": "ICON_Saro_03.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_6_3.png",
+          "filename": "ICON_Saro_04.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_6_4.png",
+          "filename": "ICON_Saro_05.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_7_1.png",
+          "filename": "ICON_Saro_woman_exclusive_show_red.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_7_2.png",
+          "filename": "img_gaizhuangshop_diban1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_7_3.png",
+          "filename": "img_gaizhuangshop_diban2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_7_4.png",
+          "filename": "img_gaizhuangshop_diban3.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_8_1.png",
+          "filename": "img_gaizhuangshop_diban4.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_8_2.png",
+          "filename": "img_gaizhuangshop_diban5.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "Icon_Nutcracker_Entrance.png",
+          "filename": "img_gaizhuangshop_diban6.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_Nutcracker_Voucher.png",
+          "filename": "img_herotraining_Oria.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_skin_moren_honorLv1.png",
+          "filename": "img_herotraining_Saro.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_skin_moren_honorLv2.png",
+          "filename": "img_shoucang_biaoti.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_skin_moren_honorLv3.png",
+          "filename": "img_shoucang_diban3.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_skin_moren_honorLv4.png",
+          "filename": "Mail_icon_soliderLv_12.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "icon_skin_moren_honorLv5.png",
+          "filename": "Mail_icon_soliderLv_13.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_soliderLv_12.png",
+          "filename": "Mail_icon_soliderLv_14.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_soliderLv_13.png",
+          "filename": "Mail_icon_soliderLv_15.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_soliderLv_14.png",
+          "filename": "relic_bg_popupList.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "ICON_soliderLv_15.png",
+          "filename": "Relic_img_shoucang_di1.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_garden_startmaking_01.png",
+          "filename": "Relic_img_shoucang_di2.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_garden_startmaking_02.png",
+          "filename": "Relic_img_shoucang_di3.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_garden_startmaking_03.png",
+          "filename": "t_effect_btnWishlist03_anniu.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_garden_startmaking_04.png",
+          "filename": "ui_chouka_Oria_01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_garden_startmaking_05.png",
+          "filename": "ui_chouka_Oria_02.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_garden_startmakingi_06.png",
+          "filename": "ui_chouka_Saro_01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_Halloween2026_01.png",
+          "filename": "ui_chouka_Saro_02.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_Halloween2026_02.png",
+          "filename": "ui_libaohalf_Oria.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_Halloween2026_03.png",
+          "filename": "ui_libaohalf_Saro.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_Halloween2026_04.png",
+          "filename": "ui_libaoOria.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_Halloween2026_06.png",
+          "filename": "ui_libaoSaro.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_Halloween2026_11.png",
+          "filename": "UI_Oria_woman_exclusive_show_red.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_Halloween2026_pack.png",
+          "filename": "UI_Saro_woman_exclusive_show_red.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_bp_Nutcracker_pack2.png",
+          "filename": "ui_x14kachi_yeqian_01.png",
           "active": false,
           "uses": []
         },
         {
-          "filename": "img_fuhuojie_dhsd_dk.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "img_halloween_dikuang.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "img_halloween_qiandaotiao.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "img_halloween_qiandaotiaoliang.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "img_landscape_Nutcracker.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "img_Nutcracker_pack.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "img_yxd_baolei.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "img_yxd_train.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "img_zhuanwu_banner_libao03.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "img_zhuanwu_banner_libao04.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "meme_num27.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "meme_num28.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "mingpian_wanshenjie2026.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_fhjd.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_kzhy.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_ljnsz.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_lst.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_mysj.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_nyfz.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_plmxs.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_shgj.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_tly.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "relics_item_ysw.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "ResHalloween2026.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_bg_beijing.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_bt_biaoqian01.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_bt_biaoqian02.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_bt_zhizuo.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_baoxiang.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_changyin01.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_changyin02.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_cuoi.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_dui.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_shop01.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_shop02.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang01.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang02.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang03.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang04.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang05.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang06.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang07.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang08.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang09.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_tangjiang10.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_teyin01.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_teyin02.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_icon_yinjiuquan.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_iconentrance.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_ban.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_ban2.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_ban3.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_batai.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_biaoti.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_dikuang.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_jiubapai.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_liantiao.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_libaotu02.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_libaotu1.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_tankuang.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_tankuangdingdan.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "startmaking_img_xuanzhong.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "thalloween2026.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "UI_mingpai_wanshenjie2026.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "UI_Talk_qipao_wanshenjie2026.png",
-          "active": false,
-          "uses": []
-        },
-        {
-          "filename": "UIFormation_gaizhuangche_wanshenjie2026_b.png",
+          "filename": "ui_x14kachi_yeqian_02.png",
           "active": false,
           "uses": []
         }

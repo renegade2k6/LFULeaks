@@ -6173,6 +6173,404 @@
           ]
         }
       ]
+    },
+    {
+      "update_id": "2026-11-03_04-41-53",
+      "manifest": {
+        "images_added": 59,
+        "reports": [
+          "version_summary.md",
+          "version_details.md",
+          "version_update_summary.md",
+          "new_images.md"
+        ],
+        "source": "android",
+        "tables_added": 0,
+        "tables_changed": 37,
+        "tables_removed": 0
+      },
+      "confirmed_new": [
+        "Autumn Feast",
+        "Auliya",
+        "Sala"
+      ],
+      "changed_existing": [
+        "Firework Prep",
+        "Mysterious Fireworks Show",
+        "Fireworks Making",
+        "Light Fireworks",
+        "Light Fireworks",
+        "War Beast Challenge",
+        "War Beast Joins the Fight",
+        "War Beast Shop",
+        "Rebuild Homeland",
+        "Mass Construction",
+        "Construction Prep",
+        "Blueprint Design",
+        "Masterpiece",
+        "Hero Growth",
+        "Call for Heroes",
+        "Zombie Queen Is Here",
+        "Unrivaled Strength",
+        "Ultimate Weapon Extension",
+        "Enhanced Ultimate Weapon",
+        "Military Drill",
+        "Rebuild Homeland",
+        "Mass Construction",
+        "Construction Prep",
+        "Blueprint Design"
+      ],
+      "groups": [
+        {
+          "title": "Other Linked Images",
+          "summary": "Images referenced by changed game data but not confidently grouped yet.",
+          "status": "Linked in game data",
+          "entries": [],
+          "images": [
+            {
+              "filename": "banner_tab_Thanksgiving2026.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Activity_panelTable.json",
+                  "row_id": "273230",
+                  "field": "ActivityBanner",
+                  "label": "Event panel #273230 - ActivityBanner"
+                }
+              ]
+            },
+            {
+              "filename": "bg_bp_garden_gangenjie.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "Activity_panelTable.json",
+                  "row_id": "273230",
+                  "field": "BgPic",
+                  "label": "Event panel #273230 - BgPic"
+                }
+              ]
+            },
+            {
+              "filename": "icon_Thanksgiving2026_bp_chest03.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8999849",
+                  "field": "Icon",
+                  "label": "Item #8999849 - Icon"
+                }
+              ]
+            },
+            {
+              "filename": "icon_Thanksgiving2026_dhsd_beike2.png",
+              "active": true,
+              "uses": [
+                {
+                  "table": "GoodsTable.json",
+                  "row_id": "8999850",
+                  "field": "Icon",
+                  "label": "Item #8999850 - Icon"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "unlinked_groups": [
+        {
+          "title": "Frame Rewards",
+          "summary": "Avatar frame and reward-frame assets linked to cosmetic or item data.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "icon_item_Frame_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_Frame_ganenjie2611_a.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        },
+        {
+          "title": "Unclassified Images",
+          "summary": "Images found in this update that are not linked to changed game data and do not have enough filename evidence for a stronger group.",
+          "status": "Found but not active yet",
+          "entries": [],
+          "images": [
+            {
+              "filename": "ActBigPictureGiftPackBGthanking2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ActSignInBattlePassthanking2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_thanking2026_battle.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_thanking_check_in2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_thanking_Seven_day_collection.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_thanking_Store2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Thanksgiving_fuhuojie.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Thanksgiving_fuhuojie_tab01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Thanksgiving_fuhuojie_tab02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Thanksgiving_fuhuojie_tab03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Thanksgiving_fuhuojie_tab04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bg_Thanksgiving_fuhuojie_tab05.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "bt_thanking_rukou_buqian.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Buff_B_BottleGreen.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Buff_B_BottlePurple.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Buff_B_BottleRed.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Buff_B_BottleYellow.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Buff_C_Cut.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Buff_F_FireUp.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_bp_garden_angenjie_title.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_mingpai_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "ICON_Talk_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Icon_Thanksgiving2026_entrance.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "icon_Thanksgiving2026_Store2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "image_Thanksgiving2026_bg_task.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_angenjie_11.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_angenjie_01.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_angenjie_02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_angenjie_03.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_angenjie_04.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_angenjie_05.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_angenjie_06.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_angenjie_07.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_bp_garden_angenjie_pack.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_datulibao_TG2026_dk02.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_king_of_hunting_03_bg.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_king_of_hunting_04_bg.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_operationscenter_statue_0072_85.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_operationscenter_statue_0072_86.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_thanking_qiandaotiao.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_thanking_qiandaotiaoliang.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "img_waixian_gaizhuangche_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "item_guashi_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "item_mingpian_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "mingpian_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "res_img_thanking2026_battle.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "Resthanking2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "thanking2026.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_mingpai_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_Talk_qipao_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UI_X14bg.png",
+              "active": false,
+              "uses": []
+            },
+            {
+              "filename": "UIFormation_gaizhuangche_ganenjie2611.png",
+              "active": false,
+              "uses": []
+            }
+          ]
+        }
+      ]
     }
   ],
   "archive": [
@@ -6399,6 +6797,15 @@
       "images": 89,
       "linked": 7,
       "tables": 46,
+      "source": "generated"
+    },
+    {
+      "date": "2026-11-03",
+      "href": "updates/2026-11-03/index.html",
+      "summary": "Grouped image and game-data status",
+      "images": 59,
+      "linked": 4,
+      "tables": 37,
       "source": "generated"
     }
   ]
